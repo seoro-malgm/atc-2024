@@ -54,9 +54,9 @@ const onSubmit = e => {
 .section-subscribe {
   /* @apply pb-20; */
   .wrap {
-    @apply flex items-center justify-center py-20 bg-baja-white-100;
+    @apply flex items-center justify-center py-28 bg-baja-white-100;
     .form-wrap {
-      @apply w-10/12 lg:w-9/12 border bg-white;
+      @apply w-10/12 lg:w-5/12 border bg-white;
       .form {
         .form-header {
           @apply p-4 border-b;

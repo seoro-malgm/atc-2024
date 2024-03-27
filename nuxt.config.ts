@@ -221,7 +221,7 @@ export default defineNuxtConfig({
   tailwindcss: {
     cssPath: "@/assets/css/global.css",
     configPath: "@/tailwind.config.js",
-    viewer: true
+    viewer: false
   },
   ui: {
     global: true
@@ -289,9 +289,8 @@ export default defineNuxtConfig({
 
   render: {
     cacheControl: {
-      static: "public, max-age=60", // 정적 자원 캐싱 설정
-      server: false, // renderingCache 비활성화
-      maxAge: 1000 * 60 * 60 * 24 * 7 // 일주일 후 캐시 만료
+      static: "public, max-age=604800", // 정적 자원 캐싱 설정
+      server: false // renderingCache 비활성화
     }
   },
   nitro: {

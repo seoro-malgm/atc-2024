@@ -98,9 +98,9 @@ watch(
   }
 }
 .global-header {
-  @apply max-lg:fixed max-lg:top-[0] max-lg:left-[50%] z-[2000];
+  @apply w-full lg:top-[0] lg:left-[50%] max-lg:fixed max-lg:top-[0] max-lg:left-[50%] z-[2000] max-lg:translate-x-[-50%] bg-white;
   &.unpinned {
-    @apply w-full lg:top-[0] lg:left-[50%] lg:fixed bg-white;
+    @apply lg:fixed;
     transform: translate(-50%, -100%);
     animation: showDown 0.3s forwards;
   }
