@@ -295,13 +295,8 @@ export default defineNuxtConfig({
     }
   },
   nitro: {
-    preset: "firebase",
-    firebase: {
-      gen: 2,
-      nodeVersion: "20"
-    },
-    routeRules: {
-      // "/works/**": { static: true }
+    storage: {
+      data: { driver: "vercelKV" }
     }
   },
   imports: {
