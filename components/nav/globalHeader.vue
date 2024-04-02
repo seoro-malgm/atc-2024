@@ -61,19 +61,25 @@ const linkList = ref([
     url: "/"
   },
   {
-    name: "ATC 참가신청",
-    url: "/subscribe"
-  },
-  {
     name: "컨퍼런스",
     // url: "/conference"
     disabled: true
   },
   {
-    name: "아트페어",
-    // url: "/artfair"
+    name: "워킹페스티벌",
+    url: "/festival",
     disabled: true
+  },
+  {
+    name: "스폰서",
+    url: "/sponsor"
   }
+
+  // {
+  //   name: "아트페어",
+  //   // url: "/artfair"
+  //   disabled: true
+  // }
 ]);
 
 const navToggle = ref(false);
@@ -98,17 +104,21 @@ watch(
   }
 }
 .global-header {
-  @apply w-full lg:top-[0] lg:left-[50%] max-lg:fixed max-lg:top-[0] max-lg:left-[50%] z-[2000] max-lg:translate-x-[-50%] bg-white;
+  @apply w-full lg:top-[0] lg:left-[50%] max-lg:fixed max-lg:top-[0] max-lg:left-[50%] z-[2000] max-lg:translate-x-[-50%] bg-white border-b;
+
   &.unpinned {
     @apply lg:fixed;
     transform: translate(-50%, -100%);
     animation: showDown 0.3s forwards;
+    .global-header-nav {
+      @apply mx-auto border-b-0;
+    }
   }
 
   .global-header-nav {
-    @apply pb-2 border-b flex items-center justify-between;
+    @apply pb-2 flex items-center justify-between container mx-auto;
     .logo {
-      @apply px-3 pt-3 pb-1 lg:px-4 lg:pt-4 lg:pb-2 w-3/12 lg:w-1/12;
+      @apply px-3 pt-3 pb-1 lg:px-4 lg:pt-4 lg:pb-2 w-4/12 md:w-4/12 lg:w-2/12 xl:w-2/12 max-w-[135px];
       img {
         @apply w-full;
       }
@@ -149,9 +159,13 @@ watch(
         .list-link {
           @apply flex max-lg:flex-col items-center;
           .list-item {
-            @apply lg:ml-4 max-lg:w-full max-lg:text-center;
+            @apply lg:ml-10 max-lg:w-full max-lg:text-center font-semibold text-gray-900;
             .link-item {
-              @apply block w-full text-lg lg:text-xl max-lg:py-3;
+              @apply block w-full text-lg lg:text-xl max-lg:py-3 hover:text-green-500 hover:underline;
+              &.active,
+              &.exact-active {
+                @apply text-green-500;
+              }
               &.disabled {
                 @apply text-gray-500 opacity-25;
               }

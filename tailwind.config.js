@@ -25,7 +25,15 @@ module.exports = {
       container: {
         fluid: {
           maxWidth: "100%"
-        }
+        },
+        center: true
+        // maxWidth: {
+        //   sm: 640,
+        //   md: 768,
+        //   lg: 1140,
+        //   xl: 1300,
+        //   "2xl": 1400
+        // }
       },
       fontFamily: {
         sans: [

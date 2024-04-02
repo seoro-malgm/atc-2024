@@ -111,35 +111,35 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted, watch } from "vue";
-import { useInterval } from "@vueuse/core";
-const { counter, reset, pause, resume } = useInterval(2000, { controls: true });
-const listColors = ref([
-  "#1B1B1B",
-  "#64ff93",
-  "#4f42e9",
-  "#086c11",
-  "#64ff93",
-  "#6978eb"
-]);
+// import { useInterval } from "@vueuse/core";
+// const { counter, reset, pause, resume } = useInterval(2000, { controls: true });
+// const listColors = ref([
+//   "#1B1B1B",
+//   "#64ff93",
+//   "#4f42e9",
+//   "#086c11",
+//   "#64ff93",
+//   "#6978eb"
+// ]);
 
-const currentColor = ref("#1B1B1B");
+// const currentColor = ref("#1B1B1B");
 
-watch(
-  () => counter.value,
-  (n, o) => {
-    if (n >= listColors.value?.length) {
-      reset();
-      currentColor.value = listColors.value[0];
-    } else {
-      currentColor.value = listColors.value[n];
-    }
-  }
-);
+// watch(
+//   () => counter.value,
+//   (n, o) => {
+//     if (n >= listColors.value?.length) {
+//       reset();
+//       currentColor.value = listColors.value[0];
+//     } else {
+//       currentColor.value = listColors.value[n];
+//     }
+//   }
+// );
 </script>
 
 <style lang="postcss" scoped>
 .path {
-  fill: #4f42e9;
+  fill: #111111;
   transition: fill 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 </style>

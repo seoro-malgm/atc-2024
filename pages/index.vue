@@ -21,11 +21,11 @@
       </div>
     </section-marquee>
     <section-scroll-horizontal :items="items"> </section-scroll-horizontal>
-    <section-marquee>
+    <!-- <section-marquee>
       <div class="marquee-images">
         <logo-symbol v-for="i in 10" :key="i" />
       </div>
-    </section-marquee>
+    </section-marquee> -->
     <!-- 참여 -->
     <section-subscribe-form />
     <!-- <div
