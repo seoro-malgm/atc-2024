@@ -1,1 +1,0 @@
-import{a as t}from"./CqVVLJng.js";import{_ as o,c as s,b as _,o as c}from"./DFjfPBi9.js";import"./C3_6Umtx.js";const r={id:"subcribe"},a={__name:"subscribe",props:{data:{type:String,default:null}},setup(n){return(p,i)=>{const e=t;return c(),s("div",r,[_(e)])}}},d=o(a,[["__scopeId","data-v-41e3f049"]]);export{d as default};
