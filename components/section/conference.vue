@@ -1,88 +1,84 @@
 <template>
-  <section class="section-conference border-b-0" ref="container">
-    <header-section> CONFERENCE </header-section>
+  <section class="section-conference" ref="container">
+    <header-section> 소식 구독하기 </header-section>
+    <div class="description">
+      <p>
+        컨퍼런스 및 워킹페스티벌이 10월에 열린다. 행사 전에 행사진행소식과
+        할인혜택 등 다양한 소식을 들려드리겠다. 관심있으면 구독해라
+      </p>
+    </div>
+
     <div class="content">
-      <!-- 내국인 -->
-      <section class="part inner">
-        <article
-          class="article"
-          :style="{
-            transform: `rotate(-4deg) translateY(${
-              partInnerVisible ? '0' : '150%'
-            })`
-          }"
-          ref="partInner"
+      <!-- 컨퍼런스 -->
+      <section class="part left">
+        <button
+          class="article-wrap"
+          @click.prevent="sbuscribeModalShown = true"
+          ref="articleLeft"
         >
-          <header class="article-header">
-            <h5>내국인</h5>
-          </header>
-          <section class="article-body">
-            <p>
-              내국인에겐 내국어 설명으로만 이루어지도록 작성하고,
-              외국인내용으로는 영어만 작성함 Lorem ipsum dolor, sit amet
-              consectetur adipisicing elit. Saepe atque laborum, porro
-              consequuntur quos vel mollitia accusamus! Quaerat, earum.
-              Similique, explicabo quos? Mollitia pariatur nihil molestiae
-              beatae voluptatem porro voluptatibus?
-            </p>
-          </section>
-          <footer class="article-footer">
-            <nuxt-link
-              class="link-item inner"
-              to="https://www.event-us.kr/1986production/event/79474?utm_source=eventus&utm_medium=organic&utm_campaign=search-result&utm_term=%ED%8A%B8%EB%A0%88%EC%9D%BC)"
-              target="_blank"
-            >
-              내국인 예약하기
-            </nuxt-link>
-          </footer>
-        </article>
-        <nuxt-img class="bg" src="/images/dummy.jpeg" />
-        <!-- :style="{
-            transform: `translate(${-50 + mouseX * 0.01 + -4}%, ${
-              -50 + mouseY * 0.001
-            }%)`
-          }" -->
+          <article>
+            <header class="article-header">
+              <h5>컨퍼런스</h5>
+            </header>
+            <section class="article-body">
+              <nuxt-img
+                v-for="(item, i) in items"
+                :alt="`컨퍼런스 ${i + 1}번째 이미지`"
+                :class="{ first: i === 0 }"
+                :src="`${item.src}`"
+                :style="{
+                  transform: `translate(-50%, -50%) ${item.transform}`,
+                  transitionDelay: `${i * 0.1}s`
+                }"
+                :key="i"
+              />
+            </section>
+            <footer class="article-footer">
+              <span>
+                미리 소식 구독하기
+                <UIcon class="icon" name="bxs:paper-plane" />
+              </span>
+            </footer>
+          </article>
+        </button>
       </section>
-      <!-- 외국인 -->
-      <section class="part outer">
-        <article
-          class="article"
-          :style="{
-            transform: `rotate(-4deg) translateY(${
-              partOuterVisible ? '0' : '150%'
-            })`
-          }"
-          ref="partOuter"
+      <!-- 워킹페스티벌 -->
+      <section class="part right">
+        <button
+          class="article-wrap"
+          @click.prevent="sbuscribeModalShown = true"
+          ref="articleRight"
         >
-          <header class="article-header">
-            <h5>for Foreigners</h5>
-          </header>
-          <section class="article-body">
-            <p>
-              안에들어가는 내용은 글자로 했지만, 슬라이드사진을 넣어도
-              될것같습니다. 혹은 그래픽으로요. praesentium soluta sed
-              consequuntur doloremque pariatur fugiat, itaque aliquam tempore
-              iste veritatis magni ipsum voluptates totam? Impedit inventore
-              vitae ratione, molestias quas voluptas vel nulla deserunt
-              voluptatem cum. Accusamus incidunt pariatur possimus sapiente aut
-              doloremque at dolor aliquid iste eos voluptatem cum excepturi
-              dolores eius quaerat commodi accusantium vel nemo quod, modi
-              voluptatum, quidem labore, molestiae ducimus. Illum animi vitae
-              quis cum nobis accusantium possimus iure doloremque impedit.
-            </p>
-          </section>
-          <footer class="article-footer">
-            <nuxt-link
-              class="link-item outer"
-              to="https://www.eventbrite.com/e/5th-asia-trails-conference-tickets-873734773227?aff=oddtdtcreator"
-              target="_blank"
-            >
-              Reserve!
-            </nuxt-link>
-          </footer>
-        </article>
-        <nuxt-img class="bg" src="/images/dummy.jpeg" />
+          <article>
+            <header class="article-header">
+              <h5>워킹 페스티벌</h5>
+            </header>
+            <section class="article-body">
+              <nuxt-img
+                v-for="(item, i) in items2"
+                :alt="`워킹 페스티벌 ${i + 1}번째 이미지`"
+                :class="{ first: i === 0 }"
+                :src="`${item.src}`"
+                :style="{
+                  transform: `translate(-50%, -50%) ${item.transform}`,
+                  transitionDelay: `${i * 0.1}s`
+                }"
+                :key="i"
+              />
+            </section>
+            <footer class="article-footer">
+              <span>
+                미리 소식 구독하기
+                <UIcon class="icon" name="bxs:paper-plane" />
+              </span>
+            </footer>
+          </article>
+        </button>
       </section>
+      <modal-subscribe
+        :shown="sbuscribeModalShown"
+        @toggle="$event => (sbuscribeModalShown = $event)"
+      />
     </div>
   </section>
 </template>
@@ -96,62 +92,134 @@ const props = defineProps({
   }
 });
 
-const container = ref();
-// const { x: mouseX, y: mouseY, isOutside } = useMouseInElement(container);
-const [partInner, partOuter] = [ref(null), ref(null)];
-const [partInnerVisible, partOuterVisible] = [ref(false), ref(false)];
+const items = [
+  {
+    src: "/images/dummy.jpeg",
+    transform: "rotate(4deg)"
+  },
+  {
+    src: "/images/dummy.jpeg",
+    transform: "rotate(15deg)"
+  },
+  {
+    src: "/images/dummy.jpeg",
+    transform: "rotate(-9deg)"
+  },
+  {
+    src: "/images/dummy.jpeg",
+    transform: "rotate(-13deg)"
+  }
+];
 
-const { stopPartInner } = useIntersectionObserver(
-  partInner,
-  ([{ isIntersecting }], observerElement) => {
-    partInnerVisible.value = isIntersecting;
+const items2 = [
+  {
+    src: "/images/dummy.jpeg",
+    transform: "rotate(-4deg)"
+  },
+  {
+    src: "/images/dummy.jpeg",
+    transform: "rotate(-13deg)"
+  },
+  {
+    src: "/images/dummy.jpeg",
+    transform: "rotate(7deg)"
+  },
+  {
+    src: "/images/dummy.jpeg",
+    transform: "rotate(13deg)"
   }
-);
-const { stopPartOuter } = useIntersectionObserver(
-  partOuter,
-  ([{ isIntersecting }], observerElement) => {
-    partOuterVisible.value = isIntersecting;
-  }
-);
+];
+
+// 구독 폼 열기
+const sbuscribeModalShown = ref(false);
 </script>
 
 <style lang="postcss" scoped>
 .section-conference {
+  @apply max-w-full overflow-hidden;
+  > .description {
+    @apply py-4 text-lg lg:text-2xl border-b border-grayscale-800;
+    p {
+      @apply text-center container;
+    }
+  }
   .content {
-    @apply border-t grid grid-cols-1 lg:grid-cols-8 gap-8;
+    @apply flex flex-col lg:flex-row lg:-mx-6 lg:items-stretch;
     .part {
-      @apply lg:col-span-4 lg:min-h-svh px-4 py-20 lg:py-4 flex flex-col items-center justify-center relative overflow-hidden;
-      &.inner {
-        @apply lg:border-r;
+      @apply lg:mb-0 border-gray-800 lg:px-6 w-full lg:w-6/12 flex justify-stretch items-stretch;
+      &.left {
+        > .article-wrap {
+          @apply lg:border-r border-gray-800;
+        }
       }
-      &.outer {
-        @apply lg:border-l;
+      &.right {
+        > .article-wrap {
+          @apply max-lg:border-t lg:border-l border-gray-800;
+        }
       }
 
-      .article {
-        @apply border bg-white relative z-[2] w-10/12 lg:w-8/12;
-        transition: all 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-        .article-header {
-          @apply text-center px-4 py-6 border-b;
-          h5 {
-            @apply font-bold text-lg lg:text-2xl;
+      .article-wrap {
+        @apply bg-baja-white-50 relative z-[2] self-stretch w-full flex flex-col justify-between h-full;
+        > article {
+          @apply self-stretch flex flex-col justify-between h-full;
+          .article-header {
+            @apply text-center px-4 py-6 lg:py-9;
+            h5 {
+              @apply font-bold text-4xl lg:text-[3rem];
+            }
+          }
+          .article-body {
+            @apply px-4 h-full pb-[50vh] relative overflow-hidden;
+            img {
+              @apply absolute block w-full h-auto max-w-[80vw] lg:max-w-[70%] top-[50%] left-[50%] scale-105 transition-all-default shadow-xl;
+              opacity: 0;
+              &.first {
+                @apply opacity-100;
+              }
+            }
+          }
+          .article-footer {
+            @apply px-8 py-12 mt-auto text-2xl lg:text-3xl relative text-right;
+            span {
+              @apply absolute-center;
+            }
+            .icon {
+              @apply ml-auto lg:text-4xl -mt-2;
+            }
+            span,
+            .icon {
+              @apply transition-all-default font-semibold;
+            }
           }
         }
-        .article-body {
-          @apply px-4 py-6;
-        }
-        .article-footer {
-          @apply px-4 border-t py-4;
-          .link-item {
-            @apply text-lg lg:text-xl border px-6 py-2 w-full block text-center hover:bg-hawkes-blue-600 hover:text-white hover:border-hawkes-blue-600 transition-all;
+        &:hover {
+          > article {
+            .article-header {
+            }
+            .article-body {
+              img {
+                @apply opacity-100 scale-100;
+                &.first {
+                  @apply opacity-100;
+                }
+              }
+            }
+            .article-footer {
+              span {
+                transform: translate(-50%, -50%) skew(-15deg);
+              }
+              .icon {
+                transform: translate(8px, -8px);
+              }
+            }
           }
         }
       }
       /* 배경 */
-      .bg {
+      /* .bg {
         @apply absolute top-[50%] left-[50%] z-[-1] object-cover h-full w-auto translate-x-[-50%] translate-y-[-50%];
         transition: all 0.02s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-      }
+      } */
     }
   }
 }

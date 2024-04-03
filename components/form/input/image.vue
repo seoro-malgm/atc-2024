@@ -181,7 +181,7 @@ const onRemove = async e => {
   @apply w-full;
   .input {
     .input-title {
-      @apply block mb-0 font-semibold text-lg text-black;
+      @apply block mb-0 font-semibold text-lg text-grayscale-900;
     }
     .input-desc {
       @apply text-sm font-light;
@@ -208,7 +208,7 @@ const onRemove = async e => {
         @apply hidden;
       }
       .input-label {
-        @apply block w-full px-3 py-2 bg-baja-white-200 rounded-lg text-center hover:bg-gray-400 ease-default;
+        @apply block w-full px-3 py-2 bg-baja-white-200 rounded-lg text-center hover:bg-grayscale-400 transition-all-default;
       }
     }
   }

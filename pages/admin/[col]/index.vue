@@ -66,13 +66,13 @@
               <div class="flex flex-col">
                 <button
                   @click="onDelete(col.key, item?.id, i)"
-                  class="bg-red-600 text-gray-200 rounded-md mb-1 py-1"
+                  class="bg-red-600 text-grayscale-200 rounded-md mb-1 py-1"
                   v-if="col.removeable"
                 >
                   삭제
                 </button>
                 <button
-                  class="bg-orange-500 text-gray-200 rounded-md py-1"
+                  class="bg-orange-500 text-grayscale-200 rounded-md py-1"
                   @click="
                     $router.push({
                       path: `/admin/${col.key}/write`,
@@ -86,7 +86,7 @@
                   수정
                 </button>
                 <button
-                  class="bg-orange-500 text-gray-200 rounded-md py-1"
+                  class="bg-orange-500 text-grayscale-200 rounded-md py-1"
                   @click="
                     $router.push({
                       path: `/admin/${col.key}/${item.id}`
@@ -113,18 +113,20 @@
           <button
             @click="viewMore()"
             v-if="!pending && !endPage"
-            class="inline-block border rounded-full px-8 py-3 border-gray-600 hover:animate-wiggle hover:bg-spring-green-500 hover:text-gray-200 hover:border-spring-green-500"
+            class="inline-block border border-grayscale-800 rounded-full px-8 py-3 border-grayscale-800 hover:animate-wiggle hover:bg-spring-green-500 hover:text-grayscale-200 hover:border-spring-green-500"
           >
             더 불러오기
           </button>
 
-          <span class="text-gray-400" v-if="!pending && endPage"> End. </span>
+          <span class="text-grayscale-400" v-if="!pending && endPage">
+            End.
+          </span>
         </nav>
       </section>
     </section>
     <template v-if="!resultItems?.length">
-      <div class="text-center pt-4 pb-8 border-b border-b-gray-300">
-        <span class="text-sm text-gray-500"> 데이터가 없습니다.</span>
+      <div class="text-center pt-4 pb-8 border-b border-b-grayscale-300">
+        <span class="text-sm text-grayscale-500"> 데이터가 없습니다.</span>
       </div>
     </template>
     <div class="floating-btn">
@@ -285,7 +287,7 @@ const onDelete = async (col, id, index) => {
   @apply fixed bottom-10 right-10;
   .link-item,
   button {
-    @apply text-nowrap my-auto bg-blue-300  hover:bg-blue-700 hover:text-gray-200 transition-all  px-5 py-3 rounded-full font-bold shadow-xl text-lg;
+    @apply text-nowrap my-auto bg-blue-300  hover:bg-blue-700 hover:text-grayscale-200 transition-all  px-5 py-3 rounded-full font-bold shadow-xl text-lg;
   }
 }
 </style>

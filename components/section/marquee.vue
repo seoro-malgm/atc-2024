@@ -1,7 +1,9 @@
 <template>
   <div class="marquee">
     <div class="marquee-content">
-      <slot></slot>
+      <div class="marquee-images">
+        <logo-symbol v-for="i in 10" :key="i" />
+      </div>
     </div>
   </div>
 </template>
@@ -10,13 +12,27 @@
 
 <style scoped>
 .marquee {
-  @apply overflow-hidden relative text-nowrap font-light whitespace-nowrap w-full h-auto pb-[80px] border-y;
+  @apply overflow-hidden relative text-nowrap font-light whitespace-nowrap w-full h-auto pb-[59px] border-t border-grayscale-800;
 }
 
 .marquee-content {
   @apply block absolute text-nowrap;
   animation: marquee 20s reverse linear infinite;
-  margin-top: 24px;
+  /* margin-top: 24px; */
+  .marquee-images {
+    @apply flex;
+
+    svg {
+      @apply block w-[400px];
+      height: auto;
+      .letter {
+        fill: #000;
+      }
+      .arrow {
+        fill: #64ff93;
+      }
+    }
+  }
 }
 
 @keyframes marquee {

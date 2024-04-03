@@ -1,6 +1,6 @@
 <template>
   <section class="section-festival border-b-0">
-    <header-section> WALKING FESTIVAL </header-section>
+    <header-section> 워킹 페스티벌 </header-section>
     <div class="border-t min-h-svh">...</div>
   </section>
 </template>

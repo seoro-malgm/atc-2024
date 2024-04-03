@@ -41,12 +41,8 @@
               </figure>
             </article>
           </div>
-          <section-marquee>
-            <div class="marquee-images">
-              <logo-symbol v-for="i in 10" :key="i" />
-              <!-- <img src="/assets-0.png" v-for="i in 10" alt="" /> -->
-            </div>
-          </section-marquee>
+          <!-- marquee -->
+          <section-marquee />
         </div>
       </div>
     </div>
@@ -171,27 +167,28 @@ onUnmounted(() => {
         flex-wrap: nowrap;
 
         .item {
-          @apply my-0 lg:mr-[40px] relative lg:border-x;
+          @apply my-0 lg:mr-[40px] relative lg:border-x border-grayscale-800;
           .item-description {
-            @apply m-0 p-4 lg:p-8 border-t bg-white w-full lg:absolute bottom-0 z-10 lg:text-center;
+            @apply m-0 p-4 lg:p-8 border-t border-grayscale-800 bg-white w-full lg:absolute bottom-0 z-10 lg:text-center;
             h4 {
-              @apply text-lg lg:text-3xl font-bold;
+              @apply text-2xl lg:text-4xl mb-2 font-bold;
             }
             p {
-              @apply text-base lg:text-lg;
+              @apply text-base lg:text-lg text-grayscale-600;
             }
           }
           width: 100vw;
           min-width: 100vw;
           height: auto;
           figure.item-image-wrapper {
+            @apply border-grayscale-800 border-x;
             position: relative;
             width: 100vw;
             padding-bottom: 100vh;
             @media all and (min-width: 1024px) {
-              padding-bottom: calc(100vh - 80px);
+              padding-bottom: calc(100vh - 59px); /** marquee 높이 제거 */
 
-              /* max-height: calc(100vh - 80px); */
+              /* max-height: calc(100vh - 59px); */
             }
             overflow: hidden;
 
@@ -222,7 +219,7 @@ onUnmounted(() => {
     @apply lg:mt-[68px];
     .horizontal-scroll-section {
       @media all and (min-width: 1024px) {
-        max-height: calc(100vh - 80px);
+        max-height: calc(100vh - 59px);
       }
       .item {
         @apply mb-8;
@@ -260,15 +257,6 @@ onUnmounted(() => {
 .horizontal-scroll-section {
   &::-webkit-scrollbar {
     display: none;
-  }
-}
-
-.marquee-images {
-  @apply flex;
-  img,
-  svg {
-    @apply block w-[400px];
-    height: auto;
   }
 }
 </style>

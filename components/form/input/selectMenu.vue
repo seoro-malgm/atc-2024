@@ -124,10 +124,10 @@ onMounted(() => {
   @apply w-full mb-6;
   .input-label {
     .input-title {
-      @apply block font-semibold text-lg text-black;
+      @apply block font-semibold text-lg text-grayscale-900;
     }
     .input-desc {
-      @apply text-sm font-light text-gray-700;
+      @apply text-sm font-light text-grayscale-700;
     }
     .input {
       @apply w-full pt-2 rounded-lg;

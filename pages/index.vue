@@ -34,24 +34,22 @@
   <div>
     <!-- 히어로 -->
     <section-hero />
-    <section-marquee>
-      <div class="marquee-images">
-        <logo-symbol v-for="i in 10" :key="i" />
-      </div>
-    </section-marquee>
+    <!-- marquee -->
+    <section-marquee />
     <!-- 지리산 정보 -->
     <section-scroll-horizontal :items="items"> </section-scroll-horizontal>
     <!-- 컨퍼런스 -->
     <section-conference />
+
     <!-- 워킹 페스티벌 -->
-    <section-festival />
+    <!-- <section-festival /> -->
 
     <!-- 참여 -->
     <!-- <section-subscribe-form /> -->
 
     <!-- 스폰서 -->
-    <section class="section-sponsorers border-b-0">
-      <header-section> SPONSORS </header-section>
+    <section class="section-sponsors border-b-0">
+      <header-section> 스폰서 </header-section>
       <!-- 스폰서 목록 -->
       <div class="list-wrapper">
         <div class="list-container">
@@ -61,6 +59,7 @@
                 <img
                   :src="`/images/sponsors/${item.src}`"
                   :alt="`${item.name} 로고이미지`"
+                  :title="`${item.name} 로고이미지`"
                 />
               </div>
             </li>
@@ -72,20 +71,10 @@
       <!-- 스폰서 미팅예약 폼 페이지로 이동 /together -->
       <div class="border-t">미팅 예약페이지로 이동 버튼...</div>
     </section>
-    <section-marquee>
-      <div class="marquee-images">
-        <logo-symbol v-for="i in 10" :key="i" />
-        <!-- <img src="/assets-0.png" v-for="i in 10" alt="" /> -->
-      </div>
-    </section-marquee>
     <!-- faq -->
     <section-faq />
-    <section-marquee>
-      <div class="marquee-images">
-        <!-- <img src="/assets-0.png" v-for="i in 10" alt="" /> -->
-        <logo-symbol v-for="i in 10" :key="i" />
-      </div>
-    </section-marquee>
+    <!-- marquee -->
+    <section-marquee />
   </div>
 </template>
 
@@ -140,19 +129,10 @@ const items = ref([
 </script>
 
 <style lang="postcss" scoped>
-.marquee-images {
-  @apply flex;
-  img,
-  svg {
-    @apply block w-[400px];
-    height: auto;
-  }
-}
-
 /* 스폰서 */
-.section-sponsorers {
+.section-sponsors {
   .list-wrapper {
-    @apply px-4 lg:px-12 border-y py-12;
+    @apply py-12 container;
     .list-container {
       .list-sponsor {
         @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6;
@@ -161,8 +141,13 @@ const items = ref([
           .logo {
             @apply p-6 md:p-5 lg:p-10;
             img {
-              @apply w-full h-auto;
+              @apply w-full h-auto transition-all;
               filter: saturate(0);
+            }
+            &:hover {
+              img {
+                filter: saturate(1);
+              }
             }
           }
         }

@@ -1,5 +1,5 @@
 <template>
-  <header class="border-t" :class="headerClass" ref="target">
+  <header :class="headerClass" ref="target">
     <h4 :class="{ shown: targetIsVisible }">
       <slot></slot>
     </h4>
@@ -29,30 +29,30 @@ const { stop } = useIntersectionObserver(
 
 <style lang="postcss" scoped>
 header {
-  @apply text-center py-4 lg:py-8;
+  @apply text-center py-4 lg:py-12 border-y border-grayscale-800 bg-spring-green-400;
+  background-image: url("/arrow-right.svg");
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: contain;
   h4 {
-    @apply font-bold text-xl lg:text-5xl;
+    @apply font-extrabold text-4xl lg:text-[4rem];
     transform: translate(-300%);
+    text-transform: uppercase;
 
     &.shown {
-      animation: header-shown 0.7s forwards cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      animation: header-shown 0.7s forwards cubic-bezier(0.645, 0.045, 0.355, 1);
     }
   }
 }
 
 @keyframes header-shown {
   0% {
-    transform: translate(-100%);
-    font-style: normal;
+    transform: translate(-100%) skew(10deg);
   }
-  99% {
-    transform: translate(-1%);
-    font-style: normal;
-  }
+
   100% {
-    @apply text-spring-green-400;
-    font-style: italic;
-    transform: translate(0%);
+    /* @apply text-spring-green-400; */
+    transform: translate(0%) skew(-18deg);
   }
 }
 </style>

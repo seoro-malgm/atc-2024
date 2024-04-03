@@ -57,7 +57,7 @@ const props = defineProps({
 
 const linkList = ref([
   {
-    name: "HOME",
+    name: "홈",
     url: "/"
   },
   {
@@ -104,12 +104,12 @@ watch(
   }
 }
 .global-header {
-  @apply w-full lg:top-[0] lg:left-[50%] max-lg:fixed max-lg:top-[0] max-lg:left-[50%] z-[2000] max-lg:translate-x-[-50%] bg-white border-b;
+  @apply w-full lg:top-[0] lg:left-[50%] max-lg:fixed max-lg:top-[0] max-lg:left-[50%] z-[2000] max-lg:translate-x-[-50%] bg-white border-b border-grayscale-800;
 
   &.unpinned {
     @apply lg:fixed;
     transform: translate(-50%, -100%);
-    animation: showDown 0.3s forwards;
+    animation: showDown 0.2s forwards;
     .global-header-nav {
       @apply mx-auto border-b-0;
     }
@@ -130,7 +130,7 @@ watch(
         .toggler {
           @apply flex flex-col justify-between w-6 h-6 mt-2 mr-1;
           .line {
-            @apply block w-full h-1 my-auto bg-black ease-default;
+            @apply block w-full h-1 my-auto bg-black transition-all-default;
             transition: all 0.3s;
             opacity: 1;
           }
@@ -159,7 +159,7 @@ watch(
         .list-link {
           @apply flex max-lg:flex-col items-center;
           .list-item {
-            @apply lg:ml-10 max-lg:w-full max-lg:text-center font-semibold text-gray-900;
+            @apply lg:ml-10 max-lg:w-full max-lg:text-center font-semibold text-grayscale-900;
             .link-item {
               @apply block w-full text-lg lg:text-xl max-lg:py-3 hover:text-green-500 hover:underline;
               &.active,
@@ -167,7 +167,7 @@ watch(
                 @apply text-green-500;
               }
               &.disabled {
-                @apply text-gray-500 opacity-25;
+                @apply text-grayscale-600 opacity-25;
               }
             }
           }

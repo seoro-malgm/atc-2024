@@ -25,7 +25,7 @@ const router = useRouter();
 
 <style lang="postcss" scoped>
 #wrapper {
-  @apply w-full min-h-svh p-4 flex justify-center items-center bg-gray-200;
+  @apply w-full min-h-svh p-4 flex justify-center items-center bg-grayscale-200;
   #main {
     @apply m-auto w-full flex justify-center;
     #content {
@@ -34,7 +34,7 @@ const router = useRouter();
         @apply bg-white p-6 rounded-lg min-h-[400px] shadow-lg;
       }
       footer {
-        @apply w-full text-right mt-4 text-gray-800;
+        @apply w-full text-right mt-4 text-grayscale-800;
       }
     }
   }

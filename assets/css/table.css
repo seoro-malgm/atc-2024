@@ -3,7 +3,7 @@
   thead {
     tr {
       th {
-        @apply bg-gray-300 px-3 py-2;
+        @apply bg-grayscale-300 px-3 py-2;
         &:first-child {
           @apply rounded-s-lg;
         }
@@ -16,7 +16,7 @@
   tbody {
     tr {
       td {
-        @apply border-b border-gray-300;
+        @apply border-b border-grayscale-800;
       }
     }
   }

@@ -1,7 +1,7 @@
 export default defineAppConfig({
   ui: {
     primary: "spring-green",
-    gray: "gray",
+    gray: "grayscale",
     toggle: {
       default: {
         color: "spring-green",
@@ -23,7 +23,7 @@ export default defineAppConfig({
     },
     tooltip: {
       background: "bg-black dark:bg-white",
-      color: "text-white dark:text-black",
+      color: "text-white dark:text-grayscale-900",
       arrow: {
         background: "before:bg-black dark:before:bg-white"
       }

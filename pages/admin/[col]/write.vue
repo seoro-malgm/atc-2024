@@ -16,7 +16,7 @@
       <div class="pt-4 border-t" v-if="col.formPreview">
         <h6 class="text-2xl mb-3">form 데이터 미리보기 :</h6>
         <pre
-          class="block w-full overflow-auto bg-gray-300 border text-wrap p-6 rounded-xl"
+          class="block w-full overflow-auto bg-grayscale-300 border border-grayscale-800 text-wrap p-6 rounded-xl"
         >
 form: {{ form }}
       </pre
