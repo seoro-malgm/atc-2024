@@ -115,7 +115,7 @@ onMounted(() => {
       @apply block font-semibold text-lg text-black;
     }
     .input-desc {
-      @apply text-sm font-light text-grayscale-700;
+      @apply text-sm font-light text-gray-700;
     }
     .input {
       @apply w-full pt-2 rounded-lg;

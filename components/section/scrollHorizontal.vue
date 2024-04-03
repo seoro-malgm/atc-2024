@@ -41,6 +41,12 @@
               </figure>
             </article>
           </div>
+          <section-marquee>
+            <div class="marquee-images">
+              <logo-symbol v-for="i in 10" :key="i" />
+              <!-- <img src="/assets-0.png" v-for="i in 10" alt="" /> -->
+            </div>
+          </section-marquee>
         </div>
       </div>
     </div>
@@ -165,9 +171,9 @@ onUnmounted(() => {
         flex-wrap: nowrap;
 
         .item {
-          @apply my-0 lg:mr-[40px] relative lg:border;
+          @apply my-0 lg:mr-[40px] relative lg:border-x;
           .item-description {
-            @apply m-0 p-4 lg:pb-8 border-y bg-white w-full lg:absolute bottom-0 z-10;
+            @apply m-0 p-4 lg:p-8 border-t bg-white w-full lg:absolute bottom-0 z-10 lg:text-center;
             h4 {
               @apply text-lg lg:text-3xl font-bold;
             }
@@ -182,12 +188,19 @@ onUnmounted(() => {
             position: relative;
             width: 100vw;
             padding-bottom: 100vh;
+            @media all and (min-width: 1024px) {
+              padding-bottom: calc(100vh - 80px);
+
+              /* max-height: calc(100vh - 80px); */
+            }
             overflow: hidden;
 
             > img {
-              width: auto;
-              min-height: 100%;
-              object-fit: cover;
+              /* width: auto;
+              height: 100%; */
+              width: 100%;
+              height: auto;
+              @apply w-[auto] h-full lg:w-full lg:h-[auto] object-fill;
               position: absolute;
               top: 50%;
               left: 50%;
@@ -208,7 +221,9 @@ onUnmounted(() => {
     /* max-height: calc(100vh - 120px) ; */
     @apply lg:mt-[68px];
     .horizontal-scroll-section {
-      /* max-height: 100vh; */
+      @media all and (min-width: 1024px) {
+        max-height: calc(100vh - 80px);
+      }
       .item {
         @apply mb-8;
         width: auto;
@@ -245,6 +260,15 @@ onUnmounted(() => {
 .horizontal-scroll-section {
   &::-webkit-scrollbar {
     display: none;
+  }
+}
+
+.marquee-images {
+  @apply flex;
+  img,
+  svg {
+    @apply block w-[400px];
+    height: auto;
   }
 }
 </style>

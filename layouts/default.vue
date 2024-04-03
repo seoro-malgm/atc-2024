@@ -14,7 +14,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, onMounted, onUnmounted, watch } from "vue";
 import { useRoute } from "vue-router";
 import { useElementBounding } from "@vueuse/core";
 const wrapper = ref();
@@ -25,8 +25,9 @@ const path = computed(() => {
 });
 
 const main = ref();
+const mainBounding = useElementBounding(main);
 const pinned = computed(() => {
-  const { y } = useElementBounding(main);
+  const { y } = mainBounding;
   return y.value >= 10;
 });
 </script>

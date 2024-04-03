@@ -34,6 +34,7 @@
 </template>
 
 <script setup>
+import { ref, computed, onMounted, onUnmounted, watch } from "vue";
 const props = defineProps({
   title: {
     type: String,
@@ -128,7 +129,7 @@ const removeValue = index => {
   .list-value {
     @apply p-2 mt-2 inline-flex flex-wrap border w-full;
     .value-item {
-      @apply flex items-center mr-2 mb-2 px-2 py-1 bg-grayscale-300 rounded-xl;
+      @apply flex items-center mr-2 mb-2 px-2 py-1 bg-gray-300 rounded-xl;
       span.value {
         @apply text-base ps-2;
       }

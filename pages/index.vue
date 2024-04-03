@@ -1,47 +1,58 @@
-<!-- 랜딩, 메인페이지 IA
+<!-- 
+  ### 5. IA 관련
 
-1. 5회째 ATC가 온다!(`히어로섹션`), ATC는 무엇이며, 5회차나 되었다
-2. 국내 1호 최대 규모인 `지리산 공원`에서한다
-여기에서 행사에 참여하면 넌 ~를 얻을 수 있을거야.
-3. 참가방법은 이거다, 지금하면 얼리버드 %할인
-참여를 바로 못하는 5월에는 CTA버튼, 이메일 수집이라도 할 수 있게
-4. 우리는 컨퍼런스도 한다 ⇒ 컨퍼런스페이지로 이동시키기 ⇒ 5월 스펙에는 미포함
-⇒ 컨퍼런스는 사진으로 어려우니 2D그래픽들로
-5. 워킹페스티벌도 한다 ⇒ 워킹페스티벌 페이지로 이동시키기  ⇒ 5월 스펙에는 미포함
-6. 후원사, 주관사, 스폰서
-7. FAQ 섹션 & FAQ 페이지 이동으로 보내든
-8. 푸터(행사자정보, 연락정보) -->
+1. ✅ 히어로
+2. ✅ ATC 브랜드 설명
+3. 💬 컨퍼런스 참여방법 | ***CONFERENCE 섹션***
+    1. 내국인/외국인 구분하여 행사 예약 플랫폼 통해서 컨퍼런스 모객예정, 이메일 수집 없이 특정 URL로 이동하는 CTA로 변경
+        1. 내국인 대상 → [이벤터스](https://www.event-us.kr/1986production/event/79474?utm_source=eventus&utm_medium=organic&utm_campaign=search-result&utm_term=%ED%8A%B8%EB%A0%88%EC%9D%BC)
+        2. 외국인 대상 → [evnetbrite](https://www.eventbrite.com/e/5th-asia-trails-conference-tickets-873734773227?aff=oddtdtcreator)
+4. 💬 (추가) 워킹페스티벌 소식받기 | ***WORKING FESTIVAL 섹션***
+    1. 10월에 워킹페스티벌이 진행 될 예정
+    2. 워킹페스티벌에 대한 간략 설명 및 얼리버드 쿠폰 및 행사 업데이트 소식을 알려 주기위한 이메일 CTA 섹션 추가
+5. 💬 스폰서 안내 및 스폰하기 | ***SPONSORS 섹션***
+    1. 스폰서 띄워주는 부분 너무 좋습니다.
+    2. (추가) 우리에게 스폰하면 간략하게 이러이러한 혜택을 줄 수 있을 것 같아, 상세한 내용 확인하거나 우리랑 미팅잡아볼래?
+    3. 디테일 페이지 이동 CTA
+6. ✅  FAQ
+7. ✅  풋터
+
+### 6. 상단메뉴
+
+1. Home
+2. 컨퍼런스 → 비활성화, 추후 디테일 페이지로
+3. 워킹페스티벌 → 비활성화, 추후 디테일 페이지로
+4. 스폰서 → 활성화, 디테일 페이지 필요
+    1. https://atcjirisan.com/together 해당 페이지 내 스폰서쉽 혜택 테이블 노출
+        1. 외부협력 담당자님이 혜택 테이블을 수정할 수 있도록 구글시트 연결이라던지, 그런게 가능 할까요? 관리자 페이지는 너무 작업량이 많을 것 같아서요.
+    2. 그외 내용은 스폰서쉽 전용 FAQ 섹션으로 
+    3. https://atcjirisan.com/26 문의메일 및 미팅예약 가능하도록
+
+-->
 
 <template>
   <div>
+    <!-- 히어로 -->
     <section-hero />
     <section-marquee>
       <div class="marquee-images">
         <logo-symbol v-for="i in 10" :key="i" />
       </div>
     </section-marquee>
+    <!-- 지리산 정보 -->
     <section-scroll-horizontal :items="items"> </section-scroll-horizontal>
-    <section-marquee>
-      <div class="marquee-images">
-        <logo-symbol v-for="i in 10" :key="i" />
-      </div>
-    </section-marquee>
-    <!-- 참여 -->
-    <section-subscribe-form />
-    <!-- <div
-      class="min-h-svh bg-slate-50 flex flex-col items-center justify-center"
-    >
-      컨퍼런스 내용?
-    </div>
-    <div
-      class="min-h-svh bg-slate-50 flex flex-col items-center justify-center"
-    >
-      워킹페스티벌 내용?
-    </div> -->
+    <!-- 컨퍼런스 -->
+    <section-conference />
+    <!-- 워킹 페스티벌 -->
+    <section-festival />
 
-    <!-- 스폰서 등버튼 -->
+    <!-- 참여 -->
+    <!-- <section-subscribe-form /> -->
+
+    <!-- 스폰서 -->
     <section class="section-sponsorers border-b-0">
       <header-section> SPONSORS </header-section>
+      <!-- 스폰서 목록 -->
       <div class="list-wrapper">
         <div class="list-container">
           <ul class="list-sponsor">
@@ -56,16 +67,22 @@
           </ul>
         </div>
       </div>
+      <!-- 스폰서 혜택 -->
+      <div class="border-t min-h-screen">스폰셔 혜택...</div>
+      <!-- 스폰서 미팅예약 폼 페이지로 이동 /together -->
+      <div class="border-t">미팅 예약페이지로 이동 버튼...</div>
     </section>
     <section-marquee>
       <div class="marquee-images">
         <logo-symbol v-for="i in 10" :key="i" />
+        <!-- <img src="/assets-0.png" v-for="i in 10" alt="" /> -->
       </div>
     </section-marquee>
     <!-- faq -->
     <section-faq />
     <section-marquee>
       <div class="marquee-images">
+        <!-- <img src="/assets-0.png" v-for="i in 10" alt="" /> -->
         <logo-symbol v-for="i in 10" :key="i" />
       </div>
     </section-marquee>
@@ -76,6 +93,9 @@
 import { ref, computed, onMounted, onUnmounted, watch } from "vue";
 import sponsors from "@/data/sponsorList";
 // import SubscribeForm from "~/components/section/subscribeForm.vue";
+
+// const firebase = useNuxtApp();
+// console.log("firebase :", firebase);
 
 const items = ref([
   {

@@ -15,7 +15,7 @@
 
 .marquee-content {
   @apply block absolute text-nowrap;
-  animation: marquee 30s linear infinite;
+  animation: marquee 20s reverse linear infinite;
   margin-top: 24px;
 }
 
