@@ -43,7 +43,8 @@
           </div>
           <section-marquee>
             <div class="marquee-images">
-              <logo-symbol v-for="i in 10" :key="i" />
+              <!-- <logo-symbol v-for="i in 10" :key="i" /> -->
+              <img src="/assets-0.png" v-for="i in 10" alt="" />
             </div>
           </section-marquee>
         </div>

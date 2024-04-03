@@ -36,7 +36,7 @@
     <section-hero />
     <section-marquee>
       <div class="marquee-images">
-        <logo-symbol v-for="i in 10" :key="i" />
+        <img src="/assets-0.png" v-for="i in 10" alt="" />
       </div>
     </section-marquee>
     <!-- 지리산 정보 -->
@@ -74,14 +74,16 @@
     </section>
     <section-marquee>
       <div class="marquee-images">
-        <logo-symbol v-for="i in 10" :key="i" />
+        <!-- <logo-symbol v-for="i in 10" :key="i" /> -->
+        <img src="/assets-0.png" v-for="i in 10" alt="" />
       </div>
     </section-marquee>
     <!-- faq -->
     <section-faq />
     <section-marquee>
       <div class="marquee-images">
-        <logo-symbol v-for="i in 10" :key="i" />
+        <img src="/assets-0.png" v-for="i in 10" alt="" />
+        <!-- <logo-symbol v-for="i in 10" :key="i" /> -->
       </div>
     </section-marquee>
   </div>
@@ -142,7 +144,7 @@ const items = ref([
   @apply flex;
   img,
   svg {
-    @apply block w-[400px];
+    @apply block w-[600px];
     height: auto;
   }
 }
