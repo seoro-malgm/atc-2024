@@ -122,7 +122,7 @@ import { ref, computed, onMounted, onUnmounted, watch } from "vue";
 //   "#6978eb"
 // ]);
 
-// const currentColor = ref("#1B1B1B");
+const currentColor = ref("#1B1B1B");
 
 // watch(
 //   () => counter.value,

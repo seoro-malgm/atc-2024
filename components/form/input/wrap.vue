@@ -43,7 +43,7 @@ const submit = e => {
 <style lang="postcss" scoped>
 .form {
   .form-footer {
-    @apply mt-8 pt-4 pb-8 border-t border-grayscale-300 flex align-middle;
+    @apply mt-8 pt-4 pb-8 border-t border-gray-300 flex align-middle;
     .link-item {
       @apply w-1/12 bg-white border border-red-700 me-3 text-center block py-3 rounded-lg hover:bg-red-700 hover:text-baja-white-200 transition-all;
     }

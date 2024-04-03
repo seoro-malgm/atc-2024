@@ -59,7 +59,7 @@ watch(
       @apply block mb-2 font-semibold text-lg text-black;
     }
     input {
-      @apply block w-full px-3 py-2 bg-grayscale-300 rounded-lg;
+      @apply block w-full px-3 py-2 bg-gray-300 rounded-lg;
     }
   }
 }

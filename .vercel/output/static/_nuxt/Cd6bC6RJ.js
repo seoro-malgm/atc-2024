@@ -1,1 +1,0 @@
-import{_ as t,c as o,a as c,b as a,o as s,aU as _}from"./CziYlEQd.js";const n={},r={id:"empty"},d={class:"container"};function i(p,m){const e=_;return s(),o("div",r,[c("div",d,[a(e)])])}const l=t(n,[["render",i],["__scopeId","data-v-3f601797"]]);export{l as default};

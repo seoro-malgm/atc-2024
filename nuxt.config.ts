@@ -224,9 +224,9 @@ export default defineNuxtConfig({
     "@nuxt/ui",
     "@vueuse/nuxt",
     "@nuxt/image",
-    "@nuxtjs/i18n"
-    // "@pinia/nuxt",
-    // "@pinia-plugin-persistedstate/nuxt"
+    "@nuxtjs/i18n",
+    "@pinia/nuxt",
+    "@pinia-plugin-persistedstate/nuxt"
   ],
   tailwindcss: {
     cssPath: "@/assets/css/global.css",
@@ -237,10 +237,7 @@ export default defineNuxtConfig({
     global: true
   },
   // plugins
-  plugins: [
-    // "@/server/lib/firebase.js",
-    // "@/plugins/authChecker.js"
-  ],
+  plugins: ["@/plugins/firebase.js", "@/plugins/authChecker.js"],
   // nuxt-iamge
   image: {
     screens: {
@@ -281,18 +278,18 @@ export default defineNuxtConfig({
   runtimeConfig: {
     // private: {
     public: {
-      // apiKey: process.env.API_KEY,
-      // authDomain: process.env.AUTH_DOMAIN,
-      // projectId: process.env.PROJECT_ID,
-      // storageBucket: process.env.STORAGE_BUCKET,
-      // messagingSenderId: process.env.MESSAGING_SENDER_ID,
-      // appId: process.env.APP_ID,
-      // measurementId: process.env.MEASUREMENT_ID || "",
-      // databaseURL: process.env.DATABASE_URL,
-      // domainURL: process.env.DOMAIN_URL,
-      // mode: process.env.ENV_MODE,
-      // authId: process.env.AUTH_ID,
-      // authPwd: process.env.AUTH_PWD,
+      apiKey: process.env.API_KEY,
+      authDomain: process.env.AUTH_DOMAIN,
+      projectId: process.env.PROJECT_ID,
+      storageBucket: process.env.STORAGE_BUCKET,
+      messagingSenderId: process.env.MESSAGING_SENDER_ID,
+      appId: process.env.APP_ID,
+      measurementId: process.env.MEASUREMENT_ID || "",
+      databaseURL: process.env.DATABASE_URL,
+      domainURL: process.env.DOMAIN_URL,
+      mode: process.env.ENV_MODE,
+      authId: process.env.AUTH_ID,
+      authPwd: process.env.AUTH_PWD
       // tokenName: process.env.TOKEN_NAME
     }
   },

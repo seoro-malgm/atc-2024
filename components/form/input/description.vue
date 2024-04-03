@@ -196,7 +196,7 @@ const onEnd = e => {
         .draggable {
           @apply px-2;
           button {
-            @apply p-2 bg-baja-white-200 rounded-lg hover:bg-grayscale-400 transition-all;
+            @apply p-2 bg-baja-white-200 rounded-lg hover:bg-gray-400 transition-all;
           }
         }
         .item {

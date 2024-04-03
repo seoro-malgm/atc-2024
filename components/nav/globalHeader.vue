@@ -72,7 +72,7 @@ const linkList = ref([
   },
   {
     name: "스폰서",
-    url: "/sponsor"
+    url: "/together"
   }
 
   // {
