@@ -1,0 +1,1 @@
+import{_ as s,o as t,c as o,a,M as c}from"./DESXl4iR.js";const n={},_={class:"marquee"},r={class:"marquee-content"};function d(e,f){return t(),o("div",_,[a("div",r,[c(e.$slots,"default",{},void 0,!0)])])}const l=s(n,[["render",d],["__scopeId","data-v-faa07211"]]);export{l as _};
