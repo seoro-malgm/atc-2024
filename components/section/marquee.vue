@@ -10,12 +10,13 @@
 
 <style scoped>
 .marquee {
-  @apply overflow-hidden relative text-nowrap font-light whitespace-nowrap w-full h-auto pb-[59px] border-y;
+  @apply overflow-hidden relative text-nowrap font-light whitespace-nowrap w-full h-auto pb-[80px] border-y;
 }
 
 .marquee-content {
   @apply block absolute text-nowrap;
   animation: marquee 20s reverse linear infinite;
+  margin-top: 24px;
 }
 
 @keyframes marquee {
@@ -27,7 +28,7 @@
   to {
     left: 0;
     top: 50%;
-    transform: translateY(-50%) translateX(-100%);
+    transform: translateY(-50%) translateX(-50%);
   }
 }
 </style>
