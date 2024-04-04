@@ -1,1 +1,0 @@
-import{_ as t,c as o,a as c,b as _,o as a,a_ as s}from"./Bc1ekGIV.js";const n={},r={id:"empty"},d={class:"container"};function i(p,m){const e=s;return a(),o("div",r,[c("div",d,[_(e)])])}const l=t(n,[["render",i],["__scopeId","data-v-3f601797"]]);export{l as default};

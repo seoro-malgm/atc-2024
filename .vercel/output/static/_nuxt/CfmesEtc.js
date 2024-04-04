@@ -1,5 +1,0 @@
-<<<<<<<< HEAD:.vercel/output/static/_nuxt/PDnL1KTY.js
-import{G as r,O as s,J as c,c as u,o as l}from"./Bc1ekGIV.js";import{u as n}from"./DO5H3ly-.js";const p={__name:"logout",setup(i){return r(async()=>{const o=s(),t=c(),e=n();try{await $fetch("/api/auth/logout"),t.clearToken(),e.add({id:"logout-complete",title:"로그아웃에 성공하였습니다.",icon:"memory:logout"}),o.push("/auth/login")}catch(a){console.error("Logout failed:",a),e.add({id:"logout-failed",title:a,icon:"memory:alert-octagon",color:"red"})}}),(o,t)=>(l(),u("div",null,"this is logout"))}};export{p as default};
-========
-import{G as r,O as s,J as c,c as u,o as l}from"./Jfc5g3KL.js";import{u as n}from"./D6L8QbS9.js";const p={__name:"logout",setup(i){return r(async()=>{const o=s(),t=c(),e=n();try{await $fetch("/api/auth/logout"),t.clearToken(),e.add({id:"logout-complete",title:"로그아웃에 성공하였습니다.",icon:"memory:logout"}),o.push("/auth/login")}catch(a){console.error("Logout failed:",a),e.add({id:"logout-failed",title:a,icon:"memory:alert-octagon",color:"red"})}}),(o,t)=>(l(),u("div",null,"this is logout"))}};export{p as default};
->>>>>>>> dev:.vercel/output/static/_nuxt/CfmesEtc.js
