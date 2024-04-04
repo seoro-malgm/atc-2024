@@ -19,12 +19,36 @@
                 <div class="content">
                   <strong>A.</strong>
                   <p class="text">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad
-                    totam laborum delectus nulla fugit non autem, quibusdam
-                    optio sunt voluptates odit dignissimos, ipsam at cum
-                    possimus nobis unde error consequatur?
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Tenetur necessitatibus omnis, aliquam accusantium quaerat
+                    minus incidunt tempore vel dolore esse consectetur eligendi
+                    consequuntur quia voluptas illo vero, magni alias! At,
+                    soluta. Animi, voluptate tenetur. Possimus recusandae ullam
+                    autem doloremque, nesciunt reprehenderit qui. Aliquam,
+                    minima voluptatibus vero porro numquam perferendis alias
+                    dolore quos consectetur aut autem fugiat sit, eligendi nemo.
+                    Hic laborum maiores, doloremque ab quibusdam ullam quis
+                    minima nostrum dicta quo incidunt similique praesentium
+                    officia cupiditate maxime inventore magnam dignissimos odit
+                    rem ea aliquid. Odit autem dignissimos eaque recusandae!
+                    Excepturi veritatis iure atque, reiciendis praesentium id
+                    nesciunt quisquam assumenda eligendi ut odio obcaecati
+                    facere perspiciatis mollitia laborum aliquam. Sit deserunt
+                    eligendi commodi ab sint dolore quidem quia magni iusto
+                    autem mollitia perferendis reprehenderit, natus adipisci at
+                    quibusdam velit. Consectetur quae maiores tenetur fugiat
+                    sint facere blanditiis iusto consequuntur, perspiciatis
+                    explicabo dolorem sed cumque dolor tempora minus a commodi
+                    fuga saepe vero ratione quod magnam. Delectus quas suscipit
+                    debitis veniam eos unde architecto, voluptates reprehenderit
+                    exercitationem quisquam velit fugit deleniti similique
+                    dolore eaque error autem voluptas fuga nisi vel! Distinctio
+                    in eius reprehenderit saepe doloribus ut odio vero, ratione
+                    veniam nulla natus ipsum doloremque. Corporis, distinctio
+                    repudiandae omnis nihil eius quod?
                   </p>
                 </div>
+                <span class="block border-t border-grayscale-800 -mt-1" />
               </div>
             </div>
           </section>
@@ -98,10 +122,10 @@ const toggle = index => {
           .faq-collapse {
             @apply border-t border-grayscale-800 transition-all-default;
             max-height: 0;
-            transition-duration: 0.5s;
+            transition-duration: 0.4s;
             overflow: hidden;
             .collapse-content {
-              @apply h-0 border-b border-grayscale-800;
+              @apply h-0 border-grayscale-800;
             }
           }
           .collapse-content {
@@ -128,7 +152,7 @@ const toggle = index => {
           }
           .faq-a {
             .faq-collapse {
-              max-height: 500px;
+              max-height: 40rem;
               .collapse-content {
                 height: inherit;
               }

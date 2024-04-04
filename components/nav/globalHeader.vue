@@ -4,7 +4,7 @@
       <!-- 로고 -->
       <nuxt-link class="logo" to="/">
         <!-- <nuxt-img src="/logo.svg" /> -->
-        <logo-kor></logo-kor>
+        <logo-kor />
       </nuxt-link>
       <!-- 동작영역 -->
       <section class="nav-section">
@@ -118,7 +118,7 @@ watch(
   .global-header-nav {
     @apply pb-2 flex items-center justify-between container mx-auto;
     .logo {
-      @apply px-3 pt-3 pb-1 lg:px-4 lg:pt-4 lg:pb-2 w-4/12 md:w-4/12 lg:w-2/12 xl:w-2/12 max-w-[135px];
+      @apply px-3 pt-3 pb-1 lg:px-4 lg:pt-4 lg:pb-2 w-4/12 md:w-4/12 lg:w-2/12 xl:w-3/12 max-w-[150px];
       img {
         @apply w-full;
       }

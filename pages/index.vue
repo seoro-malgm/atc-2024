@@ -37,7 +37,7 @@
     <!-- marquee -->
     <section-marquee />
     <!-- 지리산 정보 -->
-    <section-scroll-horizontal :items="items"> </section-scroll-horizontal>
+    <section-scroll-horizontal :items="items" />
     <!-- 컨퍼런스 -->
     <section-conference />
 
@@ -48,29 +48,9 @@
     <!-- <section-subscribe-form /> -->
 
     <!-- 스폰서 -->
-    <section class="section-sponsors border-b-0">
-      <header-section> 스폰서 </header-section>
-      <!-- 스폰서 목록 -->
-      <div class="list-wrapper">
-        <div class="list-container">
-          <ul class="list-sponsor">
-            <li v-for="(item, i) in sponsors" :key="i">
-              <div class="logo">
-                <img
-                  :src="`/images/sponsors/${item.src}`"
-                  :alt="`${item.name} 로고이미지`"
-                  :title="`${item.name} 로고이미지`"
-                />
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <!-- 스폰서 혜택 -->
-      <div class="border-t min-h-screen">스폰셔 혜택...</div>
-      <!-- 스폰서 미팅예약 폼 페이지로 이동 /together -->
-      <div class="border-t">미팅 예약페이지로 이동 버튼...</div>
-    </section>
+    <section-sponsors />
+    <!-- 스폰서 혜택 -->
+    <section-sponsor-benefits />
     <!-- faq -->
     <section-faq />
     <!-- marquee -->
@@ -79,13 +59,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted, watch } from "vue";
-import sponsors from "@/data/sponsorList";
-// import SubscribeForm from "~/components/section/subscribeForm.vue";
-
-// const firebase = useNuxtApp();
-// console.log("firebase :", firebase);
-
+import { ref } from "vue";
 const items = ref([
   {
     src: "/images/dummy.jpeg",
@@ -128,31 +102,4 @@ const items = ref([
 ]);
 </script>
 
-<style lang="postcss" scoped>
-/* 스폰서 */
-.section-sponsors {
-  .list-wrapper {
-    @apply py-12 container;
-    .list-container {
-      .list-sponsor {
-        @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6;
-        li {
-          /* margin: -1px; */
-          .logo {
-            @apply p-6 md:p-5 lg:p-10;
-            img {
-              @apply w-full h-auto transition-all;
-              filter: saturate(0);
-            }
-            &:hover {
-              img {
-                filter: saturate(1);
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-</style>
+<style lang="postcss" scoped></style>
