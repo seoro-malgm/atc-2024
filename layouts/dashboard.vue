@@ -36,12 +36,12 @@ const col = computed(() => {
     .body-wrapper {
       @apply w-full px-4 py-1 rounded-lg;
       .body-header {
-        @apply mb-4 py-3 border-b border-gray-300;
+        @apply mb-4 py-3 border-b border-grayscale-800;
         h1 {
           @apply mb-3 text-2xl text-spring-green-700 font-bold;
         }
         p {
-          @apply px-4 py-3 bg-gray-200 rounded-lg text-sm text-gray-700;
+          @apply px-4 py-3 bg-grayscale-200 rounded-lg text-sm text-grayscale-700;
         }
       }
       .body-container {

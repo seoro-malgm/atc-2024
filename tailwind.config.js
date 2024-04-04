@@ -68,7 +68,7 @@ module.exports = {
           900: "#0a5d26",
           950: "#003412"
         },
-        gray: {
+        grayscale: {
           DEFAULT: "#EDEDED",
           50: "#FFFFFF",
           100: "#FEFEFE",
@@ -100,7 +100,7 @@ module.exports = {
           900: "#312c83",
           950: "#1e1a4c"
         },
-        crusoe: {
+        crusoer: {
           DEFAULT: "#003a08",
           50: "#e6ffe4",
           100: "#c8ffc5",

@@ -1,7 +1,7 @@
 export default defineAppConfig({
   ui: {
     primary: "spring-green",
-    gray: "gray",
+    gray: "grayscale",
     toggle: {
       default: {
         color: "spring-green",
@@ -23,9 +23,18 @@ export default defineAppConfig({
     },
     tooltip: {
       background: "bg-black dark:bg-white",
-      color: "text-white dark:text-black",
+      color: "text-white dark:text-grayscale-900",
       arrow: {
         background: "before:bg-black dark:before:bg-white"
+      }
+    },
+    carousel: {
+      indicators: {
+        wrapper:
+          "absolute flex items-center justify-center gap-3 bottom-4 inset-x-0",
+        base: "rounded-none h-3 w-3 lg:w-6 lg:h-6",
+        active: "bg-spring-green-500 dark:bg-spring-green-400",
+        inactive: "bg-hawkes-blue-900 dark:bg-gray-800 mix-blend-overlay"
       }
     }
   }

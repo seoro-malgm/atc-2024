@@ -2,8 +2,10 @@
   <div class="input-group">
     <label class="input-label">
       <span class="input-title">{{ title }}</span>
-
-      <UToggle v-model="value" />
+      <div class="flex items-center">
+        <UToggle v-model="value" class="mr-2" />
+        <slot></slot>
+      </div>
     </label>
   </div>
 </template>
@@ -12,8 +14,7 @@
 const props = defineProps({
   title: {
     type: String,
-    required: true,
-    default: "제목"
+    default: null
   },
   form: {
     type: Object,
@@ -56,10 +57,10 @@ watch(
   @apply mb-3;
   .input-label {
     .input-title {
-      @apply block mb-2 font-semibold text-lg text-black;
+      @apply block mb-2 font-semibold text-lg text-grayscale-900;
     }
     input {
-      @apply block w-full px-3 py-2 bg-gray-300 rounded-lg;
+      @apply block w-full px-3 py-2 bg-grayscale-300 rounded-lg;
     }
   }
 }

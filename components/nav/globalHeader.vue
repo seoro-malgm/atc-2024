@@ -4,7 +4,7 @@
       <!-- 로고 -->
       <nuxt-link class="logo" to="/">
         <!-- <nuxt-img src="/logo.svg" /> -->
-        <logo-kor></logo-kor>
+        <logo-kor />
       </nuxt-link>
       <!-- 동작영역 -->
       <section class="nav-section">
@@ -57,7 +57,7 @@ const props = defineProps({
 
 const linkList = ref([
   {
-    name: "HOME",
+    name: "홈",
     url: "/"
   },
   {
@@ -104,12 +104,12 @@ watch(
   }
 }
 .global-header {
-  @apply w-full lg:top-[0] lg:left-[50%] max-lg:fixed max-lg:top-[0] max-lg:left-[50%] z-[2000] max-lg:translate-x-[-50%] bg-white border-b;
+  @apply w-full lg:top-[0] lg:left-[50%] max-lg:fixed max-lg:top-[0] max-lg:left-[50%] z-[2000] max-lg:translate-x-[-50%] bg-white border-b border-grayscale-800;
 
   &.unpinned {
     @apply lg:fixed;
     transform: translate(-50%, -100%);
-    animation: showDown 0.3s forwards;
+    animation: showDown 0.2s forwards;
     .global-header-nav {
       @apply mx-auto border-b-0;
     }
@@ -118,7 +118,7 @@ watch(
   .global-header-nav {
     @apply pb-2 flex items-center justify-between container mx-auto;
     .logo {
-      @apply px-3 pt-3 pb-1 lg:px-4 lg:pt-4 lg:pb-2 w-4/12 md:w-4/12 lg:w-2/12 xl:w-2/12 max-w-[135px];
+      @apply px-3 pt-3 pb-1 lg:px-4 lg:pt-4 lg:pb-2 w-4/12 md:w-4/12 lg:w-2/12 xl:w-3/12 max-w-[150px];
       img {
         @apply w-full;
       }
@@ -130,7 +130,7 @@ watch(
         .toggler {
           @apply flex flex-col justify-between w-6 h-6 mt-2 mr-1;
           .line {
-            @apply block w-full h-1 my-auto bg-black ease-default;
+            @apply block w-full h-1 my-auto bg-black transition-all-default;
             transition: all 0.3s;
             opacity: 1;
           }
@@ -159,7 +159,7 @@ watch(
         .list-link {
           @apply flex max-lg:flex-col items-center;
           .list-item {
-            @apply lg:ml-10 max-lg:w-full max-lg:text-center font-semibold text-gray-900;
+            @apply lg:ml-10 max-lg:w-full max-lg:text-center font-semibold text-grayscale-900;
             .link-item {
               @apply block w-full text-lg lg:text-xl max-lg:py-3 hover:text-green-500 hover:underline;
               &.active,
@@ -167,7 +167,7 @@ watch(
                 @apply text-green-500;
               }
               &.disabled {
-                @apply text-gray-500 opacity-25;
+                @apply text-grayscale-600 opacity-25;
               }
             }
           }

@@ -184,7 +184,7 @@ const onEnd = e => {
   @apply w-full;
   .input-label {
     .input-title {
-      @apply block mb-0 font-semibold text-lg text-black;
+      @apply block mb-0 font-semibold text-lg text-grayscale-900;
     }
     .input-desc {
       @apply text-sm font-light;
@@ -196,7 +196,7 @@ const onEnd = e => {
         .draggable {
           @apply px-2;
           button {
-            @apply p-2 bg-baja-white-200 rounded-lg hover:bg-gray-400 transition-all;
+            @apply p-2 bg-baja-white-200 rounded-lg hover:bg-grayscale-400 transition-all;
           }
         }
         .item {
@@ -217,7 +217,7 @@ const onEnd = e => {
             @apply px-2 w-full;
           }
           .btn {
-            @apply py-1 px-2 w-full border text-blue-500 border-blue-300 hover:bg-blue-600 ease-default hover:text-white transition-all;
+            @apply py-1 px-2 w-full border border-grayscale-800 text-blue-500 border-blue-300 hover:bg-blue-600 transition-all-default hover:text-white transition-all;
           }
         }
       }

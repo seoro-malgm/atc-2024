@@ -86,13 +86,13 @@ watch(
   @apply w-full;
   .input-label {
     .input-title {
-      @apply block mb-0 font-semibold text-lg text-black;
+      @apply block mb-2 font-semibold text-lg text-grayscale-900;
     }
     .input-desc {
       @apply text-sm font-light;
     }
     input {
-      @apply block w-full px-3 py-2 bg-baja-white-200 rounded-lg;
+      @apply block w-full px-3 py-2 bg-white border border-gray-800;
     }
   }
 }

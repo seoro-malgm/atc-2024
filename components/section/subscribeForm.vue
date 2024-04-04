@@ -56,7 +56,7 @@ const onSubmit = e => {
   .wrap {
     @apply flex items-center justify-center py-28 bg-baja-white-100;
     .form-wrap {
-      @apply w-10/12 lg:w-5/12 border bg-white;
+      @apply w-10/12 lg:w-5/12 border border-grayscale-800 bg-white;
       .form {
         .form-header {
           @apply p-4 border-b;

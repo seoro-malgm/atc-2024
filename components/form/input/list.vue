@@ -111,7 +111,7 @@ const removeValue = index => {
 .input-group {
   @apply w-full mb-6;
   .input-title {
-    @apply block mb-0 font-semibold text-lg text-black;
+    @apply block mb-0 font-semibold text-lg text-grayscale-900;
   }
   .input-desc {
     @apply text-sm font-light;
@@ -127,9 +127,9 @@ const removeValue = index => {
   }
 
   .list-value {
-    @apply p-2 mt-2 inline-flex flex-wrap border w-full;
+    @apply p-2 mt-2 inline-flex flex-wrap border border-grayscale-800 w-full;
     .value-item {
-      @apply flex items-center mr-2 mb-2 px-2 py-1 bg-gray-300 rounded-xl;
+      @apply flex items-center mr-2 mb-2 px-2 py-1 bg-grayscale-300 rounded-xl;
       span.value {
         @apply text-base ps-2;
       }

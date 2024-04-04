@@ -1,12 +1,16 @@
 {
+<<<<<<< HEAD
   "date": "2024-04-03T07:26:22.382Z",
+=======
+  "date": "2024-04-04T08:24:29.229Z",
+>>>>>>> dev
   "preset": "vercel_edge",
   "framework": {
     "name": "nuxt",
     "version": "3.11.1"
   },
   "versions": {
-    "nitro": "2.9.4"
+    "nitro": "2.9.6"
   },
   "commands": {
     "preview": "",

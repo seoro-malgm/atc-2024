@@ -116,7 +116,7 @@ watch(
   @apply w-full;
   .input-label {
     .input-title {
-      @apply block mb-0 font-semibold text-lg text-black;
+      @apply block mb-0 font-semibold text-lg text-grayscale-900;
     }
     .input-desc {
       @apply text-sm font-light;
