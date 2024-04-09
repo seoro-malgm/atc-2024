@@ -4,6 +4,10 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted, watch } from "vue";
+definePageMeta({
+  layout: "dashboard"
+});
+
 const props = defineProps({
   data: {
     type: String,

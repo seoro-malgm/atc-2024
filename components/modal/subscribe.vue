@@ -19,6 +19,8 @@
           title="이메일"
           placeholder="구독자님의 이메일을 입력해주세요"
           @input="$event => (subscriber.email = $event)"
+          :required:="true"
+          :validate="validator('email', subscriber.email)"
         />
         <form-input-text
           :form="subscriber"
@@ -30,14 +32,26 @@
           placeholder="구독받으실 구독자님의 이름을 입력해주세요."
           class="mt-4"
           @input="$event => (subscriber.name = $event)"
+          :required:="true"
+          :validate="validator('name', subscriber.name)"
         />
+        <form-input-select-menu
+          class="my-4"
+          :form="form"
+          title="언어 선택"
+          value-attribute="label"
+          :options="locales"
+          placeholder="구독으로 받을 메일의 언어를 선택해주세요."
+          @input="$event => (subscriber.lang = $event)"
+        />
+
         <form-input-check
           :form="subscriber"
           bind="$send_agreed"
           required="required"
           title="수신동의 여부"
           class="mt-4"
-          @input="$event => (subscriber.$send_agreed = $event)"
+          @input="$event => (subscriber.send_agreed = $event)"
         >
           <span>
             (필수)
@@ -56,7 +70,7 @@
           bind="$ad_agreed"
           required="required"
           class="mt-4"
-          @input="$event => (subscriber.$ad_agreed = $event)"
+          @input="$event => (subscriber.ad_agreed = $event)"
         >
           <span>
             (선택)
@@ -72,14 +86,19 @@
         </form-input-check>
       </section>
       <footer class="modal-footer">
-        <button @click.prevent="submit">구독하기</button>
+        <button @click.prevent="submit" :disabled="!formValidate">
+          구독하기
+        </button>
       </footer>
     </form>
+    formValidate: {{ formValidate }}
   </UModal>
 </template>
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted, watch } from "vue";
+import validator from "@/composables/validator";
+
 const props = defineProps({
   shown: {
     type: Boolean,
@@ -95,13 +114,31 @@ watch(
     modalShow.value = n;
   }
 );
-
 watch(
   () => modalShow.value,
   (n, o) => {
     emit("toggle", n);
   }
 );
+
+const locales = ref([
+  {
+    label: "한국어",
+    value: "한국어"
+  },
+  {
+    label: "English",
+    value: "영어"
+  },
+  {
+    label: "中文",
+    value: "중국어"
+  },
+  {
+    label: "日本語",
+    value: "일본어"
+  }
+]);
 
 /**
  * @param eventOccurredBy : 구독방법 관리자 수동: "MANUAL" / 구독자가 직접: "SUBSCRIBER"
@@ -115,30 +152,61 @@ watch(
 const form = ref({
   eventOccurredBy: "SUBSCRIBER",
   confirmEmailYN: "N",
-  groupIds: "test",
+  groupIds: ["330508"],
   subscribers: []
 });
 
 const subscriber = ref({
   email: null,
   name: null,
-  $ad_agreed: "N"
+  send_agreed: false,
+  ad_agreed: false
+});
+
+const formValidate = computed(() => {
+  const obj = {
+    email: validator("email", subscriber.value.email).value,
+    name: validator("name", subscriber.value.name).value,
+    send_agreed: subscriber.value?.send_agreed
+  };
+  return Object.values(obj).every(val => val === true);
 });
 
 const toast = useToast();
-const submit = e => {
+const submit = async e => {
   const body = {
     ...form.value,
-    subscribers: [subscriber.value]
+    subscribers: [
+      {
+        ...subscriber.value,
+        $ad_agreed: subscriber.value.ad_agreed ? "Y" : "N",
+        subscribed_date: new Date()
+      }
+    ]
   };
-  console.log("body :", body);
-  modalShow.value = false;
-  toast.add({
-    id: `subscriber-added-${new Date().getTime()}`,
-    title: "정상적으로 구독이 완료됐습니다.",
-    color: "spring-green",
-    icon: "memory:checkbox-marked"
-  });
+  try {
+    const data = await $fetch("/api/stibee/lists/subscribers", {
+      method: "POST",
+      body
+    });
+    if (data) {
+      modalShow.value = false;
+      toast.add({
+        id: `subscriber-added-${new Date().getTime()}`,
+        title: "정상적으로 구독이 완료됐습니다.",
+        color: "spring-green",
+        icon: "memory:checkbox-marked"
+      });
+    }
+  } catch (error) {
+    modalShow.value = false;
+    toast.add({
+      id: `subscriber-add-fail-${new Date().getTime()}`,
+      title: "구독에 실패했습니다.",
+      color: "red",
+      icon: "bxs:x-square"
+    });
+  }
 };
 </script>
 
@@ -159,7 +227,10 @@ const submit = e => {
   .modal-footer {
     @apply text-center border-t border-grayscale-800;
     button {
-      @apply block text-center py-4 px-2 w-full font-bold bg-spring-green-100 hover:bg-spring-green-400 transition-all-default;
+      @apply block text-center py-4 px-2 w-full font-bold bg-spring-green-200 hover:bg-spring-green-400 transition-all-default opacity-100;
+      &:disabled {
+        @apply bg-grayscale-400 opacity-50;
+      }
     }
   }
 }

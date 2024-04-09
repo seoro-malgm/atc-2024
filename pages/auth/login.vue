@@ -19,6 +19,7 @@
             @input="$event => (form.email = $event)"
             autocomplete="user-email"
             required
+            id="user-email"
           />
           <form-input-text
             :form="form"
@@ -28,6 +29,7 @@
             @input="$event => (form.pwd = $event)"
             autocomplete="current-password"
             required
+            id="user-pwd"
           />
         </form-input-wrap>
       </template>

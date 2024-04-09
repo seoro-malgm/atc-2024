@@ -1,17 +1,18 @@
 <template>
-  <div>this is 혜택관리</div>
+  <div>this is faq 관리</div>
 </template>
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted, watch } from "vue";
+definePageMeta({
+  layout: "dashboard"
+});
+
 const props = defineProps({
   data: {
     type: String,
     default: null
   }
-});
-definePageMeta({
-  layout: "dashboard"
 });
 </script>
 

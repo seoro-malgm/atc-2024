@@ -50,6 +50,15 @@ hr {
   @apply mx-auto my-4 border-2 border-grayscale-800;
 }
 
+@layer utilities {
+  .table tbody tr:nth-child(odd) td {
+    @apply bg-baja-white-50;
+  }
+  .table tbody tr:first-child td {
+    @apply border-t-0;
+  }
+}
+
 a.link {
   @apply underline hover:text-grayscale-700 focus:text-grayscale-700;
 }

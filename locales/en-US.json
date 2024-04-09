@@ -4,10 +4,8 @@
   },
   "components": {
     "nav": {
-      "globalHeader": {
-      }
+      "globalHeader": {}
     }
   },
-  "pages": {
-  }
+  "pages": {}
 }

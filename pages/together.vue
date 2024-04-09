@@ -1,13 +1,25 @@
 <template>
   <div>
-    <ol>
-      <li>1. 스폰서 혜택 테이블</li>
-      <li>2. 미팅 예약하기 폼</li>
-      <li>3. 함께하는 기관들 목록</li>
-      <li>4. 스폰서 목록</li>
-    </ol>
+    <!-- <section-sponsor-benefits></section-sponsor-benefits> -->
+    <section-sponsor-table></section-sponsor-table>
+    <section-marquee />
+    <section
+      class="min-h-lvh flex items-center justify-center border-t border-grayscale-800"
+    >
+      미팅 예약하기 폼
+    </section>
+
+    <section-marquee />
+    <section
+      class="min-h-lvh flex items-center justify-center border-t border-grayscale-800"
+    >
+      함께하는 기관 목록
+    </section>
+    <!-- 스폰서 -->
+    <section-sponsors />
     <!-- faq 먹럭 -->
     <section-faq></section-faq>
+    <section-marquee />
   </div>
 </template>
 

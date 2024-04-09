@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage";
-import { getAnalytics } from "firebase/analytics";
+// import { getAnalytics } from "firebase/analytics";
 
 export const setupFirebase = () => {
   const config = useRuntimeConfig();
@@ -22,6 +22,6 @@ export const setupFirebase = () => {
   const db = getFirestore(app);
   const auth = getAuth(app);
   const storage = getStorage(app);
-  const analytics = getAnalytics(app);
+  // const analytics = getAnalytics(app);
   return { app, db, auth, storage };
 };

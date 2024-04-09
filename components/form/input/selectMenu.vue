@@ -17,13 +17,13 @@
         size="lg"
         :value-attribute="valueAttribute"
       >
-        <template
+        <!-- <template
           #option="{ option: item }"
           class="truncate"
           v-if="valueAttribute"
         >
           {{ item[valueAttribute] }}
-        </template>
+        </template> -->
       </USelectMenu>
     </div>
   </div>

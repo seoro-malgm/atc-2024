@@ -12,6 +12,8 @@
         :required="required"
         :autocomplete="autocomplete"
         :id="id"
+        :class="[{ invalid: required && !validate }]"
+        :invalid="required && !validate"
       />
     </label>
   </div>
@@ -52,11 +54,15 @@ const props = defineProps({
   },
   required: {
     type: Boolean,
-    default: null
+    default: false
   },
   autocomplete: {
     type: String,
     default: null
+  },
+  validate: {
+    type: [Boolean, Object],
+    default: false
   }
 });
 const emits = defineEmits({
@@ -92,7 +98,12 @@ watch(
       @apply text-sm font-light;
     }
     input {
-      @apply block w-full px-3 py-2 bg-white border border-gray-800;
+      @apply block w-full px-3 py-2 bg-white border border-2 border-gray-800 transition-all-default;
+      outline: none;
+      &.invalid,
+      &:invalid {
+        @apply border-classic-rose-500 border-2 bg-classic-rose-50;
+      }
     }
   }
 }

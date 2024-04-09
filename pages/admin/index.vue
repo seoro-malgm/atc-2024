@@ -2,6 +2,7 @@
   <div>
     <!-- key 없이 잘못된 접근시 -->
     <status-loading />
+    <!-- this is admin main -->
   </div>
 </template>
 
@@ -19,7 +20,7 @@ const store = useAuth();
 onMounted(() => {
   // auth 상태일때, 기본으로 이동할 페이지로 이동시킴
   if (store?.isAuthenticated) {
-    router.push("/admin/works");
+    router.push("/admin/benefits");
   } else {
     router.push("/auth/login");
   }

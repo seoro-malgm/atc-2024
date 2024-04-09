@@ -17,7 +17,7 @@ const router = useRouter();
 const store = useAuth();
 onMounted(() => {
   if (store?.isAuthenticated) {
-    router.push("/admin/works");
+    router.push("/admin");
   } else {
     router.push("/auth/login");
   }

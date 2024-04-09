@@ -2,15 +2,54 @@
   {
     "text": "팝업",
     "key": "popups",
-    "icon": "ic:baseline-folder-special",
-    "description": "팝업을 관리합니다.",
+    "icon": "bxs:error-alt",
+    "description": "메인페이지에 호출할 팝업을 관리합니다.",
     "editable": true
   },
   {
     "text": "혜택",
     "key": "benefits",
-    "icon": "memory:comment-user",
+    "icon": "bxs:cheese",
     "description": "스폰서를 위한 효과를 관리합니다",
+    "editable": true,
+    "removeable": true,
+    "creatable": true,
+    "preview": false,
+    "formPreview": false,
+    "defaultQuery": {
+      "limit": 10,
+      "orderBy": ["createdAt", "desc"]
+    },
+    "list": {
+      "type": "table",
+      "key": [
+        {
+          "value": "name",
+          "text": "이름",
+          "type": "string",
+          "width": "20"
+        },
+        {
+          "value": "budget",
+          "text": "후원금",
+          "type": "string",
+          "width": "10"
+        },
+        {
+          "value": "id",
+          "text": "id",
+          "type": "url",
+          "width": "15",
+          "url": "/partners"
+        }
+      ]
+    }
+  },
+  {
+    "text": "자주 묻는 질문",
+    "key": "faqs",
+    "icon": "bxs:conversation",
+    "description": "자주 묻는 질문들을 관리합니다.",
     "editable": true,
     "removeable": true,
     "creatable": true,

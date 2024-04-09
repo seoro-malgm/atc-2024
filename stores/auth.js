@@ -13,7 +13,7 @@ export const useAuth = defineStore("auth", {
     setToken(newToken) {
       if (process.client) {
         // 클라이언트 사이드에서만 실행
-        sessionStorage.setItem("::sms::token", newToken);
+        sessionStorage.setItem("::atc::token", newToken);
         this.token = newToken;
       }
     },
@@ -21,7 +21,7 @@ export const useAuth = defineStore("auth", {
       this.token = null;
       if (process.client) {
         // 클라이언트 사이드에서만 실행
-        sessionStorage.removeItem("::sms::token");
+        sessionStorage.removeItem("::atc::token");
       }
     },
     setUser(user) {

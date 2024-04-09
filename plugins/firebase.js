@@ -3,6 +3,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage";
+// import { getAnalytics } from "firebase/analytics";
 
 // Nuxt 3 Plugin
 export default defineNuxtPlugin(nuxtApp => {
@@ -23,7 +24,8 @@ export default defineNuxtPlugin(nuxtApp => {
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
     const auth = getAuth(app);
-    const storage = getStorage(app); // app 인자가 누락되어 있었습니다
+    const storage = getStorage(app);
+    // const analytics = getAnalytics(app);
 
     return { app, db, auth, storage };
   };

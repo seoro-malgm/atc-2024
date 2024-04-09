@@ -9,7 +9,6 @@
     </div>
 
     <div class="content">
-      <!-- 컨퍼런스 -->
       <section class="part left">
         <button
           class="article-wrap"
@@ -17,9 +16,9 @@
           ref="articleLeft"
         >
           <article>
-            <header class="article-header">
+            <!-- <header class="article-header">
               <h5>컨퍼런스</h5>
-            </header>
+            </header> -->
             <section class="article-body">
               <nuxt-img
                 v-for="(item, i) in items"
@@ -43,7 +42,7 @@
         </button>
       </section>
       <!-- 워킹페스티벌 -->
-      <section class="part right">
+      <!-- <section class="part right">
         <button
           class="article-wrap"
           @click.prevent="sbuscribeModalShown = true"
@@ -63,7 +62,7 @@
                   transform: `translate(-50%, -50%) ${item.transform}`,
                   transitionDelay: `${i * 0.1}s`
                 }"
-                :key="i"
+                :key="i"ㅇ
               />
             </section>
             <footer class="article-footer">
@@ -74,7 +73,7 @@
             </footer>
           </article>
         </button>
-      </section>
+      </section> -->
       <modal-subscribe
         :shown="sbuscribeModalShown"
         @toggle="$event => (sbuscribeModalShown = $event)"
@@ -144,10 +143,10 @@ const sbuscribeModalShown = ref(false);
     }
   }
   .content {
-    @apply flex flex-col lg:flex-row lg:-mx-6 lg:items-stretch;
+    @apply flex flex-col lg:flex-row lg:-mx-6 lg:items-stretch justify-center;
     .part {
-      @apply lg:mb-0 border-gray-800 lg:px-6 w-full lg:w-6/12 flex justify-stretch items-stretch;
-      &.left {
+      @apply lg:mb-0 border-gray-800 lg:px-6 w-full flex justify-stretch items-stretch;
+      /* &.left {
         > .article-wrap {
           @apply lg:border-r border-gray-800;
         }
@@ -156,10 +155,10 @@ const sbuscribeModalShown = ref(false);
         > .article-wrap {
           @apply max-lg:border-t lg:border-l border-gray-800;
         }
-      }
+      } */
 
       .article-wrap {
-        @apply bg-baja-white-50 relative z-[2] self-stretch w-full flex flex-col justify-between h-full;
+        @apply bg-baja-white-50 relative z-[2] self-stretch w-full flex flex-col justify-between h-full py-12 lg:pt-[10rem];
         > article {
           @apply self-stretch flex flex-col justify-between h-full;
           .article-header {
@@ -169,9 +168,9 @@ const sbuscribeModalShown = ref(false);
             }
           }
           .article-body {
-            @apply px-4 h-full pb-[50vh] relative overflow-hidden;
+            @apply px-4 h-full pb-[50vh] relative;
             img {
-              @apply absolute block w-full h-auto max-w-[80vw] lg:max-w-[70%] top-[50%] left-[50%] scale-105 transition-all-default shadow-xl;
+              @apply absolute block w-full h-auto max-w-[80vw] lg:max-w-[50%] top-[50%] left-[50%] scale-105 transition-all-default shadow-xl;
               opacity: 0;
               &.first {
                 @apply opacity-100;
