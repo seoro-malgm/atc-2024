@@ -91,7 +91,6 @@
         </button>
       </footer>
     </form>
-    formValidate: {{ formValidate }}
   </UModal>
 </template>
 
