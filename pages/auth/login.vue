@@ -20,6 +20,7 @@
             autocomplete="user-email"
             required
             id="user-email"
+            :validate="validator('email', form.email)"
           />
           <form-input-text
             :form="form"
@@ -30,6 +31,7 @@
             autocomplete="current-password"
             required
             id="user-pwd"
+            :validate="validator('password', form.pwd)"
           />
         </form-input-wrap>
       </template>
@@ -41,6 +43,7 @@
 import { ref, computed, onMounted, onUnmounted, watch } from "vue";
 import { useAuth } from "@/stores/auth";
 import { useRouter } from "vue-router";
+import validator from "@/composables/validator";
 const config = useRuntimeConfig();
 
 const mode = computed(() => {

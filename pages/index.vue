@@ -34,12 +34,43 @@
   <div>
     <!-- 히어로 -->
     <section-hero />
+
+    <!-- ATC 정보 -->
+    <div class="flex items-center justify-center">
+      <ol class="grid grid-cols-3 gpa-8">
+        <li class="border p-10">ATC란 무엇인지</li>
+        <li class="border p-10">
+          ATC 날짜::
+
+          <br />
+          일시 2024년 10월 24일 아시아 트레일즈 네트워크 (ATN) 정기 총회 2024년
+          10월 25일 제 5회 아시아 트레일즈 컨퍼런스 (ATC) 2024년 10월 26일 -
+          27일 2024 지리산둘레길 걷기축제 및 부대행사
+        </li>
+
+        <li class="border p-10">
+          ATC 장소::
+          <br />
+          전라남도 구례군 더케이 지리산가족호텔 그랜드볼룸 (전라남도 구례군
+          산동면 지리산온천로 317)
+        </li>
+      </ol>
+    </div>
     <!-- marquee -->
     <section-marquee />
+    <header-section> ATC in Jirisan </header-section>
+
     <!-- 지리산 정보 -->
     <section-scroll-horizontal :items="items" />
     <!-- 컨퍼런스 -->
     <section-conference />
+    <div>
+      <ol>
+        <li>컨퍼런스가 있다</li>
+        <li>워킹페스티벌이 있다</li>
+        <li>준비되는 소식은 메일로 주겠다, 구독하면 된다.</li>
+      </ol>
+    </div>
 
     <!-- 워킹 페스티벌 -->
     <!-- <section-festival /> -->

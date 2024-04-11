@@ -177,9 +177,9 @@ onMounted(() => {
     .content-cta {
       @apply col-span-1 lg:col-span-3 border-t border-grayscale-800 flex flex-col;
       .cta-header {
-        @apply px-4 py-4 lg:py-7 border-b border-gray-800 text-center;
+        @apply px-2 py-4 lg:py-7 border-b border-gray-800 text-center text-wrap;
         h5 {
-          @apply text-2xl lg:text-3xl font-bold mb-3 lg:mb-0 lg:mr-6 text-nowrap;
+          @apply text-2xl lg:text-3xl font-bold m-0;
           transform: skew(-15deg);
         }
       }
@@ -197,7 +197,7 @@ onMounted(() => {
       .cta-footer {
         @apply text-center border-t border-gray-800 mt-auto;
         .link-item {
-          @apply block py-[1.2rem] transition-all-default bg-spring-green-200;
+          @apply block py-[1.2rem] transition-all-default bg-spring-green-200 px-5;
           span,
           .icon {
             @apply transition-all-default text-xl lg:text-2xl font-semibold;
