@@ -1,5 +1,5 @@
 <template>
-  <div id="subcribe">
+  <div id="subcribe" class="">
     <section-subscribe-form />
   </div>
 </template>

@@ -118,7 +118,7 @@ watch(
   .global-header-nav {
     @apply pb-2 flex items-center justify-between container mx-auto;
     .logo {
-      @apply px-3 pt-3 pb-1 lg:px-4 lg:pt-4 lg:pb-2 w-4/12 md:w-4/12 lg:w-2/12 xl:w-3/12 max-w-[150px];
+      @apply px-3 pt-3 pb-1 lg:px-4 lg:pt-4 lg:pb-2 max-xl:w-[150px] xl:w-3/12 max-w-[150px];
       img {
         @apply w-full;
       }
@@ -151,7 +151,7 @@ watch(
         }
       }
       .util {
-        @apply block absolute lg:static max-lg:z-[1050] max-lg:translate-x-[-50%] max-lg:w-full max-lg:top-[58px] max-lg:left-[50%] max-lg:translate-y-[-20px] max-lg:opacity-0 max-lg:pointer-events-none;
+        @apply block absolute lg:static max-lg:z-[1050] max-lg:translate-x-[-50%] max-lg:w-full max-lg:top-[77px] max-lg:left-[50%] max-lg:translate-y-[-20px] max-lg:opacity-0 max-lg:pointer-events-none;
         transition: all 0.3s ease-in-out;
         &.shown {
           @apply max-lg:bg-white max-lg:translate-y-[0] max-lg:opacity-100 max-lg:pointer-events-auto;
@@ -159,12 +159,12 @@ watch(
         .list-link {
           @apply flex max-lg:flex-col items-center;
           .list-item {
-            @apply lg:ml-10 max-lg:w-full max-lg:text-center font-semibold text-grayscale-900;
+            @apply lg:ml-4 max-lg:w-full max-lg:text-center font-semibold text-grayscale-900;
             .link-item {
-              @apply block w-full text-lg lg:text-xl max-lg:py-3 hover:text-green-500 hover:underline;
+              @apply block w-full text-lg lg:text-xl max-lg:py-3 px-4 hover:text-purple-heart-600 hover:underline;
               &.active,
               &.exact-active {
-                @apply text-green-500;
+                @apply bg-purple-heart-600 text-spring-green-300;
               }
               &.disabled {
                 @apply text-grayscale-600 opacity-25;

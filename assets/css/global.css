@@ -44,19 +44,21 @@
   .absolute-center {
     @apply absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%];
   }
-}
 
-hr {
-  @apply mx-auto my-4 border-2 border-grayscale-800;
-}
-
-@layer utilities {
   .table tbody tr:nth-child(odd) td {
     @apply bg-baja-white-50;
   }
   .table tbody tr:first-child td {
     @apply border-t-0;
   }
+
+  .fill-spring-green-300 {
+    fill: #64ff93;
+  }
+}
+
+hr {
+  @apply mx-auto my-4 border-2 border-grayscale-800;
 }
 
 a.link {

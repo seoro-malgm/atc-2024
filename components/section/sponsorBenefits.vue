@@ -21,7 +21,12 @@
         >
           <template #default="{ item }">
             <figure class="item">
-              <img :src="item.src" class="item-image" draggable="false" />
+              <nuxt-img
+                placeholder
+                :src="item.src"
+                class="item-image"
+                draggable="false"
+              />
               <figcaption>
                 <h6>{{ item.title }}</h6>
                 <p>{{ item.description }}</p>
