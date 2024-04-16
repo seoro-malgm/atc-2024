@@ -1,1 +1,0 @@
-import{k as o,A as n,x as a,c as u,b as c,j as r,o as i}from"./Cmr6xWq2.js";const m={__name:"index",setup(l){const t=o(),e=n();return a(()=>{e!=null&&e.isAuthenticated?t.push("/admin"):t.push("/auth/login")}),(_,p)=>{const s=r("status-loading");return i(),u("div",null,[c(s)])}}};export{m as default};

@@ -240,7 +240,7 @@ export default defineNuxtConfig({
   plugins: [
     "@/plugins/firebase.js",
     "@/plugins/authChecker.js",
-    "@/plugins/router.scrollBehaviour.js"
+    "@/plugins/router.scrollBehavior.js"
   ],
   // nuxt-iamge
   image: {
