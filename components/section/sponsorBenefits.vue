@@ -1,55 +1,28 @@
 <template>
   <div id="sponsor-benefits">
+    <header-section class="-my-[1px]"> 스폰서 혜택 </header-section>
     <div class="content">
-      <div class="content-benefit">
-        <header class="benefit-header">
-          <h5>함께하기</h5>
-          <p class="description">
-            사단법인 숲길의 ‘2024 지리산 걷기축제 & 아시아 트레일즈 컨퍼런스
-            조직위원회’는 더욱 아름답고 풍성한 행사를 만들기 위한 다양한 형태의
-            협업과 후원을 환영합니다.
-          </p>
-        </header>
-        <!-- <header-section class="-mt-[1px]"> 함께하기 </header-section> -->
-        <UCarousel
-          :items="items"
-          :ui="{
-            item: 'basis-full'
-          }"
-          arrows
-          ref="carouselRef"
-          class="carousel"
-        >
-          <template #default="{ item }">
-            <figure class="item">
-              <nuxt-img
-                placeholder
-                :src="item.src"
-                class="item-image"
-                draggable="false"
-              />
-              <figcaption>
-                <h6>{{ item.title }}</h6>
-                <p>{{ item.description }}</p>
-              </figcaption>
-            </figure>
-          </template>
-
-          <template #prev="{ onClick, disabled }">
-            <button :disabled="disabled" @click="onClick" class="btn prev">
-              <icon-arr dir="left" color="spring-green-400" />
-            </button>
-          </template>
-
-          <template #next="{ onClick, disabled }">
-            <button :disabled="disabled" @click="onClick" class="btn next">
-              <icon-arr dir="right" color="spring-green-400" />
-            </button>
-          </template>
-        </UCarousel>
-      </div>
       <div class="content-cta">
-        <header class="cta-header">
+        <UAccordion color="primary" variant="soft" size="sm" :items="items">
+          <template #default="{ item, index, open }">
+            <button
+              @click="carouselIndex = index"
+              class="border-b border-grayscale-800 transition-all-default text-bold text-lg px-4 py-2 font-bold hover:bg-spring-green-200"
+              :class="open ? 'bg-spring-green-400' : 'bg-white'"
+            >
+              {{ item.label }}
+            </button>
+          </template>
+          <template #item="{ item }">
+            <div
+              class="mt-0 px-3 py-4 border-b border-grayscale-800 bg-purple-heart-600 text-white"
+            >
+              <!-- carouselIndex: {{ carouselIndex }} -->
+              {{ item.content }}
+            </div>
+          </template>
+        </UAccordion>
+        <!-- <header class="cta-header">
           <h5>저희와 함께하시겠어요?</h5>
         </header>
         <section class="cta-body">
@@ -66,10 +39,57 @@
         </section>
         <footer class="cta-footer">
           <nuxt-link to="/together" class="link-item">
-            <span>혜택 자세히 보고 미팅 예약하기</span>
+            <span>스폰서 미팅 예약하기</span>
             <UIcon class="icon" name="bxs:paper-plane" />
           </nuxt-link>
-        </footer>
+        </footer> -->
+      </div>
+      <div class="content-benefit">
+        <!-- <header class="benefit-header">
+          <h5>함께하기</h5>
+          <p class="content">
+            사단법인 숲길의 ‘2024 지리산 걷기축제 & 아시아 트레일즈 컨퍼런스
+            조직위원회’는 더욱 아름답고 풍성한 행사를 만들기 위한 다양한 형태의
+            협업과 후원을 환영합니다.
+          </p>
+        </header> -->
+        <UCarousel
+          :items="items"
+          :ui="{
+            item: 'basis-full'
+          }"
+          ref="carouselRef"
+          class="carousel"
+        >
+          <!-- indicators -->
+          <!-- arrows -->
+          <template #default="{ item }">
+            <figure class="item">
+              <nuxt-img
+                placeholder
+                :src="item.src"
+                class="item-image"
+                draggable="false"
+              />
+              <!-- <figcaption>
+                <h6>{{ item.label }}</h6>
+                <p>{{ item.content }}</p>
+              </figcaption> -->
+            </figure>
+          </template>
+
+          <template #prev="{ onClick, disabled }">
+            <button :disabled="disabled" @click="onClick" class="btn prev">
+              <icon-arr dir="left" color="spring-green-400" />
+            </button>
+          </template>
+
+          <template #next="{ onClick, disabled }">
+            <button :disabled="disabled" @click="onClick" class="btn next">
+              <icon-arr dir="right" color="spring-green-400" />
+            </button>
+          </template>
+        </UCarousel>
       </div>
     </div>
   </div>
@@ -86,52 +106,108 @@ const props = defineProps({
 
 const items = [
   {
-    src: "https://picsum.photos/1920/1080?random=2",
-    title:
-      "2024 지리산 걷기축제 & 아시아 트레일즈 컨퍼런스를 후원하는 이유는 무엇입니까?",
-    description:
-      "파트너 후원은 사단법인 숲길이 지리산 환경을 보호하고 다양한 사회공헌 프로그램들을 풍성하게 운영할 수 있도록 도와줍니다. 환경보호와 사회공헌활동을 중요한 미션으로 여기는 소중한 파트너들의 후원, 지원 및 협업으로 숲길의 이러한 노력이 꽃을 피울 수 있었습니다."
+    src: "https://atc-2024-one.vercel.app/images/dummy.jpeg",
+    label: "컨퍼런스 스피치 세션 발표",
+    defaultOpen: true,
+    content:
+      "최대 20분간 세션을 발표할 수 있습니다. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ipsa asperiores error deleniti esse obcaecati, perferendis fuga incidunt id dolorem iste cupiditate dolor ad aliquid excepturi officia eaque nemo fugit!"
   },
   {
-    src: "https://picsum.photos/1920/1080?random=3",
-    title: "누가 참가하게 될까요?",
-    description:
-      "숲길은 아름다운 지리산의 자연을 다음 세대에게 그대로 물려주기 위하여 여러 단체, 기업, 공공기관 및 이해관계자들과 긴밀히 협업해왔습니다. 우리는 이러한 파트너들의 소중한 지원에 깊은 감사를 표합니다."
+    src: "https://atc-2024-one.vercel.app/images/dummy.jpeg",
+    label: "컨퍼런스 세션 중간 기업 광고 영상 송출",
+    content:
+      "짧고 강하게, 중간광고를 송출 가능 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ipsa asperiores error deleniti esse obcaecati, perferendis fuga incidunt id dolorem iste cupiditate dolor ad aliquid excepturi officia eaque nemo fugit!"
   },
   {
-    src: "https://picsum.photos/1920/1080?random=4",
-    title:
-      "2024 지리산 걷기축제 & 아시아 트레일즈 컨퍼런스는 친환경적으로 진행되나요?",
-    description:
-      "사단법인 숲길이 가장 중요하게 생각하는 것은 우리가 행하는 모든 행위가 자연에 해를 끼치지 않는 방향으로 이루어져야 한다는 점입니다. 이번 행사 또한 다르지 않습니다. 우리가 어떻게 친환경적으로 행사를 만들어 나가는지 함께 지켜봐주세요!"
+    src: "https://atc-2024-one.vercel.app/images/dummy.jpeg",
+    label: "컨퍼런스 책자 내 기업 광고 (국/영문)",
+    content:
+      " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ipsa asperiores error deleniti esse obcaecati, perferendis fuga incidunt id dolorem iste cupiditate dolor ad aliquid excepturi officia eaque nemo fugit!"
   },
   {
-    src: "https://picsum.photos/1920/1080?random=5",
-    title: "함께하기",
-    description:
+    src: "https://atc-2024-one.vercel.app/images/dummy.jpeg",
+    label: "걷기축제 시작점 / 종점 부스",
+    content:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ipsa asperiores error deleniti esse obcaecati, perferendis fuga incidunt id dolorem iste cupiditate dolor ad aliquid excepturi officia eaque nemo fugit!"
   },
   {
-    src: "https://picsum.photos/1920/1080?random=6",
-    title: "함께하기",
-    description:
+    src: "https://atc-2024-one.vercel.app/images/dummy.jpeg",
+    label: "걷기축제 공식 홍보 영상 내 제품 노출",
+    content:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ipsa asperiores error deleniti esse obcaecati, perferendis fuga incidunt id dolorem iste cupiditate dolor ad aliquid excepturi officia eaque nemo fugit!"
+  },
+  {
+    src: "https://atc-2024-one.vercel.app/images/dummy.jpeg",
+    label: "걷기축제 프로그램 가이드 내 기업 광고  (국/영문)",
+    content:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ipsa asperiores error deleniti esse obcaecati, perferendis fuga incidunt id dolorem iste cupiditate dolor ad aliquid excepturi officia eaque nemo fugit!"
+  },
+  {
+    src: "https://atc-2024-one.vercel.app/images/dummy.jpeg",
+    label: "기업 제품 증정품 지급(굿즈 패키지)",
+    content:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ipsa asperiores error deleniti esse obcaecati, perferendis fuga incidunt id dolorem iste cupiditate dolor ad aliquid excepturi officia eaque nemo fugit!"
+  },
+  {
+    src: "https://atc-2024-one.vercel.app/images/dummy.jpeg",
+    label: "기업 로고 노출 위치",
+    content:
+      "참여자 등번호, 현수막,스탠딩배너, 포스터, 웹사이트 등에 브랜드를 홍보하세요"
+  },
+  {
+    src: "https://atc-2024-one.vercel.app/images/dummy.jpeg",
+    label: "사전 마케팅 캠페인 공동 제작",
+    content:
+      "ATC를 홍보하는 마케팅의 초입부터 함께 공동으로 제작에 참여하실 수 있습니다."
+  },
+  {
+    src: "https://atc-2024-one.vercel.app/images/dummy.jpeg",
+    label: "지리산둘레길 공식 안내 책자 내 기업 광고",
+    content:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ipsa asperiores error deleniti esse obcaecati, perferendis fuga incidunt id dolorem iste cupiditate dolor ad aliquid excepturi officia eaque nemo fugit!"
+  },
+  {
+    src: "https://atc-2024-one.vercel.app/images/dummy.jpeg",
+    label: "지리산둘레길 환경 프로그램 공동 제작 & 공동마케팅 (2024년 중)",
+    content:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ipsa asperiores error deleniti esse obcaecati, perferendis fuga incidunt id dolorem iste cupiditate dolor ad aliquid excepturi officia eaque nemo fugit!"
   }
 ];
 
+const carouselIndex = ref(0);
+watch(
+  () => carouselIndex.value,
+  (n, o) => {
+    carouselRef.value.select(n + 1);
+  }
+);
+
 const carouselRef = ref();
 
-onMounted(() => {
-  setInterval(() => {
-    if (!carouselRef.value) return;
+// watch(
+//   () => carouselRef?.value?.page,
+//   (n, o) => {
+//     // carouselIndex.value = n - 1;
+//     console.log("carouselIndex.value, n :", carouselIndex.value, n);
+//     if (
+//       carouselRef?.value?.page &&
+//       carouselIndex.value !== carouselRef?.value?.page - 1
+//     ) {
+//       carouselIndex.value = carouselRef.value.page - 1;
+//     }
+//   }
+// );
+// onMounted(() => {
+// setInterval(() => {
+//   if (!carouselRef.value) return;
 
-    if (carouselRef.value.page === carouselRef.value.pages) {
-      return carouselRef.value.select(0);
-    }
+//   if (carouselRef.value.page === carouselRef.value.pages) {
+//     return carouselRef.value.select(0);
+//   }
 
-    carouselRef.value.next();
-  }, 3000);
-});
+//   carouselRef.value.next();
+// }, 3000);
+// });
 </script>
 
 <style lang="postcss" scoped>
@@ -147,23 +223,24 @@ onMounted(() => {
           @apply text-2xl lg:text-3xl font-bold mb-3 lg:mb-0 lg:mr-6 text-nowrap;
           transform: skew(-15deg);
         }
-        p.description {
+        p.content {
           @apply text-lg;
         }
       }
       .carousel {
         @apply relative;
         .item {
+          @apply relative w-full max-lg:min-h-[40vh] min-h-[45rem];
           .item-image {
-            @apply w-full;
+            @apply block absolute-center min-h-full h-full w-auto object-cover;
           }
           figcaption {
-            @apply text-center;
+            @apply text-center absolute top-0 w-full bg-white border-b border-grayscale-800;
             h6 {
-              @apply text-2xl font-bold py-2 border-b border-grayscale-800;
+              @apply text-lg lg:text-2xl font-bold py-4 px-4 border-b border-grayscale-800;
             }
             p {
-              @apply py-3 px-12;
+              @apply py-3 px-12 text-xs lg:text-sm;
             }
           }
         }
@@ -181,7 +258,7 @@ onMounted(() => {
       }
     }
     .content-cta {
-      @apply col-span-1 lg:col-span-3 border-t border-grayscale-800 flex flex-col;
+      @apply col-span-1 lg:col-span-3 border-t lg:border-r border-grayscale-800 flex flex-col bg-grayscale-200;
       .cta-header {
         @apply px-2 py-4 lg:py-7 border-b border-gray-800 text-center text-wrap;
         h5 {

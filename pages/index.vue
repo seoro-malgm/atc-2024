@@ -39,11 +39,15 @@
     <!-- 정보 섹션 -->
     <section-infos></section-infos>
     <!-- marquee -->
-    <section-marquee />
-    <header-section> ATC in Jirisan </header-section>
 
     <!-- 지리산 정보 -->
-    <section-scroll-horizontal :items="items" />
+    <section-scroll-horizontal :items="items">
+      <template #title>
+        <!-- <header-section>  -->
+        지리산에서의 ATC
+        <!-- </header-section> -->
+      </template>
+    </section-scroll-horizontal>
     <!-- 컨퍼런스 -->
     <!-- <section-conference /> -->
     <!-- 워킹 페스티벌 -->
@@ -57,6 +61,7 @@
     <section-sponsors />
     <!-- 스폰서 혜택 -->
     <section-sponsor-benefits />
+    <section-marquee />
     <!-- faq -->
     <section-faq />
     <!-- marquee -->
