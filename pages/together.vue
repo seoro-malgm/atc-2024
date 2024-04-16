@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section-sponsor-benefits></section-sponsor-benefits>
+    <section-sponsor-benefits class="-mt-[1px]"></section-sponsor-benefits>
     <!-- <section-sponsor-table></section-sponsor-table> -->
     <div>
       <ol>

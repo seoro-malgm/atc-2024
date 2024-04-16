@@ -49,7 +49,7 @@
     <!-- 워킹 페스티벌 -->
     <!-- <section-festival /> -->
     <section-subscribe />
-
+    <section-marquee />
     <!-- 참여 -->
     <!-- <section-subscribe-form /> -->
 

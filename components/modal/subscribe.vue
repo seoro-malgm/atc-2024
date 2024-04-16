@@ -56,7 +56,7 @@
           <span>
             (필수)
             <nuxt-link
-              href="/"
+              href="/terms#privacy"
               target="_blank"
               class="underline text-hawkes-blue-800"
             >
@@ -75,7 +75,7 @@
           <span>
             (선택)
             <nuxt-link
-              href="/"
+              href="/terms#ad_agree"
               target="_blank"
               class="underline text-hawkes-blue-800"
             >
