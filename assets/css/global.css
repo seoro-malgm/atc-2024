@@ -58,7 +58,7 @@
 }
 
 hr {
-  @apply mx-auto my-4 border-2 border-grayscale-800;
+  @apply mx-auto my-4 border-grayscale-800;
 }
 
 a.link {

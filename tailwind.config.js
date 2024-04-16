@@ -169,7 +169,8 @@ module.exports = {
           800: "#35389e",
           900: "#32377d",
           950: "#1d1e49"
-        }
+        },
+        orange: "#FF700A"
       },
       aspectRatio: {
         auto: "auto",

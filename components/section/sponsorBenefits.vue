@@ -10,6 +10,7 @@
             협업과 후원을 환영합니다.
           </p>
         </header>
+        <!-- <header-section class="-mt-[1px]"> 함께하기 </header-section> -->
         <UCarousel
           :items="items"
           :ui="{
