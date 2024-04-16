@@ -15,14 +15,23 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted, watch } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import { useElementBounding } from "@vueuse/core";
 const wrapper = ref();
 
 const route = useRoute();
+const router = useRouter();
 const path = computed(() => {
   return route.path;
 });
+
+watch(
+  () => path.value,
+  (n, o) => {
+    // window.scrollTo(0, 0);
+    // router.
+  }
+);
 
 const main = ref();
 const mainBounding = useElementBounding(main);

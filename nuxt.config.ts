@@ -237,7 +237,11 @@ export default defineNuxtConfig({
     global: true
   },
   // plugins
-  plugins: ["@/plugins/firebase.js", "@/plugins/authChecker.js"],
+  plugins: [
+    "@/plugins/firebase.js",
+    "@/plugins/authChecker.js",
+    "@/plugins/router.scrollBehaviour.js"
+  ],
   // nuxt-iamge
   image: {
     screens: {

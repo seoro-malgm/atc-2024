@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted, watch } from "vue";
+import { ref, watch } from "vue";
 import { useIntersectionObserver } from "@vueuse/core";
 const props = defineProps({
   headerClass: {
@@ -22,6 +22,7 @@ const targetIsVisible = ref(false);
 const { stop } = useIntersectionObserver(
   target,
   ([{ isIntersecting }], observerElement) => {
+    // console.log("isIntersecting :", isIntersecting);
     targetIsVisible.value = isIntersecting;
   }
 );
@@ -40,7 +41,7 @@ header {
     text-transform: uppercase;
 
     &.shown {
-      animation: header-shown 0.7s forwards cubic-bezier(0.645, 0.045, 0.355, 1);
+      animation: header-shown 0.4s forwards cubic-bezier(0.645, 0.045, 0.355, 1);
     }
   }
 }

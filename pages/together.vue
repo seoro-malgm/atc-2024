@@ -1,14 +1,15 @@
 <template>
   <div>
     <section-sponsor-benefits class="-mt-[1px]"></section-sponsor-benefits>
-    <!-- <section-sponsor-table></section-sponsor-table> -->
-    <div>
+    <!-- 혜택 내용 및 폼 유도 -->
+    <!-- <section-sponsor-table /> -->
+    <!-- <div>
       <ol>
         <li>혜택목록</li>
         <li>테이블에서 1열에 해당하는 목록만</li>
         <li>혜택을 가지로 "어그로"를 끌도록 해야함</li>
       </ol>
-    </div>
+    </div> -->
     <section-marquee />
     <section
       class="min-h-lvh flex items-center justify-center border-t border-grayscale-800"

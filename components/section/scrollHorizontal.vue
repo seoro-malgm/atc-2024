@@ -6,7 +6,20 @@
       ref="wrapper"
       :style="{}"
     >
-      <!-- position: state.isSticky ? 'fixed' : 'block' -->
+      <!-- header -->
+      <header class="scroll-header">
+        <div class="progress">
+          <div
+            class="bar"
+            :style="{
+              width: `${(state.scrollX / maxScroll) * 100}%`
+            }"
+          ></div>
+        </div>
+        <h2 class="title">
+          <slot name="title" />
+        </h2>
+      </header>
       <!-- wrapper -->
       <div class="horizontal-scroll-body" ref="body">
         <div class="horizontal-scroll-container" ref="container">
@@ -150,10 +163,21 @@ onUnmounted(() => {
 .horizontal-scroll {
   @apply static lg:sticky;
   background-color: white;
-
   top: 0;
   /* z-index: -1; */
   overflow: hidden;
+  .scroll-header {
+    @apply static lg:absolute lg:top-0 max-lg:mb-6 pt-8 lg:pt-[112px] pb-8 border-b border-grayscale-800 left-0 w-full z-[2] bg-purple-heart-600 text-spring-green-300;
+    .progress {
+      @apply w-full h-2 relative bg-purple-heart-600 hidden lg:block translate-y-[-30px];
+      .bar {
+        @apply absolute left-0 right-0 h-2 bg-spring-green-300;
+      }
+    }
+    h2.title {
+      @apply text-center text-3xl lg:text-5xl font-bold skew-x-[-15deg];
+    }
+  }
 
   .horizontal-scroll-body {
     position: relative;
@@ -169,9 +193,9 @@ onUnmounted(() => {
         .item {
           @apply my-0 lg:mr-[40px] relative lg:border-x border-grayscale-800;
           .item-description {
-            @apply m-0 p-4 lg:p-8 border-t border-grayscale-800 bg-white w-full lg:absolute bottom-0 z-10 lg:text-center;
+            @apply m-0 p-4 pb-6 border-t border-grayscale-800 bg-white w-full lg:absolute bottom-0 z-10 lg:text-center;
             h4 {
-              @apply text-2xl lg:text-4xl mb-2 font-bold;
+              @apply text-xl lg:text-2xl mb-1 font-bold;
             }
             p {
               @apply text-base lg:text-lg text-grayscale-600;

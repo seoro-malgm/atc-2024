@@ -1,26 +1,14 @@
 <template>
   <div id="section-subscribe">
     <header-section class="text-white border-white">
-      Walking Festival & conference
+      워킹 페스티벌 & 컨퍼런스
     </header-section>
-    <!-- <div class="p-10 pt-10 pb-4 container">
-      <p class="text-base lg:text-xl text-white">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
-        neque autem alias! Maxime cupiditate expedita cumque dolores perferendis
-        magnam odit perspiciatis quos voluptatum, enim maiores doloremque
-        placeat quidem ad eos in. Ex mollitia repudiandae ad ipsum provident
-        pariatur. Quidem autem totam, quae quaerat, temporibus rerum doloribus,
-        sint error optio similique vero nam vitae consequuntur! Incidunt, in
-        repellat! Dolores iusto est saepe tenetur. Dolores ipsam voluptate quas
-        ut veritatis quis doloribus quam quo culpa, atque distinctio corporis
-      </p>
-    </div> -->
     <!-- 내용 -->
     <section class="content">
       <!-- 티켓 1 -->
       <ticket
         :reverse="true"
-        class="-mb-2 lg:-mb-8 -ml-3 lg:-ml-24 shadow-lg w-11/12 md:5/12 lg:w-10/12 xl:w-7/12 rotate-[-5deg] relative z-[3] animation-wiggle"
+        class="-mb-2 lg:-mb-8 -ml-3 lg:-ml-24 shadow-2xl w-11/12 md:5/12 lg:w-10/12 xl:w-7/12 rotate-[-5deg] relative z-[3] animation-wiggle"
       >
         <template #body-right>
           <div
@@ -59,7 +47,7 @@
       </ticket>
       <!-- 티켓 2 -->
       <ticket
-        class="-mr-6 lg:-mr-24 shaodw-lg w-11/12 md:5/12 lg:w-10/12 xl:w-7/12 rotate-[-2deg] relative z-[2]"
+        class="-mr-6 lg:-mr-24 shadow-2xl w-11/12 md:5/12 lg:w-10/12 xl:w-7/12 rotate-[-2deg] relative z-[2]"
       >
         <template #body-left>
           <article class="flex flex-col h-full justify-between">
@@ -114,7 +102,7 @@
         </template>
       </ticket>
       <!-- 정보텍스트 -->
-      <footer class="container mx-auto">
+      <!-- <footer class="container mx-auto">
         <ul class="grid grid-cols-1 lg:grid-cols-3 gap-4 text-white">
           <li class="px-4">
             <header class="pt-3 pb-4 border-b border-white">
@@ -127,10 +115,6 @@
                 <span class="col-span-4">00:00 - 00:00</span>
                 <span class="col-span-8">자세한 일정 공개 예정</span>
               </li>
-              <!-- <li class="grid grid-cols-12 mb-2">
-                <span class="col-span-4">18:00 - 20:00</span>
-                <span class="col-span-8">송별회</span>
-              </li> -->
             </ul>
           </li>
           <li class="px-4">
@@ -174,15 +158,22 @@
             </ul>
           </li>
         </ul>
-      </footer>
+      </footer> -->
     </section>
+    <footer class="text-center mt-12">
+      <span class="text-white text-lg lg:text-xl">
+        워킹 페스티벌과 컨퍼런스의 자세한 일정은 공개 예정입니다. <br />
+        소식을 미리 구독하시면 빠르게 확인하실 수 있습니다.
+      </span>
+    </footer>
     <!-- cta -->
     <section class="cta">
       <button @click.prevent="sbuscribeModalShown = true" class="btn-cta">
-        <span> 미리 소식 구독하기 </span>
+        <span> 소식 구독하기 </span>
         <UIcon class="icon -mt-4" name="bxs:paper-plane" />
       </button>
     </section>
+
     <!-- modals -->
     <modal-subscribe
       :shown="sbuscribeModalShown"
@@ -209,11 +200,11 @@ const sbuscribeModalShown = ref(false);
   @apply bg-orange pb-24;
   /* 내용 */
   section.content {
-    @apply mx-auto min-h-screen pt-16 lg:pt-14 flex flex-col items-center;
+    @apply mx-auto min-h-screen pt-16 lg:pt-24 flex flex-col items-center;
   }
   /* cta */
   section.cta {
-    @apply sticky bottom-0 px-3 text-center z-10 pb-12 mt-24;
+    @apply sticky bottom-0 px-3 text-center z-10 pb-12 mt-8;
     .btn-cta {
       @apply py-3 px-6 lg:py-4 lg:px-10 bg-spring-green-300 shadow-xl relative;
       span,
