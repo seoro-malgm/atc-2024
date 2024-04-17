@@ -20,8 +20,8 @@
           ref="carouselRef"
           class="carousel"
           arrows
+          indicators
         >
-          <!-- indicators -->
           <template #default="{ item }">
             <figure class="item">
               <nuxt-img
@@ -38,15 +38,30 @@
           </template>
 
           <template #prev="{ onClick, disabled }">
-            <button :disabled="disabled" @click="onClick" class="btn prev">
+            <button :disabled="disabled" @click="salt -= 1" class="btn prev">
               <icon-arr dir="left" color="spring-green-400" />
             </button>
           </template>
 
           <template #next="{ onClick, disabled }">
-            <button :disabled="disabled" @click="onClick" class="btn next">
+            <button :disabled="disabled" @click="salt += 1" class="btn next">
               <icon-arr dir="right" color="spring-green-400" />
             </button>
+          </template>
+
+          <template #indicator="{ onClick, page, active }">
+            <!-- <UButton
+              :label="String(page)"
+              :variant="active ? 'solid' : 'outline'"
+              size="2xs"
+              class="rounded-full min-w-6 justify-center"
+              @click="onClick(page)"
+            /> -->
+            <button
+              class="indicator-btn"
+              :class="{ active: active }"
+              @click="salt = page - 1"
+            ></button>
           </template>
         </UCarousel>
       </div>
@@ -59,7 +74,7 @@
             <article class="benefit" :class="{ open: i === carouselIndex }">
               <header class="header-benefit">
                 <button
-                  @click="carouselIndex = i"
+                  @click="salt = i"
                   class="accordian-btn"
                   :class="{ open: i === carouselIndex }"
                 >
@@ -191,6 +206,7 @@ const items = [
 ];
 
 const carouselIndex = ref(0);
+const salt = ref(0);
 watch(
   () => carouselIndex.value,
   (n, o) => {
@@ -199,42 +215,21 @@ watch(
 );
 
 const carouselRef = ref();
+const onPrev = e => {
+  console.log("prev :", e);
+};
+const onNext = e => {
+  console.log("next :", e);
+};
 
 watch(
-  () => carouselRef?.value?.page,
+  () => salt.value,
   async (n, o) => {
-    // carouselIndex.value = n - 1;
-    // console.log("carouselIndex.value, n :", carouselIndex.value, n);
-    // if (
-    //   carouselRef?.value?.page &&
-    //   carouselIndex.value !== carouselRef?.value?.page - 1
-    // ) {
-    //   // console.log(" index,page:", {
-    //   //   index: carouselIndex.value,
-    //   //   page: carouselRef?.value?.page
-    //   // });
-    //   carouselIndex.value = carouselRef.value.page - 1;
-    // }
-    // setTimeout(() => {
-    // setimout
-    // }, 4000);
-    await nextTick(() => {
-      carouselIndex.value = n - 1;
-    });
+    if (carouselRef?.value?.page && n !== carouselRef?.value?.page - 1) {
+      carouselIndex.value = salt.value;
+    }
   }
 );
-// const testIndex = ref(0);
-// onMounted(() => {
-//   setInterval(() => {
-// if (!carouselRef.value) return;
-
-// if (carouselRef.value.page === carouselRef.value.pages) {
-//   return carouselRef.value.select(0);
-// }
-
-// carouselRef.value.next();
-//   }, 3000);
-// });
 </script>
 
 <style lang="postcss" scoped>
@@ -271,6 +266,12 @@ watch(
             p {
               @apply py-3 px-12 text-xs lg:text-sm;
             }
+          }
+        }
+        .indicator-btn {
+          @apply rounded-none h-4 w-4 lg:w-5 lg:h-5 bg-grayscale-900;
+          &.active {
+            @apply bg-spring-green-400;
           }
         }
 
