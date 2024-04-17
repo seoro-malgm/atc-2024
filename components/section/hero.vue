@@ -1,7 +1,7 @@
 <template>
   <section id="hero">
     <div class="title">
-      <h1>5th ATC HERE</h1>
+      <h1>ATC in Jirisan</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, sit
         voluptatem tempore dolore ab quasi laboriosam eum veniam nisi, tempora
@@ -30,12 +30,16 @@
 #hero {
   @apply relative;
   .title {
-    @apply absolute top-[40%] left-[50%] text-center w-11/12 lg:w-7/12 px-2 lg:px-3 text-white;
+    @apply absolute top-[40%] left-[50%] text-center w-11/12 lg:w-7/12 px-2 lg:px-3;
+    text-shadow: 0px 0px 3px #121212;
     transform: translate(-50%);
-    mix-blend-mode: difference;
+    /* mix-blend-mode: difference; */
     h1 {
-      @apply text-[72px] lg:text-[100px] font-extrabold mb-4 lg:mb-12;
-      line-height: 0.8;
+      @apply text-[72px] lg:text-[100px] font-extrabold mb-4 lg:mb-12 text-spring-green-300;
+      line-height: 0.9;
+    }
+    p {
+      @apply text-purple-heart-400;
     }
   }
   .content {

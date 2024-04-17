@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div class="py-40">스폰서에 참여하세요 !!</div>
     <section-sponsor-benefits class="-mt-[1px]"></section-sponsor-benefits>
     <!-- 혜택 내용 및 폼 유도 -->
     <!-- <section-sponsor-table /> -->
@@ -11,18 +12,8 @@
       </ol>
     </div> -->
     <section-marquee />
-    <section
-      class="min-h-lvh flex items-center justify-center border-t border-grayscale-800"
-    >
-      미팅 예약하기 폼
-      <ol>
-        <li>회사정보(이름, 담당자명)</li>
-        <li>원하는 스폰서 혜택 리스트 체크박스</li>
-        <li>원하는 미팅 날짜</li>
-        <li>가능한 미팅 방식(줌, 메일, 서면, 오프라인)</li>
-        <li>폼 결과는 => ADMIN에서 목록으로 => ATC 이메일로 발송하도록</li>
-      </ol>
-    </section>
+    <header-section> 스폰서 미팅 예약 </header-section>
+    <section id="section-meeing-form"></section>
 
     <section-marquee />
     <!-- <section

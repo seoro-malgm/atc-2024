@@ -2,48 +2,7 @@
   <div id="sponsor-benefits">
     <header-section class="-my-[1px]"> 스폰서 혜택 </header-section>
     <div class="content">
-      <div class="content-cta">
-        <UAccordion color="primary" variant="soft" size="sm" :items="items">
-          <template #default="{ item, index, open }">
-            <button
-              @click="carouselIndex = index"
-              class="border-b border-grayscale-800 transition-all-default text-bold text-lg px-4 py-2 font-bold hover:bg-spring-green-200"
-              :class="open ? 'bg-spring-green-400' : 'bg-white'"
-            >
-              {{ item.label }}
-            </button>
-          </template>
-          <template #item="{ item }">
-            <div
-              class="mt-0 px-3 py-4 border-b border-grayscale-800 bg-purple-heart-600 text-white"
-            >
-              <!-- carouselIndex: {{ carouselIndex }} -->
-              {{ item.content }}
-            </div>
-          </template>
-        </UAccordion>
-        <!-- <header class="cta-header">
-          <h5>저희와 함께하시겠어요?</h5>
-        </header>
-        <section class="cta-body">
-          <div class="body-graphic">
-            <icon-info class="icon" />
-          </div>
-          <p class="body-desc">
-            저희는 미팅을 거쳐서 스폰서 혜택을 귀사에 맞춰드릴 수 있습니다.
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-            ipsa asperiores error deleniti esse obcaecati, perferendis fuga
-            incidunt id dolorem iste cupiditate dolor ad aliquid excepturi
-            officia eaque nemo fugit!
-          </p>
-        </section>
-        <footer class="cta-footer">
-          <nuxt-link to="/together" class="link-item">
-            <span>스폰서 미팅 예약하기</span>
-            <UIcon class="icon" name="bxs:paper-plane" />
-          </nuxt-link>
-        </footer> -->
-      </div>
+      <!-- 혜택 슬라이드 -->
       <div class="content-benefit">
         <!-- <header class="benefit-header">
           <h5>함께하기</h5>
@@ -60,9 +19,9 @@
           }"
           ref="carouselRef"
           class="carousel"
+          arrows
         >
           <!-- indicators -->
-          <!-- arrows -->
           <template #default="{ item }">
             <figure class="item">
               <nuxt-img
@@ -90,6 +49,63 @@
             </button>
           </template>
         </UCarousel>
+      </div>
+      <!-- 혜택 목록 및 행동유도버튼 -->
+      <div class="content-cta">
+        <!-- <UAccordion color="primary" variant="soft" size="sm" :items="items">
+          <template #default="{ item, index, open }"> -->
+        <ul class="list-benefits">
+          <li v-for="(item, i) in items" :key="i" class="list-item">
+            <article class="benefit" :class="{ open: i === carouselIndex }">
+              <header class="header-benefit">
+                <button
+                  @click="carouselIndex = i"
+                  class="accordian-btn"
+                  :class="{ open: i === carouselIndex }"
+                >
+                  {{ item.label }}
+                  <UIcon
+                    name="ep:arrow-up-bold"
+                    class="btn-icon"
+                    :class="{ open: i === carouselIndex }"
+                  />
+                </button>
+              </header>
+              <section class="item-collapse">
+                <div class="content-collapse">
+                  {{ item.content }}
+                </div>
+              </section>
+            </article>
+          </li>
+        </ul>
+
+        <!-- </template> -->
+        <!-- <template #item="{ item }"> -->
+
+        <!-- </template> -->
+        <!-- </UAccordion> -->
+        <!-- <header class="cta-header">
+          <h5>저희와 함께하시겠어요?</h5>
+        </header>
+        <section class="cta-body">
+          <div class="body-graphic">
+            <icon-info class="icon" />
+          </div>
+          <p class="body-desc">
+            저희는 미팅을 거쳐서 스폰서 혜택을 귀사에 맞춰드릴 수 있습니다.
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+            ipsa asperiores error deleniti esse obcaecati, perferendis fuga
+            incidunt id dolorem iste cupiditate dolor ad aliquid excepturi
+            officia eaque nemo fugit!
+          </p>
+        </section>
+        <footer class="cta-footer">
+          <nuxt-link to="/together" class="link-item">
+            <span>스폰서 미팅 예약하기</span>
+            <UIcon class="icon" name="bxs:paper-plane" />
+          </nuxt-link>
+        </footer> -->
       </div>
     </div>
   </div>
@@ -184,29 +200,40 @@ watch(
 
 const carouselRef = ref();
 
-// watch(
-//   () => carouselRef?.value?.page,
-//   (n, o) => {
-//     // carouselIndex.value = n - 1;
-//     console.log("carouselIndex.value, n :", carouselIndex.value, n);
-//     if (
-//       carouselRef?.value?.page &&
-//       carouselIndex.value !== carouselRef?.value?.page - 1
-//     ) {
-//       carouselIndex.value = carouselRef.value.page - 1;
-//     }
-//   }
-// );
+watch(
+  () => carouselRef?.value?.page,
+  async (n, o) => {
+    // carouselIndex.value = n - 1;
+    // console.log("carouselIndex.value, n :", carouselIndex.value, n);
+    // if (
+    //   carouselRef?.value?.page &&
+    //   carouselIndex.value !== carouselRef?.value?.page - 1
+    // ) {
+    //   // console.log(" index,page:", {
+    //   //   index: carouselIndex.value,
+    //   //   page: carouselRef?.value?.page
+    //   // });
+    //   carouselIndex.value = carouselRef.value.page - 1;
+    // }
+    // setTimeout(() => {
+    // setimout
+    // }, 4000);
+    await nextTick(() => {
+      carouselIndex.value = n - 1;
+    });
+  }
+);
+// const testIndex = ref(0);
 // onMounted(() => {
-// setInterval(() => {
-//   if (!carouselRef.value) return;
+//   setInterval(() => {
+// if (!carouselRef.value) return;
 
-//   if (carouselRef.value.page === carouselRef.value.pages) {
-//     return carouselRef.value.select(0);
-//   }
+// if (carouselRef.value.page === carouselRef.value.pages) {
+//   return carouselRef.value.select(0);
+// }
 
-//   carouselRef.value.next();
-// }, 3000);
+// carouselRef.value.next();
+//   }, 3000);
 // });
 </script>
 
@@ -215,8 +242,10 @@ const carouselRef = ref();
   /* @apply */
   .content {
     @apply grid grid-cols-1 lg:grid-cols-12;
+
+    /* 혜택 이미지 */
     .content-benefit {
-      @apply col-span-1 lg:col-span-9 border-t lg:border-r border-grayscale-800;
+      @apply col-span-1 lg:col-span-8 border-t lg:border-r border-grayscale-800;
       .benefit-header {
         @apply p-4 lg:py-[1.11rem] border-b border-grayscale-800 flex flex-col lg:flex-row items-start lg:items-center;
         h5 {
@@ -230,7 +259,7 @@ const carouselRef = ref();
       .carousel {
         @apply relative;
         .item {
-          @apply relative w-full max-lg:min-h-[40vh] min-h-[45rem];
+          @apply relative w-full max-lg:min-h-[40vh] min-h-[48rem];
           .item-image {
             @apply block absolute-center min-h-full h-full w-auto object-cover;
           }
@@ -257,8 +286,9 @@ const carouselRef = ref();
         }
       }
     }
+    /* 혜택 목록 및 행동유도버튼 */
     .content-cta {
-      @apply col-span-1 lg:col-span-3 border-t lg:border-r border-grayscale-800 flex flex-col bg-grayscale-200;
+      @apply col-span-1 lg:col-span-4 border-t lg:border-r border-grayscale-800 flex flex-col bg-grayscale-100;
       .cta-header {
         @apply px-2 py-4 lg:py-7 border-b border-gray-800 text-center text-wrap;
         h5 {
@@ -266,7 +296,44 @@ const carouselRef = ref();
           transform: skew(-15deg);
         }
       }
-      .cta-body {
+
+      .list-benefits {
+        /* @apply  */
+        .list-item {
+          /* @apply  */
+          .benefit {
+            @apply overflow-hidden;
+            .header-benefit {
+              @apply p-2;
+              .accordian-btn {
+                @apply transition-all-default font-semibold px-4 py-2 border hover:bg-spring-green-500 rounded-md bg-white border-grayscale-800 w-full flex justify-between items-start text-left;
+                .btn-icon {
+                  @apply transition-all-default translate-y-1;
+                }
+                &.open {
+                  @apply bg-spring-green-400 border-spring-green-400;
+                  .btn-icon {
+                    @apply rotate-180 translate-y-1;
+                  }
+                }
+              }
+            }
+            .item-collapse {
+              @apply h-0 max-h-0 transition-all-default overflow-hidden;
+              .content-collapse {
+                @apply px-3 py-4  border-b border-grayscale-800 bg-purple-heart-600 text-white;
+              }
+            }
+            &.open {
+              .item-collapse {
+                @apply h-[inherit] max-h-[9999rem];
+              }
+            }
+          }
+        }
+      }
+
+      /* .cta-body {
         .body-graphic {
           @apply p-8 lg:p-12 bg-baja-white-100 border-b border-gray-800;
           .icon {
@@ -276,7 +343,8 @@ const carouselRef = ref();
         .body-desc {
           @apply p-5 lg:p-6;
         }
-      }
+      } */
+
       .cta-footer {
         @apply text-center border-t border-gray-800 mt-auto;
         .link-item {

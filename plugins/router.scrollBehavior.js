@@ -1,6 +1,5 @@
 export default defineNuxtPlugin(nuxtApp => {
   nuxtApp.$router.options.scrollBehavior = (to, from, savedPosition) => {
-    console.log("to, from :", to, from);
     if (savedPosition) return savedPosition;
 
     if (to.hash) {

@@ -92,7 +92,7 @@ const toggle = index => {
       .faq {
         /* 질문영역 */
         .faq-header {
-          @apply px-2 py-4 border-collapse relative overflow-hidden transition-all-default;
+          @apply px-2 py-4 border-collapse relative overflow-hidden transition-all-default max-lg:text-sm;
           &::before {
             @apply absolute top-[50%] left-[50%] w-full h-0 py-20  block bg-classic-rose-200 opacity-0;
             z-index: -1;
@@ -110,10 +110,10 @@ const toggle = index => {
           .faq-q {
             @apply flex items-start container;
             strong {
-              @apply text-lg md:text-xl font-bold mr-2 text-hawkes-blue-600;
+              @apply lg:text-xl font-bold mr-2 text-hawkes-blue-600;
             }
             span.text {
-              @apply px-2 text-lg md:text-xl font-bold text-left;
+              @apply px-1 lg:text-xl font-bold text-left;
             }
           }
         }
@@ -122,21 +122,21 @@ const toggle = index => {
           .faq-collapse {
             @apply border-t border-grayscale-800 transition-all-default;
             max-height: 0;
-            transition-duration: 0.4s;
+            transition-duration: 10s;
             overflow: hidden;
             .collapse-content {
               @apply h-0 border-grayscale-800;
             }
           }
           .collapse-content {
-            @apply text-grayscale-900 bg-baja-white-100;
+            @apply text-grayscale-900 bg-baja-white-100 max-lg:text-sm;
             .content {
               @apply container flex items-start;
               strong {
-                @apply px-2 py-4 text-lg md:text-xl font-bold;
+                @apply px-2 py-4 lg:text-xl font-bold;
               }
               p.text {
-                @apply px-2 py-4 text-lg md:text-xl;
+                @apply px-1 pt-4 pb-8 lg:text-xl;
               }
             }
           }
@@ -152,7 +152,7 @@ const toggle = index => {
           }
           .faq-a {
             .faq-collapse {
-              max-height: 40rem;
+              max-height: 9999rem;
               .collapse-content {
                 height: inherit;
               }

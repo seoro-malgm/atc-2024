@@ -4,7 +4,6 @@
       class="horizontal-scroll"
       :class="{ 'is-mobile-view': isMobileView }"
       ref="wrapper"
-      :style="{}"
     >
       <!-- header -->
       <header class="scroll-header">
@@ -167,9 +166,9 @@ onUnmounted(() => {
   /* z-index: -1; */
   overflow: hidden;
   .scroll-header {
-    @apply static lg:absolute lg:top-0 max-lg:mb-6 pt-8 lg:pt-[112px] pb-8 border-b border-grayscale-800 left-0 w-full z-[2] bg-purple-heart-600 text-spring-green-300;
+    @apply static lg:absolute lg:top-0 max-lg:mb-6 pt-8 lg:pt-[112px] pb-8 border-b border-grayscale-800 left-0 w-full z-[2] bg-white;
     .progress {
-      @apply w-full h-2 relative bg-purple-heart-600 hidden lg:block translate-y-[-30px];
+      @apply w-full h-2 relative bg-white lg:block translate-y-[-30px];
       .bar {
         @apply absolute left-0 right-0 h-2 bg-spring-green-300;
       }

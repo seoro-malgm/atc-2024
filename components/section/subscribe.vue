@@ -1,14 +1,12 @@
 <template>
   <div id="section-subscribe">
-    <header-section class="text-white border-white">
-      워킹 페스티벌 & 컨퍼런스
-    </header-section>
+    <header-section class="bg-white"> 워킹 페스티벌 & 컨퍼런스 </header-section>
     <!-- 내용 -->
     <section class="content">
       <!-- 티켓 1 -->
       <ticket
         :reverse="true"
-        class="-mb-2 lg:-mb-8 -ml-3 lg:-ml-24 shadow-2xl w-11/12 md:5/12 lg:w-10/12 xl:w-7/12 rotate-[-5deg] relative z-[3] animation-wiggle"
+        class="-mb-2 lg:-mb-12 -ml-3 lg:-ml-24 shadow-2xl w-11/12 md:w-9/12 lg:w-6/12 rotate-[-5deg] relative z-[3] animation-wiggle"
       >
         <template #body-right>
           <div
@@ -30,15 +28,12 @@
           </div>
         </template>
         <template #body-left>
-          <section class="bg-[#FFFAE6] p-6 lg:p-16 h-full">
-            <h6
-              class="text-xl md:text-3xl xl:text-5xl font-bold text-crusoer-900"
-            >
-              지리산둘레길 <br class="block lg:hidden" />
-              걷기 축제 1
+          <section class="bg-[#FFFAE6] p-6 md:p-8 xl:p-16 h-full">
+            <h6 class="text-sm md:text-3xl font-bold text-crusoer-900">
+              지리산둘레길 걷기 축제 1
             </h6>
-            <hr class="my-3 lg:my-6 border-1" />
-            <p class="text-sm lg:text-2xl text-grayscale-800">
+            <hr class="my-3 lg:my-3 border-1" />
+            <p class="text-xs lg:text-lg text-grayscale-800">
               먹거리와 마실거리 그리고 음악이 함께하는 축제 <br />
               A festival with food, drinks, and music
             </p>
@@ -47,7 +42,7 @@
       </ticket>
       <!-- 티켓 2 -->
       <ticket
-        class="-mr-6 lg:-mr-24 shadow-2xl w-11/12 md:5/12 lg:w-10/12 xl:w-7/12 rotate-[-2deg] relative z-[2]"
+        class="-mr-6 lg:-mr-24 shadow-2xl w-11/12 md:w-9/12 lg:w-6/12 rotate-[-2deg] relative z-[2]"
       >
         <template #body-left>
           <article class="flex flex-col h-full justify-between">
@@ -59,9 +54,7 @@
                   2
                 </div>
               </header>
-              <h6
-                class="text-xl md:text-3xl xl:text-5xl font-bold text-crusoer-900"
-              >
+              <h6 class="text-sm md:text-3xl font-bold text-crusoer-900">
                 지리산둘레길 <br />
                 걷기 축제 2
               </h6>
@@ -82,7 +75,7 @@
       <!-- 티켓 3 -->
       <ticket
         :reverse="true"
-        class="mb-16 -ml-3 lg:-ml-24 shadow-lg w-11/12 md:5/12 lg:w-10/12 xl:w-6/12 rotate-[4deg] relative z-[1]"
+        class="-ml-3 lg:-ml-40 lg:-mt-10 shadow-lg w-11/12 md:w-9/12 lg:w-6/12 rotate-[4deg] relative z-[1]"
       >
         <template #body-right>
           <img
@@ -92,13 +85,18 @@
           />
         </template>
         <template #body-left>
-          <section class="bg-[#FFFAE6] p-6 lg:p-16 h-full">
-            <h6
-              class="text-xl md:text-3xl xl:text-5xl font-bold text-crusoer-900"
-            >
-              제 5회 아시아 트레일즈 컨퍼런스 (ATC)
-            </h6>
-          </section>
+          <article class="flex flex-col h-full justify-between">
+            <section class="bg-[#FFFAE6] p-4 lg:p-16 h-full">
+              <header class="flex justify-end">
+                <h6 class="text-sm md:text-3xl font-bold text-crusoer-900">
+                  제 5회 아시아 트레일즈 컨퍼런스 (ATC)
+                </h6>
+              </header>
+            </section>
+            <footer class="bg-crusoer-900 text-white px-4 py-2 text-sm">
+              5th ASIA TRAILS CONFERENCE (ATC) 2024
+            </footer>
+          </article>
         </template>
       </ticket>
       <!-- 정보텍스트 -->
@@ -160,8 +158,8 @@
         </ul>
       </footer> -->
     </section>
-    <footer class="text-center mt-12">
-      <span class="text-white text-lg lg:text-xl">
+    <footer class="text-center px-4 max-md:-mt-[24rem] md:-mt-24">
+      <span class="lg:text-xl">
         워킹 페스티벌과 컨퍼런스의 자세한 일정은 공개 예정입니다. <br />
         소식을 미리 구독하시면 빠르게 확인하실 수 있습니다.
       </span>
@@ -197,7 +195,7 @@ const sbuscribeModalShown = ref(false);
 
 <style lang="postcss" scoped>
 #section-subscribe {
-  @apply bg-orange pb-24;
+  @apply pb-24;
   /* 내용 */
   section.content {
     @apply mx-auto min-h-screen pt-16 lg:pt-24 flex flex-col items-center;
@@ -206,7 +204,7 @@ const sbuscribeModalShown = ref(false);
   section.cta {
     @apply sticky bottom-0 px-3 text-center z-10 pb-12 mt-8;
     .btn-cta {
-      @apply py-3 px-6 lg:py-4 lg:px-10 bg-spring-green-300 shadow-xl relative;
+      @apply py-3 px-6 lg:py-4 lg:px-10 bg-spring-green-300 shadow-xl relative rounded-lg;
       span,
       .icon {
         @apply inline-block transition-all-default font-semibold text-2xl lg:text-3xl;

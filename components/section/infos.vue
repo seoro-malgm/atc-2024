@@ -73,10 +73,7 @@
                   <icon-forest addClass="fill-spring-green-300" />
                 </div>
                 <div class="col-span-8 lg:col-span-10 p-4 xl:p-8">
-                  <div class="date">
-                    2024. 10. 26. <br class="block md:hidden" />
-                    - 10. 27.
-                  </div>
+                  <div class="date">2024. 10. 26. - 10. 27.</div>
                   <div class="content">
                     2024 지리산둘레길 걷기축제 및 부대행사 ATC
                   </div>
@@ -174,19 +171,19 @@ const mousePosition = computed(() => {
           @apply text-3xl lg:text-5xl p-6 xl:p-12;
         } */
         p.description {
-          @apply text-lg lg:text-2xl p-8;
-          line-height: 1.3;
+          @apply lg:text-2xl p-8;
+          line-height: 1.4;
         }
         /* 시간정보 */
         .list-dates {
           > .list-item {
             @apply border-b border-spring-green-300;
             .date {
-              @apply text-3xl lg:text-5xl font-bold mb-4 text-spring-green-300 leading-8 mt-1;
+              @apply text-xl lg:text-5xl font-bold mb-1 lg:mb-4 text-spring-green-300 leading-8 mt-1;
               letter-spacing: -0.3px;
             }
             .content {
-              @apply text-2xl lg:text-4xl font-semibold;
+              @apply text-lg lg:text-4xl font-semibold;
             }
           }
           /* 장소 정보 */

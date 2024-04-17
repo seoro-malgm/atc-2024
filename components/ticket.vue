@@ -1,9 +1,15 @@
 <template>
   <div class="ticket">
-    <div class="col col-span-6" :class="reverse ? 'order-2' : 'order-1'">
+    <div
+      class="col max-lg:col-span-5 col-span-6"
+      :class="reverse ? 'order-2' : 'order-1'"
+    >
       <slot name="body-left" />
     </div>
-    <div class="col col-span-3" :class="reverse ? 'order-1' : 'order-2'">
+    <div
+      class="col max-lg:col-span-4 col-span-3"
+      :class="reverse ? 'order-1' : 'order-2'"
+    >
       <slot name="body-right" />
     </div>
   </div>

@@ -36,7 +36,7 @@ header {
   background-repeat: no-repeat;
   background-size: contain;
   h4 {
-    @apply font-extrabold text-4xl lg:text-[4rem];
+    @apply font-extrabold text-2xl lg:text-4xl lg:text-[4rem];
     transform: translate(-300%);
     text-transform: uppercase;
 

@@ -61,6 +61,9 @@
     <section-sponsors />
     <!-- 스폰서 혜택 -->
     <section-sponsor-benefits />
+    <section class="py-40 text-center border-t bg-spring-green-400">
+      스폰서가 될 기회입니다. 이동하기 버튼
+    </section>
     <section-marquee />
     <!-- faq -->
     <section-faq />

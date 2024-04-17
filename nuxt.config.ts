@@ -207,7 +207,8 @@ export default defineNuxtConfig({
         //   type: "text/javascript"
         // }
       ]
-    }
+    },
+    pageTransition: { name: "page", mode: "out-in" }
   },
   // router
   router: {
