@@ -23,14 +23,28 @@
           <ul class="list-link">
             <li v-for="(item, i) in linkList" :key="i" class="list-item">
               <template v-if="item?.disabled">
-                <UTooltip text="준비중입니다." :popper="{ arrow: true }">
-                  <span class="link-item disabled">
+                <UTooltip
+                  text="준비중입니다."
+                  :popper="{ arrow: true }"
+                  class="lg::py-3 h-full flex"
+                >
+                  <a
+                    class="link-item disabled"
+                    :class="{ disabled: item?.disabled }"
+                    :disabled="item.disabled"
+                  >
                     {{ item.name }}
-                  </span>
+                    <div class="block lg:hidden">(준비중입니다)</div>
+                  </a>
                 </UTooltip>
               </template>
               <template v-else>
-                <nuxt-link :to="item.url" class="link-item">
+                <nuxt-link
+                  :to="item.url"
+                  class="link-item"
+                  :class="{ disabled: item?.disabled }"
+                  :disabled="item.disabled"
+                >
                   {{ item.name }}
                 </nuxt-link>
               </template>
@@ -116,19 +130,19 @@ watch(
   }
 
   .global-header-nav {
-    @apply pb-2 flex items-center justify-between container mx-auto;
+    @apply flex items-center justify-between container mx-auto;
     .logo {
-      @apply px-3 pt-3 pb-1 lg:px-4 lg:pt-4 lg:pb-2 max-xl:w-[150px] xl:w-3/12 max-w-[150px];
+      @apply max-lg:py-2 max-lg:px-4 lg:py-3 lg:px-4 max-lg:w-[150px] lg:w-3/12 max-w-[150px];
       img {
         @apply w-full;
       }
     }
     .nav-section {
-      @apply px-3 lg:px-4 lg:mt-2;
+      @apply max-lg:px-4 max-lg:py-2 lg:self-stretch;
       .nav-toggler {
         @apply block lg:hidden;
         .toggler {
-          @apply flex flex-col justify-between w-6 h-6 mt-2 mr-1;
+          @apply flex flex-col justify-between w-6 h-6 mr-1;
           .line {
             @apply block w-full h-1 my-auto bg-black transition-all-default;
             transition: all 0.3s;
@@ -151,23 +165,23 @@ watch(
         }
       }
       .util {
-        @apply block absolute lg:static max-lg:z-[1050] max-lg:translate-x-[-50%] max-lg:w-full max-lg:top-[77px] max-lg:left-[50%] max-lg:translate-y-[-20px] max-lg:opacity-0 max-lg:pointer-events-none;
+        @apply block absolute lg:static max-lg:z-[1050] max-lg:translate-x-[-50%] max-lg:w-full max-lg:top-[77px] max-lg:left-[50%] max-lg:translate-y-[-20px] max-lg:opacity-0 max-lg:pointer-events-none lg:h-full bg-white;
         transition: all 0.3s ease-in-out;
         &.shown {
           @apply max-lg:bg-white max-lg:translate-y-[0] max-lg:opacity-100 max-lg:pointer-events-auto;
         }
         .list-link {
-          @apply flex max-lg:flex-col items-center;
+          @apply lg:flex lg:items-stretch max-h-[inherit] lg:h-full;
           .list-item {
             @apply lg:ml-4 max-lg:w-full max-lg:text-center font-semibold text-grayscale-900;
             .link-item {
-              @apply block w-full text-lg lg:text-xl max-lg:py-3 px-4 hover:text-purple-heart-600 hover:underline;
+              @apply w-full text-lg h-full lg:text-xl max-lg:py-3 px-8 self-stretch hover:bg-purple-heart-400 hover:text-spring-green-400  border-x border-grayscale-800 flex items-center justify-center transition-all-default;
               &.active,
               &.exact-active {
                 @apply bg-purple-heart-600 text-spring-green-300;
               }
               &.disabled {
-                @apply text-grayscale-600 opacity-25;
+                @apply max-lg:py-3 text-grayscale-700 my-auto opacity-25 bg-grayscale-300;
               }
             }
           }

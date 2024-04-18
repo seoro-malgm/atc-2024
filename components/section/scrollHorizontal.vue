@@ -168,7 +168,7 @@ onUnmounted(() => {
   .scroll-header {
     @apply static lg:absolute lg:top-0 max-lg:mb-6 pt-8 lg:pt-[112px] pb-8 border-b border-grayscale-800 left-0 w-full z-[2] bg-white;
     .progress {
-      @apply w-full h-2 relative bg-white lg:block translate-y-[-30px];
+      @apply w-full h-2 relative bg-white lg:block translate-y-[-37px];
       .bar {
         @apply absolute left-0 right-0 h-2 bg-spring-green-300;
       }
@@ -209,9 +209,9 @@ onUnmounted(() => {
             width: 100vw;
             padding-bottom: 100vh;
             @media all and (min-width: 1024px) {
-              padding-bottom: calc(100vh - 59px); /** marquee 높이 제거 */
+              padding-bottom: calc(100vh - 73px); /** marquee 높이 제거 */
 
-              /* max-height: calc(100vh - 59px); */
+              /* max-height: calc(100vh - 73px); */
             }
             overflow: hidden;
 
@@ -242,7 +242,7 @@ onUnmounted(() => {
     @apply lg:mt-[68px];
     .horizontal-scroll-section {
       @media all and (min-width: 1024px) {
-        max-height: calc(100vh - 59px);
+        max-height: calc(100vh - 73px);
       }
       .item {
         @apply mb-8;

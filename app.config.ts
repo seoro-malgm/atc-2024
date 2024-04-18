@@ -59,6 +59,12 @@ export default defineAppConfig({
         active: "bg-spring-green-500 dark:bg-spring-green-400",
         inactive: "bg-hawkes-blue-900 dark:bg-gray-800 mix-blend-overlay"
       }
+    },
+    selectMenu: {
+      rounded: "rounded-none",
+      option: {
+        rounded: "rounded-none"
+      }
     }
   }
 });

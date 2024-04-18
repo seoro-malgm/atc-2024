@@ -61,19 +61,72 @@
     <section-sponsors />
     <!-- 스폰서 혜택 -->
     <section-sponsor-benefits />
-    <section class="py-40 text-center border-t bg-spring-green-400">
-      스폰서가 될 기회입니다. 이동하기 버튼
+    <section
+      id="section-cta"
+      class="py-24 bg-purple-heart-500 relative overflow-hidden"
+      ref="target"
+    >
+      <div class="relative z-[2]">
+        <header class="text-center text-white px-8">
+          <h3 class="text-center text-2xl lg:text-4xl font-extrabold mb-2">
+            ATC의 정식 스폰서가 되어주세요.
+          </h3>
+          <p class="desc">
+            ATC의 스폰서는 미팅을 통해 결정하여, <br />
+            원하는 서비스를 제공받으실 수 있습니다.
+          </p>
+        </header>
+
+        <section class="cta">
+          <nuxt-link to="/together#section-meeing-form" class="btn-cta">
+            <span> 미팅 예약하기 </span>
+            <UIcon class="icon -mt-4" name="bxs:paper-plane" />
+          </nuxt-link>
+        </section>
+      </div>
+
+      <logo-symbol-text
+        class="symbol top-0 left-0 w-[70vw] lg:w-[50vw]"
+        add-class="fill-white opacity-20"
+        :style="
+          mousePosition.isOutside
+            ? {
+                transform: 'translate(-25%, 0)'
+              }
+            : {
+                transform: `translate(${-50 + mousePosition.x * 0.02}%, ${
+                  -50 + mousePosition.y * 0.2
+                }%)`
+              }
+        "
+      />
+      <logo-symbol-arr
+        class="symbol right-0 bottom-0 w-[80vw] lg:w-[30vw]"
+        add-class="fill-white opacity-20"
+        :style="
+          mousePosition.isOutside
+            ? {
+                transform: 'translate(25%, 0)'
+              }
+            : {
+                transform: `translate(${0 - mousePosition.x * 0.004}%, ${
+                  -50 + mousePosition.y * 0.2
+                }%)`
+              }
+        "
+      />
     </section>
     <section-marquee />
     <!-- faq -->
-    <section-faq />
+    <section-faq class="-mb-[1px]" />
     <!-- marquee -->
-    <section-marquee />
+    <!-- <section-marquee /> -->
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
+import { useMouseInElement } from "@vueuse/core";
 
 const items = ref([
   {
@@ -115,6 +168,46 @@ const items = ref([
     }
   }
 ]);
+
+const target = ref();
+const { elementX, elementY, isOutside } = useMouseInElement(target);
+const mousePosition = computed(() => {
+  return {
+    isOutside: isOutside.value,
+    x: elementX.value,
+    y: elementY.value
+  };
+});
 </script>
 
-<style lang="postcss" scoped></style>
+<style lang="postcss" scoped>
+#section-cta {
+  .symbol {
+    @apply absolute;
+    transition: transform 0.12s ease-out;
+    pointer-events: none;
+    z-index: 1;
+  }
+  section.cta {
+    @apply mt-8 text-center;
+    .btn-cta {
+      @apply px-5 py-3 bg-spring-green-300;
+      span,
+      .icon {
+        @apply inline-block transition-all-default font-semibold text-xl;
+      }
+      .icon {
+        @apply text-2xl mt-[-3px] ml-1;
+      }
+      &:hover {
+        span {
+          transform: skew(-15deg);
+        }
+        .icon {
+          transform: translate(4px, -4px);
+        }
+      }
+    }
+  }
+}
+</style>

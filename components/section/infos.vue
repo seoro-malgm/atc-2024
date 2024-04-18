@@ -107,20 +107,28 @@
     <logo-symbol-text
       class="symbol -top-6 -left-6 w-[70vw] lg:w-[45vw]"
       add-class="fill-white opacity-20"
-      :style="{
-        transform: `translate(${mousePosition.x * 0.02}px, ${
-          mousePosition.y * 0.03
-        }px)`
-      }"
+      :style="
+        mousePosition.isOutside
+          ? {}
+          : {
+              transform: `translate(${mousePosition.x * 0.02}px, ${
+                mousePosition.y * 0.03
+              }px)`
+            }
+      "
     />
     <logo-symbol-arr
       class="symbol -right-2 -bottom-2 w-[55vw] lg:w-[20vw]"
       add-class="fill-white opacity-20"
-      :style="{
-        transform: `translate(${-mousePosition.x * 0.02}px, ${
-          -mousePosition.y * 0.03
-        }px)`
-      }"
+      :style="
+        mousePosition.isOutside
+          ? {}
+          : {
+              transform: `translate(${-mousePosition.x * 0.02}px, ${
+                -mousePosition.y * 0.03
+              }px)`
+            }
+      "
     />
     <!-- mousePosition: {{ mousePosition.x * 0.3 }} -->
   </div>
@@ -130,18 +138,18 @@
 import { ref } from "vue";
 import { useMouseInElement } from "@vueuse/core";
 
-const props = defineProps({
-  data: {
-    type: String,
-    default: null
-  }
-});
+// const props = defineProps({
+//   data: {
+//     type: String,
+//     default: null
+//   }
+// });
+
 const target = ref();
-
-const { elementX, elementY } = useMouseInElement(target);
-
+const { elementX, elementY, isOutside } = useMouseInElement(target);
 const mousePosition = computed(() => {
   return {
+    isOutside: isOutside.value,
     x: elementX.value,
     y: elementY.value
   };

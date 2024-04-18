@@ -46,7 +46,7 @@ const pinned = computed(() => {
   @apply mx-2 lg:mx-4 my-2 lg:my-4 border border-grayscale-800;
 
   #main {
-    @apply pt-[68px] lg:pt-[56px];
+    @apply pt-[58px] lg:pt-[73px];
     &.pinned {
       @apply lg:pt-0;
     }

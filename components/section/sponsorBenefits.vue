@@ -127,83 +127,12 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted, watch } from "vue";
-const props = defineProps({
-  data: {
-    type: String,
-    default: null
-  }
-});
+import { ref, computed, watch } from "vue";
+import benefitList from "@/data/benefitList";
 
-const items = [
-  {
-    src: "https://atc-2024-one.vercel.app/images/dummy.jpeg",
-    label: "컨퍼런스 스피치 세션 발표",
-    defaultOpen: true,
-    content:
-      "최대 20분간 세션을 발표할 수 있습니다. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ipsa asperiores error deleniti esse obcaecati, perferendis fuga incidunt id dolorem iste cupiditate dolor ad aliquid excepturi officia eaque nemo fugit!"
-  },
-  {
-    src: "https://atc-2024-one.vercel.app/images/dummy.jpeg",
-    label: "컨퍼런스 세션 중간 기업 광고 영상 송출",
-    content:
-      "짧고 강하게, 중간광고를 송출 가능 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ipsa asperiores error deleniti esse obcaecati, perferendis fuga incidunt id dolorem iste cupiditate dolor ad aliquid excepturi officia eaque nemo fugit!"
-  },
-  {
-    src: "https://atc-2024-one.vercel.app/images/dummy.jpeg",
-    label: "컨퍼런스 책자 내 기업 광고 (국/영문)",
-    content:
-      " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ipsa asperiores error deleniti esse obcaecati, perferendis fuga incidunt id dolorem iste cupiditate dolor ad aliquid excepturi officia eaque nemo fugit!"
-  },
-  {
-    src: "https://atc-2024-one.vercel.app/images/dummy.jpeg",
-    label: "걷기축제 시작점 / 종점 부스",
-    content:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ipsa asperiores error deleniti esse obcaecati, perferendis fuga incidunt id dolorem iste cupiditate dolor ad aliquid excepturi officia eaque nemo fugit!"
-  },
-  {
-    src: "https://atc-2024-one.vercel.app/images/dummy.jpeg",
-    label: "걷기축제 공식 홍보 영상 내 제품 노출",
-    content:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ipsa asperiores error deleniti esse obcaecati, perferendis fuga incidunt id dolorem iste cupiditate dolor ad aliquid excepturi officia eaque nemo fugit!"
-  },
-  {
-    src: "https://atc-2024-one.vercel.app/images/dummy.jpeg",
-    label: "걷기축제 프로그램 가이드 내 기업 광고  (국/영문)",
-    content:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ipsa asperiores error deleniti esse obcaecati, perferendis fuga incidunt id dolorem iste cupiditate dolor ad aliquid excepturi officia eaque nemo fugit!"
-  },
-  {
-    src: "https://atc-2024-one.vercel.app/images/dummy.jpeg",
-    label: "기업 제품 증정품 지급(굿즈 패키지)",
-    content:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ipsa asperiores error deleniti esse obcaecati, perferendis fuga incidunt id dolorem iste cupiditate dolor ad aliquid excepturi officia eaque nemo fugit!"
-  },
-  {
-    src: "https://atc-2024-one.vercel.app/images/dummy.jpeg",
-    label: "기업 로고 노출 위치",
-    content:
-      "참여자 등번호, 현수막,스탠딩배너, 포스터, 웹사이트 등에 브랜드를 홍보하세요"
-  },
-  {
-    src: "https://atc-2024-one.vercel.app/images/dummy.jpeg",
-    label: "사전 마케팅 캠페인 공동 제작",
-    content:
-      "ATC를 홍보하는 마케팅의 초입부터 함께 공동으로 제작에 참여하실 수 있습니다."
-  },
-  {
-    src: "https://atc-2024-one.vercel.app/images/dummy.jpeg",
-    label: "지리산둘레길 공식 안내 책자 내 기업 광고",
-    content:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ipsa asperiores error deleniti esse obcaecati, perferendis fuga incidunt id dolorem iste cupiditate dolor ad aliquid excepturi officia eaque nemo fugit!"
-  },
-  {
-    src: "https://atc-2024-one.vercel.app/images/dummy.jpeg",
-    label: "지리산둘레길 환경 프로그램 공동 제작 & 공동마케팅 (2024년 중)",
-    content:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ipsa asperiores error deleniti esse obcaecati, perferendis fuga incidunt id dolorem iste cupiditate dolor ad aliquid excepturi officia eaque nemo fugit!"
-  }
-];
+const items = computed(() => {
+  return benefitList;
+});
 
 const carouselIndex = ref(0);
 const salt = ref(0);
@@ -323,11 +252,12 @@ watch(
               @apply h-0 max-h-0 transition-all-default overflow-hidden;
               .content-collapse {
                 @apply px-3 py-4  border-b border-grayscale-800 bg-purple-heart-600 text-white;
+                transition-duration: 15s;
               }
             }
             &.open {
               .item-collapse {
-                @apply h-[inherit] max-h-[9999rem];
+                @apply h-[inherit] max-h-[10rem];
               }
             }
           }
