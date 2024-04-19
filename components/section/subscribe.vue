@@ -6,7 +6,7 @@
       <!-- 티켓 1 -->
       <ticket
         :reverse="true"
-        class="-mb-2 lg:-mb-12 -ml-3 lg:-ml-24 shadow-2xl w-11/12 md:w-9/12 lg:w-6/12 rotate-[-5deg] relative z-[3] animation-wiggle"
+        class="-mb-2 lg:-mb-12 -ml-3 lg:-ml-24 shadow-2xl w-11/12 md:w-9/12 lg:w-7/12 rotate-[-5deg] relative z-[3] animation-wiggle"
       >
         <template #body-right>
           <div
@@ -42,7 +42,7 @@
       </ticket>
       <!-- 티켓 2 -->
       <ticket
-        class="-mr-6 lg:-mr-24 shadow-2xl w-11/12 md:w-9/12 lg:w-6/12 rotate-[-2deg] relative z-[2]"
+        class="-mr-6 lg:-mr-24 shadow-2xl w-11/12 md:w-9/12 lg:w-7/12 rotate-[-2deg] relative z-[2]"
       >
         <template #body-left>
           <article class="flex flex-col h-full justify-between">
@@ -75,7 +75,7 @@
       <!-- 티켓 3 -->
       <ticket
         :reverse="true"
-        class="-ml-3 lg:-ml-40 lg:-mt-10 shadow-lg w-11/12 md:w-9/12 lg:w-6/12 rotate-[4deg] relative z-[1]"
+        class="-ml-3 lg:-ml-40 lg:-mt-10 shadow-lg w-11/12 md:w-9/12 lg:w-7/12 rotate-[4deg] relative z-[1]"
       >
         <template #body-right>
           <img

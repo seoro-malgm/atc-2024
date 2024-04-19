@@ -107,11 +107,9 @@ const containerBounds = useElementBounding(container);
 
 const maxScroll = computed(() => {
   const length = props.items.length;
-  return bodyBounds.width.value * (length - 1) + (length + 1) * 40 + 160;
-});
-
-const scrollHeight = computed(() => {
-  return data;
+  const margin = 40;
+  const gnbHeight = 78;
+  return (bodyBounds.width.value + margin) * length - margin - gnbHeight;
 });
 
 // 상태업데이트
@@ -204,7 +202,7 @@ onUnmounted(() => {
           min-width: 100vw;
           height: auto;
           figure.item-image-wrapper {
-            @apply border-grayscale-800 border-x;
+            @apply border-grayscale-800 lg:border-x;
             position: relative;
             width: 100vw;
             padding-bottom: 100vh;
@@ -218,13 +216,12 @@ onUnmounted(() => {
             > img {
               /* width: auto;
               height: 100%; */
-              width: 100%;
-              height: auto;
-              @apply w-[auto] h-full lg:w-full lg:h-[auto] object-fill;
-              position: absolute;
+
+              @apply w-[auto] h-full lg:w-full lg:h-[auto] absolute-center;
+              /* position: absolute;
               top: 50%;
               left: 50%;
-              transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%); */
             }
           }
         }
@@ -260,7 +257,7 @@ onUnmounted(() => {
         figure.item-image-wrapper {
           width: 100%;
           overflow: visible;
-          position: static;
+          position: relative;
           padding-bottom: 0;
           > img {
             position: static;

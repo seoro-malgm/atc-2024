@@ -124,7 +124,7 @@ onMounted(() => {
   @apply w-full mb-6;
   .input-label {
     .input-title {
-      @apply inline-block border px-3 py-1 border-grayscale-800 mb-2 font-semibold text-lg text-grayscale-900;
+      @apply inline-block border px-3 py-1 border-grayscale-800 mb-2 font-semibold text-grayscale-900;
     }
     .input-desc {
       @apply text-sm font-light text-grayscale-700;

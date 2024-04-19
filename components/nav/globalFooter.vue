@@ -52,7 +52,7 @@
   }
 
   .infos {
-    @apply p-4 lg:p-8 max-lg:border-t lg:border-l border-grayscale-300 text-grayscale-300;
+    @apply p-4 lg:p-8 max-lg:border-t lg:border-l border-grayscale-400 text-grayscale-300;
   }
 }
 </style>

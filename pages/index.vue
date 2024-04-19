@@ -61,7 +61,7 @@
     <section-sponsors />
     <!-- 스폰서 혜택 -->
     <section-sponsor-benefits />
-    <section
+    <!-- <section
       id="section-cta"
       class="py-24 bg-purple-heart-500 relative overflow-hidden"
       ref="target"
@@ -115,8 +115,48 @@
               }
         "
       />
+    </section> -->
+    <section
+      id="section-cta"
+      class="grid grid-cols-12 max-xl:mt-12"
+      ref="target"
+    >
+      <div class="col-span-12 xl:col-span-8 border-t border-grayscale-800">
+        <div class="w-full">
+          <logo-symbol-large />
+          <nuxt-img
+            src="/lettertype-full-eng.svg"
+            alt="5th ASIA TRAILS CONFERENCE 2024 JIRISAN"
+            title="5th ASIA TRAILS CONFERENCE 2024 JIRISAN"
+          />
+        </div>
+        <!-- <section-marquee class="mt-16" /> -->
+        <section-marquee class="mt-16" />
+      </div>
+      <div
+        class="col-span-12 xl:col-span-4 bg-purple-heart-600 max-xl:py-20 xl:pt-12 xl:pb-10"
+      >
+        <header class="text-white px-8 xl:px-14 max-xl:text-center">
+          <h3 class="text-3xl lg:text-5xl font-extrabold mb-4">
+            ATC의 <br />
+            정식 스폰서가 <br />
+            되어주세요.
+          </h3>
+          <p class="desc">
+            ATC의 스폰서는 미팅을 통해 결정하여, <br />
+            원하는 서비스를 제공받으실 수 있습니다.
+          </p>
+        </header>
+
+        <section class="cta max-xl:text-center">
+          <nuxt-link to="/together#section-meeing-form" class="btn-cta">
+            <span> 미팅 예약하기 </span>
+            <UIcon class="icon -mt-4" name="bxs:paper-plane" />
+          </nuxt-link>
+        </section>
+      </div>
     </section>
-    <section-marquee />
+    <section-marquee class="block lg:hidden" />
     <!-- faq -->
     <section-faq class="-mb-[1px]" />
     <!-- marquee -->
@@ -182,14 +222,14 @@ const mousePosition = computed(() => {
 
 <style lang="postcss" scoped>
 #section-cta {
-  .symbol {
+  /* .symbol {
     @apply absolute;
     transition: transform 0.12s ease-out;
     pointer-events: none;
     z-index: 1;
-  }
+  } */
   section.cta {
-    @apply mt-8 text-center;
+    @apply mt-8 px-14;
     .btn-cta {
       @apply px-5 py-3 bg-spring-green-300;
       span,

@@ -120,19 +120,10 @@ watch(
 .global-header {
   @apply w-full lg:top-[0] lg:left-[50%] max-lg:fixed max-lg:top-[0] max-lg:left-[50%] z-[2000] max-lg:translate-x-[-50%] bg-white border-b border-grayscale-800;
 
-  &.unpinned {
-    @apply lg:fixed;
-    transform: translate(-50%, -100%);
-    animation: showDown 0.2s forwards;
-    .global-header-nav {
-      @apply mx-auto border-b-0;
-    }
-  }
-
   .global-header-nav {
     @apply flex items-center justify-between container mx-auto;
     .logo {
-      @apply max-lg:py-2 max-lg:px-4 lg:py-3 lg:px-4 max-lg:w-[150px] lg:w-3/12 max-w-[150px];
+      @apply max-lg:py-2 max-lg:px-4  lg:border-l-grayscale-800 lg:py-3 lg:px-4 max-lg:w-[150px] lg:w-3/12 max-w-[150px];
       img {
         @apply w-full;
       }
@@ -165,7 +156,7 @@ watch(
         }
       }
       .util {
-        @apply block absolute lg:static max-lg:z-[1050] max-lg:translate-x-[-50%] max-lg:w-full max-lg:top-[77px] max-lg:left-[50%] max-lg:translate-y-[-20px] max-lg:opacity-0 max-lg:pointer-events-none lg:h-full bg-white;
+        @apply block absolute lg:static max-lg:z-[2000] max-lg:border-b border-b-gray-800 max-lg:translate-x-[-50%] max-lg:w-full max-lg:top-[65px] max-lg:left-[50%] max-lg:translate-y-[-20px] max-lg:opacity-0 max-lg:pointer-events-none lg:h-full bg-white;
         transition: all 0.3s ease-in-out;
         &.shown {
           @apply max-lg:bg-white max-lg:translate-y-[0] max-lg:opacity-100 max-lg:pointer-events-auto;
@@ -173,15 +164,43 @@ watch(
         .list-link {
           @apply lg:flex lg:items-stretch max-h-[inherit] lg:h-full;
           .list-item {
-            @apply lg:ml-4 max-lg:w-full max-lg:text-center font-semibold text-grayscale-900;
+            @apply max-lg:w-full max-lg:text-center font-semibold text-grayscale-900;
             .link-item {
               @apply w-full text-lg h-full lg:text-xl max-lg:py-3 px-8 self-stretch hover:bg-purple-heart-400 hover:text-spring-green-400  border-x border-grayscale-800 flex items-center justify-center transition-all-default;
+              &:last-child {
+                @apply border-r-0;
+              }
               &.active,
               &.exact-active {
                 @apply bg-purple-heart-600 text-spring-green-300;
               }
               &.disabled {
                 @apply max-lg:py-3 text-grayscale-700 my-auto opacity-25 bg-grayscale-300;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.unpinned {
+    @apply lg:fixed;
+    transform: translate(-50%, -100%);
+    animation: showDown 0.2s forwards;
+    .global-header-nav {
+      @apply mx-auto border-b-0;
+      .logo {
+        @apply lg:border-l;
+      }
+    }
+    .nav-section {
+      .util {
+        .list-link {
+          .list-item {
+            .link-item {
+              &:last-child {
+                border-right-width: 1px;
               }
             }
           }

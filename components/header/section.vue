@@ -30,7 +30,7 @@ const { stop } = useIntersectionObserver(
 
 <style lang="postcss" scoped>
 header {
-  @apply text-center py-4 lg:py-12 border-y border-grayscale-800;
+  @apply text-center py-4 lg:py-12 border-y border-grayscale-800 overflow-x-hidden;
   background-image: url("/arrow-right.svg");
   background-position: right center;
   background-repeat: no-repeat;

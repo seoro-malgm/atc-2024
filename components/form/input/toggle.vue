@@ -57,7 +57,7 @@ watch(
   @apply mb-3;
   .input-label {
     .input-title {
-      @apply inline-block border px-3 py-1 border-grayscale-800 mb-2 font-semibold text-lg text-grayscale-900;
+      @apply inline-block border px-3 py-1 border-grayscale-800 mb-2 font-semibold text-grayscale-900;
     }
     input {
       @apply block w-full px-3 py-2 bg-grayscale-300 rounded-lg;

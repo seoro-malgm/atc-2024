@@ -260,6 +260,15 @@ export default defineNuxtConfig({
           height: 88
         }
       }
+    },
+    providers: {
+      defaultProvider: {
+        name: "defaultProvider",
+        provider: "~/providers/default-provider.ts",
+        options: {
+          baseURL: "https://atc-2024-one.vercel.app/"
+        }
+      }
     }
   },
   // 기본 컬러모드
@@ -294,8 +303,9 @@ export default defineNuxtConfig({
       domainURL: process.env.DOMAIN_URL,
       mode: process.env.ENV_MODE,
       authId: process.env.AUTH_ID,
-      authPwd: process.env.AUTH_PWD
+      authPwd: process.env.AUTH_PWD,
       // tokenName: process.env.TOKEN_NAME
+      baseURL: process.env.BASE_URL
     },
     stibee_apiKey: process.env.STIBEE_APIKEY,
     stibee_listId: process.env.STIBEE_LISTID

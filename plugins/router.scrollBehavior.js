@@ -8,7 +8,6 @@ export default defineNuxtPlugin(nuxtApp => {
         behavior: "smooth"
       };
     }
-
     return { x: 0, y: 0, behavior: "smooth" };
   };
 });

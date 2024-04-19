@@ -1,28 +1,91 @@
 <template>
-  <div>
-    <div class="py-40 bg-spring-green-500 text-center">
-      <h1>ATC를 후원하세요!</h1>
-    </div>
-    <section-sponsor-benefits class="-mt-[1px]"></section-sponsor-benefits>
-    <!-- 혜택 내용 및 폼 유도 -->
-    <!-- <section-sponsor-table /> -->
-    <!-- <div>
-      <ol>
-        <li>혜택목록</li>
-        <li>테이블에서 1열에 해당하는 목록만</li>
-        <li>혜택을 가지로 "어그로"를 끌도록 해야함</li>
-      </ol>
-    </div> -->
+  <div id="page-together">
+    <header class="header-page">
+      <div class="logo">
+        <logo-symbol-large />
+        <nuxt-img
+          src="/lettertype-full-eng.svg"
+          alt="5th ASIA TRAILS CONFERENCE 2024 JIRISAN"
+          title="5th ASIA TRAILS CONFERENCE 2024 JIRISAN"
+        />
+      </div>
+
+      <div class="">
+        <!-- <h1>ATC를 후원하세요!</h1> -->
+        <ul>
+          <li>
+            <div class="flex flex-col md:flex-row">
+              <div class="p-4 w-full lg:w-4/12">
+                <h6 class="max-lg:text-xl text-2xl font-bold mb-3">
+                  ATC는 친환경적이고, 규모가 정말 큽니다
+                </h6>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Neque sequi autem expedita tempora fugiat adipisci, assumenda
+                  esse vitae aliquid, commodi, deleniti voluptates itaque.
+                  Obcaecati consectetur ab quae porro necessitatibus ex.
+                </p>
+              </div>
+              <div class="p-4 w-full lg:w-8/12">
+                <nuxt-img src="/images/dummy.jpeg" alt="" />
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="flex flex-col md:flex-row">
+              <div class="p-4 w-full lg:w-6/12">
+                <nuxt-img src="/images/dummy.jpeg" alt="" />
+              </div>
+              <div class="p-4 w-full lg:w-6/12">
+                <h6 class="max-lg:text-xl text-2xl font-bold mb-3">
+                  각종 기관들과 연대하고, 함께하고 있습니다
+                </h6>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Neque sequi autem expedita tempora fugiat adipisci, assumenda
+                  esse vitae aliquid, commodi, deleniti voluptates itaque.
+                  Obcaecati consectetur ab quae porro necessitatibus ex.
+                </p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="flex flex-col md:flex-row">
+              <div class="p-4 w-full lg:w-7/12">
+                <h6 class="max-lg:text-xl text-2xl font-bold mb-3">
+                  꾸준한 지속가능성을 보여줄 것이고 이렇게 이어나갈 수 있습니다.
+                </h6>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Neque sequi autem expedita tempora fugiat adipisci, assumenda
+                  esse vitae aliquid, commodi, deleniti voluptates itaque.
+                  Obcaecati consectetur ab quae porro necessitatibus ex.
+                </p>
+              </div>
+              <div class="p-4 w-full lg:w-5/12">
+                <nuxt-img src="/images/dummy.jpeg" alt="" />
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <section-marquee />
+    <section-sponsor-benefits />
+
     <section id="section-meeing-form">
       <!-- marquee로 padding 역할 -->
       <section-marquee />
       <header-section> 스폰서 미팅 예약 </header-section>
-      <div class="form-wrap relative flex max-xl:flex-col items-start">
-        <header class="w-full xl:w-6/12 xl:sticky xl:top-[81px] left-0 p-8">
+      <div class="form-wrap relative flex max-md:flex-col items-start">
+        <!-- 폼 헤더 -->
+        <header
+          class="w-full md:w-5/12 xl:w-6/12 xl:sticky xl:top-[82px] left-0 p-8 border-b border-grayscale-800"
+        >
           <h4 class="text-2xl xl:text-3xl mb-3 skew-x-[-15deg] font-bold">
             미팅을 통해 ATC의 스폰서가 되어주세요
           </h4>
-          <p>
+          <p class="text-sm">
             표를 잘 작성해주시면 저희가 연락을 할 것이고 그러면 미팅을 진행하여
             스폰서 계약을 진행합니다. Lorem ipsum dolor sit amet consectetur
             adipisicing elit. Accusamus exercitationem modi deleniti odit est
@@ -41,8 +104,9 @@
             molestias quaerat odit autem.
           </p>
         </header>
+        <!-- 폼 -->
         <section
-          class="w-full max-xl:mt-8 max-xl:border-t xl:w-6/12 xl:border-s xl:border-gray-800"
+          class="w-full md:w-7/12 max-md:mt-8 max-md:border-t max-lg:border-grayscale-800 xl:w-6/12 md:border-s md:border-gray-800"
         >
           <form @submit.prevent="submit">
             <ul class="p-8">
@@ -112,7 +176,7 @@
             <footer class="footer-form mt-8">
               <button
                 type="submit"
-                class="py-3 border-t border-grayscale-800 w-full hover:bg-spring-green-400 transition-all-default text-xl font-semibold"
+                class="py-3 border-t border-grayscale-800 w-full bg-spring-green-200 hover:bg-spring-green-400 transition-all-default text-xl font-semibold"
               >
                 작성 완료
               </button>
@@ -167,6 +231,13 @@ const submit = () => {
 </script>
 
 <style lang="postcss" scoped>
+#page-together {
+  .header-page {
+    .logo {
+      @apply border-b border-grayscale-800;
+    }
+  }
+}
 #section-meeing-form {
   /* @apply pt-[68px] xl:pt-[81px]; */
 }

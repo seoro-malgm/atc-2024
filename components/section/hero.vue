@@ -58,7 +58,7 @@
     }
   }
   .scroll-down {
-    @apply absolute bottom-10 lg:bottom-28 left-[50%] translate-x-[-50%] flex items-center flex-col text-white;
+    @apply absolute bottom-10 lg:bottom-10 left-[50%] translate-x-[-50%] flex items-center flex-col text-white;
     /* mix-blend-mode: difference; */
     .icon {
       @apply w-[56px] h-[56px] lg:w-[66px] lg:h-[66px] mt-3;
