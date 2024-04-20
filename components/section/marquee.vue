@@ -12,7 +12,7 @@
 
 <style scoped>
 .marquee {
-  @apply overflow-hidden relative text-nowrap font-light whitespace-nowrap w-full h-auto pb-[59px] border-t border-grayscale-800;
+  @apply overflow-hidden relative text-nowrap font-light whitespace-nowrap w-full h-auto pb-[80px] border-t border-grayscale-800;
 }
 
 .marquee-content {
@@ -23,7 +23,7 @@
     @apply flex;
 
     svg {
-      @apply block w-[400px];
+      @apply block w-[550px];
       height: auto;
       .letter {
         fill: #000;

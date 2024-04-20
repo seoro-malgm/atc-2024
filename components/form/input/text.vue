@@ -92,17 +92,17 @@ watch(
   @apply w-full;
   .input-label {
     .input-title {
-      @apply block mb-2 font-semibold text-lg text-grayscale-900;
+      @apply inline-block border px-3 py-1 border-grayscale-800 mb-2 font-semibold text-grayscale-900;
     }
     .input-desc {
       @apply text-sm font-light;
     }
     input {
-      @apply block w-full px-3 py-2 bg-white border border-2 border-gray-800 transition-all-default;
+      @apply block w-full px-3 py-2 bg-white border-b border-gray-800 transition-all-default;
       outline: none;
       &.invalid,
       &:invalid {
-        @apply border-classic-rose-500 border-2 bg-classic-rose-50;
+        @apply border-classic-rose-500 border-b bg-classic-rose-50;
       }
     }
   }

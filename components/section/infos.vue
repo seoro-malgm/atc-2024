@@ -73,10 +73,7 @@
                   <icon-forest addClass="fill-spring-green-300" />
                 </div>
                 <div class="col-span-8 lg:col-span-10 p-4 xl:p-8">
-                  <div class="date">
-                    2024. 10. 26. <br class="block md:hidden" />
-                    - 10. 27.
-                  </div>
+                  <div class="date">2024. 10. 26. - 10. 27.</div>
                   <div class="content">
                     2024 지리산둘레길 걷기축제 및 부대행사 ATC
                   </div>
@@ -110,20 +107,28 @@
     <logo-symbol-text
       class="symbol -top-6 -left-6 w-[70vw] lg:w-[45vw]"
       add-class="fill-white opacity-20"
-      :style="{
-        transform: `translate(${mousePosition.x * 0.02}px, ${
-          mousePosition.y * 0.03
-        }px)`
-      }"
+      :style="
+        mousePosition.isOutside
+          ? {}
+          : {
+              transform: `translate(${mousePosition.x * 0.02}px, ${
+                mousePosition.y * 0.03
+              }px)`
+            }
+      "
     />
     <logo-symbol-arr
       class="symbol -right-2 -bottom-2 w-[55vw] lg:w-[20vw]"
       add-class="fill-white opacity-20"
-      :style="{
-        transform: `translate(${-mousePosition.x * 0.02}px, ${
-          -mousePosition.y * 0.03
-        }px)`
-      }"
+      :style="
+        mousePosition.isOutside
+          ? {}
+          : {
+              transform: `translate(${-mousePosition.x * 0.02}px, ${
+                -mousePosition.y * 0.03
+              }px)`
+            }
+      "
     />
     <!-- mousePosition: {{ mousePosition.x * 0.3 }} -->
   </div>
@@ -133,18 +138,18 @@
 import { ref } from "vue";
 import { useMouseInElement } from "@vueuse/core";
 
-const props = defineProps({
-  data: {
-    type: String,
-    default: null
-  }
-});
+// const props = defineProps({
+//   data: {
+//     type: String,
+//     default: null
+//   }
+// });
+
 const target = ref();
-
-const { elementX, elementY } = useMouseInElement(target);
-
+const { elementX, elementY, isOutside } = useMouseInElement(target);
 const mousePosition = computed(() => {
   return {
+    isOutside: isOutside.value,
     x: elementX.value,
     y: elementY.value
   };
@@ -174,19 +179,19 @@ const mousePosition = computed(() => {
           @apply text-3xl lg:text-5xl p-6 xl:p-12;
         } */
         p.description {
-          @apply text-lg lg:text-2xl p-8;
-          line-height: 1.3;
+          @apply lg:text-2xl p-8;
+          line-height: 1.4;
         }
         /* 시간정보 */
         .list-dates {
           > .list-item {
             @apply border-b border-spring-green-300;
             .date {
-              @apply text-3xl lg:text-5xl font-bold mb-4 text-spring-green-300 leading-8 mt-1;
+              @apply text-xl lg:text-5xl font-bold mb-1 lg:mb-4 text-spring-green-300 leading-8 mt-1;
               letter-spacing: -0.3px;
             }
             .content {
-              @apply text-2xl lg:text-4xl font-semibold;
+              @apply text-lg lg:text-4xl font-semibold;
             }
           }
           /* 장소 정보 */

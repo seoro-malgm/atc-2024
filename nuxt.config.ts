@@ -207,7 +207,8 @@ export default defineNuxtConfig({
         //   type: "text/javascript"
         // }
       ]
-    }
+    },
+    pageTransition: { name: "page", mode: "out-in" }
   },
   // router
   router: {
@@ -224,7 +225,7 @@ export default defineNuxtConfig({
     "@nuxt/ui",
     "@vueuse/nuxt",
     "@nuxt/image",
-    "@nuxtjs/i18n",
+    // "@nuxtjs/i18n",
     "@pinia/nuxt",
     "@pinia-plugin-persistedstate/nuxt"
   ],
@@ -259,6 +260,15 @@ export default defineNuxtConfig({
           height: 88
         }
       }
+    },
+    providers: {
+      defaultProvider: {
+        name: "defaultProvider",
+        provider: "~/providers/default-provider.ts",
+        options: {
+          baseURL: "https://atc-2024-one.vercel.app/"
+        }
+      }
     }
   },
   // 기본 컬러모드
@@ -266,15 +276,16 @@ export default defineNuxtConfig({
     preference: "light"
   },
   // i18n
-  i18n: {
-    strategy: "prefix_except_default",
-    defaultLocale: "ko",
-    detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: "i18n_redirected",
-      redirectOn: "root" // recommended
-    }
-  },
+  // i18n: {
+  //   strategy: "prefix_except_default",
+  //   vueI18n: "./i18n.config.ts",
+  //   defaultLocale: "ko",
+  //   detectBrowserLanguage: {
+  //     useCookie: true,
+  //     cookieKey: "i18n_redirected",
+  //     redirectOn: "root" // recommended
+  //   }
+  // },
   serverHandlers: [
     // { route: "/rss", middleware: true, handler: "~/server/middleware/rss.js" }
   ],
@@ -293,19 +304,19 @@ export default defineNuxtConfig({
       domainURL: process.env.DOMAIN_URL,
       mode: process.env.ENV_MODE,
       authId: process.env.AUTH_ID,
-      authPwd: process.env.AUTH_PWD
+      authPwd: process.env.AUTH_PWD,
       // tokenName: process.env.TOKEN_NAME
+      baseURL: process.env.BASE_URL
     },
     stibee_apiKey: process.env.STIBEE_APIKEY,
     stibee_listId: process.env.STIBEE_LISTID
   },
-
-  render: {
-    cacheControl: {
-      static: "public, max-age=604800", // 정적 자원 캐싱 설정
-      server: false // renderingCache 비활성화
-    }
-  },
+  // render: {
+  //   cacheControl: {
+  //     static: "public, max-age=604800", // 정적 자원 캐싱 설정
+  //     server: false // renderingCache 비활성화
+  //   }
+  // },
   nitro: {
     storage: {
       data: { driver: "vercelKV" }

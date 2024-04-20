@@ -2,7 +2,7 @@
 import colors from "tailwindcss/colors";
 
 module.exports = {
-  // mode: "jit",
+  mode: "jit",
   content: [
     "./components/**/*.{js,vue,ts}",
     "./layouts/**/*.{js,vue,ts}",

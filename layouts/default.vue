@@ -14,24 +14,16 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted, watch } from "vue";
-import { useRoute, useRouter } from "vue-router";
+import { ref, computed, onMounted } from "vue";
+import { useRoute } from "vue-router";
 import { useElementBounding } from "@vueuse/core";
 const wrapper = ref();
 
 const route = useRoute();
-const router = useRouter();
+// const router = useRouter();
 const path = computed(() => {
   return route.path;
 });
-
-watch(
-  () => path.value,
-  (n, o) => {
-    // window.scrollTo(0, 0);
-    // router.
-  }
-);
 
 const main = ref();
 const mainBounding = useElementBounding(main);
@@ -43,10 +35,12 @@ const pinned = computed(() => {
 
 <style lang="postcss" scoped>
 #wrapper {
-  @apply mx-2 lg:mx-4 my-2 lg:my-4 border border-grayscale-800;
+  @apply lg:mx-4 my-2 lg:my-4 border border-grayscale-800 container;
+  margin-left: auto;
+  margin-right: auto;
 
   #main {
-    @apply pt-[52px] lg:pt-[56px];
+    @apply pt-[58px] lg:pt-[73px];
     &.pinned {
       @apply lg:pt-0;
     }

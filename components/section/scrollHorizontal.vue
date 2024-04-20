@@ -4,7 +4,6 @@
       class="horizontal-scroll"
       :class="{ 'is-mobile-view': isMobileView }"
       ref="wrapper"
-      :style="{}"
     >
       <!-- header -->
       <header class="scroll-header">
@@ -108,11 +107,9 @@ const containerBounds = useElementBounding(container);
 
 const maxScroll = computed(() => {
   const length = props.items.length;
-  return bodyBounds.width.value * (length - 1) + (length + 1) * 40 + 160;
-});
-
-const scrollHeight = computed(() => {
-  return data;
+  const margin = 40;
+  const gnbHeight = 78;
+  return (bodyBounds.width.value + margin) * length - margin - gnbHeight;
 });
 
 // 상태업데이트
@@ -167,9 +164,9 @@ onUnmounted(() => {
   /* z-index: -1; */
   overflow: hidden;
   .scroll-header {
-    @apply static lg:absolute lg:top-0 max-lg:mb-6 pt-8 lg:pt-[112px] pb-8 border-b border-grayscale-800 left-0 w-full z-[2] bg-purple-heart-600 text-spring-green-300;
+    @apply static lg:absolute lg:top-0 max-lg:mb-6 pt-8 lg:pt-[112px] pb-8 border-b border-grayscale-800 left-0 w-full z-[2] bg-white;
     .progress {
-      @apply w-full h-2 relative bg-purple-heart-600 hidden lg:block translate-y-[-30px];
+      @apply w-full h-2 relative bg-white lg:block translate-y-[-37px];
       .bar {
         @apply absolute left-0 right-0 h-2 bg-spring-green-300;
       }
@@ -205,27 +202,26 @@ onUnmounted(() => {
           min-width: 100vw;
           height: auto;
           figure.item-image-wrapper {
-            @apply border-grayscale-800 border-x;
+            @apply border-grayscale-800 lg:border-x;
             position: relative;
             width: 100vw;
             padding-bottom: 100vh;
             @media all and (min-width: 1024px) {
-              padding-bottom: calc(100vh - 59px); /** marquee 높이 제거 */
+              padding-bottom: calc(100vh - 73px); /** marquee 높이 제거 */
 
-              /* max-height: calc(100vh - 59px); */
+              /* max-height: calc(100vh - 73px); */
             }
             overflow: hidden;
 
             > img {
               /* width: auto;
               height: 100%; */
-              width: 100%;
-              height: auto;
-              @apply w-[auto] h-full lg:w-full lg:h-[auto] object-fill;
-              position: absolute;
+
+              @apply w-[auto] h-full lg:w-full lg:h-[auto] absolute-center;
+              /* position: absolute;
               top: 50%;
               left: 50%;
-              transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%); */
             }
           }
         }
@@ -243,7 +239,7 @@ onUnmounted(() => {
     @apply lg:mt-[68px];
     .horizontal-scroll-section {
       @media all and (min-width: 1024px) {
-        max-height: calc(100vh - 59px);
+        max-height: calc(100vh - 73px);
       }
       .item {
         @apply mb-8;
@@ -261,7 +257,7 @@ onUnmounted(() => {
         figure.item-image-wrapper {
           width: 100%;
           overflow: visible;
-          position: static;
+          position: relative;
           padding-bottom: 0;
           > img {
             position: static;

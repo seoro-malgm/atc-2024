@@ -35,6 +35,7 @@ const props = defineProps({
 <style lang="postcss" scoped>
 /* 스폰서 */
 .section-sponsors {
+  /* @apply bg-gray-200; */
   .list-wrapper {
     @apply py-12 container;
     .list-container {

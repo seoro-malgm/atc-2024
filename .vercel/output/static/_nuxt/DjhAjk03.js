@@ -1,1 +1,0 @@
-const n={name:"ATC 2024"},o={nav:{globalHeader:{}}},a={},e={brand:n,components:o,pages:a},s={name:"ATC 2024"},c={nav:{globalHeader:{}}},t={},g={brand:s,components:c,pages:t},l=()=>({legacy:!1,locale:"ko",messages:{en:g,ko:e}});export{l as default};
