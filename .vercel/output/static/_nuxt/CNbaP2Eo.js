@@ -1,0 +1,1 @@
+import{N as t,T as l,aZ as r,a_ as m,h as e,o as p,i as u,P as c,K as d,r as i,s as _}from"./W-AFi6ds.js";const y=t({__name:"Modals.client",setup(f){const o=l(r),{isOpen:a}=m();return(V,n)=>e(o)?(p(),u(i(e(o).component),c({key:0},e(o).props,{modelValue:e(a),"onUpdate:modelValue":n[0]||(n[0]=s=>d(a)?a.value=s:null)}),null,16,["modelValue"])):_("",!0)}});export{y as default};

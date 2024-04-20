@@ -1,1 +1,0 @@
-import{_ as t,c as o,a as c,b as s,o as _,b2 as a}from"./jXR-_GK-.js";const n={},r={id:"empty"},d={class:"container"};function i(p,m){const e=a;return _(),o("div",r,[c("div",d,[s(e)])])}const l=t(n,[["render",i],["__scopeId","data-v-3f601797"]]);export{l as default};
