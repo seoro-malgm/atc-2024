@@ -6,7 +6,10 @@
       :class="[{ 'is-main': path === '/' }, { pinned: pinned }]"
       ref="main"
     >
-      <slot></slot>
+      <NuxtLayout name="page">
+        <NuxtPage />
+        <!-- <slot></slot> -->
+      </NuxtLayout>
     </main>
     <nav-global-footer />
     <UNotifications />

@@ -70,7 +70,7 @@
         </ul>
       </div>
     </header>
-    <section-marquee />
+    <section-marquee class="border-b border-grayscale-800" />
     <section-sponsor-benefits />
 
     <section id="section-meeing-form">

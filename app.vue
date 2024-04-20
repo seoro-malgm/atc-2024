@@ -6,13 +6,13 @@
 </template>
 
 <style>
-.page-enter-active,
-.page-leave-active {
+.slide-out-enter-active,
+.slide-out-leave-active {
   transition: all 0.4s;
 }
-.page-enter-from,
-.page-leave-to {
+.slide-out-enter-from,
+.slide-out-leave-to {
   opacity: 0;
-  filter: blur(1rem);
+  transform: translateY(24px);
 }
 </style>
