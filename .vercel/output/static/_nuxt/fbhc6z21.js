@@ -1,0 +1,1 @@
+import{N as t,T as r,a$ as l,b0 as i,h as e,o as m,i as p,P as u,K as c,r as d,s as f}from"./jXCT86Xi.js";const k=t({__name:"Slideovers.client",setup(v){const o=r(l),{isOpen:s}=i();return(_,n)=>e(o)?(m(),p(d(e(o).component),u({key:0},e(o).props,{modelValue:e(s),"onUpdate:modelValue":n[0]||(n[0]=a=>c(s)?s.value=a:null)}),null,16,["modelValue"])):f("",!0)}});export{k as default};

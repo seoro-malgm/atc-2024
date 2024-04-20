@@ -208,7 +208,7 @@ export default defineNuxtConfig({
         // }
       ]
     },
-    pageTransition: { name: "page", mode: "out-in" }
+    pageTransition: { name: "slide-out", mode: "out-in" }
   },
   // router
   router: {

@@ -1,0 +1,1 @@
+import{k as n,A as o,x as a,c as u,b as c,j as r,o as i}from"./jXCT86Xi.js";const m={__name:"index",setup(l){const t=n(),e=o();return a(()=>{e!=null&&e.isAuthenticated?t.push("/admin/benefits"):t.push("/auth/login")}),(_,p)=>{const s=r("status-loading");return i(),u("div",null,[c(s)])}}};export{m as default};
