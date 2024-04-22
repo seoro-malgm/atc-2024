@@ -15,6 +15,7 @@
           :max-date="attributes?.maxDate"
           :disabled-dates="attributes?.disabledDates"
           :dates:="attributes?.dates"
+          :masks:="attributes?.masks"
         />
       </div>
     </label>
@@ -110,7 +111,7 @@ const attrs = {
   }
   .input {
     :deep(.vc-weekday-1) {
-      @apply text-red-500;
+      @apply text-classic-rose-500;
     }
     :deep(.vc-weekday-7) {
       @apply text-purple-heart-600;

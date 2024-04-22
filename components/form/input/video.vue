@@ -198,7 +198,7 @@ const onRemove = async e => {
           @apply w-8 h-8 rounded-full p-2 flex items-center justify-center;
         }
         .btn-remove {
-          @apply bg-red-400 hover:bg-red-800 text-white;
+          @apply bg-classic-rose-400 hover:bg-classic-rose-800 text-white;
         }
       }
     }

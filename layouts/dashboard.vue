@@ -17,7 +17,7 @@
 </template>
 
 <script setup>
-import links from "@/data/dashboardLinks.json";
+import links from "@/data/dashboardLinks";
 import { useRoute } from "vue-router";
 const route = useRoute();
 const col = computed(() => {

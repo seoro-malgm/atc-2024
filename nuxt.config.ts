@@ -259,6 +259,13 @@ export default defineNuxtConfig({
           width: 88,
           height: 88
         }
+      },
+      adminLogo: {
+        modifiers: {
+          format: "jpg, gif",
+          width: 48,
+          height: 48
+        }
       }
     },
     providers: {

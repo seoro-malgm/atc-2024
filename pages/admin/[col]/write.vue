@@ -29,7 +29,7 @@ form: {{ form }}
 <script setup>
 import { ref, computed, onMounted, onUnmounted, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
-// import FormWorks from "@/components/form/works";
+import FormSponsors from "@/components/form/sponsors";
 // import FormBlog from "@/components/form/blog";
 // import FormClient from "@/components/form/client";
 // import FormEstimates from "@/components/form/estimates";
@@ -50,10 +50,7 @@ const toast = useToast();
 
 // 컬렉션에 따른 폼 목록
 const forms = {
-  works: FormWorks,
-  blog: FormBlog,
-  client: FormClient,
-  estimates: FormEstimates
+  sponsors: FormSponsors
 };
 const currentForm = computed(() => {
   return forms[props.col.key];
@@ -101,8 +98,7 @@ const submit = async e => {
       method: "POST",
       body: {
         ...form.value,
-        createdAt: new Date().toLocaleString(),
-        viewer: 0
+        createdAt: new Date().toLocaleString()
       }
     });
     if (data) {

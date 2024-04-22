@@ -118,6 +118,8 @@
                   title="소속"
                   placeholder="회사명을 입력해주세요."
                   @input="$event => (form.company = $event)"
+                  :required="true"
+                  :validate="validator('name', form.company)"
                 />
               </li>
               <li class="mb-10">
@@ -128,6 +130,8 @@
                   title="담당자명"
                   placeholder="담당자 성함을 입력해주세요."
                   @input="$event => (form.manager = $event)"
+                  :required="true"
+                  :validate="validator('name', form.manager)"
                 />
               </li>
               <li class="mb-10">
@@ -137,8 +141,11 @@
                   bind="phone"
                   input-type="tel"
                   title="담당자 연락처"
+                  desc="하이픈(-)도 함께 입력해주세요."
                   placeholder="담당자 연락처를 입력해주세요."
                   @input="$event => (form.phone = $event)"
+                  :required="true"
+                  :validate="validator('phone', form.phone)"
                 />
               </li>
               <li class="mb-10">
@@ -150,6 +157,8 @@
                   title="담당자 이메일"
                   placeholder="담당자 이메일을 입력해주세요"
                   @input="$event => (form.email = $event)"
+                  :required="true"
+                  :validate="validator('email', form.email)"
                 />
               </li>
               <li class="mb-10">
@@ -166,18 +175,17 @@
               </li>
               <li class="mb-10">
                 <form-input-date-picker
-                  v-model="form.dates"
+                  v-model="form.meetingDate"
                   title="원하는 미팅 날짜"
                   :attributes="attributes"
+                  :required="true"
                   desc="미팅이 가능하신 날짜를 선택해주세요."
                 />
               </li>
             </ul>
             <footer class="footer-form mt-8">
-              <button
-                type="submit"
-                class="py-3 border-t border-grayscale-800 w-full bg-spring-green-200 hover:bg-spring-green-400 transition-all-default text-xl font-semibold"
-              >
+              <button type="submit" class="btn-submit">
+                <!-- :disabled="!formValidate" -->
                 작성 완료
               </button>
             </footer>
@@ -185,7 +193,6 @@
         </section>
       </div>
     </section>
-
     <section-marquee />
     <!-- <section
       class="min-h-lvh flex items-center justify-center border-t border-grayscale-800"
@@ -203,12 +210,20 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted, watch } from "vue";
 import benefitList from "@/data/benefitList";
+import validator from "@/composables/validator";
 
 const items = computed(() => {
   return benefitList;
 });
 
-const form = ref({});
+const form = ref({
+  company: null,
+  manager: null,
+  phone: null,
+  email: null,
+  selectedBenefits: [],
+  meetingDate: null
+});
 
 const attributes = computed(() => {
   return {
@@ -221,11 +236,65 @@ const attributes = computed(() => {
           weekdays: [1, 7]
         }
       }
-    ]
+    ],
+    masks: { modelValue: "YYY-MM-DD" }
   };
 });
 
-const submit = () => {
+const formValidate = computed(() => {
+  const obj = {
+    company: !!form.value.company && form.value.company !== "",
+    manager: !!form.value.manager && form.value.manager !== "",
+    phone: validator("phone", form.value.phone).value,
+    email: validator("email", form.value.email).value,
+    meetingDate: !!form?.value?.meetingDate
+  };
+  // return obj;
+  return Object.values(obj).every(val => val === true);
+});
+
+const toast = useToast();
+const submit = async () => {
+  const body = {
+    ...form.value,
+    meetingDate: new Date(form.value.meetingDate).toLocaleDateString()
+  };
+  try {
+    const data = await $fetch("/api/together/create", {
+      method: "POST",
+      body
+    });
+    if (data) {
+      toast.add({
+        id: `contact-added-${new Date().getTime()}`,
+        title: "정상적으로 미팅 신청이 완료됐습니다.",
+        color: "spring-green",
+        icon: "memory:checkbox-marked"
+      });
+      const mailSend = await $fetch("/api/mail/send", {
+        method: "POST",
+        body
+      });
+      if (mailSend) {
+        console.log("mailSend :", mailSend);
+      }
+      form.value = {
+        company: null,
+        manager: null,
+        phone: null,
+        email: null,
+        selectedBenefits: [],
+        meetingDate: null
+      };
+    }
+  } catch (error) {
+    toast.add({
+      id: `contact-add-fail-${new Date().getTime()}`,
+      title: "신청에 실패했습니다. 다시 시도해주세요.",
+      color: "red",
+      icon: "bxs:x-square"
+    });
+  }
   console.log("form.value :", form.value);
 };
 </script>
@@ -240,5 +309,12 @@ const submit = () => {
 }
 #section-meeing-form {
   /* @apply pt-[68px] xl:pt-[81px]; */
+}
+
+.btn-submit {
+  @apply block py-3 border-t border-grayscale-800 w-full bg-spring-green-200 hover:bg-spring-green-400  transition-all-default text-xl font-semibold;
+  &:disabled {
+    @apply bg-gray-400 opacity-50;
+  }
 }
 </style>

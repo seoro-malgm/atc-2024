@@ -95,7 +95,7 @@ watch(
       @apply inline-block border px-3 py-1 border-grayscale-800 mb-2 font-semibold text-grayscale-900;
     }
     .input-desc {
-      @apply text-sm font-light;
+      @apply text-sm font-light mb-2;
     }
     input {
       @apply block w-full px-3 py-2 bg-white border-b border-gray-800 transition-all-default;

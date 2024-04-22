@@ -7,7 +7,7 @@
           <NuxtPage />
         </div>
         <footer>
-          <span class="copyright">&copy; {{ $t("brand.name") }} 2024</span>
+          <span class="copyright">&copy; ATC 2024</span>
         </footer>
       </section>
     </main>
@@ -34,7 +34,7 @@ const router = useRouter();
         @apply bg-white p-6 rounded-lg min-h-[400px] shadow-lg;
       }
       footer {
-        @apply w-full text-right mt-4 text-grayscale-800;
+        @apply w-full text-right mt-4 pt-4 text-grayscale-800;
       }
     }
   }

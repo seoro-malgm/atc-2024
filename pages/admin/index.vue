@@ -20,7 +20,7 @@ const store = useAuth();
 onMounted(() => {
   // auth 상태일때, 기본으로 이동할 페이지로 이동시킴
   if (store?.isAuthenticated) {
-    router.push("/admin/benefits");
+    router.push("/admin/sponsors");
   } else {
     router.push("/auth/login");
   }

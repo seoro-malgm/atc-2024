@@ -3,7 +3,7 @@
   thead {
     tr {
       th {
-        @apply bg-baja-white-200 px-2 py-4 text-xl lg:text-2xl border border-baja-white-600;
+        @apply bg-baja-white-100 px-2 py-4 text-lg border border-baja-white-600;
         &:first-child {
           @apply border-l-0;
         }
@@ -16,7 +16,7 @@
   tbody {
     tr {
       td {
-        @apply border border-grayscale-800 py-3 text-center align-middle;
+        @apply px-6 border border-grayscale-800 py-3 text-center align-middle;
         &:first-child {
           @apply border-l-0;
         }

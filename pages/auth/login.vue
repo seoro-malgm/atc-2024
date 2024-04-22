@@ -18,7 +18,7 @@
             inputType="email"
             @input="$event => (form.email = $event)"
             autocomplete="user-email"
-            required
+            :required="true"
             id="user-email"
             :validate="validator('email', form.email)"
           />
@@ -29,8 +29,9 @@
             inputType="password"
             @input="$event => (form.pwd = $event)"
             autocomplete="current-password"
-            required
+            :required="true"
             id="user-pwd"
+            class="mt-5"
             :validate="validator('password', form.pwd)"
           />
         </form-input-wrap>

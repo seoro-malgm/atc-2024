@@ -87,7 +87,7 @@ const {
     @apply mb-2;
     .util {
       .btn-logout {
-        @apply px-2 py-1 border block text-center border-red-300 text-sm text-red-500 rounded-full hover:bg-red-500 hover:text-grayscale-200 transition-all;
+        @apply px-2 py-1 border block text-center border-classic-rose-300 text-sm text-classic-rose-500 rounded-full hover:bg-classic-rose-500 hover:text-grayscale-200 transition-all;
       }
     }
   }

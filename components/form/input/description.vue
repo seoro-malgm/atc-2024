@@ -205,7 +205,7 @@ const onEnd = e => {
         .util {
           @apply px-2 mt-0 py-0;
           button {
-            @apply p-2 bg-red-200 rounded-lg hover:bg-red-400 transition-all;
+            @apply p-2 bg-classic-rose-200 rounded-lg hover:bg-classic-rose-400 transition-all;
           }
         }
       }
