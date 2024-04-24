@@ -3,7 +3,6 @@
     "text": "스폰서",
     "key": "sponsors",
     "icon": "material-symbols:location-city",
-    "description": "스폰서 목록을 관리합니다",
     "editable": true,
     "removeable": true,
     "creatable": true,
@@ -12,24 +11,6 @@
     "viewMoreable": false,
     "defaultQuery": {
       "orderBy": ["no", "asc"]
-    },
-    "list": {
-      "type": "table",
-      "key": [
-        {
-          "value": "logo",
-          "text": "로고",
-          "type": "image",
-          "width": "10",
-          "preset": "adminLogo"
-        },
-        {
-          "value": "name",
-          "text": "브랜드명",
-          "type": "string",
-          "width": "20"
-        }
-      ]
     }
   },
   {

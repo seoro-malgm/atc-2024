@@ -1,5 +1,10 @@
 <template>
-  <div>this is faq 관리</div>
+  <div>
+    this is faq 관리
+
+    <br />
+    col: {{ col }}
+  </div>
 </template>
 
 <script setup>
@@ -9,8 +14,12 @@ definePageMeta({
 });
 
 const props = defineProps({
-  data: {
-    type: String,
+  col: {
+    type: Object,
+    default: null
+  },
+  addQuery: {
+    type: Object,
     default: null
   }
 });

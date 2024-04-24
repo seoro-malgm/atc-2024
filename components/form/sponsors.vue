@@ -9,14 +9,15 @@
         @input="$event => $emit('input', ['logo', $event])"
       />
     </div>
-    <div class="mb-4"></div>
-    <form-input-text
-      class="mb-6"
-      :form="form"
-      bind="name"
-      title="이름"
-      @input="$event => $emit('input', ['name', $event])"
-    />
+    <div class="mb-4">
+      <form-input-text
+        class="mb-6"
+        :form="form"
+        bind="name"
+        title="이름"
+        @input="$event => $emit('input', ['name', $event])"
+      />
+    </div>
   </div>
 </template>
 
@@ -40,12 +41,20 @@ const props = defineProps({
 const emit = defineEmits();
 const selected = ref(false);
 
+// bind를 관리하기위해 만든 하위 폼. 실제 form 상위에서 관리함
+// const childForm = ref({});
+
 const route = useRoute();
 const no = computed(() => {
   return route.query?.no;
 });
-const id = computed(() => {
-  return route.query?.id;
+
+// const id = computed(() => {
+//   return route.query?.id;
+// });
+
+onMounted(() => {
+  emit("input", ["no", no.value ? no.value : 0]);
 });
 </script>
 

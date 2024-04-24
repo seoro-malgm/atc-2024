@@ -10,6 +10,7 @@ export default defineEventHandler(async evt => {
   const { db } = setupFirebase();
   const body = await readBody(evt);
   const { col: collectionName } = getRouterParams(evt);
+  console.log("body.no :", Number(body.no));
   try {
     const docRef = await addDoc(collection(db, collectionName), {
       ...body,

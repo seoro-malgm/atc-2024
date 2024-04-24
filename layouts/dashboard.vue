@@ -8,7 +8,7 @@
           <p v-if="col?.description">💡 {{ col.description }}</p>
         </header>
         <div class="body-container">
-          <NuxtPage :col="col" />
+          <nuxt-page :col="col" />
         </div>
       </div>
     </main>
