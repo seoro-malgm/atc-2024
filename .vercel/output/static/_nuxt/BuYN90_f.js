@@ -1,0 +1,1 @@
+import n from"./Bvd1MlKc.js";import{_ as e,o as c,c as _,b as s}from"./D2dFwJ2f.js";const t={},a={class:"loading"};function r(d,m){const o=n;return c(),_("div",a,[s(o,{name:"svg-spinners:3-dots-move",class:"icon"})])}const f=e(t,[["render",r],["__scopeId","data-v-e766d2d8"]]);export{f as _};

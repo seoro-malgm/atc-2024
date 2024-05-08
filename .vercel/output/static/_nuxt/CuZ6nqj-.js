@@ -1,0 +1,1 @@
+import{c as a,d as e,t as l,a as c,o}from"./D2dFwJ2f.js";const s=c("br",null,null,-1),d={__name:"index",props:{col:{type:Object,default:null},addQuery:{type:Object,default:null}},setup(t){return(n,r)=>(o(),a("div",null,[e(" this is faq 관리 "),s,e(" col: "+l(t.col),1)]))}};export{d as default};

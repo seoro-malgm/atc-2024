@@ -1,0 +1,1 @@
+import{y as t,X as r,a$ as l,b0 as i,h as e,o as m,i as p,S as u,G as c,r as d,n as f}from"./D2dFwJ2f.js";const S=t({__name:"Slideovers.client",setup(v){const o=r(l),{isOpen:n}=i();return(_,s)=>e(o)?(m(),p(d(e(o).component),u({key:0},e(o).props,{modelValue:e(n),"onUpdate:modelValue":s[0]||(s[0]=a=>c(n)?n.value=a:null)}),null,16,["modelValue"])):f("",!0)}});export{S as default};
