@@ -60,6 +60,9 @@ watch(
 </script>
 
 <style lang="postcss" scoped>
+.symbol {
+  @apply w-full;
+}
 .letter {
   fill: #000;
 }

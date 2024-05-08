@@ -1,35 +1,3 @@
-<!-- 
-  ### 5. IA 관련
-
-1. ✅ 히어로
-2. ✅ ATC 브랜드 설명
-3. 💬 컨퍼런스 참여방법 | ***CONFERENCE 섹션***
-    1. 내국인/외국인 구분하여 행사 예약 플랫폼 통해서 컨퍼런스 모객예정, 이메일 수집 없이 특정 URL로 이동하는 CTA로 변경
-        1. 내국인 대상 → [이벤터스](https://www.event-us.kr/1986production/event/79474?utm_source=eventus&utm_medium=organic&utm_campaign=search-result&utm_term=%ED%8A%B8%EB%A0%88%EC%9D%BC)
-        2. 외국인 대상 → [evnetbrite](https://www.eventbrite.com/e/5th-asia-trails-conference-tickets-873734773227?aff=oddtdtcreator)
-4. 💬 (추가) 워킹페스티벌 소식받기 | ***WORKING FESTIVAL 섹션***
-    1. 10월에 워킹페스티벌이 진행 될 예정
-    2. 워킹페스티벌에 대한 간략 설명 및 얼리버드 쿠폰 및 행사 업데이트 소식을 알려 주기위한 이메일 CTA 섹션 추가
-5. 💬 스폰서 안내 및 스폰하기 | ***SPONSORS 섹션***
-    1. 스폰서 띄워주는 부분 너무 좋습니다.
-    2. (추가) 우리에게 스폰하면 간략하게 이러이러한 혜택을 줄 수 있을 것 같아, 상세한 내용 확인하거나 우리랑 미팅잡아볼래?
-    3. 디테일 페이지 이동 CTA
-6. ✅  FAQ
-7. ✅  풋터
-
-### 6. 상단메뉴
-
-1. Home
-2. 컨퍼런스 → 비활성화, 추후 디테일 페이지로
-3. 워킹페스티벌 → 비활성화, 추후 디테일 페이지로
-4. 스폰서 → 활성화, 디테일 페이지 필요
-    1. https://atcjirisan.com/together 해당 페이지 내 스폰서쉽 혜택 테이블 노출
-        1. 외부협력 담당자님이 혜택 테이블을 수정할 수 있도록 구글시트 연결이라던지, 그런게 가능 할까요? 관리자 페이지는 너무 작업량이 많을 것 같아서요.
-    2. 그외 내용은 스폰서쉽 전용 FAQ 섹션으로 
-    3. https://atcjirisan.com/26 문의메일 및 미팅예약 가능하도록
-
--->
-
 <template>
   <div>
     <!-- 히어로 -->
@@ -123,21 +91,22 @@
     >
       <div class="col-span-12 xl:col-span-8 border-t border-grayscale-800">
         <div class="w-full">
-          <logo-symbol-large />
+          <logo-symbol-large class="hidden xl:block" />
           <nuxt-img
+            class="hidden xl:block"
             src="/lettertype-full-eng.svg"
             alt="5th ASIA TRAILS CONFERENCE 2024 JIRISAN"
             title="5th ASIA TRAILS CONFERENCE 2024 JIRISAN"
           />
         </div>
         <!-- <section-marquee class="mt-16" /> -->
-        <section-marquee class="mt-16" />
+        <section-marquee class="xl:mt-16" />
       </div>
       <div
-        class="col-span-12 xl:col-span-4 bg-purple-heart-600 max-xl:py-20 xl:pt-12 xl:pb-10"
+        class="col-span-12 xl:col-span-4 bg-purple-heart-600 max-xl:py-[10rem] xl:pt-12 xl:pb-10"
       >
         <header class="text-white px-8 xl:px-14 max-xl:text-center">
-          <h3 class="text-3xl lg:text-5xl font-extrabold mb-4">
+          <h3 class="text-3xl lg:text-6xl font-extrabold mb-4">
             ATC의 <br />
             정식 스폰서가 <br />
             되어주세요.

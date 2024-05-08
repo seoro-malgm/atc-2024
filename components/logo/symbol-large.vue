@@ -157,7 +157,7 @@ watch(
 
 <style lang="postcss" scoped>
 svg {
-  width: max-content;
+  @apply w-full;
 }
 .letter,
 .letter-pin {

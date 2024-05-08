@@ -38,7 +38,7 @@ const pinned = computed(() => {
 
 <style lang="postcss" scoped>
 #wrapper {
-  @apply lg:mx-4 my-2 lg:my-4 border border-grayscale-800 container;
+  @apply lg:mx-4 my-2 lg:my-4 border border-grayscale-800;
   margin-left: auto;
   margin-right: auto;
 
