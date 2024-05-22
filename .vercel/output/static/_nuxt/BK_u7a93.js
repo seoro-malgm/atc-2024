@@ -1,1 +1,0 @@
-import{y as t,X as l,aZ as r,a_ as m,h as e,o as p,i as u,S as c,G as d,r as i,n as _}from"./D2dFwJ2f.js";const k=t({__name:"Modals.client",setup(f){const o=l(r),{isOpen:a}=m();return(y,n)=>e(o)?(p(),u(i(e(o).component),c({key:0},e(o).props,{modelValue:e(a),"onUpdate:modelValue":n[0]||(n[0]=s=>d(a)?a.value=s:null)}),null,16,["modelValue"])):_("",!0)}});export{k as default};

@@ -30,6 +30,7 @@
                   transitionDelay: `${i * 0.1}s`
                 }"
                 :key="i"
+                provider="storageBucket"
               />
             </section>
             <footer class="article-footer">
@@ -93,38 +94,38 @@ const props = defineProps({
 
 const items = [
   {
-    src: "/images/dummy.jpeg",
+    src: "dummy.png",
     transform: "rotate(4deg)"
   },
   {
-    src: "/images/dummy.jpeg",
+    src: "dummy.png",
     transform: "rotate(15deg)"
   },
   {
-    src: "/images/dummy.jpeg",
+    src: "dummy.png",
     transform: "rotate(-9deg)"
   },
   {
-    src: "/images/dummy.jpeg",
+    src: "dummy.png",
     transform: "rotate(-13deg)"
   }
 ];
 
 const items2 = [
   {
-    src: "/images/dummy.jpeg",
+    src: "dummy.png",
     transform: "rotate(-4deg)"
   },
   {
-    src: "/images/dummy.jpeg",
+    src: "dummy.png",
     transform: "rotate(-13deg)"
   },
   {
-    src: "/images/dummy.jpeg",
+    src: "dummy.png",
     transform: "rotate(7deg)"
   },
   {
-    src: "/images/dummy.jpeg",
+    src: "dummy.png",
     transform: "rotate(13deg)"
   }
 ];

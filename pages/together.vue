@@ -10,10 +10,10 @@
         />
       </div>
 
-      <div class="">
+      <div class="container mx-auto">
         <!-- <h1>ATC를 후원하세요!</h1> -->
         <ul>
-          <li>
+          <li class="my-40">
             <div class="flex flex-col md:flex-row">
               <div class="p-4 w-full lg:w-4/12">
                 <h6 class="max-lg:text-xl text-2xl font-bold mb-3">
@@ -27,14 +27,24 @@
                 </p>
               </div>
               <div class="p-4 w-full lg:w-8/12">
-                <nuxt-img src="/images/dummy.jpeg" alt="" />
+                <nuxt-img
+                  src="dummy.png"
+                  alt=""
+                  class="w-full"
+                  provider="storageBucket"
+                />
               </div>
             </div>
           </li>
-          <li>
+          <li class="my-40">
             <div class="flex flex-col md:flex-row">
               <div class="p-4 w-full lg:w-6/12">
-                <nuxt-img src="/images/dummy.jpeg" alt="" />
+                <nuxt-img
+                  src="dummy.png"
+                  alt=""
+                  class="w-full"
+                  provider="storageBucket"
+                />
               </div>
               <div class="p-4 w-full lg:w-6/12">
                 <h6 class="max-lg:text-xl text-2xl font-bold mb-3">
@@ -49,7 +59,7 @@
               </div>
             </div>
           </li>
-          <li>
+          <li class="my-40">
             <div class="flex flex-col md:flex-row">
               <div class="p-4 w-full lg:w-7/12">
                 <h6 class="max-lg:text-xl text-2xl font-bold mb-3">
@@ -63,7 +73,12 @@
                 </p>
               </div>
               <div class="p-4 w-full lg:w-5/12">
-                <nuxt-img src="/images/dummy.jpeg" alt="" />
+                <nuxt-img
+                  src="dummy.png"
+                  alt=""
+                  class="w-full"
+                  provider="storageBucket"
+                />
               </div>
             </div>
           </li>
@@ -182,6 +197,16 @@
                   desc="미팅이 가능하신 날짜를 선택해주세요."
                 />
               </li>
+              <li class="mb-10">
+                <form-input-radio-btns
+                  v-model="form.meetingTime"
+                  title="원하는 미팅 시간"
+                  :form="form"
+                  @input="$event => (form.meetingTime = $event)"
+                  :options="meetingTimeOptions"
+                >
+                </form-input-radio-btns>
+              </li>
             </ul>
             <footer class="footer-form mt-8">
               <button type="submit" class="btn-submit">
@@ -193,6 +218,7 @@
         </section>
       </div>
     </section>
+    <!-- <dev-only> form: {{ form }} </dev-only> -->
     <section-marquee />
     <!-- <section
       class="min-h-lvh flex items-center justify-center border-t border-grayscale-800"
@@ -222,7 +248,8 @@ const form = ref({
   phone: null,
   email: null,
   selectedBenefits: [],
-  meetingDate: null
+  meetingDate: null,
+  meetingTime: null
 });
 
 const attributes = computed(() => {
@@ -241,13 +268,45 @@ const attributes = computed(() => {
   };
 });
 
+const meetingTimeOptions = ref([
+  {
+    label: "오전 10시",
+    value: "10:00"
+  },
+  {
+    label: "오전 11시",
+    value: "11:00"
+  },
+  {
+    label: "오후 1시",
+    value: "13:00"
+  },
+  {
+    label: "오후 2시",
+    value: "14:00"
+  },
+  {
+    label: "오후 3시",
+    value: "15:00"
+  },
+  {
+    label: "오후 4시",
+    value: "16:00"
+  },
+  {
+    label: "오후 5시",
+    value: "17:00"
+  }
+]);
+
 const formValidate = computed(() => {
   const obj = {
     company: !!form.value.company && form.value.company !== "",
     manager: !!form.value.manager && form.value.manager !== "",
     phone: validator("phone", form.value.phone).value,
     email: validator("email", form.value.email).value,
-    meetingDate: !!form?.value?.meetingDate
+    meetingDate: !!form?.value?.meetingDate,
+    meetingTime: !!form?.value?.meetingTime
   };
   // return obj;
   return Object.values(obj).every(val => val === true);
@@ -284,7 +343,8 @@ const submit = async () => {
         phone: null,
         email: null,
         selectedBenefits: [],
-        meetingDate: null
+        meetingDate: null,
+        meetingTime: null
       };
     }
   } catch (error) {

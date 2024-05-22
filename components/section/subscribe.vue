@@ -65,8 +65,9 @@
           </article>
         </template>
         <template #body-right>
-          <img
-            src="/images/dummy.jpeg"
+          <nuxt-img
+            src="dummy.png"
+            provider="storageBucket"
             alt="ticket image"
             class="object-cover h-full absolute-center"
           />
@@ -78,8 +79,9 @@
         class="-ml-3 lg:-ml-40 lg:-mt-10 shadow-lg w-11/12 md:w-9/12 lg:w-7/12 rotate-[4deg] relative z-[1]"
       >
         <template #body-right>
-          <img
-            src="/images/dummy.jpeg"
+          <nuxt-img
+            src="dummy.png"
+            provider="storageBucket"
             alt="ticket image"
             class="object-cover h-full absolute-center"
           />

@@ -12,7 +12,11 @@
                   <h6 class="item-label">{{ item.label }}</h6>
                 </header>
                 <div class="image-wrap">
-                  <nuxt-img :src="item.src" :alt="`${item.label} 이미지`" />
+                  <nuxt-img
+                    :src="item.src"
+                    :alt="`${item.label} 이미지`"
+                    provider="storageBucket"
+                  />
                 </div>
                 <figcaption class="caption-benefit">
                   <p class="item-desc">
@@ -111,6 +115,7 @@
                 <figure class="item">
                   <nuxt-img
                     placeholder
+                    provider="storageBucket"
                     :src="item.src"
                     class="item-image"
                     draggable="false"

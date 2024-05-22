@@ -49,7 +49,13 @@
                 </div>
               </slot>
               <figure class="item-image-wrapper">
-                <nuxt-img fit="cover" :src="item.src" preload />
+                <nuxt-img
+                  fit="cover"
+                  :src="item.src"
+                  provider="storageBucket"
+                  alt="item image"
+                  preload
+                />
               </figure>
             </article>
           </div>

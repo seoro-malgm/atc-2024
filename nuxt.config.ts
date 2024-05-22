@@ -273,8 +273,12 @@ export default defineNuxtConfig({
         name: "defaultProvider",
         provider: "~/providers/default-provider.ts",
         options: {
-          baseURL: "https://atc-2024-one.vercel.app/"
+          baseURL: process.env.BASE_URL
         }
+      },
+      storageBucket: {
+        name: "storageBucket",
+        provider: "~/providers/storage-bucket.ts"
       }
     }
   },
@@ -325,8 +329,10 @@ export default defineNuxtConfig({
   //   }
   // },
   nitro: {
-    storage: {
-      data: { driver: "vercelKV" }
+    preset: "firebase",
+    firebase: {
+      gen: 2,
+      nodeVersion: "20"
     }
   },
   imports: {

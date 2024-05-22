@@ -4,14 +4,9 @@ import { createOperationsGenerator } from "#image";
 
 const operationsGenerator = createOperationsGenerator();
 
-export const getImage: ProviderGetImage = (
-  src,
-  { modifiers = {}, baseURL } = {}
-) => {
-  if (!baseURL) {
-    // also support runtime config
-    baseURL = useRuntimeConfig().public.baseURL;
-  }
+export const getImage: ProviderGetImage = (src, { modifiers = {} } = {}) => {
+  const config = useRuntimeConfig();
+  const baseURL: any = config.public.siteUrl;
 
   const operations = operationsGenerator(modifiers);
 

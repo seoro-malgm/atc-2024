@@ -139,13 +139,13 @@ import { useMouseInElement } from "@vueuse/core";
 
 const items = ref([
   {
-    src: "/images/dummy.jpeg",
+    src: "dummy.png",
     description: {
       title: "지리산이 속삭이는생명, 평화, 공존의 메세지"
     }
   },
   {
-    src: "/images/dummy.jpeg",
+    src: "dummy.png",
     description: {
       title: "대한민국 최초·최대 국립공원",
       paragraph:
@@ -153,7 +153,7 @@ const items = ref([
     }
   },
   {
-    src: "/images/dummy.jpeg",
+    src: "dummy.png",
     description: {
       title: "우리나라 최다 생물종 서식지",
       paragraph:
@@ -161,7 +161,7 @@ const items = ref([
     }
   },
   {
-    src: "/images/dummy.jpeg",
+    src: "dummy.png",
     description: {
       title: "우리나라 최초 도보여행 순례길",
       paragraph:
@@ -169,7 +169,7 @@ const items = ref([
     }
   },
   {
-    src: "/images/dummy.jpeg",
+    src: "dummy.png",
     description: {
       title: "우리나라 최대 트래킹 성지",
       paragraph:

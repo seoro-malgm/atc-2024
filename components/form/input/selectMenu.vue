@@ -108,7 +108,7 @@ watch(
 
 onMounted(() => {
   if (props.form[props.bind]) {
-    console.log("props.form[props.bind] :", props.form[props.bind]);
+    // console.log("props.form[props.bind] :", props.form[props.bind]);
   }
   if (props.localStorage) {
     const storedItems = localStorage.getItem(props.localStorage);

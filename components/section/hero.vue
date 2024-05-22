@@ -11,13 +11,7 @@
     </div>
     <div class="content">
       <!-- dummy reels -->
-      <video
-        src="https://firebasestorage.googleapis.com/v0/b/atcjirisan.appspot.com/o/reels-dummy.mp4?alt=media&token=9e1ca4da-bb41-4f88-a584-35e52fc3e3f9"
-        autoplay
-        playsinline
-        muted
-        loop
-      />
+      <video :src="reelsURL" autoplay playsinline muted loop />
     </div>
     <div class="scroll-down">
       <span>SCROLL DOWN</span>
@@ -37,6 +31,8 @@
 //     default: null
 //   }
 // });
+
+const reelsURL = getRefURL("reels-dummy.mp4");
 </script>
 
 <style lang="postcss" scoped>

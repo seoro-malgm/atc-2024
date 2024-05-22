@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "atcjirisan"
-  }
+  },
+  "targets": {},
+  "etags": {
+    "atcjirisan": {
+      "extensionInstances": {
+        "firestore-send-email-3fb5": "e4f28939cee009a8cd7bd8cd60ac0180d2cf110af4eb02639b75afc3726e4db6"
+      }
+    }
+  },
+  "dataconnectEmulatorConfig": {}
 }
