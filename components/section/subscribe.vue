@@ -67,7 +67,7 @@
         <template #body-right>
           <nuxt-img
             src="dummy.png"
-            provider="storageBucket"
+            provider="defaultProvider"
             alt="ticket image"
             class="object-cover h-full absolute-center"
           />
@@ -81,7 +81,7 @@
         <template #body-right>
           <nuxt-img
             src="dummy.png"
-            provider="storageBucket"
+            provider="defaultProvider"
             alt="ticket image"
             class="object-cover h-full absolute-center"
           />

@@ -55,13 +55,6 @@ const sns = ref([
     method: copyLink
   },
   {
-    type: "instagram",
-    label: "인스타그램으로 공유하기",
-    icon: "skill-icons:instagram",
-    color: "#ea3379",
-    method: copyLink
-  },
-  {
     type: "twitter",
     label: "X로 공유하기",
     icon: "devicon:twitter",

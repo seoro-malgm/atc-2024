@@ -19,10 +19,11 @@
       </template>
     </section-scroll-horizontal>
 
+    <!-- 연사 -->
+    <section-speakers />
+
     <!-- 스폰서 -->
     <section-sponsors />
-    <!-- 스폰서 혜택 -->
-    <section-sponsor-benefits />
 
     <section
       id="section-cta"
@@ -32,45 +33,51 @@
       <div class="col-span-12 xl:col-span-8 border-t border-grayscale-800">
         <div class="w-full">
           <logo-symbol-large class="hidden xl:block" />
-          <nuxt-img
-            class="hidden xl:block"
-            src="/lettertype-full-eng.svg"
-            alt="5th ASIA TRAILS CONFERENCE 2024 JIRISAN"
-            title="5th ASIA TRAILS CONFERENCE 2024 JIRISAN"
-          />
+          <div class="hidden xl:block px-2 mt-2">
+            <nuxt-img
+              src="/lettertype-full-eng.svg"
+              provider="defaultProvider"
+              alt="5th ASIA TRAILS CONFERENCE 2024 JIRISAN"
+              title="5th ASIA TRAILS CONFERENCE 2024 JIRISAN"
+            />
+          </div>
         </div>
-        <!-- <section-marquee class="mt-16" /> -->
-        <!-- <section-marquee class="xl:mt-16" /> -->
       </div>
       <div
         class="col-span-12 xl:col-span-4 bg-purple-heart-600 max-xl:py-[10rem] xl:pt-12 xl:pb-10"
       >
         <header class="text-white px-8 xl:px-14 max-xl:text-center">
           <h3 class="text-3xl lg:text-6xl font-extrabold mb-4">
-            ATC의 정식 스폰서가 <br />
-            되어주세요.
+            ATC 2024 <br />
+            사전예약 오픈 D-15 <br />
+            알림받기
           </h3>
           <p class="desc">
-            ATC의 스폰서는 미팅을 통해 결정하여, <br />
-            원하는 서비스를 제공받으실 수 있습니다.
+            ATC의 소식을 가장 먼저 받아보세요. 알림을 예약하시면,
+            <br />
+            ATC 2024의 모든 소식을 가장 먼저 받아보실 수 있습니다.
           </p>
         </header>
 
         <section class="cta max-xl:text-center">
-          <nuxt-link to="/together#section-meeing-form" class="btn-cta">
-            <span> 미팅 예약하기 </span>
-            <UIcon class="icon -mt-4" name="bxs:paper-plane" />
-          </nuxt-link>
+          <button @click.prevent="sbuscribeModalShown = true" class="btn-cta">
+            <UIcon class="icon -mt-4 mr-3" name="bxs:paper-plane" />
+            <span> 알림 예약하기 </span>
+          </button>
         </section>
       </div>
     </section>
     <section-marquee class="block lg:hidden" />
-    <!-- faq -->
-    <!-- <section-faq class="-mb-[1px]" /> -->
-    <!-- marquee -->
-    <!-- <section-marquee /> -->
+
     <!-- 공유하기 -->
     <section-share />
+
+    <!-- modals -->
+    <!-- 구독 모달 -->
+    <modal-subscribe
+      :shown="sbuscribeModalShown"
+      @toggle="$event => (sbuscribeModalShown = $event)"
+    />
   </div>
 </template>
 
@@ -137,6 +144,9 @@ const mousePosition = computed(() => {
     y: elementY.value
   };
 });
+
+// 구독 폼 열기
+const sbuscribeModalShown = ref(false);
 </script>
 
 <style lang="postcss" scoped>

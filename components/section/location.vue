@@ -26,14 +26,12 @@ const emits = defineEmits();
 
 <style lang="postcss" scoped>
 #section-location {
-  @apply flex flex-col lg:flex-row lg:items-center;
+  @apply flex flex-col lg:flex-row lg:items-center border-b border-grayscale-900;
   .infos {
     @apply px-4 lg:w-7/12;
   }
   .map {
-    @apply w-full lg:w-5/12;
-    height: 500px;
-    border: 1px solid #ddd;
+    @apply w-full h-[640px] p-4 lg:w-5/12  lg:border-l border-grayscale-900 relative;
   }
 }
 </style>

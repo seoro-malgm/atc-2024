@@ -317,7 +317,8 @@ export default defineNuxtConfig({
       authId: process.env.AUTH_ID,
       authPwd: process.env.AUTH_PWD,
       // tokenName: process.env.TOKEN_NAME
-      baseURL: process.env.BASE_URL
+      baseURL: process.env.BASE_URL,
+      mapId: process.env.MAP_ID
     },
     stibee_apiKey: process.env.STIBEE_APIKEY,
     stibee_listId: process.env.STIBEE_LISTID

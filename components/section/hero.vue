@@ -9,7 +9,12 @@
         praesentium accusamus.
       </p>
     </div> -->
-    <div class="content">
+    <div
+      class="content"
+      :style="{
+        height: `calc(100vh - ${headerHeight}px)`
+      }"
+    >
       <!-- dummy reels -->
       <video :src="reelsURL" autoplay playsinline muted loop />
     </div>
@@ -23,10 +28,15 @@
 </template>
 
 <script setup>
+import sponsors from "@/data/sponsorList";
 const reelsURL = getRefURL("reels-dummy.mp4");
 
 const props = defineProps({
   scrollY: {
+    type: [Number, String],
+    default: 0
+  },
+  headerHeight: {
     type: [Number, String],
     default: 0
   }
@@ -35,9 +45,9 @@ const props = defineProps({
 
 <style lang="postcss" scoped>
 #hero {
-  @apply max-lg:relative;
+  @apply max-lg:relative overflow-x-hidden;
   .title {
-    @apply absolute top-[25%] lg:top-[40%] left-[50%] text-center w-11/12 lg:w-7/12 px-2 lg:px-3;
+    @apply absolute top-[25%] lg:top-1/2 left-1/2 text-center w-11/12 lg:w-7/12 px-2 lg:px-3 z-20;
     text-shadow: 0px 0px 3px #121212;
     transform: translate(-50%);
     /* mix-blend-mode: difference; */
@@ -50,7 +60,7 @@ const props = defineProps({
     }
   }
   .content {
-    @apply relative overflow-hidden w-full pb-[80vh] md:pb-[76%];
+    @apply relative w-full;
     video {
       @apply absolute top-[50%] left-[50%] h-full w-auto;
       transform: translate(-50%, -50%);
@@ -59,7 +69,7 @@ const props = defineProps({
     }
   }
   .scroll-down {
-    @apply absolute bottom-10 lg:bottom-10 left-[50%] translate-x-[-50%] flex items-center flex-col text-white transition-all lg:text-2xl;
+    @apply absolute bottom-10 left-[50%] translate-x-[-50%] flex items-center flex-col text-white transition-all lg:text-2xl;
     /* mix-blend-mode: difference; */
     .icon {
       @apply w-[56px] h-[56px] lg:w-[66px] lg:h-[66px] mt-3;

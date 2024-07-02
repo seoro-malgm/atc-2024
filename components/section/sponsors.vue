@@ -1,6 +1,6 @@
 <template>
   <section class="section-sponsors border-b-0">
-    <header-section> 스폰서 </header-section>
+    <header-section> 주관 및 주최 </header-section>
     <!-- 스폰서 목록 -->
     <div class="list-wrapper">
       <div class="list-container">
@@ -21,15 +21,14 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted, watch } from "vue";
 import sponsors from "@/data/sponsorList";
 
-const props = defineProps({
-  data: {
-    type: String,
-    default: null
-  }
-});
+// const props = defineProps({
+//   data: {
+//     type: String,
+//     default: null
+//   }
+// });
 </script>
 
 <style lang="postcss" scoped>
@@ -40,7 +39,7 @@ const props = defineProps({
     @apply py-12 container;
     .list-container {
       .list-sponsor {
-        @apply grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5;
+        @apply grid grid-cols-3 lg:grid-cols-5;
         li {
           /* margin: -1px; */
           .logo {

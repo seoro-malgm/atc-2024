@@ -181,7 +181,7 @@ onUnmounted(() => {
   .scroll-header {
     @apply static lg:absolute lg:top-0 max-lg:mb-6 max-lg:pt-8 pb-8 border-b border-grayscale-800 left-0 w-full z-[2] bg-white;
     .progress {
-      @apply w-full h-2 relative bg-white lg:block;
+      @apply max-lg:hidden w-full h-2 relative bg-white lg:block;
       .bar {
         @apply absolute left-0 right-0 h-2 bg-spring-green-300;
       }
@@ -232,7 +232,7 @@ onUnmounted(() => {
               /* width: auto;
               height: 100%; */
 
-              @apply w-[auto] h-full lg:w-full lg:h-[auto] absolute-center;
+              @apply max-lg:w-full w-[auto] h-full lg:w-full lg:h-[auto] absolute-center;
               /* position: absolute;
               top: 50%;
               left: 50%;

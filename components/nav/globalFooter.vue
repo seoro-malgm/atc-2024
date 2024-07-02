@@ -6,7 +6,7 @@
       <div class="container">
         <div class="copyrights">
           <h6 class="logo">
-            <nuxt-img src="/logo-white.svg" />
+            <nuxt-img src="/logo-white.svg" provider="defaultProvider" />
           </h6>
           <span class="text"> &copy; 2024 ATN all reserved.</span>
         </div>
@@ -51,6 +51,7 @@
 
   .infos {
     @apply p-4 lg:p-8 max-lg:border-t lg:border-l border-grayscale-400 text-grayscale-300;
+    color: #003a08;
   }
 }
 </style>
