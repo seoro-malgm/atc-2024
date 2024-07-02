@@ -1,89 +1,29 @@
 <template>
   <div>
     <!-- 히어로 -->
-    <section-hero />
-    <section-marquee />
+    <section-hero :scrollY="scrollY" />
+    <!-- <section-marquee /> -->
 
     <!-- 정보 섹션 -->
-    <section-infos></section-infos>
-    <!-- marquee -->
+    <section-infos />
+
+    <!-- 장소섹션 -->
+    <section-location />
 
     <!-- 지리산 정보 -->
-    <section-scroll-horizontal :items="items">
+    <section-scroll-horizontal :headerHeight="headerHeight" :items="items">
       <template #title>
         <!-- <header-section>  -->
         지리산에서의 ATC
         <!-- </header-section> -->
       </template>
     </section-scroll-horizontal>
-    <!-- 컨퍼런스 -->
-    <!-- <section-conference /> -->
-    <!-- 워킹 페스티벌 -->
-    <!-- <section-festival /> -->
-    <section-subscribe />
-    <section-marquee />
-    <!-- 참여 -->
-    <!-- <section-subscribe-form /> -->
 
     <!-- 스폰서 -->
     <section-sponsors />
     <!-- 스폰서 혜택 -->
     <section-sponsor-benefits />
-    <!-- <section
-      id="section-cta"
-      class="py-24 bg-purple-heart-500 relative overflow-hidden"
-      ref="target"
-    >
-      <div class="relative z-[2]">
-        <header class="text-center text-white px-8">
-          <h3 class="text-center text-2xl lg:text-4xl font-extrabold mb-2">
-            ATC의 정식 스폰서가 되어주세요.
-          </h3>
-          <p class="desc">
-            ATC의 스폰서는 미팅을 통해 결정하여, <br />
-            원하는 서비스를 제공받으실 수 있습니다.
-          </p>
-        </header>
 
-        <section class="cta">
-          <nuxt-link to="/together#section-meeing-form" class="btn-cta">
-            <span> 미팅 예약하기 </span>
-            <UIcon class="icon -mt-4" name="bxs:paper-plane" />
-          </nuxt-link>
-        </section>
-      </div>
-
-      <logo-symbol-text
-        class="symbol top-0 left-0 w-[70vw] lg:w-[50vw]"
-        add-class="fill-white opacity-20"
-        :style="
-          mousePosition.isOutside
-            ? {
-                transform: 'translate(-25%, 0)'
-              }
-            : {
-                transform: `translate(${-50 + mousePosition.x * 0.02}%, ${
-                  -50 + mousePosition.y * 0.2
-                }%)`
-              }
-        "
-      />
-      <logo-symbol-arr
-        class="symbol right-0 bottom-0 w-[80vw] lg:w-[30vw]"
-        add-class="fill-white opacity-20"
-        :style="
-          mousePosition.isOutside
-            ? {
-                transform: 'translate(25%, 0)'
-              }
-            : {
-                transform: `translate(${0 - mousePosition.x * 0.004}%, ${
-                  -50 + mousePosition.y * 0.2
-                }%)`
-              }
-        "
-      />
-    </section> -->
     <section
       id="section-cta"
       class="grid grid-cols-12 max-xl:mt-12"
@@ -100,15 +40,14 @@
           />
         </div>
         <!-- <section-marquee class="mt-16" /> -->
-        <section-marquee class="xl:mt-16" />
+        <!-- <section-marquee class="xl:mt-16" /> -->
       </div>
       <div
         class="col-span-12 xl:col-span-4 bg-purple-heart-600 max-xl:py-[10rem] xl:pt-12 xl:pb-10"
       >
         <header class="text-white px-8 xl:px-14 max-xl:text-center">
           <h3 class="text-3xl lg:text-6xl font-extrabold mb-4">
-            ATC의 <br />
-            정식 스폰서가 <br />
+            ATC의 정식 스폰서가 <br />
             되어주세요.
           </h3>
           <p class="desc">
@@ -127,15 +66,26 @@
     </section>
     <section-marquee class="block lg:hidden" />
     <!-- faq -->
-    <section-faq class="-mb-[1px]" />
+    <!-- <section-faq class="-mb-[1px]" /> -->
     <!-- marquee -->
     <!-- <section-marquee /> -->
+    <!-- 공유하기 -->
+    <section-share />
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
 import { useMouseInElement } from "@vueuse/core";
+const props = defineProps({
+  scrollY: {
+    type: [Number, String],
+    default: 0
+  },
+  headerHeight: {
+    type: [Number, String],
+    default: 0
+  }
+});
 
 const items = ref([
   {

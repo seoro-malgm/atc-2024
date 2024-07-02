@@ -1,7 +1,5 @@
 <template>
   <footer class="global-footer">
-    <!-- 공유하기 -->
-    <section-share />
     <section-marquee />
     <!-- 푸터 정보 -->
     <div class="content">

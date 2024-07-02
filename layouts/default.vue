@@ -1,12 +1,19 @@
 <template>
   <div id="wrapper" ref="wrapper">
-    <nav-global-header :pinned="pinned" />
+    <nav-global-header
+      :scrollY="scrollY"
+      :headerHeight="headerHeight"
+      ref="header"
+    />
     <main
       id="main"
-      :class="[{ 'is-main': path === '/' }, { pinned: pinned }]"
+      :class="[{ 'is-main': path === '/' }]"
       ref="main"
+      :style="{
+        paddingTop: `${headerHeight}px`
+      }"
     >
-      <NuxtLayout name="page">
+      <NuxtLayout name="page" :scrollY="scrollY" :headerHeight="headerHeight">
         <NuxtPage />
         <!-- <slot></slot> -->
       </NuxtLayout>
@@ -30,23 +37,29 @@ const path = computed(() => {
 
 const main = ref();
 const mainBounding = useElementBounding(main);
-const pinned = computed(() => {
+const scrollY = computed(() => {
   const { y } = mainBounding;
-  return y.value >= 10;
+  return Number(y.value) * -1;
+});
+
+const header = ref();
+const headerBounding = useElementBounding(header);
+const headerHeight = computed(() => {
+  return headerBounding.height.value;
 });
 </script>
 
 <style lang="postcss" scoped>
 #wrapper {
-  @apply lg:mx-4 my-2 lg:my-4 border border-grayscale-800;
+  /* @apply; */
   margin-left: auto;
   margin-right: auto;
 
   #main {
-    @apply pt-[58px] lg:pt-[73px];
-    &.pinned {
+    @apply pt-[58px] lg:pt-[200px];
+    /* &.pinned {
       @apply lg:pt-0;
-    }
+    } */
   }
 }
 </style>

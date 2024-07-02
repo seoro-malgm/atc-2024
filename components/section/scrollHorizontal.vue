@@ -6,14 +6,19 @@
       ref="wrapper"
     >
       <!-- header -->
-      <header class="scroll-header">
+      <header
+        class="scroll-header"
+        :style="{
+          paddingTop: `${headerHeight}px`
+        }"
+      >
         <div class="progress">
           <div
             class="bar"
             :style="{
               width: `${(state.scrollX / maxScroll) * 100}%`
             }"
-          ></div>
+          />
         </div>
         <h2 class="title">
           <slot name="title" />
@@ -82,6 +87,10 @@ const props = defineProps({
   items: {
     type: Array,
     default: () => []
+  },
+  headerHeight: {
+    type: [Number, String],
+    default: 0
   }
 });
 
@@ -112,7 +121,7 @@ const bodyBounds = useElementBounding(body);
 const containerBounds = useElementBounding(container);
 
 const maxScroll = computed(() => {
-  const length = props.items.length;
+  const length = props.items.length - 1;
   const margin = 40;
   const gnbHeight = 78;
   return (bodyBounds.width.value + margin) * length - margin - gnbHeight;
@@ -170,15 +179,15 @@ onUnmounted(() => {
   /* z-index: -1; */
   overflow: hidden;
   .scroll-header {
-    @apply static lg:absolute lg:top-0 max-lg:mb-6 pt-8 lg:pt-[112px] pb-8 border-b border-grayscale-800 left-0 w-full z-[2] bg-white;
+    @apply static lg:absolute lg:top-0 max-lg:mb-6 max-lg:pt-8 pb-8 border-b border-grayscale-800 left-0 w-full z-[2] bg-white;
     .progress {
-      @apply w-full h-2 relative bg-white lg:block translate-y-[-37px];
+      @apply w-full h-2 relative bg-white lg:block;
       .bar {
         @apply absolute left-0 right-0 h-2 bg-spring-green-300;
       }
     }
     h2.title {
-      @apply text-center text-3xl lg:text-5xl font-bold skew-x-[-15deg];
+      @apply text-center text-3xl lg:text-5xl font-bold skew-x-[-15deg] lg:pt-8;
     }
   }
 
