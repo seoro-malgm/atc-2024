@@ -32,57 +32,10 @@ onMounted(async () => {
 
   const map = new Map(mapRef.value, {
     center: props.position,
-    zoom: 12,
+    zoom: 13,
     mapId: config.public.mapId
   });
 
-  // const mapStyles = [
-  //   {
-  //     featureType: "all",
-  //     elementType: "labels.text.fill",
-  //     stylers: [{ color: "#000000" }]
-  //   },
-  //   {
-  //     featureType: "all",
-  //     elementType: "labels.text.stroke",
-  //     stylers: [{ color: "#ffffff" }, { weight: 2 }]
-  //   },
-  //   {
-  //     featureType: "landscape",
-  //     elementType: "geometry",
-  //     stylers: [{ color: "#e0e0e0" }]
-  //   },
-  //   {
-  //     featureType: "road.highway",
-  //     elementType: "geometry.fill",
-  //     stylers: [{ color: "#ff0000" }, { lightness: 50 }]
-  //   },
-  //   {
-  //     featureType: "road.highway",
-  //     elementType: "geometry.stroke",
-  //     stylers: [{ color: "#000000" }, { lightness: 40 }]
-  //   },
-  //   {
-  //     featureType: "water",
-  //     elementType: "geometry.fill",
-  //     stylers: [{ color: "#0000ff" }]
-  //   },
-  //   {
-  //     featureType: "poi.park",
-  //     elementType: "geometry",
-  //     stylers: [{ color: "#00ff00" }, { lightness: 40 }]
-  //   },
-  //   {
-  //     featureType: "transit.line",
-  //     elementType: "geometry",
-  //     stylers: [{ color: "#ff00ff" }, { lightness: 40 }]
-  //   },
-  //   {
-  //     featureType: "administrative.land_parcel",
-  //     elementType: "geometry.stroke",
-  //     stylers: [{ color: "#0000ff" }, { lightness: 50 }]
-  //   }
-  // ];
   new AdvancedMarkerElement({
     position: props.position,
     map: map,

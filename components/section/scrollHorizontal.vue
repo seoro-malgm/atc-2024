@@ -181,7 +181,7 @@ onUnmounted(() => {
   .scroll-header {
     @apply static lg:absolute lg:top-0 max-lg:mb-6 max-lg:pt-8 pb-8 border-b border-grayscale-800 left-0 w-full z-[2] bg-white;
     .progress {
-      @apply max-lg:hidden w-full h-2 relative bg-white lg:block;
+      @apply max-lg:hidden w-full h-2 relative bg-grayscale-950 lg:block;
       .bar {
         @apply absolute left-0 right-0 h-2 bg-spring-green-300;
       }

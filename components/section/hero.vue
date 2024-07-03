@@ -28,7 +28,6 @@
 </template>
 
 <script setup>
-import sponsors from "@/data/sponsorList";
 const reelsURL = getRefURL("reels-dummy.mp4");
 
 const props = defineProps({
@@ -69,10 +68,10 @@ const props = defineProps({
     }
   }
   .scroll-down {
-    @apply absolute bottom-10 left-[50%] translate-x-[-50%] flex items-center flex-col text-white transition-all lg:text-2xl;
+    @apply absolute max-lg:bottom-28 bottom-10 left-[50%] translate-x-[-50%] flex items-center flex-col text-white transition-all text-xl lg:text-2xl mix-blend-difference;
     /* mix-blend-mode: difference; */
     .icon {
-      @apply w-[56px] h-[56px] lg:w-[66px] lg:h-[66px] mt-3;
+      @apply w-[52px] h-[52px] lg:w-[66px] lg:h-[66px] mt-2;
       animation: up-down 0.3s alternate infinite;
     }
   }

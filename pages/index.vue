@@ -5,7 +5,7 @@
     <!-- <section-marquee /> -->
 
     <!-- 정보 섹션 -->
-    <section-infos />
+    <!-- <section-infos /> -->
 
     <!-- 장소섹션 -->
     <section-location />
@@ -21,6 +21,9 @@
 
     <!-- 연사 -->
     <section-speakers />
+
+    <!-- 프로그램 -->
+    <section-programs />
 
     <!-- 스폰서 -->
     <section-sponsors />

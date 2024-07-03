@@ -5,11 +5,12 @@
       <section class="logo-section">
         <nuxt-link class="logo" to="/" :class="{ pinned: pinned }">
           <logo-interactive
-            class="logo-symbol"
+            class="logo-symbol hidden lg:block"
             :style="{
-              width: pinned ? `calc(100% - ${scrollY / 4}%)` : '380px'
+              width: pinned ? `calc(100% - ${scrollY / 4}%)` : 'unset'
             }"
           />
+          <logo-interactive class="logo-symbol lg:hidden w-full" />
           <div class="lettertype">
             <nuxt-img
               src="/lettertype-full-eng.svg"
@@ -189,7 +190,7 @@ const pinned = computed(() => {
   @apply w-full top-0 fixed left-1/2 z-[2000] -translate-x-1/2 bg-white border-b border-grayscale-800 px-2 py-2 lg:px-4 lg:pt-3;
   transition: all 0.3s ease-out;
   .global-header-nav {
-    @apply flex items-start justify-between mx-auto;
+    @apply flex items-center lg:items-start justify-between mx-auto;
     .logo-section {
       @apply max-lg:max-w-[60vw] lg:max-w-[65%] w-full;
       .logo {
@@ -198,7 +199,7 @@ const pinned = computed(() => {
         &.pinned {
           @apply lg:flex-col;
           .logo-symbol {
-            @apply w-full h-auto;
+            @apply w-full h-auto lg:max-h-[unset];
           }
           .lettertype {
             @apply mt-2 lg:px-0;
@@ -209,7 +210,7 @@ const pinned = computed(() => {
         }
         /* 고정해제 */
         .logo-symbol {
-          @apply lg:min-w-[unset] lg:min-h-16 w-auto;
+          @apply lg:min-w-[unset] lg:min-h-16 lg:max-h-[64px] w-auto;
         }
         .lettertype {
           @apply w-full max-lg:mt-2 lg:mt-0 lg:px-4;
@@ -220,28 +221,28 @@ const pinned = computed(() => {
       }
     }
     .nav-section {
-      @apply max-lg:px-4 max-lg:py-2 lg:self-stretch lg:max-w-[50%] xl:max-w-[35%];
+      @apply max-lg:px-2 max-lg:py-1 lg:self-stretch lg:max-w-[50%] xl:max-w-[35%];
       /* 토글러 */
       .nav-toggler {
         @apply block lg:hidden;
         .toggler {
-          @apply flex flex-col justify-between w-6 h-6 mr-1;
+          @apply flex flex-col justify-between w-8 h-8 mr-1;
           .line {
-            @apply block w-full h-1 my-auto bg-black transition-all-default;
+            @apply block w-full h-2 my-auto bg-black transition-all-default;
             transition: all 0.3s;
             opacity: 1;
           }
           &.toggled {
             .line {
               &:first-child {
-                transform: rotate(45deg) translate(0.5rem, 0.25rem);
+                transform: rotate(45deg) translate(0.75rem, 0.25rem);
               }
               &:nth-child(2) {
                 transform: translate(32px);
                 opacity: 0;
               }
               &:last-child {
-                transform: rotate(-45deg) translate(0.5rem, -0.25rem);
+                transform: rotate(-45deg) translate(0.75rem, -0.25rem);
               }
             }
           }
@@ -298,7 +299,7 @@ const pinned = computed(() => {
         }
         /* 스폰서 목록 */
         .list-sponsor {
-          @apply max-lg:hidden w-full flex flex-row items-center opacity-0 max-h-[0]  transition-all ease-out duration-100;
+          @apply max-lg:hidden w-full flex flex-row items-center opacity-0 max-h-[0]  transition-all ease-out duration-100 pointer-events-none;
           &.shown {
             @apply opacity-100 max-h-[1000px];
           }
