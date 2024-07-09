@@ -193,7 +193,7 @@ const submit = async e => {
       toast.add({
         id: `subscriber-added-${new Date().getTime()}`,
         title: "정상적으로 구독이 완료됐습니다.",
-        color: "spring-green",
+        color: "green",
         icon: "memory:checkbox-marked"
       });
     }
@@ -226,7 +226,7 @@ const submit = async e => {
   .modal-footer {
     @apply text-center border-t border-grayscale-800;
     button {
-      @apply block text-center py-4 px-2 w-full font-bold bg-spring-green-200 hover:bg-spring-green-400 transition-all-default opacity-100;
+      @apply block text-center py-4 px-2 w-full font-bold bg-green-200 hover:bg-green-400 transition-all-default opacity-100;
       &:disabled {
         @apply bg-grayscale-400 opacity-50;
       }

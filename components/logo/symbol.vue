@@ -39,24 +39,23 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted, watch } from "vue";
-import { useInterval } from "@vueuse/core";
-const { counter, reset, pause, resume } = useInterval(4000, { controls: true });
-const listColors = ref(["#64ff93", "#fff7cf", "#ffcce4", "#cfdcfc"]);
+// import { useInterval } from "@vueuse/core";
+// const { counter, reset, pause, resume } = useInterval(4000, { controls: true });
+// const listColors = ref(["#64ff93", "#fff7cf", "#ffcce4", "#cfdcfc"]);
 
-const currentColor = ref("#64ff93");
+const currentColor = ref("#a5fea3");
 
-watch(
-  () => counter.value,
-  (n, o) => {
-    if (n >= listColors.value?.length) {
-      reset();
-      currentColor.value = listColors.value[0];
-    } else {
-      currentColor.value = listColors.value[n];
-    }
-  }
-);
+// watch(
+//   () => counter.value,
+//   (n, o) => {
+//     if (n >= listColors.value?.length) {
+//       reset();
+//       currentColor.value = listColors.value[0];
+//     } else {
+//       currentColor.value = listColors.value[n];
+//     }
+//   }
+// );
 </script>
 
 <style lang="postcss" scoped>

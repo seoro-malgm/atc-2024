@@ -54,12 +54,19 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted, watch } from "vue";
-import { useInterval } from "@vueuse/core";
-const { counter, reset, pause, resume } = useInterval(1000, { controls: true });
-const listColors = ref(["#64ff93", "#fff7cf", "#ffcce4", "#cfdcfc"]);
+// import { useInterval } from "@vueuse/core";
 
-const currentColor = ref("#64ff93");
+const props = defineProps({
+  duration: {
+    type: [String, Number],
+    default: 1300
+  }
+});
+
+// const { counter, reset, pause, resume } = useInterval(1000, { controls: true });
+// const listColors = ref(["#a5fea3", "#fff7cf", "#ffcce4", "#cfdcfc"]);
+
+const currentColor = ref("#a5fea3");
 
 const fromLetterPinPoints =
   "1264 89.6 1264 0 1110.2 0 1110.2 0 1028.5 83.7 1028.5 118.3 1028.5 173 1076.4 173 1179.6 173 1179.6 260 1264 260 1264 173 1179.6 173 1179.6 89.6 1264 89.6";
@@ -75,7 +82,7 @@ const letterPinPoints = ref(fromLetterPinPoints);
 const arrowPoints = ref(fromArrowPoints);
 
 let animationStartTime = null;
-const animationDuration = 1300;
+const animationDuration = +props.duration;
 let animationDirection = 1; // 1은 정방향, -1은 역방향
 
 function animate(currentTime) {
@@ -142,17 +149,17 @@ onMounted(() => {
   // reverseAnimation();
 });
 
-watch(
-  () => counter.value,
-  (n, o) => {
-    if (n >= listColors.value?.length) {
-      reset();
-      currentColor.value = listColors.value[0];
-    } else {
-      currentColor.value = listColors.value[n];
-    }
-  }
-);
+// watch(
+//   () => counter.value,
+//   (n, o) => {
+//     if (n >= listColors.value?.length) {
+//       reset();
+//       currentColor.value = listColors.value[0];
+//     } else {
+//       currentColor.value = listColors.value[n];
+//     }
+//   }
+// );
 </script>
 
 <style lang="postcss" scoped>

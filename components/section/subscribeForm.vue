@@ -45,7 +45,7 @@ const onSubmit = e => {
     title: `등록이 완료되었습니다.`,
     // description: error.data.message || "에러가 발생하였습니다.",
     icon: "ic:baseline-check-circle",
-    color: "spring-green"
+    color: "green"
   });
 };
 </script>
@@ -73,7 +73,7 @@ const onSubmit = e => {
         .form-footer {
           @apply text-center border-t;
           .btn-submit {
-            @apply w-full p-4 bg-transparent hover:bg-spring-green-400 transition-all text-lg lg:text-xl font-bold;
+            @apply w-full p-4 bg-transparent hover:bg-green-400 transition-all text-lg lg:text-xl font-bold;
           }
         }
       }

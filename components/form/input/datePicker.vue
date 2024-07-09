@@ -114,14 +114,14 @@ const attrs = {
       @apply text-classic-rose-500;
     }
     :deep(.vc-weekday-7) {
-      @apply text-purple-heart-600;
+      @apply text-blue-600;
     }
     :deep(.vc-day),
     :deep(.vc-day-content) {
       @apply rounded-none w-full;
     }
     :deep(.vc-day .vc-primary) {
-      @apply bg-purple-heart-600 transition-all-default;
+      @apply bg-blue-600 transition-all-default;
     }
     :deep(.vc-container) {
       @apply w-full;

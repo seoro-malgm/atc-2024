@@ -1,20 +1,24 @@
 export default defineAppConfig({
   ui: {
-    primary: "spring-green",
+    primary: "green",
     gray: "grayscale",
     toggle: {
       default: {
-        color: "spring-green",
-        variant: "spring-green"
+        color: "green",
+        variant: "green"
       }
     },
     icons: {
       dynamic: true
     },
-    notifications: {
+    notification: {
       rounded: "rounded-none",
-      inner: "border border-gray-800"
+      container: "border border-grayscale-900"
     },
+    notifications: {
+      rounded: "rounded-none"
+    },
+
     tooltip: {
       background: "bg-black dark:bg-white",
       color: "text-white dark:text-grayscale-900",
@@ -50,7 +54,7 @@ export default defineAppConfig({
         wrapper:
           "absolute flex items-center justify-center gap-3 lg:gap-4 bottom-6 inset-x-0",
         base: "rounded-none h-4 w-4 lg:w-5 lg:h-5",
-        active: "bg-spring-green-500 dark:bg-spring-green-400",
+        active: "bg-green-500 dark:bg-green-400",
         inactive: "bg-hawkes-blue-900 dark:bg-gray-800 mix-blend-overlay"
       }
     },
@@ -59,6 +63,13 @@ export default defineAppConfig({
       option: {
         rounded: "rounded-none"
       }
+    },
+    modal: {
+      wrapper: "relative z-[4000]",
+
+      shadow: "shadow-none",
+      rounded: "rounded-none",
+      background: "border border-grayscale-800 dark:border-grayscale-200"
     }
   }
 });

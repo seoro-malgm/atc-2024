@@ -11,10 +11,12 @@
     >
       <polygon
         class="cls-1"
+        :style="{ fill: fill }"
         points="153.32 51.03 102.29 0 73.79 28.51 125.07 79.79 153.32 51.03"
       />
       <polygon
         class="cls-1"
+        :style="{ fill: fill }"
         points="182.08 79.79 125.07 79.79 0 79.79 0 120.1 126.1 120.1 73.79 172.42 102.29 200.92 174.25 128.97 183.12 120.1 202.76 100.46 182.08 79.79"
       />
     </svg>
@@ -22,7 +24,6 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted, watch } from "vue";
 const props = defineProps({
   dir: {
     type: String,
@@ -31,6 +32,10 @@ const props = defineProps({
   color: {
     type: String,
     default: "block"
+  },
+  fill: {
+    type: String,
+    default: "black"
   }
 });
 const dirs = ref({

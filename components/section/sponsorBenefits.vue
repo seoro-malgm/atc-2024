@@ -133,7 +133,7 @@
                   @click="salt -= 1"
                   class="btn prev"
                 >
-                  <icon-arr dir="left" color="spring-green-400" />
+                  <icon-arr dir="left" color="green-400" />
                 </button>
               </template>
 
@@ -143,7 +143,7 @@
                   @click="salt += 1"
                   class="btn next"
                 >
-                  <icon-arr dir="right" color="spring-green-400" />
+                  <icon-arr dir="right" color="green-400" />
                 </button>
               </template>
 
@@ -280,7 +280,7 @@ watch(
           .indicator-btn {
             @apply rounded-none h-4 w-4 lg:w-5 lg:h-5 bg-grayscale-900;
             &.active {
-              @apply bg-spring-green-400;
+              @apply bg-green-400;
             }
           }
 
@@ -316,12 +316,12 @@ watch(
               .header-benefit {
                 @apply p-2;
                 .accordian-btn {
-                  @apply transition-all-default font-semibold px-4 py-2 border hover:bg-spring-green-500  bg-white border-grayscale-800 w-full flex justify-between items-start text-left;
+                  @apply transition-all-default font-semibold px-4 py-2 border hover:bg-green-500  bg-white border-grayscale-800 w-full flex justify-between items-start text-left;
                   .btn-icon {
                     @apply transition-all-default translate-y-1;
                   }
                   &.open {
-                    @apply bg-spring-green-400 border-spring-green-400;
+                    @apply bg-green-400 border-green-400;
                     .btn-icon {
                       @apply rotate-180 translate-y-1;
                     }
@@ -331,7 +331,7 @@ watch(
               .item-collapse {
                 @apply h-0 max-h-0 transition-all-default overflow-hidden;
                 .content-collapse {
-                  @apply px-3 py-4  border-b border-grayscale-800 bg-purple-heart-600 text-white;
+                  @apply px-3 py-4  border-b border-grayscale-800 bg-blue-600 text-white;
                   /* transition-duration: 15s; */
                 }
               }
@@ -359,7 +359,7 @@ watch(
         .cta-footer {
           @apply text-center border-t border-gray-800 mt-auto;
           .link-item {
-            @apply block py-[1.2rem] transition-all-default bg-spring-green-200 px-5;
+            @apply block py-[1.2rem] transition-all-default bg-green-200 px-5;
             span,
             .icon {
               @apply transition-all-default text-xl lg:text-2xl font-semibold;
@@ -368,7 +368,7 @@ watch(
               @apply lg:text-3xl ml-2;
             }
             &:hover {
-              @apply bg-spring-green-500;
+              @apply bg-green-500;
               span {
                 transform: skew(-15deg);
               }

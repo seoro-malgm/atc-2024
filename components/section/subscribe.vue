@@ -20,7 +20,7 @@
           >
             <footer class="absolute left-4 bottom-4">
               <div
-                class="border-2 rounded-3xl text-crusoer-900 border-crusoer-900 px-4 py-1 font-bold text-lg lg:text-xl"
+                class="border-2 rounded-3xl text-deep-green-900 border-deep-green-900 px-4 py-1 font-bold text-lg lg:text-xl"
               >
                 1
               </div>
@@ -29,7 +29,7 @@
         </template>
         <template #body-left>
           <section class="bg-[#FFFAE6] p-6 md:p-8 xl:p-16 h-full">
-            <h6 class="text-sm md:text-3xl font-bold text-crusoer-900">
+            <h6 class="text-sm md:text-3xl font-bold text-deep-green-900">
               지리산둘레길 걷기 축제 1
             </h6>
             <hr class="my-3 lg:my-3 border-1" />
@@ -49,17 +49,17 @@
             <section class="bg-[#FFFAE6] p-4 lg:p-16 h-full">
               <header class="flex justify-end">
                 <div
-                  class="border-2 rounded-3xl text-crusoer-900 border-crusoer-900 px-4 py-1 font-bold text-lg lg:text-xl"
+                  class="border-2 rounded-3xl text-deep-green-900 border-deep-green-900 px-4 py-1 font-bold text-lg lg:text-xl"
                 >
                   2
                 </div>
               </header>
-              <h6 class="text-sm md:text-3xl font-bold text-crusoer-900">
+              <h6 class="text-sm md:text-3xl font-bold text-deep-green-900">
                 지리산둘레길 <br />
                 걷기 축제 2
               </h6>
             </section>
-            <footer class="bg-crusoer-900 text-white px-4 py-2 text-sm">
+            <footer class="bg-deep-green-900 text-white px-4 py-2 text-sm">
               2024 Jirisan Trail Walking Festival 2
             </footer>
           </article>
@@ -90,12 +90,12 @@
           <article class="flex flex-col h-full justify-between">
             <section class="bg-[#FFFAE6] p-4 lg:p-16 h-full">
               <header class="flex justify-end">
-                <h6 class="text-sm md:text-3xl font-bold text-crusoer-900">
+                <h6 class="text-sm md:text-3xl font-bold text-deep-green-900">
                   제 5회 아시아 트레일즈 컨퍼런스 (ATC)
                 </h6>
               </header>
             </section>
-            <footer class="bg-crusoer-900 text-white px-4 py-2 text-sm">
+            <footer class="bg-deep-green-900 text-white px-4 py-2 text-sm">
               5th ASIA TRAILS CONFERENCE (ATC) 2024
             </footer>
           </article>
@@ -206,7 +206,7 @@ const sbuscribeModalShown = ref(false);
   section.cta {
     @apply sticky bottom-0 px-3 text-center z-10 pb-12 mt-8;
     .btn-cta {
-      @apply py-3 px-6 lg:py-4 lg:px-10 bg-spring-green-300 shadow-xl relative rounded-lg;
+      @apply py-3 px-6 lg:py-4 lg:px-10 bg-green-300 shadow-xl relative rounded-lg;
       span,
       .icon {
         @apply inline-block transition-all-default font-semibold text-2xl lg:text-3xl;

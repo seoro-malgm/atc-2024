@@ -16,19 +16,33 @@
       }"
     >
       <!-- dummy reels -->
-      <video :src="reelsURL" autoplay playsinline muted loop />
+      <video
+        :src="reelsURL"
+        autoplay
+        playsinline
+        muted
+        loop
+        :style="{
+          minHeight: `calc(100vh - ${headerHeight}px)`
+        }"
+      />
     </div>
     <div class="scroll-down" :class="{ 'opacity-0': scrollY >= 80 }">
       <span>SCROLL DOWN </span>
       <div class="icon">
-        <icon-arr dir="down" color="transparent fill-white" />
+        <icon-arr dir="down" color="transparent" fill="white" />
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-const reelsURL = getRefURL("reels-dummy.mp4");
+// const reelsURL = getRefURL(process.env?.mode !== 'de' ?  "reels-dummy.mp4");
+const reelsURL = computed(() => {
+  return process.env?.NODE_ENV === "development"
+    ? "https://youtu.be/6v2L2UGZJAM?si=cnUkEpKc4cu03zKb"
+    : getRefURL("reels-dummy.mp4");
+});
 
 const props = defineProps({
   scrollY: {
@@ -51,24 +65,27 @@ const props = defineProps({
     transform: translate(-50%);
     /* mix-blend-mode: difference; */
     h1 {
-      @apply text-[72px] lg:text-[100px] font-extrabold mb-4 lg:mb-12 text-spring-green-300;
+      @apply text-[72px] lg:text-[100px] font-extrabold mb-4 lg:mb-12 text-green-300;
       line-height: 0.9;
     }
     p {
-      @apply text-purple-heart-400;
+      @apply text-blue-400;
     }
   }
   .content {
-    @apply relative w-full;
+    @apply relative w-full overflow-hidden;
     video {
-      @apply absolute top-[50%] left-[50%] h-full w-auto;
+      @apply absolute top-[50%] left-[50%];
       transform: translate(-50%, -50%);
-      max-width: unset;
       z-index: -1;
+      min-width: 100vw;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
   .scroll-down {
-    @apply absolute max-lg:bottom-28 bottom-10 left-[50%] translate-x-[-50%] flex items-center flex-col text-white transition-all text-xl lg:text-2xl mix-blend-difference;
+    @apply absolute max-lg:bottom-28 bottom-10 left-[50%] translate-x-[-50%] flex items-center flex-col text-white transition-all text-xl lg:text-3xl;
     /* mix-blend-mode: difference; */
     .icon {
       @apply w-[52px] h-[52px] lg:w-[66px] lg:h-[66px] mt-2;

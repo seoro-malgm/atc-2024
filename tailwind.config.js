@@ -86,7 +86,7 @@ module.exports = {
         red: colors.red,
         white: colors.white,
         black: colors.black,
-        "purple-heart": {
+        blue: {
           DEFAULT: "#4f42e9",
           50: "#eef2ff",
           100: "#dfe6ff",
@@ -100,7 +100,7 @@ module.exports = {
           900: "#312c83",
           950: "#1e1a4c"
         },
-        crusoer: {
+        "deep-green": {
           DEFAULT: "#003a08",
           50: "#e6ffe4",
           100: "#c8ffc5",
@@ -114,7 +114,7 @@ module.exports = {
           900: "#0c5b14",
           950: "#003a08" // default
         },
-        "spring-green": {
+        green: {
           DEFAULT: "#64ff93",
           50: "#eefff2",
           100: "#d7ffe3",

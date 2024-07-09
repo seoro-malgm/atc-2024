@@ -313,7 +313,6 @@ export default defineNuxtConfig({
       measurementId: process.env.MEASUREMENT_ID || "",
       databaseURL: process.env.DATABASE_URL,
       domainURL: process.env.DOMAIN_URL,
-      mode: process.env.ENV_MODE,
       authId: process.env.AUTH_ID,
       authPwd: process.env.AUTH_PWD,
       // tokenName: process.env.TOKEN_NAME

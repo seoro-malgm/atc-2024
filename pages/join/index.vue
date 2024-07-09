@@ -1,5 +1,5 @@
 <template>
-  <div>this is 참여하기 페이지</div>
+  <div class="min-h-screen">this is 참여하기 페이지</div>
 </template>
 
 <script setup>

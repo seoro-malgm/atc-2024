@@ -52,7 +52,7 @@
     @apply border-t-0;
   }
 
-  .fill-spring-green-300 {
+  .fill-green-300 {
     fill: #64ff93;
   }
 }
@@ -68,7 +68,9 @@ a.link {
 html,
 body {
   word-break: keep-all;
-  font-family: "Pretendard-Regular", "Noto Sans Gothic", sans-serif;
+  text-wrap: pretty;
+  font-family: "SUITE", "Noto Sans KR", sans-serif;
+  letter-spacing: -0.08rem;
   @apply text-grayscale-900 dark:text-grayscale-200;
 }
 html,

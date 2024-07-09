@@ -34,9 +34,9 @@
 .global-footer {
   /* @apply ; */
   .content {
-    @apply bg-crusoer-950;
+    @apply bg-deep-green-950;
     .container {
-      @apply flex flex-col lg:flex-row justify-between bg-crusoer-950;
+      @apply flex flex-col lg:flex-row justify-between bg-deep-green-950;
     }
   }
   .copyrights {
@@ -51,7 +51,6 @@
 
   .infos {
     @apply p-4 lg:p-8 max-lg:border-t lg:border-l border-grayscale-400 text-grayscale-300;
-    color: #003a08;
   }
 }
 </style>

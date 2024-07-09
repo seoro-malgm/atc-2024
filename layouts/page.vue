@@ -1,6 +1,10 @@
 <template>
   <div>
-    <NuxtPage :scrollY="scrollY" :headerHeight="headerHeight" />
+    <NuxtPage
+      :scrollY="scrollY"
+      :headerHeight="headerHeight"
+      @modal-subscribe="$event => $emit('modal-subscribe', $event)"
+    />
   </div>
 </template>
 

@@ -78,7 +78,7 @@ const mousePosition = computed(() => {
 
 <style lang="postcss" scoped>
 .section-infos {
-  @apply bg-purple-heart-600 text-white py-12 relative overflow-hidden px-4;
+  @apply bg-blue-600 text-white py-12 relative overflow-hidden px-4;
   .header-infos {
     @apply lg:py-8 px-8 text-center;
     h1 {
@@ -92,7 +92,7 @@ const mousePosition = computed(() => {
     }
   }
   .content-wrap {
-    @apply max-xl:pb-14 p-6 xl:p-8 border border-spring-green-500;
+    @apply max-xl:pb-14 p-6 xl:p-8 border border-green-500;
   }
 }
 *::selection {

@@ -66,11 +66,11 @@ const sns = ref([
 
 <style lang="postcss" scoped>
 #section-share {
-  @apply py-[8rem] border-t border-grayscale-800;
+  @apply pt-12 pb-16 border-t border-grayscale-800;
   header {
     @apply mb-6 lg:mb-8 px-4 text-center;
     h4 {
-      @apply text-base lg:text-xl text-grayscale-700 font-bold;
+      @apply text-base lg:text-2xl text-grayscale-700 font-bold;
     }
   }
   .list-sns {
@@ -84,7 +84,7 @@ const sns = ref([
         }
         &:hover {
           .icon-wrap {
-            /* @apply bg-spring-green-100; */
+            /* @apply bg-green-100; */
             &.variant-link {
               @apply bg-grayscale-200;
             }

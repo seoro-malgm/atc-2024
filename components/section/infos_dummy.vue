@@ -38,9 +38,9 @@
             <li class="list-item">
               <div class="grid grid-cols-12 gap-2">
                 <div
-                  class="col-span-4 lg:col-span-2 border-r border-spring-green-300 p-4 xl:p-8"
+                  class="col-span-4 lg:col-span-2 border-r border-green-300 p-4 xl:p-8"
                 >
-                  <icon-paper addClass="fill-spring-green-300" />
+                  <icon-paper addClass="fill-green-300" />
                 </div>
                 <div class="col-span-8 lg:col-span-10 p-4 xl:p-8">
                   <div class="date">2024. 10. 24.</div>
@@ -53,9 +53,9 @@
             <li class="list-item">
               <div class="grid grid-cols-12 gap-2">
                 <div
-                  class="col-span-4 lg:col-span-2 border-r border-spring-green-300 p-4 xl:p-8"
+                  class="col-span-4 lg:col-span-2 border-r border-green-300 p-4 xl:p-8"
                 >
-                  <icon-forest addClass="fill-spring-green-300" />
+                  <icon-forest addClass="fill-green-300" />
                 </div>
                 <div class="col-span-8 lg:col-span-10 p-4 xl:p-8">
                   <div class="date">2024. 10. 25.</div>
@@ -68,9 +68,9 @@
             <li class="list-item">
               <div class="grid grid-cols-12 gap-2">
                 <div
-                  class="col-span-4 lg:col-span-2 border-r border-spring-green-300 p-4 xl:p-8"
+                  class="col-span-4 lg:col-span-2 border-r border-green-300 p-4 xl:p-8"
                 >
-                  <icon-forest addClass="fill-spring-green-300" />
+                  <icon-forest addClass="fill-green-300" />
                 </div>
                 <div class="col-span-8 lg:col-span-10 p-4 xl:p-8">
                   <div class="date">2024. 10. 26. - 10. 27.</div>
@@ -83,9 +83,9 @@
             <li class="list-item">
               <div class="grid grid-cols-12 gap-2">
                 <div
-                  class="col-span-4 lg:col-span-2 border-r border-spring-green-300 p-4 xl:p-8"
+                  class="col-span-4 lg:col-span-2 border-r border-green-300 p-4 xl:p-8"
                 >
-                  <icon-map addClass="fill-spring-green-300" />
+                  <icon-map addClass="fill-green-300" />
                 </div>
                 <div class="col-span-8 lg:col-span-10 p-4 xl:p-8 place">
                   <nuxt-link
@@ -158,7 +158,7 @@ const mousePosition = computed(() => {
 
 <style lang="postcss" scoped>
 .section-infos {
-  @apply bg-purple-heart-600 text-white py-12 relative overflow-hidden;
+  @apply bg-blue-600 text-white py-12 relative overflow-hidden;
   .header-infos {
     @apply lg:py-8 px-8 text-center;
     h1 {
@@ -173,7 +173,7 @@ const mousePosition = computed(() => {
     .list-infos {
       @apply grid xl:grid-cols-3 gap-8;
       > .list-item {
-        @apply max-xl:border-y xl:border-x border-spring-green-300;
+        @apply max-xl:border-y xl:border-x border-green-300;
         /* 타이틀 */
         /* h2.title {
           @apply text-3xl lg:text-5xl p-6 xl:p-12;
@@ -185,9 +185,9 @@ const mousePosition = computed(() => {
         /* 시간정보 */
         .list-dates {
           > .list-item {
-            @apply border-b border-spring-green-300;
+            @apply border-b border-green-300;
             .date {
-              @apply text-xl lg:text-5xl font-bold mb-1 lg:mb-4 text-spring-green-300 leading-8 mt-1;
+              @apply text-xl lg:text-5xl font-bold mb-1 lg:mb-4 text-green-300 leading-8 mt-1;
               letter-spacing: -0.3px;
             }
             .content {
@@ -196,9 +196,9 @@ const mousePosition = computed(() => {
           }
           /* 장소 정보 */
           .place {
-            @apply border-spring-green-300 text-2xl lg:text-4xl;
+            @apply border-green-300 text-2xl lg:text-4xl;
             strong {
-              @apply py-1 border-spring-green-300 text-spring-green-300;
+              @apply py-1 border-green-300 text-green-300;
               &:hover {
                 @apply underline;
               }

@@ -2,19 +2,43 @@
   <div id="section-location">
     <div class="infos">
       <header class="info-header">
-        <h2 class="title">
-          <div class="w-16 h-16 lg:w-28 lg:h-28 mb-2">
-            <icon-map addClass="fill-spring-green-500 " />
-          </div>
-          오시는 길
-        </h2>
-        <p class="text-lg lg:text-xl font-bold">
-          케이 지리산 가족호텔, 전라남도 순천시 낙안읍 낙안로 100번길 10
-        </p>
+        <div class="w-16 h-16 lg:w-28 lg:h-28 mb-2">
+          <icon-map addClass="fill-grayscale-900" />
+        </div>
+        <h2 class="title">오시는 길</h2>
+        <ul>
+          <li class="mb-2">
+            <button
+              class="flex items-center p-1 text-grayscale-800"
+              @click="clipboard('케이 지리산 가족호텔')"
+            >
+              <div class="w-8 h-8 ms-1 me-3 px-1">
+                <icon-addr addClass="fill-grayscale-500" />
+              </div>
+              <span class="text-lg lg:text-3xl font-bold">
+                케이 지리산 가족호텔
+              </span>
+            </button>
+          </li>
+          <li class="mb-2">
+            <button
+              class="flex items-center p-1 text-grayscale-500"
+              @click="clipboard('전라남도 순천시 낙안읍 낙안로 100번길 10')"
+            >
+              <div class="w-8 h-8 ms-1 me-3 px-1">
+                <icon-copy addClass="fill-grayscale-500" />
+              </div>
+              <span class="text-lg lg:text-2xl font-semibold"
+                >전라남도 순천시 낙안읍 낙안로 100번길 10</span
+              >
+            </button>
+          </li>
+        </ul>
+        <p class="text-lg lg:text-xl font-bold">,</p>
       </header>
       <div class="info-list">
         <ul class="list-infos">
-          <li v-for="(item, i) in items" :key="i" class="list-item">
+          <li v-for="(item, i) in guideList" :key="i" class="list-item">
             <article class="info-item" :class="{ open: i === selected }">
               <header class="header-info">
                 <button
@@ -32,7 +56,7 @@
               </header>
               <section class="item-collapse">
                 <div class="content-collapse">
-                  <ul>
+                  <ul class="min-h-[unset] h-[inherit]">
                     <li
                       v-for="(item2, l) in item.content"
                       :key="l"
@@ -67,29 +91,18 @@
 
 <script setup>
 import guideList from "@/data/guideList";
-const props = defineProps({
-  data: {
-    type: String,
-    default: null
-  }
-});
-const emits = defineEmits();
-
 const selected = ref(0);
-const items = computed(() => {
-  return guideList;
-});
 </script>
 
 <style lang="postcss" scoped>
 #section-location {
-  @apply flex flex-col lg:flex-row lg:items-stretch border-b lg:min-h-[1080px] border-grayscale-900;
+  @apply flex flex-col lg:flex-row lg:items-stretch border-b lg:min-h-[100vh] border-grayscale-900;
   .infos {
     @apply px-8 py-12 lg:w-4/12 order-2 lg:order-1;
     .info-header {
       /* @apply ; */
       .title {
-        @apply text-2xl lg:text-5xl font-bold mb-3;
+        @apply text-2xl lg:text-5xl font-bold mb-4 px-4;
       }
     }
     /* 정보 리스트 */
@@ -102,12 +115,12 @@ const items = computed(() => {
           .header-info {
             @apply pt-2 pb-1;
             .accordian-btn {
-              @apply transition-all-default font-semibold px-4 py-2 border hover:bg-spring-green-500  bg-white border-grayscale-800 w-full flex justify-between items-start text-left;
+              @apply transition-all-default font-semibold px-4 py-2 border hover:bg-green-500  bg-white border-grayscale-800 w-full flex justify-between items-start text-left;
               .btn-icon {
                 @apply transition-all-default translate-y-1;
               }
               &.open {
-                @apply bg-spring-green-400;
+                @apply bg-green-400;
                 .btn-icon {
                   @apply rotate-180 translate-y-1;
                 }
@@ -117,7 +130,7 @@ const items = computed(() => {
           .item-collapse {
             @apply h-0 max-h-0 transition-all-default overflow-hidden;
             .content-collapse {
-              @apply px-3 py-4  border-b border-grayscale-800 bg-purple-heart-100;
+              @apply px-3 py-4  border-b border-grayscale-800 bg-blue-100;
               transition-duration: 4s;
             }
           }

@@ -31,10 +31,10 @@ const { stop } = useIntersectionObserver(
 <style lang="postcss" scoped>
 header {
   @apply text-center py-4 lg:py-12 border-y border-grayscale-800 overflow-x-hidden;
-  background-image: url("/arrow-right.svg");
+  /* background-image: url("/arrow-right.svg");
   background-position: right center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: contain; */
   h4 {
     @apply font-extrabold text-2xl lg:text-4xl lg:text-[4rem];
     transform: translate(-300%);
@@ -48,12 +48,12 @@ header {
 
 @keyframes header-shown {
   0% {
-    transform: translate(-100%) skew(10deg);
+    transform: translate(-100%);
   }
 
   100% {
-    /* @apply text-spring-green-400; */
-    transform: translate(0%) skew(-18deg);
+    /* @apply text-green-400; */
+    transform: translate(0%);
   }
 }
 </style>

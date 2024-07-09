@@ -38,7 +38,7 @@ const col = computed(() => {
       .body-header {
         @apply mb-4 py-3 border-b border-grayscale-800;
         h1 {
-          @apply mb-3 text-2xl text-spring-green-700 font-bold;
+          @apply mb-3 text-2xl text-green-700 font-bold;
         }
         p {
           @apply px-4 py-3 bg-grayscale-200 rounded-lg text-sm text-grayscale-700;

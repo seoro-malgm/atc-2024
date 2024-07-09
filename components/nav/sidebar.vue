@@ -62,7 +62,7 @@ const {
   .sidebar-header {
     @apply pt-0 pb-5;
     h1 {
-      @apply text-2xl text-center font-bold px-3 pt-3 pb-4 rounded-xl bg-spring-green-100 text-spring-green-500 rounded-t-none;
+      @apply text-2xl text-center font-bold px-3 pt-3 pb-4 rounded-xl bg-green-100 text-green-500 rounded-t-none;
     }
   }
   .sidebar-nav {
@@ -72,12 +72,12 @@ const {
       li {
         @apply mb-3;
         .link-item {
-          @apply block p-3 rounded-lg font-semibold hover:bg-spring-green-200 text-sm text-grayscale-700 transition-all;
+          @apply block p-3 rounded-lg font-semibold hover:bg-green-200 text-sm text-grayscale-700 transition-all;
           &:hover {
             @apply bg-grayscale-300 text-grayscale-700;
           }
           &.active {
-            @apply bg-spring-green-600 font-bold text-grayscale-200 hover:bg-spring-green-800;
+            @apply bg-green-600 font-bold text-grayscale-200 hover:bg-green-800;
           }
         }
       }

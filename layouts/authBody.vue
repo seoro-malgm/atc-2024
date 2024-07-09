@@ -26,7 +26,7 @@ const props = defineProps({
   .auth-header {
     @apply pb-4 mb-6 border-b;
     h1 {
-      @apply text-xl font-bold text-spring-green-600;
+      @apply text-xl font-bold text-green-600;
     }
   }
 }

@@ -20,7 +20,7 @@ export default async function clipboard(text) {
     toast.add({
       id: `clipboard-added-${new Date().getTime()}`,
       title: "클립보드에 저장되었습니다.",
-      color: "spring-green",
+      color: "green",
       icon: "memory:checkbox-marked"
     });
   } catch (err) {

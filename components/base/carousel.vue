@@ -8,12 +8,12 @@
   :prev-button="{
     icon: 'bxs:chevron-left',
     class: 'text-2xl lg:text-5xl rounded-none',
-    color: 'spring-green'
+    color: 'green'
   }"
   :next-button="{
     icon: 'bxs:chevron-right',
     class: 'text-2xl lg:text-5xl rounded-none',
-    color: 'spring-green'
+    color: 'green'
   }"
   arrows
   indicators

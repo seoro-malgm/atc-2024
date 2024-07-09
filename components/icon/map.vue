@@ -35,7 +35,6 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted, watch } from "vue";
 const props = defineProps({
   addClass: {
     type: String,
@@ -46,8 +45,9 @@ const props = defineProps({
 
 <style lang="postcss" scoped>
 .icon {
+  @apply w-full h-auto;
   svg {
-    @apply w-full;
+    @apply w-full h-auto;
   }
 }
 </style>

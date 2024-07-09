@@ -20,9 +20,6 @@
             }"
           />
         </div>
-        <h2 class="title">
-          <slot name="title" />
-        </h2>
       </header>
       <!-- wrapper -->
       <div class="horizontal-scroll-body" ref="body">
@@ -45,6 +42,9 @@
             <article class="item" v-for="(item, index) in items" :key="index">
               <slot name="item-description">
                 <div class="item-description">
+                  <span class="subtitle">
+                    {{ item.description.subtitle }}
+                  </span>
                   <h4>
                     {{ item.description.title }}
                   </h4>
@@ -114,17 +114,21 @@ const state = reactive({
 
 // 마우스를 쓰는 환경인지 확인
 const { sourceType } = useMouseInElement(wrapper);
-const wrapperBounds = useElementBounding(wrapper);
+// const wrapperBounds = useElementBounding(wrapper);
 
 // useElementBounding을 사용하여 body와 container의 위치 및 크기 반응형 참조 생성
 const bodyBounds = useElementBounding(body);
-const containerBounds = useElementBounding(container);
+// const containerBounds = useElementBounding(container);
 
 const maxScroll = computed(() => {
   const length = props.items.length - 1;
   const margin = 40;
-  const gnbHeight = 78;
-  return (bodyBounds.width.value + margin) * length - margin - gnbHeight;
+  return (
+    (bodyBounds.width.value + margin) * length -
+    margin -
+    +props.headerHeight +
+    250
+  );
 });
 
 // 상태업데이트
@@ -179,16 +183,16 @@ onUnmounted(() => {
   /* z-index: -1; */
   overflow: hidden;
   .scroll-header {
-    @apply static lg:absolute lg:top-0 max-lg:mb-6 max-lg:pt-8 pb-8 border-b border-grayscale-800 left-0 w-full z-[2] bg-white;
+    @apply static lg:absolute lg:top-0 max-lg:mb-6 max-lg:pt-8 border-b border-grayscale-800 left-0 w-full z-[2] bg-white;
     .progress {
       @apply max-lg:hidden w-full h-2 relative bg-grayscale-950 lg:block;
       .bar {
-        @apply absolute left-0 right-0 h-2 bg-spring-green-300;
+        @apply absolute left-0 right-0 h-2 bg-green-300;
       }
     }
-    h2.title {
+    /* .title {
       @apply text-center text-3xl lg:text-5xl font-bold skew-x-[-15deg] lg:pt-8;
-    }
+    } */
   }
 
   .horizontal-scroll-body {
@@ -205,9 +209,12 @@ onUnmounted(() => {
         .item {
           @apply my-0 lg:mr-[40px] relative lg:border-x border-grayscale-800;
           .item-description {
-            @apply m-0 p-4 pb-6 border-t border-grayscale-800 bg-white w-full lg:absolute bottom-0 z-10 lg:text-center;
+            @apply m-0 p-4 pb-6 lg:pb-8 border-t border-grayscale-800 bg-white w-full lg:absolute bottom-0 z-10 lg:text-center;
+            span.subtitle {
+              @apply text-base lg:text-xl text-grayscale-700;
+            }
             h4 {
-              @apply text-xl lg:text-2xl mb-1 font-bold;
+              @apply text-xl lg:text-4xl mb-1 lg:mb-3 font-bold;
             }
             p {
               @apply text-base lg:text-lg text-grayscale-600;
@@ -217,7 +224,6 @@ onUnmounted(() => {
           min-width: 100vw;
           height: auto;
           figure.item-image-wrapper {
-            @apply border-grayscale-800 lg:border-x;
             position: relative;
             width: 100vw;
             padding-bottom: 100vh;

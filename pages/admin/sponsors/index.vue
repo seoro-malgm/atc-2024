@@ -5,7 +5,7 @@
       <p>
         💡 스폰서 목록을 관리합니다, 로고를 드래그하여 순서를 수정할 수
         있습니다. 순서는
-        <strong class="px-2 py-1 rounded-xl bg-spring-green-300 text-black mx-1"
+        <strong class="px-2 py-1 rounded-xl bg-green-300 text-black mx-1"
           >저장</strong
         >을 눌렀을 때 진행됩니다.
       </p>
@@ -60,9 +60,7 @@
         </div>
       </template>
       <div class="floating-btn">
-        <button
-          class="link-item bg-spring-green-300 hover:bg-spring-green-500 me-4"
-        >
+        <button class="link-item bg-green-300 hover:bg-green-500 me-4">
           저장
         </button>
         <nuxt-link
@@ -171,7 +169,7 @@ const onEnd = e => {
 .body-header {
   @apply mb-4 py-3 border-b border-grayscale-800;
   h1 {
-    @apply mb-3 text-2xl text-spring-green-700 font-bold;
+    @apply mb-3 text-2xl text-green-700 font-bold;
   }
   p {
     @apply px-4 py-3 bg-grayscale-200 rounded-lg text-sm text-grayscale-700;

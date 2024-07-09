@@ -3,6 +3,7 @@
     <nav-global-header
       :scrollY="scrollY"
       :headerHeight="headerHeight"
+      @modal-subscribe="$event => (sbuscribeModalShown = $event)"
       ref="header"
     />
     <main
@@ -13,12 +14,28 @@
         paddingTop: `${headerHeight}px`
       }"
     >
-      <NuxtLayout name="page" :scrollY="scrollY" :headerHeight="headerHeight">
-        <NuxtPage />
+      <NuxtLayout
+        name="page"
+        :scrollY="scrollY"
+        :headerHeight="headerHeight"
+        @modal-subscribe="$event => (sbuscribeModalShown = $event)"
+      >
+        <NuxtPage
+          @modal-subscribe="$event => $emit('modal-subscribe', $event)"
+        />
         <!-- <slot></slot> -->
       </NuxtLayout>
     </main>
     <nav-global-footer />
+
+    <!-- modals -->
+    <!-- 구독 모달 -->
+    <modal-subscribe
+      :shown="sbuscribeModalShown"
+      @toggle="$event => (sbuscribeModalShown = $event)"
+    />
+
+    <!-- toast -->
     <UNotifications />
   </div>
 </template>
@@ -47,6 +64,9 @@ const headerBounding = useElementBounding(header);
 const headerHeight = computed(() => {
   return headerBounding.height.value;
 });
+
+// 구독 폼 열기
+const sbuscribeModalShown = ref(false);
 </script>
 
 <style lang="postcss" scoped>

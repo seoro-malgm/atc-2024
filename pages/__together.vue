@@ -327,7 +327,7 @@ const submit = async () => {
       toast.add({
         id: `contact-added-${new Date().getTime()}`,
         title: "정상적으로 미팅 신청이 완료됐습니다.",
-        color: "spring-green",
+        color: "green",
         icon: "memory:checkbox-marked"
       });
       const mailSend = await $fetch("/api/mail/send", {
@@ -372,7 +372,7 @@ const submit = async () => {
 }
 
 .btn-submit {
-  @apply block py-3 border-t border-grayscale-800 w-full bg-spring-green-200 hover:bg-spring-green-400  transition-all-default text-xl font-semibold;
+  @apply block py-3 border-t border-grayscale-800 w-full bg-green-200 hover:bg-green-400  transition-all-default text-xl font-semibold;
   &:disabled {
     @apply bg-gray-400 opacity-50;
   }
