@@ -43,7 +43,7 @@ const props = defineProps({
 
 .marquee-content {
   @apply block absolute text-nowrap;
-  animation: marquee 20s linear infinite;
+  animation: marquee 200s linear infinite;
   .marquee-images {
   }
 }
@@ -52,12 +52,12 @@ const props = defineProps({
   from {
     left: 0;
     top: 50%;
-    transform: translateY(-50%) translateX(100%);
+    transform: translateY(-50%) translateX(0%);
   }
   to {
     left: 0;
     top: 50%;
-    transform: translateY(-50%) translateX(-100%);
+    transform: translateY(-50%) translateX(-50%);
   }
 }
 </style>

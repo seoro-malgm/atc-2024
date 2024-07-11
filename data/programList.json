@@ -1,0 +1,51 @@
+[
+  {
+    "src": "/images/programs/program_0.png",
+    "title": "지리산 최대 규모의 걷기 축제",
+    "desc": ["제주 올레 걷기축제와 유사한 이동형 걷기 축제 2000명 규모"],
+    "date": "2024.10.26."
+  },
+  {
+    "src": "/images/programs/program_1.png",
+    "title": "지역 술과 음식을 즐기는 뮤직 페스티벌",
+    "desc": [
+      "술과 음식, 음악이 함께하는 페스티벌",
+      "지역 특산주와 음식, 음악을 함께 즐기는 페스티벌",
+      "지역술, 지역음식, 지역아티스트, 로컬 페스티벌 이벤트 2000명 규모"
+    ],
+    "date": "2024.10.26."
+  },
+  {
+    "src": "/images/programs/program_2.png",
+    "title": "6地 6色 걷기 프로그램",
+    "desc": [
+      "각 지역마다 지리산둘레길 발굴단(지역/주민기획자)의 여행 콘텐츠 즐기기 40명 규모",
+      "구례군, 남원시, 산청군, 장수군, 함양군, 하동군"
+    ],
+    "date": "2024.10.27."
+  },
+  {
+    "src": "/images/programs/program_3.png",
+    "title": "STAY & TRANSPORT PACKAGE",
+    "desc": [""],
+    "date": "2024.10.25. ~ 2024.10.27."
+  },
+  {
+    "src": "/images/programs/program_4.png",
+    "title": "(참가자 한정) 지리산둘레길 굿즈 제공",
+    "desc": [""],
+    "date": null
+  },
+  {
+    "src": "/images/programs/program_5.png",
+    "title": "양파의 숲길 걷기 꿀팁",
+    "desc": [""],
+    "date": "2024.10.25."
+  },
+  {
+    "src": "/images/programs/program_6.png",
+    "title": "지리산둘레길을 좋아하는 사람들의 모임",
+    "desc": [""],
+    "date": "2024.10.25."
+  }
+]
