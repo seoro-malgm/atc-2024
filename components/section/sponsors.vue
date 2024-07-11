@@ -5,7 +5,39 @@
     <div class="list-wrapper">
       <div class="list-container">
         <ul class="list-sponsor">
-          <li v-for="(item, i) in sponsors" :key="i">
+          <!-- 주최 -->
+          <li class="list-item" v-for="(item, i) in sponsors.hosting" :key="i">
+            <div class="logo">
+              <img
+                :src="`/images/sponsors/${item.src}`"
+                :alt="`${item.name} 로고이미지`"
+                :title="`${item.name} 로고이미지`"
+              />
+            </div>
+          </li>
+          <!-- 단체 -->
+          <li
+            class="list-item"
+            v-for="(item, i) in sponsors.organization"
+            :key="i"
+          >
+            <div class="logo">
+              <img
+                :src="`/images/sponsors/${item.src}`"
+                :alt="`${item.name} 로고이미지`"
+                :title="`${item.name} 로고이미지`"
+              />
+            </div>
+          </li>
+        </ul>
+        <!-- <ul class="list-supervising"></ul> -->
+        <ul class="list-supervising">
+          <!-- 주관 -->
+          <li
+            class="list-item"
+            v-for="(item, i) in sponsors.supervising"
+            :key="i"
+          >
             <div class="logo">
               <img
                 :src="`/images/sponsors/${item.src}`"
@@ -40,18 +72,20 @@ import sponsors from "@/data/sponsorList";
     .list-container {
       .list-sponsor {
         @apply grid grid-cols-3 lg:grid-cols-5;
-        li {
-          /* margin: -1px; */
-          .logo {
-            @apply p-6 md:p-5 lg:p-10;
+      }
+      .list-supervising {
+        @apply grid grid-cols-3 lg:grid-cols-6;
+      }
+      .list-item {
+        .logo {
+          @apply p-3 md:p-5 lg:p-10;
+          img {
+            @apply w-full h-auto transition-all;
+            filter: saturate(0);
+          }
+          &:hover {
             img {
-              @apply w-full h-auto transition-all;
-              filter: saturate(0);
-            }
-            &:hover {
-              img {
-                filter: saturate(1);
-              }
+              filter: saturate(1);
             }
           }
         }

@@ -228,7 +228,6 @@
 
 <script setup>
 import { useRoute, useRouter } from "vue-router";
-// import sponsors from "@/data/sponsorList";
 
 const router = useRouter();
 const route = useRoute();

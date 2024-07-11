@@ -51,7 +51,6 @@
 
 <script setup>
 import { useMouseInElement } from "@vueuse/core";
-// import sponsors from "@/data/sponsorList";
 
 // const props = defineProps({
 //   data: {

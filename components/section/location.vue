@@ -34,7 +34,7 @@
             </button>
           </li>
         </ul>
-        <p class="text-lg lg:text-xl font-bold">,</p>
+        <!-- <p class="text-lg lg:text-xl font-bold">,</p> -->
       </header>
       <div class="info-list">
         <ul class="list-infos">
@@ -64,12 +64,31 @@
                     >
                       <div class="flex items-end">
                         <strong class="me-2 text-lg">
-                          {{ item2.name }}
+                          {{ item2?.name }}
                         </strong>
                         <small v-if="item2?.time">({{ item2.time }})</small>
                       </div>
-
-                      <span>{{ item2.desc }}</span>
+                      <template v-if="item2?.desc">
+                        <template
+                          v-if="
+                            typeof item2.desc !== 'string' &&
+                            item2?.desc?.length
+                          "
+                        >
+                          <ul>
+                            <li
+                              v-for="(item3, j) in item2.desc"
+                              :key="j"
+                              class="text-lg"
+                            >
+                              {{ item3 }}
+                            </li>
+                          </ul>
+                        </template>
+                        <template v-else>
+                          <span class="text-lg">{{ item2.desc }}</span>
+                        </template>
+                      </template>
                     </li>
                   </ul>
                 </div>
@@ -77,6 +96,9 @@
             </article>
           </li>
         </ul>
+        <div class="my-2">
+          <span> 🚕 역 및 터미널에서 호텔까지 택시로 2-30분 </span>
+        </div>
       </div>
     </div>
     <div class="map">
@@ -115,7 +137,7 @@ const selected = ref(0);
           .header-info {
             @apply pt-2 pb-1;
             .accordian-btn {
-              @apply transition-all-default font-semibold px-4 py-2 border hover:bg-green-500  bg-white border-grayscale-800 w-full flex justify-between items-start text-left;
+              @apply transition-all-default text-lg lg:text-xl font-semibold px-4 py-2 border hover:bg-green-500  bg-white border-grayscale-800 w-full flex justify-between items-start text-left;
               .btn-icon {
                 @apply transition-all-default translate-y-1;
               }

@@ -21,22 +21,29 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted, watch } from "vue";
-import useClipvoard from "@/composables/clipboard";
+import { ref, computed } from "vue";
 import { useInfos } from "@/stores/infos";
-// const props = defineProps({
-//   data: {
-//     type: String,
-//     default: null
-//   }
-// });
+
 const store = useInfos();
 const infos = computed(() => {
   return store.getInfos;
 });
 
-const copyLink = () => {
-  useClipvoard(infos.value?.domain);
+const shareOnFacebook = () => {
+  const url = infos.value?.domain;
+  const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+    url
+  )}`;
+  window.open(facebookShareUrl, "_blank");
+};
+
+const shareOnTwitter = () => {
+  const url = infos.value?.domain;
+  const text = "ATC 2024 | 지리산둘레길 걷기축제  & 아시아 트레일 컨퍼런스 ";
+  const twitterShareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+    url
+  )}&text=${encodeURIComponent(text)}`;
+  window.open(twitterShareUrl, "_blank");
 };
 
 const sns = ref([
@@ -45,21 +52,21 @@ const sns = ref([
     label: "링크로 공유하기",
     icon: "akar-icons:link-chain",
     color: "#232323",
-    method: copyLink
+    method: () => navigator.clipboard.writeText(infos.value?.domain)
   },
   {
     type: "facebook",
     label: "페이스북으로 공유하기",
     icon: "logos:facebook",
     color: "#0866ff",
-    method: copyLink
+    method: shareOnFacebook
   },
   {
     type: "twitter",
     label: "X로 공유하기",
     icon: "devicon:twitter",
     color: "#111111",
-    method: copyLink
+    method: shareOnTwitter
   }
 ]);
 </script>

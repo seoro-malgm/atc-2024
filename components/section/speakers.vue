@@ -1,5 +1,7 @@
 <template>
-  <div id="section-speakers">this is 연사 섹션</div>
+  <div id="section-speakers">
+    <div class="text-center text-xl lg:text-2xl">연사 섹션(작업예정)</div>
+  </div>
 </template>
 
 <script setup>

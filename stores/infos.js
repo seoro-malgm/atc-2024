@@ -4,7 +4,7 @@ import { defineStore } from "pinia";
 export const useInfos = defineStore("info", {
   state: () => ({
     info: {
-      domain: "https://atc-2024-one.vercel.app/",
+      domain: "https://atcjirisan.com/",
       instagram: "https://instagram.com/",
       facebook: "https://www.facebook.com/"
     }
