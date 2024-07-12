@@ -64,7 +64,7 @@
     <section-share />
 
     <!-- faq -->
-    <section-faq />
+    <!-- <section-faq /> -->
   </div>
 </template>
 

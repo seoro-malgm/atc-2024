@@ -43,7 +43,7 @@ const props = defineProps({
 
 .marquee-content {
   @apply block absolute text-nowrap;
-  animation: marquee 200s linear infinite;
+  animation: marquee linear infinite;
   .marquee-images {
   }
 }

@@ -1,25 +1,15 @@
 <template>
   <section class="section-sponsors border-b-0">
-    <header-section> 주관 및 주최 </header-section>
     <!-- 스폰서 목록 -->
     <div class="list-wrapper">
+      <header-section> 주최 </header-section>
       <div class="list-container">
+        <!-- 주최 -->
         <ul class="list-sponsor">
-          <!-- 주최 -->
-          <li class="list-item" v-for="(item, i) in sponsors.hosting" :key="i">
-            <div class="logo">
-              <img
-                :src="`/images/sponsors/${item.src}`"
-                :alt="`${item.name} 로고이미지`"
-                :title="`${item.name} 로고이미지`"
-              />
-            </div>
-          </li>
-          <!-- 단체 -->
           <li
             class="list-item"
-            v-for="(item, i) in sponsors.organization"
-            :key="i"
+            v-for="item in sponsors?.hosting"
+            :key="item.id"
           >
             <div class="logo">
               <img
@@ -30,13 +20,31 @@
             </div>
           </li>
         </ul>
-        <!-- <ul class="list-supervising"></ul> -->
+        <!-- 주관 -->
         <ul class="list-supervising">
-          <!-- 주관 -->
           <li
             class="list-item"
-            v-for="(item, i) in sponsors.supervising"
-            :key="i"
+            v-for="item in sponsors?.supervising"
+            :key="item.id"
+          >
+            <div class="logo">
+              <img
+                :src="`/images/sponsors/${item.src}`"
+                :alt="`${item.name} 로고이미지`"
+                :title="`${item.name} 로고이미지`"
+              />
+            </div>
+          </li>
+        </ul>
+      </div>
+      <header-section class="mt-12"> 주관 </header-section>
+      <div class="list-container">
+        <ul class="list-organization">
+          <!-- 단체 -->
+          <li
+            class="list-item"
+            v-for="item in sponsors?.organization"
+            :key="item.id"
           >
             <div class="logo">
               <img
@@ -55,12 +63,14 @@
 <script setup>
 import sponsors from "@/data/sponsorList";
 
-// const props = defineProps({
-//   data: {
-//     type: String,
-//     default: null
-//   }
-// });
+if (
+  !sponsors ||
+  !sponsors?.hosting ||
+  !sponsors?.supervising ||
+  !sponsors?.organization
+) {
+  throw new Error("스폰서 데이터가 올바르게 로드되지 않았습니다.");
+}
 </script>
 
 <style lang="postcss" scoped>
@@ -68,25 +78,33 @@ import sponsors from "@/data/sponsorList";
 .section-sponsors {
   /* @apply bg-gray-200; */
   .list-wrapper {
-    @apply py-12 container;
     .list-container {
-      .list-sponsor {
-        @apply grid grid-cols-3 lg:grid-cols-5;
-      }
-      .list-supervising {
-        @apply grid grid-cols-3 lg:grid-cols-6;
-      }
-      .list-item {
-        .logo {
-          @apply p-3 md:p-5 lg:p-10;
-          img {
-            @apply w-full h-auto transition-all;
-            filter: saturate(0);
-          }
-          &:hover {
+      @apply container mx-auto;
+      .list-sponsor,
+      .list-supervising,
+      .list-organization {
+        @apply flex items-center justify-center flex-wrap;
+        .list-item {
+          @apply w-1/2 lg:w-4/12 lg:my-2;
+          .logo {
+            @apply p-3 md:px-5 md:py-3 lg:px-8 lg:py-4;
             img {
-              filter: saturate(1);
+              @apply w-full h-auto transition-all;
+              filter: saturate(0);
             }
+            &:hover {
+              img {
+                filter: saturate(1);
+              }
+            }
+          }
+        }
+      }
+      .list-organization {
+        .list-item {
+          @apply max-lg:w-4/12;
+          .logo {
+            @apply p-3 md:px-5 md:py-3 lg:px-20 lg:py-4;
           }
         }
       }

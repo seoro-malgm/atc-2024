@@ -2,51 +2,63 @@
   "hosting": [
     {
       "name": "산림청",
-      "src": "kfs.svg"
+      "src": "kfs.svg",
+      "id": "kfs",
+      "isTop": true
     },
     {
       "name": "지리산권관광개발조합",
-      "src": "jirisantour.svg"
+      "src": "jirisantour.png",
+      "id": "jirisantour"
     }
   ],
   "supervising": [
     {
       "name": "구례군",
-      "src": "gurye.svg"
+      "src": "gurye.svg",
+      "id": "gurye"
     },
     {
       "name": "남원시",
-      "src": "namwon.svg"
+      "src": "namwon.svg",
+      "id": "namwon"
     },
     {
       "name": "산청군",
-      "src": "sancheong.svg"
+      "src": "sancheong.svg",
+      "id": "sancheong"
     },
     {
       "name": "장수군",
-      "src": "jangsu.svg"
+      "src": "jangsu.svg",
+      "id": "jangsu"
     },
     {
       "name": "하동군",
-      "src": "hadong.svg"
+      "src": "hadong.svg",
+      "id": "hadong"
     },
     {
       "name": "함양군",
-      "src": "hygn.svg"
+      "src": "hygn.svg",
+      "id": "hygn"
     }
   ],
   "organization": [
     {
       "name": "숲길",
-      "src": "jirisantrail.svg"
+      "src": "jirisantrail.svg",
+      "id": "jirisantrail"
     },
     {
       "name": "ATN",
-      "src": "atn.svg"
+      "src": "atn.svg",
+      "id": "atn"
     },
     {
       "name": "한국등산트레킹지원센터",
-      "src": "komount.svg"
+      "src": "komount.svg",
+      "id": "komount"
     }
   ]
 }

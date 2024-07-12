@@ -12,11 +12,14 @@
     </header>
     <section class="py-5 ms-auto">
       <!-- 프로그램 윗줄 -->
-      <section-marquee-custom :height="`${marqueeHeight}px`" duration="12s">
+      <section-marquee-custom :height="`${marqueeHeight}px`" duration="50s">
         <ul class="list-programs" ref="list">
           <li
             class="item-program"
             v-for="(item, i) in [
+              ...programList,
+              ...programList,
+              ...programList,
               ...programList,
               ...programList,
               ...programList
@@ -48,12 +51,15 @@
         class="mt-4"
         :height="`${marqueeHeight}px`"
         direction="reverse"
-        duration="12s"
+        duration="50s"
       >
         <ul class="list-programs" ref="list">
           <li
             class="item-program"
             v-for="(item, i) in [
+              ...programList,
+              ...programList,
+              ...programList,
               ...programList,
               ...programList,
               ...programList
@@ -79,6 +85,7 @@
           </li>
         </ul>
       </section-marquee-custom>
+      <div class="section-footer"></div>
     </section>
   </div>
 </template>
