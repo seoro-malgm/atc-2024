@@ -69,7 +69,7 @@ html,
 body {
   word-break: keep-all;
   text-wrap: pretty;
-  font-family: "SUITE", "Noto Sans KR", sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
   letter-spacing: -0.08rem;
   @apply text-grayscale-900 dark:text-grayscale-200;
 }
