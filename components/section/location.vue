@@ -66,7 +66,9 @@
                         <strong class="me-2 text-lg">
                           {{ item2?.name }}
                         </strong>
-                        <small v-if="item2?.time">({{ item2.time }})</small>
+                        <small class="text-base" v-if="item2?.time"
+                          >({{ item2.time }})</small
+                        >
                       </div>
                       <template v-if="item2?.desc">
                         <template
