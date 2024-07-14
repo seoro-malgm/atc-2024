@@ -3,7 +3,7 @@
     <!-- <header class="section-header">
       <h4>컨퍼런스 소개</h4>
     </header> -->
-    <header-section> 컨퍼런스 소개 </header-section>
+    <header-section v-if="!hideHeader"> 컨퍼런스 소개 </header-section>
     <div class="section-body">
       <ul class="list-infos">
         <li v-for="(item, i) in items" :key="i" class="list-item">
@@ -36,9 +36,9 @@
 
 <script setup>
 const props = defineProps({
-  data: {
-    type: String,
-    default: null
+  hideHeader: {
+    type: Boolean,
+    default: false
   }
 });
 const emits = defineEmits();

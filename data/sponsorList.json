@@ -3,13 +3,7 @@
     {
       "name": "산림청",
       "src": "kfs.svg",
-      "id": "kfs",
-      "isTop": true
-    },
-    {
-      "name": "지리산권관광개발조합",
-      "src": "jirisantour.png",
-      "id": "jirisantour"
+      "id": "kfs"
     }
   ],
   "supervising": [

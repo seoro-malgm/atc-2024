@@ -42,7 +42,7 @@
             <article class="item" v-for="(item, index) in items" :key="index">
               <slot name="item-description">
                 <div class="item-description">
-                  <span class="subtitle">
+                  <span class="subtitle" v-if="item.description.subtitle">
                     {{ item.description.subtitle }}
                   </span>
                   <h4>
@@ -65,7 +65,7 @@
             </article>
           </div>
           <!-- marquee -->
-          <section-marquee />
+          <!-- <section-marquee /> -->
         </div>
       </div>
     </div>
@@ -127,7 +127,7 @@ const maxScroll = computed(() => {
     (bodyBounds.width.value + margin) * length -
     margin -
     +props.headerHeight +
-    250
+    280
   );
 });
 
@@ -183,7 +183,7 @@ onUnmounted(() => {
   /* z-index: -1; */
   overflow: hidden;
   .scroll-header {
-    @apply static lg:absolute lg:top-0 max-lg:mb-6 max-lg:pt-8 border-b border-grayscale-800 left-0 w-full z-[2] bg-white;
+    @apply max-lg:hidden static lg:absolute lg:top-0 max-lg:mb-6 max-lg:pt-8 pt-12 border-b border-grayscale-800 left-0 w-full z-[2] bg-white;
     .progress {
       @apply max-lg:hidden w-full h-2 relative bg-grayscale-950 lg:block;
       .bar {
@@ -209,15 +209,15 @@ onUnmounted(() => {
         .item {
           @apply my-0 lg:mr-[40px] relative lg:border-x border-grayscale-800;
           .item-description {
-            @apply m-0 p-4 pb-6 lg:pb-8 border-t border-grayscale-800 bg-white w-full lg:absolute bottom-0 z-10 lg:text-center;
+            @apply m-0 p-4 pb-6 lg:pb-8 lg:pt-10 border-t border-grayscale-800 bg-white w-full lg:absolute bottom-0 z-10 lg:text-center;
             span.subtitle {
               @apply text-base lg:text-xl text-grayscale-700;
             }
             h4 {
-              @apply text-xl lg:text-4xl mb-1 lg:mb-3 font-bold;
+              @apply text-xl lg:text-4xl mb-3 lg:mb-6 font-bold;
             }
             p {
-              @apply text-base lg:text-lg text-grayscale-600;
+              @apply text-base lg:text-xl  text-grayscale-600 px-4 lg:px-20;
             }
           }
           width: 100vw;
@@ -228,7 +228,8 @@ onUnmounted(() => {
             width: 100vw;
             padding-bottom: 100vh;
             @media all and (min-width: 1024px) {
-              padding-bottom: calc(100vh - 73px); /** marquee 높이 제거 */
+              padding-bottom: 100vh;
+              /* padding-bottom: calc(100vh - 73px); // marquee 높이 제거 */
 
               /* max-height: calc(100vh - 73px); */
             }
