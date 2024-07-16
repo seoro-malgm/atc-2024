@@ -70,6 +70,9 @@ export default defineAppConfig({
       shadow: "shadow-none",
       rounded: "rounded-none",
       background: "border border-grayscale-800 dark:border-grayscale-200"
+    },
+    popover: {
+      rounded: "rounded-none"
     }
   }
 });

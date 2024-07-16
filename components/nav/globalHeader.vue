@@ -199,7 +199,7 @@
                       : 'text-base md:text-lg lg:text-2xl'
                   "
                 >
-                  {{ item.en }}
+                  {{ $t(item.key) }}
                 </span>
               </nuxt-link>
             </template>
@@ -220,6 +220,47 @@
               </span>
             </button>
           </li>
+          <li class="list-item ms-auto pt-1">
+            <UPopover
+              color="bg-grayscale-900"
+              :popper="{
+                placement: 'bottom-end'
+              }"
+            >
+              <button class="flex items-center">
+                <UIcon
+                  name="ic:round-language"
+                  class="w-6 h-6 lg:w-8 lg:h-8 text-white"
+                />
+                <span
+                  class="uppercase ms-1 font-bold w-8 max-lg:w-5 max-lg:text-sm"
+                >
+                  <!-- {{ $t("lang") }} -->
+                  {{ locale }}
+                </span>
+              </button>
+
+              <template #panel="{ close }">
+                <ul class="bg-grayscale-900 p-1">
+                  <li
+                    class="px-3 py-1"
+                    v-for="(item, i) in langs"
+                    :key="item.id"
+                  >
+                    <button
+                      @click="
+                        updateLang(item.id);
+                        close();
+                      "
+                      :class="{ active: locale === item.id }"
+                    >
+                      {{ item.label }}
+                    </button>
+                  </li>
+                </ul>
+              </template>
+            </UPopover>
+          </li>
         </ul>
       </div>
     </nav>
@@ -228,9 +269,10 @@
 
 <script setup>
 import { useRoute, useRouter } from "vue-router";
+import { useLocaleStore } from "@/stores/locale";
 
-const router = useRouter();
 const route = useRoute();
+const router = useRouter();
 
 const props = defineProps({
   scrollY: {
@@ -246,14 +288,12 @@ const props = defineProps({
 // 링크 리스트
 const linkList = ref([
   {
-    ko: "프로그램",
-    en: "programs",
+    key: "global_gnb_item01_programs",
     url: "/programs",
     icon: "bx:news"
   },
   {
-    ko: "연사",
-    en: "speakers",
+    key: "global_gnb_item02_speakers",
     url: "/speakers",
     icon: "bx:bxs-microphone"
   }
@@ -286,6 +326,61 @@ const pinned = computed(() => {
 const headingFontSize = computed(() => {
   return `max(3.5rem, calc(5.5rem - ${props.scrollY / 300}rem))`;
 });
+
+// toast
+const toast = useToast();
+const { t, setLocale, locale } = useI18n();
+const switchLocalePath = useSwitchLocalePath();
+const localeStore = useLocaleStore();
+const langs = reactive([
+  {
+    id: "ko",
+    label: "한국어"
+  },
+  {
+    id: "en",
+    label: "English"
+  },
+  {
+    id: "jp",
+    label: "日本語"
+  },
+  {
+    id: "cn",
+    label: "中文"
+  }
+]);
+
+const updateLang = async id => {
+  await setLocale(id);
+  localeStore.setLocale(id); // Pinia store에 저장
+  toast.add({
+    title: t("toast_message_lang_change"),
+    color: "green"
+  });
+};
+
+onMounted(() => {
+  const savedLocale = localeStore.getLocale;
+  setLocale(savedLocale);
+});
+
+watch(
+  () => route.path,
+  n => {
+    const savedLocale = localeStore.getLocale;
+    if (savedLocale !== locale) {
+      setLocale(savedLocale);
+    }
+  }
+);
+
+watch(
+  () => localeStore.getLocale,
+  (n, o) => {
+    router.go();
+  }
+);
 </script>
 
 <style lang="postcss" scoped>
@@ -420,7 +515,7 @@ const headingFontSize = computed(() => {
         .heading,
         .date,
         .place {
-          @apply max-lg:mb-1 xl:px-2;
+          @apply max-lg:mb-1;
         }
 
         h2 {
@@ -473,6 +568,11 @@ const headingFontSize = computed(() => {
             &.exact-active {
               @apply text-green-300;
             }
+          }
+        }
+        &:first-child {
+          .link-item {
+            border-left-width: 0 !important;
           }
         }
       }

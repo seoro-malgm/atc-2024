@@ -7,7 +7,6 @@
 </template>
 
 <script setup>
-import { ref, watch } from "vue";
 import { useIntersectionObserver } from "@vueuse/core";
 const props = defineProps({
   headerClass: {

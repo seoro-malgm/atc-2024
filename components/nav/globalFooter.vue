@@ -3,7 +3,7 @@
     <section-marquee />
     <!-- 푸터 정보 -->
     <div class="content">
-      <div class="container">
+      <div class="footer-container">
         <div class="copyrights">
           <h6 class="logo">
             <nuxt-img src="/logo-white.svg" provider="defaultProvider" />
@@ -13,10 +13,10 @@
 
         <div class="infos">
           <ul>
-            <li>사단법인 숲길</li>
-            <li>사업자 정보 확인 대표 : 이상윤</li>
-            <li>주소 : (우)52326 경상남도 하동군 하동읍 중앙로 52-4</li>
-            <li>사업자등록번호 : 292-82-00342</li>
+            <li>{{ $t("global_main-name__title") }}</li>
+            <li>{{ $t("global_main-owner__title") }}</li>
+            <li>{{ $t("global_main-adds__title") }}</li>
+            <li>{{ $t("global_main-number__title") }}</li>
           </ul>
         </div>
       </div>
@@ -35,12 +35,12 @@
   /* @apply ; */
   .content {
     @apply bg-deep-green-950;
-    .container {
+    .footer-container {
       @apply flex flex-col lg:flex-row justify-between bg-deep-green-950;
     }
   }
   .copyrights {
-    @apply p-4 lg:p-8 w-full text-xs;
+    @apply p-4 lg:py-8 lg:px-12 w-full text-xs;
     h6.logo {
       @apply mb-4 w-3/12 lg:w-1/12;
     }
@@ -50,7 +50,7 @@
   }
 
   .infos {
-    @apply p-4 lg:p-8 max-lg:border-t lg:border-l border-grayscale-400 text-grayscale-300;
+    @apply p-4 lg:py-8 lg:px-12 max-lg:border-t lg:border-l border-grayscale-400 text-grayscale-300;
   }
 }
 </style>

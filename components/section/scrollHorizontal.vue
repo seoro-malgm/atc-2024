@@ -43,13 +43,13 @@
               <slot name="item-description">
                 <div class="item-description">
                   <span class="subtitle" v-if="item.description.subtitle">
-                    {{ item.description.subtitle }}
+                    {{ $t(item.description.subtitle) }}
                   </span>
                   <h4>
-                    {{ item.description.title }}
+                    {{ $t(item.description.title) }}
                   </h4>
                   <p v-if="item?.description.paragraph">
-                    {{ item?.description.paragraph }}
+                    {{ $t(item?.description.paragraph) }}
                   </p>
                 </div>
               </slot>
@@ -185,7 +185,7 @@ onUnmounted(() => {
   .scroll-header {
     @apply max-lg:hidden static lg:absolute lg:top-0 max-lg:mb-6 max-lg:pt-8 pt-12 border-b border-grayscale-800 left-0 w-full z-[2] bg-white;
     .progress {
-      @apply max-lg:hidden w-full h-2 relative bg-grayscale-950 lg:block;
+      @apply max-lg:hidden w-full h-2 relative lg:block;
       .bar {
         @apply absolute left-0 right-0 h-2 bg-green-300;
       }

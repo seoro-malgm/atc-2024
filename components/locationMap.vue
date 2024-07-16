@@ -1,10 +1,10 @@
 <template>
-  <div id="map" ref="mapRef"></div>
+  <div id="map" ref="mapRef" />
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
 import { Loader } from "@googlemaps/js-api-loader";
+import { useLocaleStore } from "@/stores/locale";
 
 const props = defineProps({
   position: {
@@ -18,12 +18,24 @@ const props = defineProps({
 });
 
 const mapRef = ref(null);
+const localeStore = useLocaleStore();
+// const currentLocale = ;
+const currentLocale = computed(() => {
+  return localeStore.getLocale;
+});
 
-onMounted(async () => {
+const loadMap = async () => {
   const config = useRuntimeConfig();
+  const languages = {
+    ko: "ko",
+    en: "en",
+    jp: "ja",
+    cn: "zh"
+  };
   const loader = new Loader({
     apiKey: config.public.apiKey,
-    version: "weekly"
+    version: "weekly",
+    language: languages[currentLocale.value]
   });
 
   await loader.load();
@@ -42,6 +54,10 @@ onMounted(async () => {
     title: props.title
     // styles: mapStyles
   });
+};
+
+onMounted(async () => {
+  await loadMap();
 });
 </script>
 

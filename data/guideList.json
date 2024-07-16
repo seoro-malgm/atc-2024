@@ -1,84 +1,66 @@
 [
   {
-    "label": "버스 이용",
+    "label": "main_map_bus_title",
     "defaultOpen": true,
     "content": [
       {
-        "name": "서울 남부터미널 → 구례 공용버스터미널 (시외)",
-        "desc": "06:40 첫차 | 19:30 막차 | 일 8회",
-        "time": "약 3시간 10분"
+        "name": "main_map_bus_desc01_name",
+        "desc": "main_map_bus_desc01_desc",
+        "time": "main_map_bus_desc01_time"
       },
       {
-        "name": "서울 센트럴시티터미널 → 남원 공용버스터미널 (시외)",
-        "desc": "07:30 첫차 | 20:40 막차 | 일 7회",
-        "time": "약 3시간 10분"
+        "name": "main_map_bus_desc02_name",
+        "desc": "main_map_bus_desc02_desc",
+        "time": "main_map_bus_desc02_time"
       }
     ]
   },
   {
-    "label": "KTX 이용",
+    "label": "main_map_ktx_title",
     "content": [
       {
-        "name": "용산역(KTX) → 구례구역(KTX)",
-        "desc": "05:44 첫차 | 19:15 막차 | 일 13회",
-        "time": "2시간 45분"
+        "name": "main_map_ktx_desc01_name",
+        "desc": "main_map_ktx_desc01_desc",
+        "time": "main_map_ktx_desc01_time"
       },
       {
-        "name": "용산역(KTX) → 남원역(KTX)",
-        "desc": "05:08 첫차 | 18:48 막차 | 일 20회",
-        "time": "2시간 15분"
+        "name": "main_map_ktx_desc02_name",
+        "desc": "main_map_ktx_desc02_desc",
+        "time": "main_map_ktx_desc02_time"
       }
     ]
   },
   {
-    "label": "인천(서울)공항 츨발",
+    "label": "main_map_INC_title",
     "content": [
       {
-        "name": "인천공항 → 용산역(KTX) → 구례구역(KTX)",
-        "desc": [
-          "용산역까지는 공항철도 이용 | 1시간",
-          "05:44 첫차 | 19:15 막차 | 일 13회 | 2시간 45분"
-        ]
+        "name": "main_map_INC_desc01_name",
+        "desc": ["main_map_INC_desc01_desc1", "main_map_INC_desc01_desc2"]
       },
       {
-        "name": "인천공항 → 용산역(KTX)  → 남원역(KTX)",
-        "desc": [
-          "용산역까지는 공항철도 이용 1시간",
-          "05:08 첫차 | 18:48 막차 | 일 20회 | 2시간 15분"
-        ]
+        "name": "main_map_INC_desc02_name",
+        "desc": ["main_map_INC_desc02_desc1", "main_map_INC_desc02_desc2"]
       },
       {
-        "name": "인천공항 → 서울 남부터미널→ 구례 공용버스터미널 (시외)",
-        "desc": [
-          "서울 남부터미널역까지 지하철 이용 | 1시간 30분",
-          "06:40 첫차 | 19:30 막차 | 일 8회 | 약 3시간 10분"
-        ]
+        "name": "main_map_INC_desc03_name",
+        "desc": ["main_map_INC_desc03_desc1", "main_map_INC_desc03_desc2"]
       },
       {
-        "name": "인천공항 → 서울 센트럴시티터미널 → 남원 공용버스터미널 (시외)",
-        "desc": [
-          "고속터미널역까지는 지하철 이용 | 1시간 30분",
-          "07:30 첫차 | 20:40 막차 | 일 7회 | 약 3시간 10분"
-        ]
+        "name": "main_map_INC_desc04_name",
+        "desc": ["main_map_INC_desc04_desc1", "main_map_INC_desc04_desc2"]
       }
     ]
   },
   {
-    "label": "김해(부산)공항",
+    "label": "main_map_PUS_title",
     "content": [
       {
-        "name": "김해공항 → 부산 서부사상 버스터미널 → 구례 공용버스터미널 (시외)",
-        "desc": [
-          "김해공항에서 사상역까지는 공항철도 이용",
-          "08:30 첫차 | 17:30 막차 | 일 4회 | 약 2시간 47분"
-        ]
+        "name": "main_map_PUS_desc01_name",
+        "desc": ["main_map_PUS_desc01_desc1", "main_map_PUS_desc01_desc2"]
       },
       {
-        "name": "김해공항 → 부산 서부사상 버스터미널 → 남원 공용버스터미널 (시외)",
-        "desc": [
-          "김해공항에서 사상역까지는 공항철도 이용",
-          "06:20 첫차 | 18:40 막차 | 일 4회 | 약 2시간 19분"
-        ]
+        "name": "main_map_PUS_desc02_name",
+        "desc": ["main_map_PUS_desc02_desc1", "main_map_PUS_desc02_desc2"]
       }
     ]
   }

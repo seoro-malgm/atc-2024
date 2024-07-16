@@ -4,10 +4,11 @@
       <div class="w-16 h-16 lg:w-28 lg:h-28 mb-2">
         <icon-paper addClass="fill-grayscale-900" />
       </div>
-      <h2 class="title">부대행사 (10.25~27)</h2>
+      <h2 class="title">
+        {{ $t("main_event__title") }}
+      </h2>
       <p class="desc">
-        컨퍼런스 외에도 다양한 부대행사들이 3일간 진행되니 많은 관심
-        부탁드립니다.
+        {{ $t("main_event__desc01") }}
       </p>
     </header>
     <section class="py-5 ms-auto">
@@ -35,7 +36,7 @@
             <div class="program-info">
               <div class="program-text">
                 <h6 class="program-title">
-                  {{ item.title }}
+                  {{ $t(item.title) }}
                 </h6>
                 <p class="program-description">
                   {{ item.date }}
@@ -75,7 +76,7 @@
             <div class="program-info">
               <div class="program-text">
                 <h6 class="program-title">
-                  {{ item.title }}
+                  {{ $t(item.title) }}
                 </h6>
                 <p class="program-description">
                   {{ item.date }}
@@ -103,7 +104,7 @@ const marqueeHeight = computed(() => {
 
 <style lang="postcss" scoped>
 #section-programs {
-  @apply pt-24 pb-48 bg-grayscale-200 border-t border-grayscale-800;
+  @apply pt-24 pb-32 bg-grayscale-200;
   .section-header {
     @apply container mx-auto text-left mb-4 lg:mb-10 px-2;
     .title {
@@ -122,9 +123,9 @@ const marqueeHeight = computed(() => {
     .thumbnail-wrapper {
       @apply mb-4 border border-gray-800 m-4;
       .thumbnail {
-        @apply h-48 relative;
+        @apply aspect-video relative overflow-hidden;
         img {
-          @apply absolute-center;
+          @apply absolute-center  w-full h-auto min-h-full;
         }
       }
     }

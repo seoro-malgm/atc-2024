@@ -19,7 +19,7 @@
     <!-- 스폰서 -->
     <section-sponsors />
 
-    <section-marquee class="block mt-12 xl:hidden" />
+    <section-marquee class="block xl:hidden" />
     <section id="section-cta" class="grid grid-cols-12" ref="target">
       <div
         class="col-span-12 xl:col-span-9 border-t border-grayscale-800 bg-blue-600"
@@ -41,19 +41,14 @@
       >
         <header class="section-header">
           <h3 class="title">
-            ATC 2024 <br />
-            예약 오픈 D-30
+            <pre>{{ $t("main_book__title") }}</pre>
           </h3>
-          <p class="desc">
-            사전예약 오픈 알림을 예약하시면,
-            <br />
-            ATC 2024의 소식과 다양한 할인 혜택을 가장 먼저 알려드릴게요.
-          </p>
+          <pre class="desc">{{ $t("main_book__desc") }}</pre>
         </header>
 
         <section class="cta max-xl:text-center">
           <button @click="$emit('modal-subscribe', true)" class="btn-cta">
-            <span> 알림 예약하기 </span>
+            <span> {{ $t("main_book__btn") }} </span>
           </button>
         </section>
       </div>
@@ -105,6 +100,9 @@ const mousePosition = computed(() => {
     .title {
       @apply text-5xl font-extrabold mb-4;
       line-height: 1.3;
+    }
+    pre {
+      @apply text-white;
     }
   }
   section.cta {

@@ -5,32 +5,32 @@
         <div class="w-16 h-16 lg:w-28 lg:h-28 mb-2">
           <icon-map addClass="fill-grayscale-900" />
         </div>
-        <h2 class="title">오시는 길</h2>
+        <h2 class="title">{{ $t("main_map__title") }}</h2>
         <ul>
           <li class="mb-2">
             <button
               class="flex items-center p-1 text-grayscale-800"
-              @click="clipboard('케이 지리산 가족호텔')"
+              @click="clipboard($t('main_map__hotel'))"
             >
               <div class="w-8 h-8 ms-1 me-3 px-1">
                 <icon-addr addClass="fill-grayscale-500" />
               </div>
-              <span class="text-lg lg:text-3xl font-bold">
-                케이 지리산 가족호텔
+              <span class="text-lg lg:text-2xl font-bold text-left">
+                {{ $t("main_map__hotel") }}
               </span>
             </button>
           </li>
           <li class="mb-2">
             <button
               class="flex items-center p-1 text-grayscale-500"
-              @click="clipboard('전라남도 순천시 낙안읍 낙안로 100번길 10')"
+              @click="clipboard($t('main_map__adds'))"
             >
               <div class="w-8 h-8 ms-1 me-3 px-1">
                 <icon-copy addClass="fill-grayscale-500" />
               </div>
-              <span class="text-lg lg:text-2xl font-semibold"
-                >전라남도 순천시 낙안읍 낙안로 100번길 10</span
-              >
+              <span class="text-lg lg:text-xl font-semibold text-left">
+                {{ $t("main_map__adds") }}
+              </span>
             </button>
           </li>
         </ul>
@@ -46,7 +46,7 @@
                   class="accordian-btn"
                   :class="{ open: i === selected }"
                 >
-                  {{ item.label }}
+                  {{ $t(item.label) }}
                   <UIcon
                     name="ep:arrow-up-bold"
                     class="btn-icon"
@@ -62,12 +62,12 @@
                       :key="l"
                       class="mb-3"
                     >
-                      <div class="flex items-end">
+                      <div class="flex items-end flex-wrap">
                         <strong class="me-2 text-lg">
-                          {{ item2?.name }}
+                          {{ $t(item2?.name) }}
                         </strong>
                         <small class="text-base" v-if="item2?.time"
-                          >({{ item2.time }})</small
+                          >({{ $t(item2.time) }})</small
                         >
                       </div>
                       <template v-if="item2?.desc">
@@ -83,12 +83,12 @@
                               :key="j"
                               class="text-lg"
                             >
-                              {{ item3 }}
+                              {{ $t(item3) }}
                             </li>
                           </ul>
                         </template>
                         <template v-else>
-                          <span class="text-lg">{{ item2.desc }}</span>
+                          <span class="text-lg">{{ $t(item2.desc) }}</span>
                         </template>
                       </template>
                     </li>
@@ -99,7 +99,10 @@
           </li>
         </ul>
         <div class="my-2">
-          <span> 🚕 역 및 터미널에서 호텔까지 택시로 2-30분 </span>
+          <!-- <span v-html="$t('main_map_taxi_title')"> </span> -->
+          <span c>
+            <pre>{{ $t("main_map_taxi_title") }}</pre>
+          </span>
         </div>
       </div>
     </div>
@@ -107,7 +110,7 @@
       <!-- map -->
       <location-map
         :position="{ lat: 35.32170486450195, lng: 127.46190643310547 }"
-        title="지리산더케이호텔"
+        :title="$t('main_map__hotel')"
       />
     </div>
   </div>

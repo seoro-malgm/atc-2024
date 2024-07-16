@@ -2,7 +2,7 @@
   <div id="section-share">
     <div class="container">
       <header>
-        <h4>공유하기</h4>
+        <h4>{{ $t("main_share__title") }}</h4>
       </header>
       <ul class="list-sns">
         <li v-for="(item, i) in sns" :key="i" class="list-item">
@@ -11,7 +11,7 @@
               <UIcon :name="item.icon" class="icon" />
             </div>
             <span class="label">
-              {{ item.label }}
+              {{ $t(item.label) }}
             </span>
           </button>
         </li>
@@ -39,7 +39,7 @@ const shareOnFacebook = () => {
 
 const shareOnTwitter = () => {
   const url = infos.value?.domain;
-  const text = "ATC 2024 | 지리산둘레길 걷기축제  & 아시아 트레일 컨퍼런스 ";
+  const text = "ATC 2024 | 5th ASIA TRAILS CONFERENCE 2024 JIRISAN     ";
   const twitterShareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
     url
   )}&text=${encodeURIComponent(text)}`;
@@ -49,21 +49,21 @@ const shareOnTwitter = () => {
 const sns = ref([
   {
     type: "link",
-    label: "링크로 공유하기",
+    label: "main_share_link_title",
     icon: "akar-icons:link-chain",
     color: "#232323",
     method: () => navigator.clipboard.writeText(infos.value?.domain)
   },
   {
     type: "facebook",
-    label: "페이스북으로 공유하기",
+    label: "main_share_facebook_title",
     icon: "logos:facebook",
     color: "#0866ff",
     method: shareOnFacebook
   },
   {
     type: "twitter",
-    label: "X로 공유하기",
+    label: "main_share_x_title",
     icon: "devicon:twitter",
     color: "#111111",
     method: shareOnTwitter

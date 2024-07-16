@@ -2,7 +2,7 @@
   <UModal v-model="modalShow" class="modal">
     <form>
       <header class="modal-header">
-        <h6>소식 구독하기</h6>
+        <h6>{{ $t("main_pop-up__title") }}</h6>
 
         <button @click.prevent="modalShow = false">
           <UIcon name="bxs:x-square" />
@@ -16,8 +16,8 @@
           bind="email"
           type="email"
           required="required"
-          title="이메일"
-          placeholder="구독자님의 이메일을 입력해주세요"
+          :title="$t('main_pop-up_mail_subtitle')"
+          :placeholder="$t('main_pop-up_mail_desc')"
           @input="$event => (subscriber.email = $event)"
           :required:="true"
           :validate="validator('email', subscriber.email)"
@@ -28,8 +28,8 @@
           bind="name"
           type="text"
           required="required"
-          title="이름"
-          placeholder="구독받으실 구독자님의 이름을 입력해주세요."
+          :title="$t('main_pop-up_name_subtitle')"
+          :placeholder="$t('main_pop-up_name_desc')"
           class="mt-4"
           @input="$event => (subscriber.name = $event)"
           :required:="true"
@@ -38,10 +38,10 @@
         <form-input-select-menu
           class="my-4"
           :form="form"
-          title="언어 선택"
+          :title="$t('main_pop-up_lang_subtitle')"
           value-attribute="label"
           :options="locales"
-          placeholder="구독으로 받을 메일의 언어를 선택해주세요."
+          :placeholder="$t('main_pop-up_lang_desc')"
           @input="$event => (subscriber.lang = $event)"
         />
 
@@ -49,20 +49,18 @@
           :form="subscriber"
           bind="$send_agreed"
           required="required"
-          title="수신동의 여부"
+          :title="$t('main_pop-up_agree_subtitle')"
           class="mt-4"
           @input="$event => (subscriber.send_agreed = $event)"
         >
           <span>
-            (필수)
             <nuxt-link
               href="/terms#privacy"
               target="_blank"
               class="underline text-hawkes-blue-800"
             >
-              개인정보 수집 및 이용
+              {{ $t("main_pop-up_privacy_desc") }}
             </nuxt-link>
-            에 동의합니다.
           </span>
         </form-input-check>
         <form-input-check
@@ -73,21 +71,19 @@
           @input="$event => (subscriber.ad_agreed = $event)"
         >
           <span>
-            (선택)
             <nuxt-link
               href="/terms#ad_agree"
               target="_blank"
               class="underline text-hawkes-blue-800"
             >
-              광고성 정보 수신
+              {{ $t("main_pop-up_ad_desc") }}
             </nuxt-link>
-            에 동의합니다.
           </span>
         </form-input-check>
       </section>
       <footer class="modal-footer">
         <button @click.prevent="submit" :disabled="!formValidate">
-          구독하기
+          {{ $t("main_pop-up_subs_subtitle") }}
         </button>
       </footer>
     </form>
@@ -95,7 +91,6 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted, watch } from "vue";
 import validator from "@/composables/validator";
 
 const props = defineProps({

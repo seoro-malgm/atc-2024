@@ -1,0 +1,34 @@
+[
+  {
+    "id": "brenda_yankoviak",
+    "image": "brenda_yankoviak.png",
+    "subjectImage": "brenda_yankoviak.webp",
+    "name": "speaker_presentation_item01_name",
+    "title": "speaker_presentation_item01_title",
+    "brief": "speaker_presentation_item01_brief",
+    "bio": "speaker_presentation_item01_bio"
+  },
+  {
+    "id": "kfs",
+    "name": "speaker_presentation_item02_name",
+    "title": "speaker_presentation_item02_title",
+    "brief": "speaker_presentation_item02_brief",
+    "bio": "speaker_presentation_item02_bio"
+  },
+  {
+    "id": "enock_glidden",
+    "image": "enock_glidden.png",
+    "name": "speaker_presentation_item03_name",
+    "title": "speaker_presentation_item03_title",
+    "brief": "speaker_presentation_item03_brief",
+    "bio": "speaker_presentation_item03_bio"
+  },
+  {
+    "id": "su_dol_kang",
+    "image": "su_dol_kang.png",
+    "name": "speaker_presentation_item04_name",
+    "title": "speaker_presentation_item04_title",
+    "brief": "speaker_presentation_item04_brief",
+    "bio": "speaker_presentation_item04_bio"
+  }
+]

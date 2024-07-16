@@ -225,7 +225,7 @@ export default defineNuxtConfig({
     "@nuxt/ui",
     "@vueuse/nuxt",
     "@nuxt/image",
-    // "@nuxtjs/i18n",
+    "@nuxtjs/i18n",
     "@pinia/nuxt",
     "@pinia-plugin-persistedstate/nuxt"
   ],
@@ -287,16 +287,16 @@ export default defineNuxtConfig({
     preference: "light"
   },
   // i18n
-  // i18n: {
-  //   strategy: "prefix_except_default",
-  //   vueI18n: "./i18n.config.ts",
-  //   defaultLocale: "ko",
-  //   detectBrowserLanguage: {
-  //     useCookie: true,
-  //     cookieKey: "i18n_redirected",
-  //     redirectOn: "root" // recommended
-  //   }
-  // },
+  i18n: {
+    strategy: "prefix_except_default",
+    vueI18n: "./i18n.config.ts",
+    defaultLocale: "ko",
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: "i18n_redirected",
+      redirectOn: "no prefix"
+    }
+  },
   serverHandlers: [
     // { route: "/rss", middleware: true, handler: "~/server/middleware/rss.js" }
   ],

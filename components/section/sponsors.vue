@@ -2,7 +2,7 @@
   <section class="section-sponsors border-b-0">
     <!-- 스폰서 목록 -->
     <div class="list-wrapper">
-      <header-section> 주최 </header-section>
+      <header-section> {{ $t("main_open__title") }} </header-section>
       <div class="list-container">
         <!-- 주최 -->
         <ul class="list-sponsor">
@@ -14,8 +14,8 @@
             <div class="logo">
               <img
                 :src="`/images/sponsors/${item.src}`"
-                :alt="`${item.name} 로고이미지`"
-                :title="`${item.name} 로고이미지`"
+                :alt="`${item.name} logo image`"
+                :title="`${item.name} logo image`"
               />
             </div>
           </li>
@@ -30,14 +30,16 @@
             <div class="logo">
               <img
                 :src="`/images/sponsors/${item.src}`"
-                :alt="`${item.name} 로고이미지`"
-                :title="`${item.name} 로고이미지`"
+                :alt="`${item.name} logo image`"
+                :title="`${item.name} logo image`"
               />
             </div>
           </li>
         </ul>
       </div>
-      <header-section class="mt-12"> 주관 </header-section>
+      <header-section class="mt-12">
+        {{ $t("main_open__title2") }}
+      </header-section>
       <div class="list-container">
         <ul class="list-organization">
           <!-- 단체 -->
@@ -49,8 +51,8 @@
             <div class="logo">
               <img
                 :src="`/images/sponsors/${item.src}`"
-                :alt="`${item.name} 로고이미지`"
-                :title="`${item.name} 로고이미지`"
+                :alt="`${item.name} logo image`"
+                :title="`${item.name} logo image`"
               />
             </div>
           </li>
@@ -79,7 +81,7 @@ if (
   /* @apply bg-gray-200; */
   .list-wrapper {
     .list-container {
-      @apply container mx-auto;
+      @apply container mx-auto py-12 lg:py-24;
       .list-sponsor,
       .list-supervising,
       .list-organization {
