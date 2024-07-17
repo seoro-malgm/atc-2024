@@ -116,6 +116,7 @@
   "program_timetable__subject": "주제",
   "program_timetable__time": "시간",
   "program_timetable__title": "타임테이블",
+  "speaker_subject__title": "연사",
   "speaker_presentation_item01_bio": "북부 메인주의 작은 마을 패튼에서 자란 에녹은 척추갈림증(Spina Bifida)으로 태어나 다른 방식으로 일을 하는 방법을 배워야 했습니다. 적응형 장비와 친구 및 가족의 도움을 통해 그는 매우 충만한 삶을 살아왔습니다.\n에녹은 현재 메인주 베델에 거주하며, 열정적인 스키어, 암벽 등반가, 그리고 하이커입니다. 그는 테니스, 농구, 패러글라이딩, 스카이다이빙을 포함한 많은 다른 스포츠에도 참여합니다. 컴퓨터 과학을 전공하며 인턴십을 통해 미국 전역을 여행하며 많은 국립공원을 포함한 소중한 야외 공간들을 방문했습니다. 그는 요세미티 국립공원의 엘 캐피탄을 5일간 등반하며 인턴십 경험을 마무리했습니다.\n현재 에녹은 메인주에서 모든 능력을 가진 사람들이 야외 활동을 할 수 있도록 돕는 사명을 수행하고 있습니다. 그의 컨설팅 업무와 블로그를 통해 모두가 이용할 수 있는 놀라운 야외 공간을 소개하고 접근성을 향상시키는 데 도움을 주고 있습니다.\n이 모든 경험 덕분에 그는 누구에게나 \"나는 할 수 없다\"고 말하지 않고 대신 \"어떻게 하면 할 수 있을까?\"라고 묻도록 가르치는 것을 그의 인생의 사명으로 삼았습니다.",
   "speaker_presentation_item01_brief": "모든 사람은 자신에게 모험이 무엇을 의미하는지 선택할 자격이 있습니다. 에녹은 자신의 개인적인 이야기를 통해 장애가 있는 사람들에게 야외 접근이 어떤 영향을 미칠 수 있는지 보여줄 것입니다. 그는 표지판, 트레일 및 기타 야외 공간의 특징에 대한 다양한 장애물 제거와 추가 방법을 통해 모든 능력을 가진 사람들이 야외 활동을 즐길 수 있는 아이디어를 제시할 것입니다.",
   "speaker_presentation_item01_name": "브렌다 얀코비야크",
@@ -139,5 +140,9 @@
   "toast_message_subscribe_fail": "구독에 실패했습니다",
   "toast_message_subscribe_success": "구독에 성공했습니다",
   "toast_message_lang_change": "한국어로 변경되었습니다",
-  "message_infos_speakers_comming_soon": "더 많은 연사는 추후 공개 예정입니다"
+  "message_infos_speakers_comming_soon": "더 많은 연사는 추후 공개 예정입니다",
+  "word__time_hour": "시간",
+  "word__time_min": "분",
+  "word__time_sec": "초",
+  "error_message_page_to_go_home": "홈으로 돌아가기"
 }

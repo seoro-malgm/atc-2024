@@ -2,7 +2,9 @@
   <div class="error-page">
     <h1>{{ statusCode }} Error</h1>
     <p>{{ message }}</p>
-    <button @click="goHome">홈으로 돌아가기</button>
+    <button @click="goHome">
+      {{ $t("error_message_page_to_go_home") }}
+    </button>
   </div>
 </template>
 

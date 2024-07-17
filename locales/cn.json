@@ -116,6 +116,7 @@
   "program_timetable__subject": "主题",
   "program_timetable__time": "时间",
   "program_timetable__title": "时间表",
+  "speaker_subject__title": "연사",
   "speaker_presentation_item01_bio": "伊诺克在缅因州北部的帕顿小镇长大，天生患有脊柱裂，必须学会用不同的方式做事。 在辅助设备和亲朋好友的帮助下，他过上了非常充实的生活。\n伊诺克目前住在缅因州贝瑟尔，是一名狂热的滑雪者、攀岩者和徒步旅行者。 他还参加了网球、篮球、滑翔伞和跳伞等许多其他运动。作为一名计算机科学专业的学生，他的实习经历让他得以走遍美国，游览包括许多国家公园在内的户外宝地。 他用五天时间攀登了优胜美地国家公园的埃尔卡皮坦（El Capitan），为他的实习经历画上了圆满的句号。\n如今，伊诺克肩负着帮助缅因州各种能力的人进行户外活动的使命。 通过他的咨询工作和博客，他帮助展示和改善了每个人都能获得的令人惊叹的户外空间。\n因为所有这些经历，他将教导任何人停止说 \"我不能\"，转而问 \"我怎么能？\"作为自己的人生使命。",
   "speaker_presentation_item01_brief": "每个人都有权选择探险对自己的意义。伊诺克将用他的亲身经历说明户外活动对残障人士的影响，并介绍如何消除和增加户外标志、小径和其他设施中的各种障碍，让各种能力的人都能享受户外活动。",
   "speaker_presentation_item01_name": "布伦达-扬科维亚克",
@@ -139,5 +140,9 @@
   "toast_message_subscribe_fail": "订阅失败",
   "toast_message_subscribe_success": "成功订阅",
   "toast_message_lang_change": "改为台语。",
-  "message_infos_speakers_comming_soon": "即将公布更多演讲者"
+  "message_infos_speakers_comming_soon": "更多发言人稍后公布",
+  "word__time_hour": "时间",
+  "word__time_min": "分",
+  "word__time_sec": "秒",
+  "error_message_page_to_go_home": "홈으로 돌아가기"
 }

@@ -116,6 +116,7 @@
   "program_timetable__subject": "Topics",
   "program_timetable__time": "Time",
   "program_timetable__title": "Timetables",
+  "speaker_subject__title": "연사",
   "speaker_presentation_item01_bio": "Growing up in Patten, a small town in northern Maine, Enock was born with Spina Bifida and had to learn to do things differently. With the use of adaptive equipment and help from friends and family, he has had a very full life.\nEnock resides in Bethel, Maine, and is an avid skier, rock climber, and hiker. He also participates in many other sports, including tennis, basketball, paragliding, and skydiving. Through an internship related to his studies in computer science, he traveled across the United States, visiting some of our most cherished outdoor spaces, including many national parks. He culminated his internship experience in California with a 5-day ascent of El Capitan in Yosemite National Park.\nEnock is now on a mission to get people of all abilities outdoors in Maine. Through his consulting work and blog, he showcases the amazing outdoor spaces available to everyone and helps improve access.\nBecause of all these experiences, he has made it his life's mission to speak to anyone and everyone about never saying, \"I can't,\" and instead always asking, \"How can I?\"",
   "speaker_presentation_item01_brief": "Everyone deserves a choice as to what adventure means to them. Enock will show what access to the outdoors can do for someone with a disability through personal stories. He will delve into ideas for giving access to people of all abilities through various types of barrier removal and additions that can be made to signage, trails, and other features of outdoor spaces.",
   "speaker_presentation_item01_name": "Brenda Yankoviak",
@@ -139,5 +140,9 @@
   "toast_message_subscribe_fail": "Subscription failed",
   "toast_message_subscribe_success": "Subscription succeeded",
   "toast_message_lang_change": "Changed to English.",
-  "message_infos_speakers_comming_soon": "More speakers to be announced soon"
+  "message_infos_speakers_comming_soon": "More speakers to be announced at a later date",
+  "word__time_hour": "Time(s)",
+  "word__time_min": "Minutes",
+  "word__time_sec": "Seconds",
+  "error_message_page_to_go_home": "홈으로 돌아가기"
 }

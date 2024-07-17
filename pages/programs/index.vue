@@ -36,15 +36,15 @@
               <td>
                 <pre>{{ $t("program_timetable__desc04") }}</pre>
               </td>
-              <td class="note">(30 min.)</td>
+              <td class="note">(30 {{ $t("word__time_min") }})</td>
             </tr>
             <tr>
               <td>{{ $t("program_timetable__desc05") }}</td>
-              <td class="note">(30 min.)</td>
+              <td class="note">(30 {{ $t("word__time_min") }})</td>
             </tr>
             <tr>
               <td>{{ $t("program_timetable__desc06") }}</td>
-              <td class="note">(20 min.)</td>
+              <td class="note">(20 {{ $t("word__time_min") }})</td>
             </tr>
             <tr>
               <td class="time">12:00 - 13:30</td>
@@ -61,15 +61,15 @@
             </tr>
             <tr>
               <td>{{ $t("program_timetable__desc09") }}</td>
-              <td class="note">(30 min.)</td>
+              <td class="note">(30 {{ $t("word__time_min") }})</td>
             </tr>
             <tr>
               <td>{{ $t("program_timetable__desc10") }}</td>
-              <td class="note">(30 min.)</td>
+              <td class="note">(30 {{ $t("word__time_min") }})</td>
             </tr>
             <tr>
               <td>{{ $t("program_timetable__desc11") }}</td>
-              <td class="note">(30 min.)</td>
+              <td class="note">(30 {{ $t("word__time_min") }})</td>
             </tr>
             <tr>
               <td colspan="4" class="subject">
@@ -83,15 +83,15 @@
               <td>
                 <pre>{{ $t("program_timetable__desc13") }}</pre>
               </td>
-              <td class="note">(30 min.)</td>
+              <td class="note">(30 {{ $t("word__time_min") }})</td>
             </tr>
             <tr>
               <td>{{ $t("program_timetable__desc14") }}</td>
-              <td class="note">(30 min.)</td>
+              <td class="note">(30 {{ $t("word__time_min") }})</td>
             </tr>
             <tr>
               <td>{{ $t("program_timetable__desc15") }}</td>
-              <td class="note">(30 min.)</td>
+              <td class="note">(30 {{ $t("word__time_min") }})</td>
             </tr>
 
             <tr>
@@ -105,13 +105,13 @@
             </tr>
             <tr>
               <td>{{ $t("program_timetable__desc18") }}</td>
-              <td class="note">(30 min.)</td>
+              <td class="note">(30 {{ $t("word__time_min") }})</td>
             </tr>
             <tr>
               <td>
                 <pre>{{ $t("program_timetable__desc19") }}</pre>
               </td>
-              <td class="note">(30 min.)</td>
+              <td class="note">(30 {{ $t("word__time_min") }})</td>
             </tr>
             <tr>
               <td class="time">18:00 - 20:00</td>

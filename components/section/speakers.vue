@@ -1,6 +1,6 @@
 <template>
   <section id="section-speakers" ref="target">
-    <header-section>연사</header-section>
+    <header-section>{{ $t("speaker_subject__title") }}</header-section>
     <div class="mt-12 mx-auto">
       <ul class="list-speaker">
         <li v-for="(item, i) in items" :key="item.id" class="list-item">
