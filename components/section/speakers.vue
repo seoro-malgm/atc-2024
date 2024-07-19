@@ -65,7 +65,7 @@ const selected = ref();
 // const emits = defineEmits();
 
 const items = computed(() => {
-  return spkeakerList?.filter(item => item?.image);
+  return spkeakerList?.filter(item => item?.image && !item?.hidden);
 });
 </script>
 

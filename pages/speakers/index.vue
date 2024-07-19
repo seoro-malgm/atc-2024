@@ -4,7 +4,12 @@
 
     <section class="section-list">
       <ul class="list-prorgrams">
-        <li v-for="(item, i) in items" :key="item.id" class="list-item">
+        <li
+          v-for="(item, i) in items"
+          :key="item.id"
+          class="list-item"
+          :class="{ disabled: item?.disabled }"
+        >
           <article class="item">
             <div class="thumbnail">
               <template v-if="item.subjectImage">
@@ -15,7 +20,7 @@
                 />
               </template>
               <template v-else>
-                <div class="w-full h-full bg-grayscale-200" />
+                <div class="w-full h-full bg-green-200" />
               </template>
             </div>
             <button class="infos" @click="selected = item">
@@ -99,6 +104,10 @@ const selected = ref();
           }
         }
       }
+    }
+    /* 아직 선택불가할 때 */
+    &.disabled {
+      @apply opacity-60 pointer-events-none;
     }
   }
 }

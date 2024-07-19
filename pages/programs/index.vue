@@ -1,5 +1,8 @@
 <template>
   <div id="programs">
+    <header-section>
+      {{ $t("program_subject__title") }}
+    </header-section>
     <section-introduction :hideHeader="true" />
 
     <section class="mt-24 lg:mt-48">
@@ -69,7 +72,7 @@
             </tr>
             <tr>
               <td>{{ $t("program_timetable__desc11") }}</td>
-              <td class="note">(30 {{ $t("word__time_min") }})</td>
+              <td class="note">(20 {{ $t("word__time_min") }})</td>
             </tr>
             <tr>
               <td colspan="4" class="subject">
@@ -91,7 +94,7 @@
             </tr>
             <tr>
               <td>{{ $t("program_timetable__desc15") }}</td>
-              <td class="note">(30 {{ $t("word__time_min") }})</td>
+              <td class="note">(20 {{ $t("word__time_min") }})</td>
             </tr>
 
             <tr>
@@ -101,7 +104,14 @@
               </td>
             </tr>
             <tr>
-              <td rowspan="3" class="time">16:30 - 17:50</td>
+              <td rowspan="4" class="time">16:30 - 17:50</td>
+            </tr>
+
+            <tr>
+              <td>
+                <pre>{{ $t("program_timetable__desc17") }}</pre>
+              </td>
+              <td class="note">(30 {{ $t("word__time_min") }})</td>
             </tr>
             <tr>
               <td>{{ $t("program_timetable__desc18") }}</td>
@@ -111,7 +121,7 @@
               <td>
                 <pre>{{ $t("program_timetable__desc19") }}</pre>
               </td>
-              <td class="note">(30 {{ $t("word__time_min") }})</td>
+              <td class="note">(20 {{ $t("word__time_min") }})</td>
             </tr>
             <tr>
               <td class="time">18:00 - 20:00</td>
@@ -125,7 +135,7 @@
 
     <section class="mt-12 lg:mt-48">
       <header-section class="border-b-0">
-        {{ $t("program_subject__title") }}
+        {{ $t("program_subject__topic") }}
       </header-section>
       <div>
         <section-scroll-horizontal
@@ -147,28 +157,28 @@ const props = defineProps({
 
 const subjects = reactive([
   {
-    src: "dummy.png",
+    src: "/conferenc_subjects/subject_0.png",
     description: {
       title: "program_subject_item01_subtitle",
       paragraph: "program_subject_item01_desc"
     }
   },
   {
-    src: "dummy.png",
+    src: "/conferenc_subjects/subject_1.png",
     description: {
       title: "program_subject_item02_subtitle",
       paragraph: "program_subject_item02_desc"
     }
   },
   {
-    src: "dummy.png",
+    src: "/conferenc_subjects/subject_2.png",
     description: {
       title: "program_subject_item03_subtitle",
       paragraph: "program_subject_item03_desc"
     }
   },
   {
-    src: "dummy.png",
+    src: "/conferenc_subjects/subject_3.png",
     description: {
       title: "program_subject_item04_subtitle",
       paragraph: "program_subject_item04_desc"

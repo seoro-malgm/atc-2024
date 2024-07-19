@@ -60,9 +60,9 @@ const items = reactive([
   },
   {
     src: "/images/introduction/item_2.png",
-    subtitle: "main_intro_item02_title",
-    title: "main_intro_item02_subtitle",
-    desc: "main_intro_item02_desc"
+    subtitle: "main_intro_item03_title",
+    title: "main_intro_item03_subtitle",
+    desc: "main_intro_item03_desc"
   }
 ]);
 </script>

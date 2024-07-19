@@ -9,15 +9,18 @@
     "bio": "speaker_presentation_item01_bio"
   },
   {
-    "id": "kfs",
+    "id": "enock_glidden",
+    "image": "enock_glidden.png",
     "name": "speaker_presentation_item02_name",
     "title": "speaker_presentation_item02_title",
     "brief": "speaker_presentation_item02_brief",
     "bio": "speaker_presentation_item02_bio"
   },
   {
-    "id": "enock_glidden",
-    "image": "enock_glidden.png",
+    "id": "kfs",
+    "image": "kfs.png",
+    "hidden": true,
+    "disabled": true,
     "name": "speaker_presentation_item03_name",
     "title": "speaker_presentation_item03_title",
     "brief": "speaker_presentation_item03_brief",
@@ -26,6 +29,7 @@
   {
     "id": "su_dol_kang",
     "image": "su_dol_kang.png",
+    "disabled": true,
     "name": "speaker_presentation_item04_name",
     "title": "speaker_presentation_item04_title",
     "brief": "speaker_presentation_item04_brief",

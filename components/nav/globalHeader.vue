@@ -12,7 +12,7 @@
       <section
         class="logo-section"
         :style="{
-          width: pinned ? `calc(100% - ${scrollY / 8}vw)` : `unset`
+          width: pinned ? `calc(100% - ${scrollY / 10}vw)` : `unset`
         }"
       >
         <nuxt-link class="logo" to="/">
@@ -22,80 +22,6 @@
 
       <!-- nav 영역 -->
       <section class="nav-section">
-        <!-- <div class="nav-toggler">
-          <button
-            class="toggler"
-            :class="{ toggled: navToggle }"
-            @click="navToggle = !navToggle"
-          >
-            <span class="line" v-for="i in 3" :key="i" />
-          </button>
-        </div> -->
-
-        <!-- <div
-          class="util"
-          :class="[{ shown: navToggle }]"
-          :style="{
-            top: `${headerHeight}px`
-          }"
-        > -->
-        <!-- <ul class="list-link">
-            <li v-for="(item, i) in linkList" :key="i" class="list-item">
-              <template v-if="item?.disabled">
-                <UTooltip
-                  text="준비중입니다."
-                  :popper="{ arrow: true }"
-                  class="lg::py-3 h-full flex"
-                >
-                  <a
-                    class="link-item disabled"
-                    :class="{ disabled: item?.disabled }"
-                    :disabled="item.disabled"
-                  >
-                    {{ item.name }}
-                    <div class="block lg:hidden">(준비중입니다)</div>
-                  </a>
-                </UTooltip>
-              </template>
-              <template v-else>
-                <nuxt-link
-                  :to="item.url"
-                  class="link-item"
-                  :class="{ disabled: item?.disabled }"
-                  :disabled="item.disabled"
-                  @mouseover="hoverItem = i"
-                  @mouseleave="hoverItem = null"
-                  @focus="hoverItem = i"
-                  @blur="hoverItem = null"
-                >
-                  <span
-                    :class="
-                      pinned
-                        ? 'max-lg:text-xl lg:text-xl'
-                        : 'max-lg:text-xl lg:text-2xl'
-                    "
-                  >
-                    <UIcon :name="item.icon" class="icon" />
-                    {{ hoverItem === i ? item.ko : item.en }}
-                  </span>
-                </nuxt-link>
-              </template>
-            </li>
-          </ul> -->
-
-        <!-- <ul class="list-sponsor" :class="{ shown: pinned }">
-            <li v-for="(item, i) in sponsors" :key="i" class="list-item">
-              <div class="item">
-                <img
-                  :src="`/images/sponsors/${item.src}`"
-                  :alt="`${item.name} 로고이미지`"
-                  :title="`${item.name} 로고이미지`"
-                />
-              </div>
-            </li>
-          </ul> -->
-        <!-- </div> -->
-
         <div class="title flex max-lg:hidden" :class="{ pinned: pinned }">
           <!-- 제목 -->
           <div
@@ -104,13 +30,6 @@
               width: `max(100%, calc(100% - ${scrollY / 100}%))`
             }"
           >
-            <!-- <h2
-              :style="{
-                fontSize: headingFontSize
-              }"
-            >
-              The 5th Asia Trails Conference
-            </h2> -->
             <nuxt-img
               src="/lettertype-full-eng.svg"
               provider="defaultProvider"
@@ -143,7 +62,10 @@
             <!-- <small>(GMT+9)</small> -->
           </div>
         </div>
-        <div class="title flex lg:hidden" :class="{ pinned: pinned }">
+        <div
+          class="title flex flex-col items-center justify-center lg:hidden"
+          :class="{ pinned: pinned }"
+        >
           <!-- 제목 -->
           <div class="heading">
             <h2>The 5th Asia Trails Conference</h2>
@@ -233,10 +155,12 @@
                   class="w-6 h-6 lg:w-8 lg:h-8 text-white"
                 />
                 <span
-                  class="uppercase ms-1 font-bold w-8 max-lg:w-5 max-lg:text-sm"
+                  class="uppercase lg:ms-1 font-bold w-8 max-lg:w-5 max-lg:text-sm"
                 >
                   <!-- {{ $t("lang") }} -->
-                  {{ locale }}
+                  <sapn class="max-lg:hidden">
+                    {{ locale }}
+                  </sapn>
                 </span>
               </button>
 
@@ -319,7 +243,7 @@ watch(
 
 // gnb 고정 여부
 const pinned = computed(() => {
-  return Number(props.scrollY) <= 600;
+  return Number(props.scrollY) <= 550;
 });
 
 // 헤더에 위치한 제목의 폰트 사이즈
@@ -402,7 +326,7 @@ watch(
       .logo {
         @apply w-full flex max-lg:flex-col px-2 py-1 lg:py-4 lg:ps-12;
         .logo-symbol {
-          @apply lg:min-w-[24rem] lg:min-h-16  w-auto;
+          @apply lg:min-w-[18rem] 2xl:min-w-[24rem] lg:min-h-16  w-auto;
         }
         .lettertype {
           @apply w-full max-lg:mt-2 lg:mt-0 lg:px-4;
@@ -416,80 +340,6 @@ watch(
     /* nav, 정보 영역 */
     .nav-section {
       @apply max-lg:w-full lg:min-w-[50vw] px-0 md:pe-3 lg:pt-8 lg:pb-6 lg:px-12 lg:w-full;
-      /* 토글러 */
-      /* .nav-toggler {
-        @apply block lg:hidden;
-        .toggler {
-          @apply flex flex-col justify-between w-8 h-8 mr-1;
-          .line {
-            @apply block w-full h-2 my-auto bg-black transition-all-default;
-            transition: all 0.3s;
-            opacity: 1;
-          }
-          &.toggled {
-            .line {
-              &:first-child {
-                transform: rotate(45deg) translate(0.75rem, 0.25rem);
-              }
-              &:nth-child(2) {
-                transform: translate(32px);
-                opacity: 0;
-              }
-              &:last-child {
-                transform: rotate(-45deg) translate(0.75rem, -0.25rem);
-              }
-            }
-          }
-        }
-      } */
-      /* 유틸 */
-      /* .util {
-        @apply block fixed lg:static max-lg:z-[2000]  border-b-gray-800 max-lg:translate-x-[-50%] max-lg:w-full max-lg:left-[50%] max-lg:translate-y-[-20px] max-lg:opacity-0 max-lg:pointer-events-none  bg-white;
-        transition: all 0.3s ease-in-out;
-        &.shown {
-          @apply max-lg:bg-white max-lg:translate-y-[0] max-lg:opacity-100 max-lg:pointer-events-auto;
-        } */
-      /* 링크 */
-      /* .list-link {
-          @apply lg:flex justify-between items-center max-h-[inherit];
-          .list-item {
-            @apply w-full max-lg:text-center font-semibold text-grayscale-900 px-1;
-            .link-item {
-              @apply w-full relative h-full max-lg:py-6 lg:py-5 px-8 self-stretch hover:bg-blue-300  border max-lg:border-x-0 max-lg:border-t-0 border-grayscale-900 flex items-center justify-center transition-all-default;
-              > span {
-                @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 uppercase font-bold flex items-center transition-all;
-                .icon {
-                  @apply mr-2;
-                }
-              }
-              &.active,
-              &.exact-active {
-                @apply bg-blue-600 text-green-300;
-              }
-              &.disabled {
-                @apply max-lg:py-3 text-grayscale-700 my-auto opacity-25 bg-grayscale-300;
-              }
-            }
-          }
-        } */
-      /* 날짜 등의 타이틀 정보 */
-      /* } */
-      /* 스폰서 목록 */
-      /* .list-sponsor {
-          @apply max-lg:hidden w-full flex flex-row items-center opacity-0 max-h-[0]  transition-all ease-out duration-100 pointer-events-none;
-          &.shown {
-            @apply opacity-100 max-h-[1000px];
-          }
-          .list-item {
-            @apply px-2 py-1 mx-auto;
-            .item {
-              @apply w-full;
-              img {
-                @apply h-auto w-full;
-              }
-            }
-          }
-        } */
 
       .title {
         @apply flex-col lg:flex-row max-lg:items-start items-center transition-all flex-wrap pt-2 pb-1 px-1 lg:p-0  max-lg:text-xl max-lg:text-left max-lg:py-3;
@@ -497,20 +347,17 @@ watch(
           letter-spacing: -0.08rem;
           word-spacing: -0.3rem;
         }
-
         &.pinned {
           @apply lg:flex-col max-lg:items-center lg:items-start lg:justify-start max-lg:text-2xl max-lg:text-center;
-          /* .heading,
-          .date,
-          .place {
-            @apply mb-1;
-          } */
-          /* .place-and-date {
-            @apply ;
-          } */
+          .place-and-date {
+            @apply max-lg:justify-center;
+          }
+          .heading {
+            @apply w-full pe-3 max-lg:text-2xl;
+          }
         }
         .heading {
-          @apply w-full;
+          @apply w-full pe-3 max-lg:text-lg;
         }
         .heading,
         .date,
@@ -519,19 +366,12 @@ watch(
         }
 
         h2 {
-          @apply font-extrabold text-nowrap;
+          @apply font-extrabold;
           line-height: 0.9;
         }
 
-        /* .date {
-          @apply flex items-start mr-2;
-          small {
-            @apply text-sm italic p-0 ;
-          }
-        } */
-
         .place-and-date {
-          @apply flex flex-nowrap items-start;
+          @apply flex flex-nowrap items-center max-lg:justify-start mx-auto w-full;
           h2 {
             @apply max-lg:mr-1 text-nowrap;
           }
@@ -546,18 +386,18 @@ watch(
   .global-header-nav {
     /* 링크 영역 */
     .link-section {
-      @apply w-full flex-grow-[1] bg-grayscale-950 text-white px-2;
+      @apply w-full flex-grow-[1] bg-grayscale-950 text-white lg:px-2;
       .list-link {
-        @apply flex items-center max-lg:justify-center;
+        @apply flex items-center max-lg:justify-center flex-wrap;
         .list-item {
           .link-item {
-            @apply block px-5 md:px-4 py-1 lg:px-4 lg:py-2 border-r border-white lg:min-w-[210px] text-center;
+            @apply block px-4 md:px-4 pt-1 pb-2 lg:px-4 lg:py-2 border-r border-white lg:min-w-[210px] text-center text-nowrap;
             &:first-child {
               @apply max-lg:border-l;
             }
 
             span {
-              @apply uppercase transition-all;
+              @apply uppercase transition-all max-lg:text-sm;
             }
             &:hover,
             &:focus,
@@ -572,7 +412,9 @@ watch(
         }
         &:first-child {
           .link-item {
-            border-left-width: 0 !important;
+            @media all and (min-width: 1204px) {
+              border-left-width: 0 !important;
+            }
           }
         }
       }
