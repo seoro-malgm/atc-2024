@@ -23,6 +23,7 @@
         <header class="section-header">
           <h3 class="title">
             <pre>{{ $t("main_book__title") }}</pre>
+            <div>{{ dayCount }}</div>
           </h3>
           <pre class="desc">{{ $t("main_book__desc") }}</pre>
         </header>
@@ -38,7 +39,19 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const dayCount = computed(() => {
+  const today = new Date();
+  const targetDate = new Date("2024-08-15");
+  const timeDiff = targetDate - today;
+  const day = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+
+  if (day <= 0) {
+    return "D-DAY";
+  }
+  return `D-${day}`;
+});
+</script>
 
 <style lang="postcss" scoped>
 #section-booking-news {
