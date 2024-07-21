@@ -39,9 +39,7 @@
 <script setup>
 // const reelsURL = getRefURL(process.env?.mode !== 'de' ?  "reels-dummy.mp4");
 const reelsURL = computed(() => {
-  return process.env?.NODE_ENV === "development"
-    ? "https://youtu.be/6v2L2UGZJAM?si=cnUkEpKc4cu03zKb"
-    : getRefURL("reels-dummy.mp4");
+  return getRefURL("reels-dummy.mp4");
 });
 
 const props = defineProps({

@@ -8,11 +8,18 @@
 
         <div class="util">
           <button @click.prevent="close">
-            <UIcon name="bxs:x-square" class="text-xl lg:text-2xl" />
+            <UIcon name="bxs:x-square" class="text-2xl lg:text-4xl" />
           </button>
         </div>
       </header>
       <section class="modal-body">
+        <template v-if="selected?.subjectImage">
+          <nuxt-img
+            :src="`/images/subjects/${selected.subjectImage}`"
+            provider="defaultProvider"
+            class="image w-full aspect-square"
+          />
+        </template>
         <p class="brief" v-if="selected?.brief">
           {{ $t(selected?.brief) }}
         </p>
@@ -75,9 +82,9 @@ watch(
   .modal-container {
     /* 헤더 */
     .modal-header {
-      @apply flex items-start justify-between px-4 py-2 border-b;
+      @apply flex items-start justify-between px-6 py-3 border-b;
       h5.title {
-        @apply text-lg lg:text-2xl font-bold py-2;
+        @apply text-lg lg:text-2xl font-bold py-2 pe-4 w-10/12;
       }
       .util {
         @apply py-2;
@@ -85,19 +92,22 @@ watch(
     }
     /* 내용 */
     .modal-body {
-      @apply py-4 border-t border-grayscale-800;
+      @apply pb-4 border-t border-grayscale-800;
+      .image {
+        @apply mb-2;
+      }
       .brief {
-        @apply text-base  px-4 pb-2 border-b border-grayscale-800 font-semibold;
+        @apply text-base mt-4 px-6 pb-4 border-b border-grayscale-800 font-semibold;
         line-height: 1.7;
       }
       .bio {
-        @apply text-gray-700 mt-2 px-4;
+        @apply text-gray-700 mt-4 px-6;
         line-height: 1.7;
       }
     }
     /* 푸터 */
     .modal-footer {
-      @apply flex items-center mb-4 px-4;
+      @apply flex items-center mb-6 px-6;
       .profile {
         @apply w-10 lg:w-14 h-10 lg:h-14 rounded-full overflow-hidden border border-gray-800;
       }

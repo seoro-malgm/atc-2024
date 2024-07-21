@@ -5,7 +5,7 @@
         <h6>{{ $t("main_pop-up__title") }}</h6>
 
         <button @click.prevent="modalShow = false">
-          <UIcon name="bxs:x-square" />
+          <UIcon name="bxs:x-square" class="text-2xl lg:text-4xl" />
         </button>
       </header>
       <section class="modal-body">

@@ -56,6 +56,14 @@
         </li>
       </ul>
     </section>
+    <div class="mb-24">
+      <div class="text-center">
+        <span class="text-sm text-gray-700">
+          {{ $t("message_infos_speakers_comming_soon") }}
+        </span>
+      </div>
+    </div>
+
     <modal-speaker :selected="selected" @close="selected = null" />
   </div>
 </template>
@@ -72,35 +80,35 @@ const selected = ref();
 
 <style lang="postcss" scoped>
 .section-list {
-  @apply container px-2 mx-auto mt-24 pb-40;
+  @apply container px-2 mx-auto my-24;
   .list-item {
-    @apply mb-4;
+    @apply mb-4 px-2;
     .item {
-      @apply flex items-stretch border border-gray-800;
+      @apply flex items-center border border-gray-800;
       .thumbnail {
-        @apply w-3/12 lg:w-2/12 aspect-square relative p-[1px] overflow-hidden border-r border-grayscale-800;
+        @apply w-4/12 lg:w-2/12 aspect-square relative p-[1px] overflow-hidden border-r border-grayscale-800 self-stretch;
         .image {
-          @apply absolute-center w-full h-full;
+          @apply absolute-center object-cover h-full w-auto;
         }
       }
       .infos {
-        @apply px-4 py-2 w-9/12 lg:w-10/12 flex flex-col hover:cursor-pointer text-left text-gray-600 hover:text-gray-800 transition-all;
+        @apply px-4 py-2 lg:pt-5 pb-3 w-8/12 lg:w-10/12 flex flex-col hover:cursor-pointer text-left text-gray-600 hover:text-gray-800 transition-all;
         h6 {
-          @apply text-xl lg:text-2xl font-bold mb-2 mt-auto;
+          @apply text-base lg:text-xl font-bold mb-2 mt-auto truncate w-full;
         }
         .brief {
-          @apply truncate line-clamp-2 h-10 w-full mb-auto;
+          @apply truncate line-clamp-2 w-full mb-auto;
           p {
-            @apply text-sm text-grayscale-700 text-wrap pe-4 lg:pe-8;
+            @apply text-xs lg:text-sm text-grayscale-700 text-wrap pe-4 lg:pe-8;
           }
         }
         .footer {
-          @apply flex items-center mb-2;
+          @apply flex items-center mt-4 mb-2;
           .profile {
-            @apply w-10 lg:w-14 h-10 lg:h-14 rounded-full overflow-hidden border border-gray-800;
+            @apply w-8 lg:w-14 h-8 lg:h-14 rounded-full overflow-hidden border border-gray-800;
           }
           .name {
-            @apply ms-2;
+            @apply ms-1 lg:ms-2 text-xs;
           }
         }
       }

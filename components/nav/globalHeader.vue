@@ -326,7 +326,7 @@ watch(
       .logo {
         @apply w-full flex max-lg:flex-col px-2 py-1 lg:py-4 lg:ps-12;
         .logo-symbol {
-          @apply lg:min-w-[18rem] 2xl:min-w-[24rem] lg:min-h-16  w-auto;
+          @apply lg:min-w-[18rem] 2xl:min-w-[24rem] lg:min-h-16 w-full h-auto;
         }
         .lettertype {
           @apply w-full max-lg:mt-2 lg:mt-0 lg:px-4;

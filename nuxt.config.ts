@@ -66,11 +66,11 @@ export default defineNuxtConfig({
         },
         {
           name: "msapplication-TileColor",
-          content: "#4f42e9"
+          content: "#ffffff"
         },
         {
           name: "theme-color",
-          content: "#4f42e9"
+          content: "#ffffff"
         },
         {
           hid: "twitter:card",

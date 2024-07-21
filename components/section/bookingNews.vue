@@ -58,7 +58,7 @@ const dayCount = computed(() => {
   .section-header {
     @apply text-white px-8 xl:px-14 max-xl:text-center;
     .title {
-      @apply text-5xl font-extrabold mb-4;
+      @apply text-5xl lg:text-[4rem] font-extrabold mb-4;
       line-height: 1.3;
     }
     pre {

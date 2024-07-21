@@ -7,12 +7,16 @@
 
     <section class="mt-24 lg:mt-48">
       <header-section>{{ $t("program_timetable__title") }}</header-section>
-      <div class="time-table container mx-auto my-24">
+      <div class="time-table">
+        <header class="lg:hidden">
+          SCROLL
+          <icon-arr dir="right" color="transparent" fill="black" class="icon" />
+        </header>
         <table class="w-full border-collapse">
           <thead>
             <tr>
               <th>{{ $t("program_timetable__time") }}</th>
-              <th width="65%">{{ $t("program_timetable__subject") }}</th>
+              <th>{{ $t("program_timetable__subject") }}</th>
               <th>{{ $t("program_timetable__note") }}</th>
             </tr>
           </thead>
@@ -189,14 +193,19 @@ const subjects = reactive([
 
 <style lang="postcss" scoped>
 .time-table {
-  @apply container mx-auto px-4 my-24;
+  @apply lg:container lg:mx-auto px-4 mx-4 mt-10 max-lg:pb-8 lg:my-24 max-w-full overflow-x-auto;
+  header {
+    @apply flex items-center lg:hidden;
+    .icon {
+      @apply w-8 h-8;
+    }
+  }
 
   table {
-    @apply w-full border-collapse;
-
+    @apply w-full border-collapse lg:container mx-auto mb-2;
     thead {
       th {
-        @apply bg-grayscale-800 text-white p-4 text-center text-lg;
+        @apply bg-grayscale-800 text-white p-2 lg:p-4 text-center text-sm lg:text-lg;
       }
     }
 
@@ -208,7 +217,7 @@ const subjects = reactive([
         @apply bg-white;
       }
       td {
-        @apply border-y border-grayscale-800 p-4 text-lg lg:text-2xl text-left;
+        @apply border-y border-grayscale-800 p-2 lg:p-4 text-base lg:text-2xl text-left text-nowrap;
         pre {
           @apply text-left;
         }
@@ -216,13 +225,13 @@ const subjects = reactive([
           @apply font-bold;
         }
         &.time {
-          @apply text-2xl lg:text-3xl font-bold text-center align-middle border-r border-grayscale-800;
+          @apply text-base lg:text-3xl font-bold text-center align-middle border-r border-grayscale-800;
         }
         &.note {
           @apply text-center border-l;
         }
         &.subject {
-          @apply bg-grayscale-950 text-white text-center text-lg lg:text-xl py-2;
+          @apply bg-grayscale-950 text-white text-center text-base lg:text-xl py-2;
         }
       }
     }

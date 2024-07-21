@@ -1,9 +1,8 @@
 <template>
   <svg
-    id="_레이어_1"
-    data-name="레이어 1"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 767 164.76"
+    preserveAspectRatio="xMidYMid meet"
   >
     <defs></defs>
     <path
@@ -35,7 +34,6 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted, watch } from "vue";
 import { useInterval } from "@vueuse/core";
 const { counter, reset, pause, resume } = useInterval(1430, { controls: true });
 const listColors = ref(["#a5fea3", "#FFCCE4", "#FFF7CF", "#CFDCFC"]);

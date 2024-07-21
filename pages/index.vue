@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="index">
     <!-- 히어로 -->
     <section-hero :scrollY="scrollY" />
     <!-- <section-marquee /> -->
@@ -54,4 +54,8 @@ const props = defineProps({
 // });
 </script>
 
-<style lang="postcss" scoped></style>
+<style lang="postcss" scoped>
+#index {
+  overflow-x: hidden;
+}
+</style>
