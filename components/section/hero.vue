@@ -39,7 +39,7 @@
 <script setup>
 // const reelsURL = getRefURL(process.env?.mode !== 'de' ?  "reels-dummy.mp4");
 const reelsURL = computed(() => {
-  return getRefURL("reels-dummy.mp4");
+  return getRefURL("reels.mp4");
 });
 
 const props = defineProps({

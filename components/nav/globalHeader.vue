@@ -158,9 +158,9 @@
                   class="uppercase lg:ms-1 font-bold w-8 max-lg:w-5 max-lg:text-sm"
                 >
                   <!-- {{ $t("lang") }} -->
-                  <sapn class="max-lg:hidden">
+                  <span class="max-lg:hidden">
                     {{ locale }}
-                  </sapn>
+                  </span>
                 </span>
               </button>
 
