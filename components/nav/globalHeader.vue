@@ -275,8 +275,10 @@ const langs = reactive([
   }
 ]);
 
+// 언어 업데이트
 const updateLang = async id => {
   await setLocale(id);
+  // await switchLocalePath(id);
   localeStore.setLocale(id); // Pinia store에 저장
   toast.add({
     title: t("toast_message_lang_change"),
@@ -284,25 +286,31 @@ const updateLang = async id => {
   });
 };
 
+// 쿼리에 세팅된 언어
+const queryLang = computed(() => {
+  return route?.query?.lang;
+});
+
 onMounted(() => {
   const savedLocale = localeStore.getLocale;
-  setLocale(savedLocale);
+  // console.log("savedLocale :", savedLocale);
+  updateLang(queryLang?.value ? queryLang?.value : savedLocale);
 });
+
+watch(
+  () => queryLang,
+  (n, o) => {
+    updateLang(queryLang?.value ? queryLang?.value : n);
+  }
+);
 
 watch(
   () => route.path,
   n => {
     const savedLocale = localeStore.getLocale;
     if (savedLocale !== locale) {
-      setLocale(savedLocale);
+      updateLang(queryLang?.value ? queryLang?.value : savedLocale);
     }
-  }
-);
-
-watch(
-  () => localeStore.getLocale,
-  (n, o) => {
-    router.go();
   }
 );
 </script>

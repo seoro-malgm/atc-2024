@@ -193,7 +193,7 @@ const subjects = reactive([
 
 <style lang="postcss" scoped>
 .time-table {
-  @apply lg:container lg:mx-auto px-4 mx-4 mt-10 max-lg:pb-8 lg:my-24 max-w-full overflow-x-auto;
+  @apply max-lg:container lg:mx-auto px-4 mx-4 mt-10 max-lg:pb-8 lg:my-24 max-w-full max-lg:overflow-x-auto;
   header {
     @apply flex items-center lg:hidden;
     .icon {

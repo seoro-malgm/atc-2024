@@ -88,7 +88,7 @@ const items = computed(() => {
           content: "";
         }
         + figcaption {
-          @apply w-full text-center;
+          @apply w-full text-center px-2;
           h6 {
             @apply text-xl lg:text-2xl font-bold;
           }
