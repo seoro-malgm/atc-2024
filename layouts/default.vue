@@ -41,7 +41,6 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from "vue";
 import { useRoute } from "vue-router";
 import { useElementBounding } from "@vueuse/core";
 const wrapper = ref();
@@ -67,6 +66,11 @@ const headerHeight = computed(() => {
 
 // 구독 폼 열기
 const sbuscribeModalShown = ref(false);
+
+// 현재 설정된 언어
+// const lang = computed(() => {
+//   return route?.params?.lang;
+// });
 </script>
 
 <style lang="postcss" scoped>

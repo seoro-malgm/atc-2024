@@ -91,40 +91,22 @@
       <div class="link-section">
         <ul class="list-link">
           <li v-for="(item, i) in linkList" :key="i" class="list-item">
-            <template v-if="item?.disabled">
-              <UTooltip
-                text="준비중입니다."
-                :popper="{ arrow: true }"
-                class="lg::py-3 h-full flex"
+            <nuxt-link
+              :to="`/${currentLocale}/${item.url}`"
+              class="link-item"
+              :class="{ disabled: item?.disabled }"
+              :disabled="item.disabled"
+            >
+              <span
+                :class="
+                  pinned
+                    ? 'text-base md:text-lg lg:text-3xl'
+                    : 'text-base md:text-lg lg:text-2xl'
+                "
               >
-                <a
-                  class="link-item disabled"
-                  :class="{ disabled: item?.disabled }"
-                  :disabled="item.disabled"
-                >
-                  {{ item.name }}
-                  <div class="block lg:hidden">(준비중입니다)</div>
-                </a>
-              </UTooltip>
-            </template>
-            <template v-else>
-              <nuxt-link
-                :to="item.url"
-                class="link-item"
-                :class="{ disabled: item?.disabled }"
-                :disabled="item.disabled"
-              >
-                <span
-                  :class="
-                    pinned
-                      ? 'text-base md:text-lg lg:text-3xl'
-                      : 'text-base md:text-lg lg:text-2xl'
-                  "
-                >
-                  {{ $t(item.key) }}
-                </span>
-              </nuxt-link>
-            </template>
+                {{ $t(item.key) }}
+              </span>
+            </nuxt-link>
           </li>
           <li class="list-item">
             <button
@@ -213,12 +195,12 @@ const props = defineProps({
 const linkList = ref([
   {
     key: "global_gnb_item01_programs",
-    url: "/programs",
+    url: "programs",
     icon: "bx:news"
   },
   {
     key: "global_gnb_item02_speakers",
-    url: "/speakers",
+    url: "speakers",
     icon: "bx:bxs-microphone"
   }
   // {
@@ -253,9 +235,14 @@ const headingFontSize = computed(() => {
 
 // toast
 const toast = useToast();
+
+// i18n
 const { t, setLocale, locale } = useI18n();
 const switchLocalePath = useSwitchLocalePath();
 const localeStore = useLocaleStore();
+const currentLocale = computed(() => {
+  return localeStore.getLocale;
+});
 const langs = reactive([
   {
     id: "ko",
@@ -280,36 +267,36 @@ const updateLang = async id => {
   await setLocale(id);
   // await switchLocalePath(id);
   localeStore.setLocale(id); // Pinia store에 저장
-  toast.add({
-    title: t("toast_message_lang_change"),
-    color: "green"
-  });
+  // toast.add({
+  //   title: t("toast_message_lang_change"),
+  //   color: "green"
+  // });
 };
 
-// 쿼리에 세팅된 언어
-const queryLang = computed(() => {
-  return route?.query?.lang;
+// params에 세팅된 언어
+const paramsLang = computed(() => {
+  return route?.params?.lang;
 });
 
 onMounted(() => {
-  const savedLocale = localeStore.getLocale;
+  const savedLocale = currentLocale.value;
   // console.log("savedLocale :", savedLocale);
-  updateLang(queryLang?.value ? queryLang?.value : savedLocale);
+  updateLang(paramsLang.value ? paramsLang.value : savedLocale);
 });
 
 watch(
-  () => queryLang,
+  () => paramsLang.value,
   (n, o) => {
-    updateLang(queryLang?.value ? queryLang?.value : n);
+    updateLang(paramsLang.value ? paramsLang.value : n);
   }
 );
 
 watch(
   () => route.path,
   n => {
-    const savedLocale = localeStore.getLocale;
-    if (savedLocale !== locale) {
-      updateLang(queryLang?.value ? queryLang?.value : savedLocale);
+    const savedLocale = currentLocale.value;
+    if (savedLocale !== n) {
+      updateLang(paramsLang.value ? paramsLang.value : savedLocale);
     }
   }
 );
