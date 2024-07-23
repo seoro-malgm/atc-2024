@@ -248,7 +248,7 @@ const pinned = computed(() => {
 
 // 헤더에 위치한 제목의 폰트 사이즈
 const headingFontSize = computed(() => {
-  return `max(3.5rem, calc(5.5rem - ${props.scrollY / 300}rem))`;
+  return `max(3.5vw, calc(4.5vw - ${props.scrollY / 300}vw))`;
 });
 
 // toast
