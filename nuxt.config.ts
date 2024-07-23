@@ -291,12 +291,7 @@ export default defineNuxtConfig({
     strategy: "prefix_except_default",
     vueI18n: "./i18n.config.ts",
     defaultLocale: "ko",
-    detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: "i18n_redirected",
-      redirectOn: "root",
-      alwaysRedirect: true
-    }
+    detectBrowserLanguage: false
   },
   serverHandlers: [
     // { route: "/rss", middleware: true, handler: "~/server/middleware/rss.js" }
@@ -316,7 +311,7 @@ export default defineNuxtConfig({
       domainURL: process.env.DOMAIN_URL,
       authId: process.env.AUTH_ID,
       authPwd: process.env.AUTH_PWD,
-      // tokenName: process.env.TOKEN_NAME
+      tokenName: process.env.TOKEN_NAME,
       baseURL: process.env.BASE_URL,
       mapId: process.env.MAP_ID
     },

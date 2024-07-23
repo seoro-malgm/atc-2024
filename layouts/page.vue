@@ -17,6 +17,16 @@ const props = defineProps({
   headerHeight: {
     type: [Number, String],
     default: 0
+  },
+  validate: {
+    type: Boolean,
+    default: false
+  }
+});
+
+onMounted(() => {
+  if (!props.validate) {
+    navigateTo("/ko/home");
   }
 });
 </script>

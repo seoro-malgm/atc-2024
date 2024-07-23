@@ -4,11 +4,12 @@
  */
 
 export default async function clipboard(text) {
+  const nuxtApp = useNuxtApp();
+  const { t } = nuxtApp?.$i18n;
   if (!navigator.clipboard) {
     toast.add({
-      id: "connot-fail",
       title: `ERROR`,
-      description: "클립보드를 사용할 수 없는 브라우저입니다.",
+      description: t("toast_message_clipboard_disabled"),
       icon: "memory:alert-octagon",
       color: "red"
     });
@@ -18,16 +19,14 @@ export default async function clipboard(text) {
   try {
     await navigator.clipboard.writeText(text);
     toast.add({
-      id: `clipboard-added-${new Date().getTime()}`,
-      title: "클립보드에 저장되었습니다.",
+      title: t("toast_message_clipboard_success"),
       color: "green",
       icon: "memory:checkbox-marked"
     });
   } catch (err) {
     toast.add({
-      id: "clipboard-fail",
       title: `ERROR`,
-      description: "에러가 발생하여 클립보드에 복사할 수 없습니다.",
+      description: t("toast_message_clipboard_fail"),
       icon: "memory:alert-octagon",
       color: "red"
     });

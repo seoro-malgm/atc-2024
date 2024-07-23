@@ -25,26 +25,9 @@ import { ref, computed } from "vue";
 import { useInfos } from "@/stores/infos";
 
 const store = useInfos();
-const infos = computed(() => {
-  return store.getInfos;
+const domain = computed(() => {
+  return store.getInfos?.domain;
 });
-
-const shareOnFacebook = () => {
-  const url = infos.value?.domain;
-  const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-    url
-  )}`;
-  window.open(facebookShareUrl, "_blank");
-};
-
-const shareOnTwitter = () => {
-  const url = infos.value?.domain;
-  const text = "ATC 2024 | 5th ASIA TRAILS CONFERENCE 2024 JIRISAN     ";
-  const twitterShareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-    url
-  )}&text=${encodeURIComponent(text)}`;
-  window.open(twitterShareUrl, "_blank");
-};
 
 const sns = ref([
   {
@@ -52,21 +35,37 @@ const sns = ref([
     label: "main_share_link_title",
     icon: "akar-icons:link-chain",
     color: "#232323",
-    method: () => navigator.clipboard.writeText(infos.value?.domain)
+    method: () => {
+      clipboard(domain.value);
+      // navigator.clipboard.writeText(domain.value);
+    }
   },
   {
     type: "facebook",
     label: "main_share_facebook_title",
     icon: "logos:facebook",
     color: "#0866ff",
-    method: shareOnFacebook
+    method: () => {
+      const url = domain.value;
+      const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+        url
+      )}`;
+      window.open(facebookShareUrl, "_blank");
+    }
   },
   {
     type: "twitter",
     label: "main_share_x_title",
     icon: "devicon:twitter",
     color: "#111111",
-    method: shareOnTwitter
+    method: () => {
+      const url = domain.value;
+      const text = "ATC 2024 | 5th ASIA TRAILS CONFERENCE 2024 JIRISAN     ";
+      const twitterShareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+        url
+      )}&text=${encodeURIComponent(text)}`;
+      window.open(twitterShareUrl, "_blank");
+    }
   }
 ]);
 </script>

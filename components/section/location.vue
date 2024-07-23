@@ -100,7 +100,7 @@
         </ul>
         <div class="my-2">
           <!-- <span v-html="$t('main_map_taxi_title')"> </span> -->
-          <span c>
+          <span>
             <pre>{{ $t("main_map_taxi_title") }}</pre>
           </span>
         </div>

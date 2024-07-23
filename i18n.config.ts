@@ -1,7 +1,7 @@
 import ko from "@/locales/ko.json";
 import en from "@/locales/en.json";
 import jp from "@/locales/jp.json";
-import cn from "@/locales/cn.json";
+import tw from "@/locales/tw.json";
 export default defineI18nConfig(() => ({
   legacy: false,
   locale: "ko",
@@ -9,6 +9,6 @@ export default defineI18nConfig(() => ({
     ko,
     en,
     jp,
-    cn
+    tw
   }
 }));

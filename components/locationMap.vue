@@ -4,7 +4,6 @@
 
 <script setup>
 import { Loader } from "@googlemaps/js-api-loader";
-import { useLocaleStore } from "@/stores/locale";
 
 const props = defineProps({
   position: {
@@ -17,25 +16,23 @@ const props = defineProps({
   }
 });
 
+const config = useRuntimeConfig();
+const pending = ref(false);
 const mapRef = ref(null);
-const localeStore = useLocaleStore();
-// const currentLocale = ;
-const currentLocale = computed(() => {
-  return localeStore.getLocale;
+
+// 모든 언어
+const allLanguages = ref({
+  ko: "ko",
+  en: "en",
+  jp: "ja",
+  tw: "zh"
 });
 
 const loadMap = async () => {
-  const config = useRuntimeConfig();
-  const languages = {
-    ko: "ko",
-    en: "en",
-    jp: "ja",
-    cn: "zh"
-  };
   const loader = new Loader({
     apiKey: config.public.apiKey,
     version: "weekly",
-    language: languages[currentLocale.value]
+    language: allLanguages.value["en"] // todo : 지도 다국어화
   });
 
   await loader.load();
@@ -54,6 +51,7 @@ const loadMap = async () => {
     title: props.title
     // styles: mapStyles
   });
+  pending.value = true;
 };
 
 onMounted(async () => {

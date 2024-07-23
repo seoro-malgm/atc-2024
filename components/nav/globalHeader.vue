@@ -15,7 +15,7 @@
           width: pinned ? `calc(100% - ${scrollY / 10}vw)` : `unset`
         }"
       >
-        <nuxt-link class="logo" to="/">
+        <nuxt-link class="logo" :to="`/${currentLocale}/home`">
           <logo-interactive class="logo-symbol w-full" />
         </nuxt-link>
       </section>
@@ -89,7 +89,7 @@
     <nav class="global-header-nav">
       <!-- link영역 -->
       <div class="link-section">
-        <ul class="list-link">
+        <ul class="list-link" v-if="validate">
           <li v-for="(item, i) in linkList" :key="i" class="list-item">
             <nuxt-link
               :to="`/${currentLocale}/${item.url}`"
@@ -155,7 +155,8 @@
                   >
                     <button
                       @click="
-                        updateLang(item.id);
+                        // updateLang(item.id);
+                        navigateTo(`/${item.id}/home`);
                         close();
                       "
                       :class="{ active: locale === item.id }"
@@ -188,6 +189,10 @@ const props = defineProps({
   headerHeight: {
     type: [Number, String],
     default: 0
+  },
+  validate: {
+    type: Boolean,
+    default: false
   }
 });
 
@@ -203,12 +208,6 @@ const linkList = ref([
     url: "speakers",
     icon: "bx:bxs-microphone"
   }
-  // {
-  //   ko: "참여하기",
-  //   en: "join",
-  //   url: "/join",
-  //   icon: "bx:bxs-calendar-check"
-  // }
 ]);
 
 const navToggle = ref(false);
@@ -239,64 +238,56 @@ const toast = useToast();
 // i18n
 const { t, setLocale, locale } = useI18n();
 const switchLocalePath = useSwitchLocalePath();
+// 언어 store
 const localeStore = useLocaleStore();
-const currentLocale = computed(() => {
-  return localeStore.getLocale;
-});
-const langs = reactive([
-  {
-    id: "ko",
-    label: "한국어"
-  },
-  {
-    id: "en",
-    label: "English"
-  },
-  {
-    id: "jp",
-    label: "日本語"
-  },
-  {
-    id: "cn",
-    label: "中文"
-  }
-]);
-
-// 언어 업데이트
-const updateLang = async id => {
-  await setLocale(id);
-  // await switchLocalePath(id);
-  localeStore.setLocale(id); // Pinia store에 저장
-  // toast.add({
-  //   title: t("toast_message_lang_change"),
-  //   color: "green"
-  // });
-};
 
 // params에 세팅된 언어
 const paramsLang = computed(() => {
   return route?.params?.lang;
 });
 
-onMounted(() => {
-  const savedLocale = currentLocale.value;
-  // console.log("savedLocale :", savedLocale);
-  updateLang(paramsLang.value ? paramsLang.value : savedLocale);
+/**
+ * 현재 언어 상태 확인
+ * @param lang 최우선으로 현재 경로의 lang param
+ * @argument locale 그 뒤의 locale 값
+ * 모두 없으면 기본 언어 'ko'
+ */
+const currentLocale = computed(() => {
+  return paramsLang?.value || locale.value || "ko";
+});
+const langs = computed(() => {
+  return localeStore.allLocales;
 });
 
-watch(
-  () => paramsLang.value,
-  (n, o) => {
-    updateLang(paramsLang.value ? paramsLang.value : n);
+// 언어 업데이트
+const updateLang = async id => {
+  if (!id || !locale.value) return;
+  if (id === locale.value) return;
+  for (let index = 0; index < langs.value.length; index++) {
+    const lang = langs.value[index].id;
+    if (lang) {
+      switchLocalePath(id);
+      setLocale(id);
+      localeStore.setLocale(id); // Pinia store에 저장
+    }
   }
-);
+  switchLocalePath("ko");
+  setLocale("ko");
+  localeStore.setLocale("ko"); // Pinia store에 저장
+};
 
+// 현재 언어 확인하여 적용
+onMounted(() => {
+  updateLang(currentLocale.value);
+});
+
+// 라우트 이동시 언어감지, 적용
 watch(
   () => route.path,
   n => {
-    const savedLocale = currentLocale.value;
-    if (savedLocale !== n) {
-      updateLang(paramsLang.value ? paramsLang.value : savedLocale);
+    // 현재 언어와 locale 설정과 다른경우 적용
+    if (currentLocale.value !== locale.value) {
+      updateLang(currentLocale.value);
     }
   }
 );
