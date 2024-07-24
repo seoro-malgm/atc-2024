@@ -34,6 +34,7 @@
     <modal-subscribe
       :shown="sbuscribeModalShown"
       @toggle="$event => (sbuscribeModalShown = $event)"
+      :lang="paramsLang"
     />
 
     <!-- toast -->
@@ -91,6 +92,15 @@ const sbuscribeModalShown = ref(false);
 // const lang = computed(() => {
 //   return route?.params?.lang;
 // });
+
+watch(
+  () => route.path,
+  (n, o) => {
+    if (sbuscribeModalShown.value) {
+      sbuscribeModalShown.value = false;
+    }
+  }
+);
 </script>
 
 <style lang="postcss" scoped>

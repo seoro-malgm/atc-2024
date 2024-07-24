@@ -9,7 +9,7 @@
     <ul class="border-t">
       <li class="mb-12 border-b px-8 pb-8" id="privacy">
         <header class="pt-24 mb-3 pb-4">
-          <nuxt-link to="/terms#privacy">
+          <nuxt-link to="/ko/terms#privacy">
             <h4 class="text-2xl font-bold text-hawkes-main-800">이용약관</h4>
           </nuxt-link>
         </header>
@@ -267,7 +267,7 @@
       </li>
       <li class="mb-12 border-b px-8" id="ad_agree">
         <header class="pt-48 mb-3 pb-4">
-          <nuxt-link to="/terms#ad_agree">
+          <nuxt-link to="/ko/terms#ad_agree">
             <h4 class="text-2xl font-bold text-hawkes-main-800">
               개인정보처리방침
             </h4>
@@ -440,8 +440,6 @@
   </div>
 </template>
 
-<script setup>
-const props = defineProps({ data: { type: String, default: null } });
-</script>
+<script setup></script>
 
 <style lang="postcss" scoped></style>

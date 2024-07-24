@@ -55,8 +55,7 @@
         >
           <span>
             <nuxt-link
-              href="/terms#privacy"
-              target="_blank"
+              :href="`/${lang}/terms`"
               class="underline text-hawkes-blue-800"
             >
               {{ $t("main_pop-up_privacy_desc") }}
@@ -72,8 +71,7 @@
         >
           <span>
             <nuxt-link
-              href="/terms#ad_agree"
-              target="_blank"
+              :href="`/${lang}/terms`"
               class="underline text-hawkes-blue-800"
             >
               {{ $t("main_pop-up_ad_desc") }}
@@ -97,6 +95,10 @@ const props = defineProps({
   shown: {
     type: Boolean,
     default: null
+  },
+  lang: {
+    type: String,
+    default: "ko"
   }
 });
 const emit = defineEmits();

@@ -175,11 +175,11 @@
 </template>
 
 <script setup>
-import { useRoute, useRouter } from "vue-router";
+import { useRoute } from "vue-router";
 import { useLocaleStore } from "@/stores/locale";
 
 const route = useRoute();
-const router = useRouter();
+// const router = useRouter();
 
 const props = defineProps({
   scrollY: {

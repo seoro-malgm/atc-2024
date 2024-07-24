@@ -41,7 +41,7 @@ function initializeLocale() {
 }
 
 onMounted(() => {
-  initializeLocale();
+  // initializeLocale();
 });
 </script>
 

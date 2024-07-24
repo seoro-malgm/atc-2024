@@ -27,11 +27,12 @@ const currentLocale = computed(() => {
 // 언어를 확인하고 라우트를 이동시킴
 function initializeLocale() {
   // 저장된 언어 혹은 기본언어로 이동
-  router.push(`/${currentLocale?.value || "ko"}/home`);
+  // router.push(`/${currentLocale?.value || "ko"}/home`);
+  console.log("3 :", currentLocale.value);
 }
 
 onMounted(() => {
-  initializeLocale();
+  // initializeLocale();
 });
 </script>
 
