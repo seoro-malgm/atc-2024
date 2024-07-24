@@ -8,7 +8,9 @@
           <h6 class="logo">
             <nuxt-img src="/logo-white.svg" provider="defaultProvider" />
           </h6>
-          <span class="text"> &copy; 2024 ATN all reserved.</span>
+          <span class="text">
+            &copy; 2024 Soopgil Foundation. All rights reserved.</span
+          >
         </div>
 
         <div class="infos">

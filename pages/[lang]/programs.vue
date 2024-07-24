@@ -205,7 +205,7 @@ const subjects = reactive([
     @apply w-full border-collapse lg:container mx-auto mb-2;
     thead {
       th {
-        @apply bg-grayscale-800 text-white p-2 lg:p-4 text-center text-sm lg:text-lg;
+        @apply bg-grayscale-950 text-white p-2 lg:p-4 text-center text-sm lg:text-lg;
       }
     }
 
@@ -217,7 +217,7 @@ const subjects = reactive([
         @apply bg-white;
       }
       td {
-        @apply border-y border-grayscale-800 p-2 lg:p-4 text-base lg:text-2xl text-left text-nowrap;
+        @apply border-y border-grayscale-800 p-2 lg:p-4 text-base lg:text-2xl text-left whitespace-pre-wrap;
         pre {
           @apply text-left;
         }
@@ -231,7 +231,7 @@ const subjects = reactive([
           @apply text-center border-l;
         }
         &.subject {
-          @apply bg-grayscale-950 text-white text-center text-base lg:text-xl py-2;
+          @apply bg-grayscale-900 text-white text-center text-2xl lg:text-3xl py-4;
         }
       }
     }

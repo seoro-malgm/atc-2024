@@ -5,12 +5,12 @@
     "content": [
       {
         "name": "main_map_bus_desc01_name",
-        "desc": "main_map_bus_desc01_desc",
+        "desc": ["main_map_bus_desc01_desc"],
         "time": "main_map_bus_desc01_time"
       },
       {
         "name": "main_map_bus_desc02_name",
-        "desc": "main_map_bus_desc02_desc",
+        "desc": ["main_map_bus_desc02_desc"],
         "time": "main_map_bus_desc02_time"
       }
     ]
@@ -20,12 +20,12 @@
     "content": [
       {
         "name": "main_map_ktx_desc01_name",
-        "desc": "main_map_ktx_desc01_desc",
+        "desc": ["main_map_ktx_desc01_desc"],
         "time": "main_map_ktx_desc01_time"
       },
       {
         "name": "main_map_ktx_desc02_name",
-        "desc": "main_map_ktx_desc02_desc",
+        "desc": ["main_map_ktx_desc02_desc"],
         "time": "main_map_ktx_desc02_time"
       }
     ]

@@ -1,5 +1,6 @@
 // import type { Config } from "tailwindcss";
 import colors from "tailwindcss/colors";
+const plugin = require("tailwindcss/plugin");
 
 module.exports = {
   mode: "jit",
@@ -11,7 +12,55 @@ module.exports = {
     "./app.vue",
     "./error.vue"
   ],
-  plugins: [],
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        ".container-fluid": {
+          width: "100%",
+          "max-width": "calc(100% - 2rem)",
+          "margin-right": "auto",
+          "margin-left": "auto",
+          "padding-right": "1rem",
+          "padding-left": "1rem"
+        },
+        ".leading-0": {
+          "line-height": "0"
+        },
+        ".transition-all-default": {
+          transition: "all 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19)",
+          "transition-timing-function": "cubic-bezier(0.55, 0.055, 0.675, 0.19)"
+        },
+        ".animate-wiggle": {
+          "@apply transition-all-default": "",
+          animation: "wiggle 0.2s"
+        },
+        ".hover\\:animate-wiggle:hover": {
+          "@apply animate-wiggle": ""
+        },
+        ".bg-white-blur": {
+          "background-color": "rgba(255, 255, 255, 0.8)",
+          "backdrop-filter": "blur(8px)"
+        },
+        ".trasnlate-x-center": {
+          left: "50%",
+          transform: "translateX(-50%)"
+        },
+        ".absolute-center": {
+          "@apply absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]":
+            ""
+        },
+        ".table tbody tr:nth-child(odd) td": {
+          "@apply bg-baja-white-50": ""
+        },
+        ".table tbody tr:first-child td": {
+          "@apply border-t-0": ""
+        },
+        ".fill-green-300": {
+          fill: "#64ff93"
+        }
+      });
+    })
+  ],
 
   theme: {
     extend: {

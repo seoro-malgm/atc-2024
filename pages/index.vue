@@ -1,7 +1,6 @@
 <template>
   <div class="py-12 min-h-screen text-center">
     <status-loading />
-    currentLocale: {{ currentLocale }}
   </div>
 </template>
 

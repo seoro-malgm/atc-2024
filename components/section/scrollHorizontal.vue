@@ -71,7 +71,7 @@
     </div>
     <!-- 스크롤 용도 -->
     <div
-      class="hidden lg:block scroll-block"
+      class="hidden xl:block scroll-block"
       :style="{
         height: isMobileView ? 'unset' : `${maxScroll}px`
       }"
@@ -156,14 +156,14 @@ const isMobileView = ref(false);
 
 // 화면 크기가 변할 때마다 isMobileView 업데이트
 const updateMobileViewStatus = () => {
-  isMobileView.value = window.innerWidth <= 1024; // lg size
+  isMobileView.value = window.innerWidth <= 1280; // xl size
 };
 // isMobileView 값이 변경될 때마다 실행되는 watch
 watch(isMobileView, n => {});
 
 onMounted(() => {
   // 사이즈 체크
-  isMobileView.value = window.innerWidth <= 1024; // lg size
+  isMobileView.value = window.innerWidth <= 1280; // xl size
   window.addEventListener("resize", updateMobileViewStatus);
   // 스크롤 이벤트
   window.addEventListener("scroll", handleScroll, { passive: true });
@@ -177,21 +177,21 @@ onUnmounted(() => {
 
 <style lang="postcss" scoped>
 .horizontal-scroll {
-  @apply static lg:sticky;
+  @apply static xl:sticky;
   background-color: white;
   top: 0;
   /* z-index: -1; */
   overflow: hidden;
   .scroll-header {
-    @apply max-lg:hidden static lg:absolute lg:top-0 max-lg:mb-6 max-lg:pt-8 pt-12 border-b border-grayscale-800 left-0 w-full z-[2] bg-white;
+    @apply max-xl:hidden static xl:absolute xl:top-0 max-xl:mb-6 max-xl:pt-8 pt-12 border-b border-grayscale-800 left-0 w-full z-[2] bg-white;
     .progress {
-      @apply max-lg:hidden w-full h-2 relative lg:block;
+      @apply max-xl:hidden w-full h-2 relative xl:block;
       .bar {
         @apply absolute left-0 right-0 h-2 bg-green-300;
       }
     }
     /* .title {
-      @apply text-center text-3xl lg:text-5xl font-bold skew-x-[-15deg] lg:pt-8;
+      @apply text-center text-3xl xl:text-5xl font-bold skew-x-[-15deg] xl:pt-8;
     } */
   }
 
@@ -201,45 +201,34 @@ onUnmounted(() => {
 
     .horizontal-scroll-container {
       .horizontal-scroll-section {
-        @apply flex flex-col lg:flex-row;
+        @apply flex flex-col xl:flex-row;
         /* display: flex; */
         align-items: stretch;
         flex-wrap: nowrap;
 
         .item {
-          @apply my-0 lg:mr-[40px] relative lg:border-x border-grayscale-800;
+          @apply my-0 xl:mr-[40px] relative xl:border-x border-grayscale-800 w-screen min-w-[100vw] h-auto max-xl:flex max-xl:flex-col;
           .item-description {
-            @apply m-0 p-4 pb-6 lg:pb-8 lg:pt-10 border-t border-grayscale-800 bg-white w-full lg:absolute bottom-0 z-10 lg:text-center;
+            @apply m-0 p-4 pb-6 xl:py-0 border-t border-grayscale-800 bg-white max-xl:w-full xl:absolute xl:right-[-1px] xl:top-1/2 xl:-translate-y-1/2 xl:w-[30vw] xl:h-full xl:flex xl:flex-col xl:items-center xl:justify-center z-10 xl:text-center xl:border-l max-xl:order-1;
             span.subtitle {
-              @apply text-base lg:text-xl text-grayscale-700;
+              @apply text-base xl:text-xl text-grayscale-700;
             }
             h4 {
-              @apply text-xl lg:text-4xl mb-3 lg:mb-6 font-bold;
+              @apply text-2xl xl:text-4xl mb-3 max-xl:mt-8 xl:mb-6 font-bold max-xl:container px-10 max-xl:text-center;
             }
             p {
-              @apply text-base lg:text-xl  text-grayscale-600 px-4 lg:px-20;
+              @apply text-base xl:text-xl  text-grayscale-600 max-xl:mt-5 max-xl:container px-10 pb-4 xl:pb-0;
+              line-height: 1.7;
             }
           }
-          width: 100vw;
-          min-width: 100vw;
-          height: auto;
           figure.item-image-wrapper {
-            position: relative;
-            width: 100vw;
-            padding-bottom: 100vh;
-            @media all and (min-width: 1024px) {
-              padding-bottom: 100vh;
-              /* padding-bottom: calc(100vh - 73px); // marquee 높이 제거 */
-
-              /* max-height: calc(100vh - 73px); */
-            }
-            overflow: hidden;
+            @apply relative w-screen pb-[100vh] overflow-hidden aspect-video object-cover;
 
             > img {
               /* width: auto;
               height: 100%; */
 
-              @apply max-lg:w-full w-[auto] h-full lg:w-full lg:h-[auto] absolute-center;
+              @apply absolute-center w-full min-h-full;
               /* position: absolute;
               top: 50%;
               left: 50%;
@@ -258,18 +247,13 @@ onUnmounted(() => {
   .horizontal-scroll-body {
     /* test */
     /* max-height: calc(100vh - 120px) ; */
-    @apply lg:mt-[68px];
+    @apply xl:mt-[68px];
     .horizontal-scroll-section {
-      @media all and (min-width: 1024px) {
+      @media all and (min-width: 1280px) {
         max-height: calc(100vh - 73px);
       }
       .item {
-        @apply mb-8;
-        width: auto;
-        height: auto;
-        min-width: unset;
-        min-height: unset;
-        max-width: unset;
+        @apply xl:mb-8 w-auto h-auto min-w-[unset] min-h-[unset] max-w-[unset] xl:min-w-[100vw];
         &:last-child {
           @apply mb-0;
         }

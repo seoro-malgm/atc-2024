@@ -66,31 +66,19 @@
                         <strong class="me-2 text-lg">
                           {{ $t(item2?.name) }}
                         </strong>
-                        <small class="text-base" v-if="item2?.time"
-                          >({{ $t(item2.time) }})</small
-                        >
+                        <small class="text-base" v-if="item2?.time">
+                          ({{ $t(item2.time) }})
+                        </small>
                       </div>
-                      <template v-if="item2?.desc">
-                        <template
-                          v-if="
-                            typeof item2.desc !== 'string' &&
-                            item2?.desc?.length
-                          "
+                      <ul>
+                        <li
+                          v-for="(item3, j) in item2.desc"
+                          :key="j"
+                          class="text-lg"
                         >
-                          <ul>
-                            <li
-                              v-for="(item3, j) in item2.desc"
-                              :key="j"
-                              class="text-lg"
-                            >
-                              {{ $t(item3) }}
-                            </li>
-                          </ul>
-                        </template>
-                        <template v-else>
-                          <span class="text-lg">{{ $t(item2.desc) }}</span>
-                        </template>
-                      </template>
+                          <span v-html="$t(item3)"></span>
+                        </li>
+                      </ul>
                     </li>
                   </ul>
                 </div>

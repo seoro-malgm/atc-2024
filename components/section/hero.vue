@@ -16,7 +16,7 @@
       }"
     >
       <!-- dummy reels -->
-      <!-- <video
+      <video
         :src="reelsURL"
         autoplay
         playsinline
@@ -25,7 +25,7 @@
         :style="{
           minHeight: `calc(100vh - ${headerHeight}px)`
         }"
-      /> -->
+      />
     </div>
     <div class="scroll-down" :class="{ 'opacity-0': scrollY >= 80 }">
       <span>SCROLL DOWN </span>
