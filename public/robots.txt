@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /ko/home
+Allow: /ko/programs
+Allow: /ko/speakers
+Allow: /en/home
+Allow: /en/programs
+Allow: /en/speakers
+Allow: /tw/home
+Allow: /tw/programs
+Allow: /tw/speakers
+Allow: /jp/home
+Allow: /jp/programs
+Allow: /jp/speakers
+Disallow: /admin/
+Disallow: /auth/
+
+Sitemap: https://atcjirisan.com/sitemap.xml

@@ -17,7 +17,7 @@
     <section-programs />
 
     <!-- 소식 구독 예약하기 -->
-    <section-booking-news />
+    <section-booking-news @modal-subscribe="$emit('modal-subscribe', true)" />
 
     <!-- 스폰서 -->
     <section-sponsors />
