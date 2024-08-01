@@ -14,7 +14,7 @@
         :searchablePlaceholder="searchablePlaceholder || '검색...'"
         :placeholder="placeholder || '선택하세요'"
         class="input"
-        size="lg"
+        size="xl"
         :value-attribute="valueAttribute"
       >
         <!-- <template

@@ -1,5 +1,11 @@
 <template>
-  <UModal v-model="modalShow" class="modal">
+  <UModal
+    v-model="modalShow"
+    class="modal"
+    :ui="{
+      width: 'w-full sm:max-w-[50rem]'
+    }"
+  >
     <form>
       <header class="modal-header">
         <h6>{{ $t("main_pop-up__title") }}</h6>
@@ -9,19 +15,6 @@
         </button>
       </header>
       <section class="modal-body">
-        <!-- todo: validation -->
-        <form-input-text
-          :form="subscriber"
-          id="subscriber-email"
-          bind="email"
-          type="email"
-          required="required"
-          :title="$t('main_pop-up_mail_subtitle')"
-          :placeholder="$t('main_pop-up_mail_desc')"
-          @input="$event => (subscriber.email = $event)"
-          :required:="true"
-          :validate="validator('email', subscriber.email)"
-        />
         <form-input-text
           :form="subscriber"
           id="subscriber-name"
@@ -35,6 +28,21 @@
           :required:="true"
           :validate="validator('name', subscriber.name)"
         />
+
+        <form-input-text
+          :form="subscriber"
+          id="subscriber-email"
+          bind="email"
+          type="email"
+          required="required"
+          :title="$t('main_pop-up_mail_subtitle')"
+          :placeholder="$t('main_pop-up_mail_desc')"
+          @input="$event => (subscriber.email = $event)"
+          :required:="true"
+          class="mt-4"
+          :validate="validator('email', subscriber.email)"
+        />
+
         <form-input-select-menu
           class="my-4"
           :form="form"
@@ -44,6 +52,31 @@
           :placeholder="$t('main_pop-up_lang_desc')"
           @input="$event => (subscriber.lang = $event)"
         />
+
+        <div class="input-phone">
+          <form-input-select-menu
+            class="input-phone-lang"
+            :form="form"
+            :title="$t('main_pop-up_phone_lang_desc')"
+            value-attribute="value"
+            :options="countryCodes"
+            :placeholder="$t('main_pop-up_phone_lang_subtitle')"
+            @input="$event => (subscriber.phone_lang = $event)"
+          />
+          <form-input-text
+            :form="subscriber"
+            id="subscriber-phone"
+            bind="phone"
+            type="text"
+            required="required"
+            :title="$t('main_pop-up_phone_number_subtitle')"
+            :placeholder="$t('main_pop-up_phone_number_desc')"
+            class="input-phone-number"
+            @input="$event => (subscriber.phone_number = $event)"
+            :required:="true"
+            :validate="validator('phone', subscriber.phone_number)"
+          />
+        </div>
 
         <form-input-check
           :form="subscriber"
@@ -90,6 +123,7 @@
 
 <script setup>
 import validator from "@/composables/validator";
+import countryCodes from "@/data/countryCodes";
 
 const props = defineProps({
   shown: {
@@ -156,7 +190,10 @@ const subscriber = ref({
   email: null,
   name: null,
   send_agreed: false,
-  ad_agreed: false
+  lang: null,
+  ad_agreed: false,
+  phone_lang: null,
+  phone_number: null
 });
 
 const formValidate = computed(() => {
@@ -170,13 +207,29 @@ const formValidate = computed(() => {
 
 const toast = useToast();
 const submit = async e => {
+  const { email, name, ad_agreed, lang, phone_lang, phone_number } =
+    subscriber.value; // 구독자 정보 불러오기
+  // 연락처 생성
+  const phone = `+${phone_lang}${
+    // 국가번호와 합침
+    String(phone_number).startsWith("0")
+      ? String(phone_number).slice(1)
+      : phone_number //  0으로 시작할 경우 맨 앞의 0 제거
+  }`;
+
+  // 최종 body 생성
   const body = {
     ...form.value,
     subscribers: [
       {
-        ...subscriber.value,
-        $ad_agreed: subscriber.value.ad_agreed ? "Y" : "N",
-        subscribed_date: new Date()
+        email,
+        name,
+        phone,
+        lang,
+        $ad_agreed: ad_agreed ? "Y" : "N",
+        tag1: lang,
+        tag2: phone_lang,
+        tag3: phone
       }
     ]
   };
@@ -219,6 +272,19 @@ const submit = async e => {
   }
   .modal-body {
     @apply px-4 py-6;
+    .input-phone {
+      @apply grid grid-cols-12 gap-4 mt-4;
+      .input-phone-lang,
+      .input-phone-number {
+        /* @apply ; */
+      }
+      .input-phone-lang {
+        @apply col-span-12 lg:col-span-3 mb-0;
+      }
+      .input-phone-number {
+        @apply col-span-12 lg:col-span-9;
+      }
+    }
   }
   .modal-footer {
     @apply text-center border-t border-grayscale-800;

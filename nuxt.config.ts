@@ -31,6 +31,8 @@ export default defineNuxtConfig({
     "@nuxtjs/i18n",
     "@pinia/nuxt",
     "@pinia-plugin-persistedstate/nuxt"
+    // "country-codes-list",
+    // "country-flag-icons"
   ],
   tailwindcss: {
     cssPath: "@/assets/css/global.css",
