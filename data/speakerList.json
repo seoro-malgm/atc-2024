@@ -1,38 +1,37 @@
 [
   {
-    "id": "brenda_yankoviak",
+    "id": "speaker_presentation_item01",
+    "thumbnail": "brenda_yankoviak.png",
     "image": "brenda_yankoviak.png",
-    "subjectImage": "brenda_yankoviak.webp",
-    "name": "speaker_presentation_item01_name",
-    "title": "speaker_presentation_item01_title",
-    "brief": "speaker_presentation_item01_brief",
-    "bio": "speaker_presentation_item01_bio"
+    "subjectImage": "brenda_yankoviak.png"
   },
   {
-    "id": "enock_glidden",
+    "id": "speaker_presentation_item02",
+    "thumbnail": "enock_glidden.png",
     "image": "enock_glidden.png",
-    "name": "speaker_presentation_item02_name",
-    "title": "speaker_presentation_item02_title",
-    "brief": "speaker_presentation_item02_brief",
-    "bio": "speaker_presentation_item02_bio"
+    "subjectImage": "enock_glidden.webp"
   },
   {
-    "id": "kfs",
-    "image": "kfs.png",
-    "hidden": true,
-    "disabled": true,
-    "name": "speaker_presentation_item03_name",
-    "title": "speaker_presentation_item03_title",
-    "brief": "speaker_presentation_item03_brief",
-    "bio": "speaker_presentation_item03_bio"
+    "id": "speaker_presentation_item03",
+    "image": "soo_kwang.png",
+    "hidden": true
+  },
+
+  {
+    "id": "speaker_presentation_item04",
+    "thumbnail": "AFoCO.png",
+    "image": "AFoCO.png",
+    "hidden": true
   },
   {
-    "id": "su_dol_kang",
-    "image": "su_dol_kang.png",
-    "disabled": true,
-    "name": "speaker_presentation_item04_name",
-    "title": "speaker_presentation_item04_title",
-    "brief": "speaker_presentation_item04_brief",
-    "bio": "speaker_presentation_item04_bio"
+    "id": "speaker_presentation_item05",
+    "thumbnail": "IUCN_Asia.png",
+    "image": "IUCN_Asia.png",
+    "hidden": true
+  },
+  {
+    "id": "speaker_presentation_item06",
+    "thumbnail": "su_dol_kang.png",
+    "image": "su_dol_kang.png"
   }
 ]

@@ -12,17 +12,26 @@
             <figure class="speaker">
               <!-- 연사 인물 이미지 -->
               <nuxt-img
-                :src="`/images/speakers/${item.id}.png`"
+                :src="`/images/speakers/${item.thumbnail}`"
                 provider="defaultProvider"
                 class="image"
+                v-if="item?.thumbnail"
               />
               <div class="dim" />
             </figure>
             <figcaption>
               <!-- 연사이름 -->
               <h6>
-                {{ $t(item.name) }}
+                {{ $t(`${item.id}_name`) }}
               </h6>
+              <ul class="info-list">
+                <li v-if="$t(`${item.id}_company`) !== ''">
+                  {{ $t(`${item.id}_company`) }}
+                </li>
+                <li v-if="$t(`${item.id}_position`) !== ''">
+                  {{ $t(`${item.id}_position`) }}
+                </li>
+              </ul>
             </figcaption>
           </button>
         </li>

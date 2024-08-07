@@ -2,8 +2,8 @@
   <UModal v-model="isOpen" prevent-close class="modal">
     <article class="modal-container" v-if="selected">
       <header class="modal-header">
-        <h5 class="title" v-if="selected?.title">
-          {{ $t(selected?.title) }}
+        <h5 class="title">
+          {{ $t(`${selected?.id}_title`) }}
         </h5>
 
         <div class="util">
@@ -20,11 +20,11 @@
             class="image w-full aspect-square"
           />
         </template>
-        <p class="brief" v-if="selected?.brief">
-          {{ $t(selected?.brief) }}
+        <p class="brief">
+          {{ $t(`${selected?.id}_brief`) }}
         </p>
-        <p class="bio" v-if="selected?.bio">
-          {{ $t(selected?.bio) }}
+        <p class="bio">
+          {{ $t(`${selected?.id}_bio`) }}
         </p>
       </section>
       <footer class="modal-footer">
@@ -42,7 +42,28 @@
         </div>
         <div>
           <div class="name">
-            {{ $t(selected?.name) }}
+            {{ $t(`${selected?.id}_name`) }}
+          </div>
+          <div class="details">
+            <ul class="info-list">
+              <li v-if="$t(`${selected.id}_company`) !== ''">
+                {{ $t(`${selected.id}_company`) }}
+              </li>
+              <li v-if="$t(`${selected.id}_position`) !== ''">
+                {{ $t(`${selected.id}_position`) }}
+              </li>
+              <li v-if="$t(`${selected.id}_website`) !== ''">
+                <client-only>
+                  <button
+                    :href="$t(`${selected.id}_website`)"
+                    target="_blank"
+                    @click.prevent="linkTo($t(`${selected.id}_website`))"
+                  >
+                    <UIcon name="ic:twotone-launch" />
+                  </button>
+                </client-only>
+              </li>
+            </ul>
           </div>
         </div>
       </footer>
@@ -75,6 +96,10 @@ watch(
     }
   }
 );
+
+const linkTo = url => {
+  window.open(url, "_blank");
+};
 </script>
 
 <style lang="postcss" scoped>
@@ -84,7 +109,7 @@ watch(
     .modal-header {
       @apply flex items-start justify-between px-6 py-3 border-b;
       h5.title {
-        @apply text-lg lg:text-2xl font-bold py-2 pe-4 w-10/12;
+        @apply text-lg lg:text-xl font-bold pt-3 pb-2 pe-4 w-10/12;
       }
       .util {
         @apply py-2;
@@ -107,12 +132,24 @@ watch(
     }
     /* 푸터 */
     .modal-footer {
-      @apply flex items-center mb-6 px-6;
+      @apply flex items-center mb-6 pt-6 px-6 border-t border-grayscale-800;
       .profile {
-        @apply w-10 lg:w-14 h-10 lg:h-14 rounded-full overflow-hidden border border-gray-800;
+        @apply w-24 lg:w-20 h-24 lg:h-20 rounded-full overflow-hidden border border-gray-800;
       }
       .name {
-        @apply px-2;
+        @apply ms-2 text-base lg:text-lg font-bold;
+      }
+      .details {
+        @apply max-lg:mt-1;
+        .info-list {
+          @apply flex max-lg:flex-col lg:items-center text-sm overflow-hidden;
+          li {
+            @apply ms-2 max-lg:mb-1;
+            .icon {
+              @apply text-xl;
+            }
+          }
+        }
       }
     }
   }

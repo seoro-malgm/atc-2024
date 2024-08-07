@@ -15,7 +15,7 @@
         height: `calc(100vh - ${headerHeight}px)`
       }"
     >
-      <!-- dummy reels -->
+      <!-- reels -->
       <video
         :src="reelsURL"
         autoplay

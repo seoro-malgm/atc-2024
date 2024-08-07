@@ -28,7 +28,7 @@ const currentLocale = computed(() => {
 function initializeLocale() {
   // 저장된 언어 혹은 기본언어로 이동
   // router.push(`/${currentLocale?.value || "ko"}/home`);
-  console.log("3 :", currentLocale.value);
+  // console.log("3 :", currentLocale.value);
 }
 
 onMounted(() => {
