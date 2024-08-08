@@ -133,14 +133,14 @@ const linkTo = url => {
             @apply w-16 lg:w-20 h-16 lg:h-20 rounded-full overflow-hidden border border-gray-800;
           }
           .name {
-            @apply ms-2 text-sm font-bold;
+            @apply ms-2 text-base font-bold;
           }
           .details {
             @apply max-lg:mt-1;
             .info-list {
-              @apply flex max-lg:flex-col lg:items-center text-sm overflow-hidden;
+              @apply flex flex-col items-start text-sm overflow-hidden;
               li {
-                @apply ms-2 max-lg:mb-1;
+                @apply ms-2 max-lg:mb-1 text-sm;
                 .icon {
                   @apply text-xl;
                 }

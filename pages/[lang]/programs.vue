@@ -217,7 +217,7 @@ const subjects = reactive([
         @apply bg-white;
       }
       td {
-        @apply border-y border-grayscale-800 p-2 lg:p-4 text-base lg:text-2xl text-left whitespace-pre-wrap;
+        @apply border-y border-grayscale-800 p-2 lg:p-4 text-base lg:text-xl text-left whitespace-pre-wrap;
         pre {
           @apply text-left;
         }
@@ -225,13 +225,13 @@ const subjects = reactive([
           @apply font-bold;
         }
         &.time {
-          @apply text-base lg:text-3xl font-bold text-center align-middle border-r border-grayscale-800;
+          @apply text-base lg:text-xl font-bold text-center align-middle border-r border-grayscale-800;
         }
         &.note {
           @apply text-center border-l;
         }
         &.subject {
-          @apply bg-grayscale-900 text-white text-center text-2xl lg:text-3xl py-4;
+          @apply bg-grayscale-900 text-white text-center text-2xl lg:text-xl py-4;
         }
       }
     }
