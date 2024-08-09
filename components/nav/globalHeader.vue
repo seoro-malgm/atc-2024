@@ -109,6 +109,19 @@
             </nuxt-link>
           </li>
           <li class="list-item">
+            <nuxt-link :to="`/festival`" class="link-item">
+              <span
+                :class="
+                  pinned
+                    ? 'text-base md:text-lg lg:text-3xl'
+                    : 'text-base md:text-lg lg:text-2xl'
+                "
+              >
+                {{ $t("global_gnb_item04_festival") }}
+              </span>
+            </nuxt-link>
+          </li>
+          <li class="list-item">
             <button
               class="link-item"
               @click.prevent="$emit('modal-subscribe', true)"
@@ -120,7 +133,7 @@
                     : 'text-base md:text-lg lg:text-2xl'
                 "
               >
-                Join
+                {{ $t("global_gnb_item03_join") }}
               </span>
             </button>
           </li>
@@ -200,14 +213,16 @@ const props = defineProps({
 const linkList = ref([
   {
     key: "global_gnb_item01_programs",
-    url: "programs",
-    icon: "bx:news"
+    url: "programs"
   },
   {
     key: "global_gnb_item02_speakers",
-    url: "speakers",
-    icon: "bx:bxs-microphone"
+    url: "speakers"
   }
+  // {
+  //   key: "global_gnb_item04_festival",
+  //   url: "festival"
+  // }
 ]);
 
 const navToggle = ref(false);

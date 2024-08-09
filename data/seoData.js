@@ -1,5 +1,5 @@
 export default {
-  title: "ATC 2024 | 지리산둘레길 걷기축제  & 아시아 트레일 컨퍼런스",
+  title: "제 5회 아시아 트레일즈 컨퍼런스 2024 | 지리산둘레길 걷기축제",
   htmlAttrs: {
     lang: "ko-KR"
   },
@@ -8,31 +8,31 @@ export default {
     { name: "viewport", content: "width=device-width, initial-scale=1" },
     { name: "format-detection", content: "telephone=no" },
     {
-      hid: "description",
       name: "description",
       content:
-        "2024년 제 5회를 맞은 아시아 트레일즈 컨퍼런스(Asia Trails Conference, ATC)는 아시아 트레일 네트워크(Asia Trails Network, ATN)를 중심으로 전 세계의 트레일 운영관리 단체들과 각 국의 정책결정자, 실무자 및 이해관계자들이 한자리에 모여 트레일의 운영관리, 도보여행의 영향력, 그리고 각 국의 정책 등에 대해 논의하며 미래세대를 위한 방향성을 제시하는 컨퍼런스입니다."
+        "2024년 10월 지리산둘레길에서 열리는 제 5회 아시아 트레일즈 컨퍼런스 및 걷기축제에 초대합니다. 트레일 운영 관리, 생물다양성 보존, 기후 위기 대응, 사회적 약자를 위한 프로그램 등 다양한 주제로 논의하며, 걷기 축제도 함께 즐길 수 있습니다. 지리산둘레길에서 만나보세요."
     },
     {
-      name: "keyword",
+      name: "keywords",
       content:
-        "festival, 숲길, 지리산둘레길, 사단법인 숲길, 아시아 트레일 컨퍼런스, 아시아 워킹 페스티벌, 걷기축제"
+        "제 5회 아시아 트레일즈 컨퍼런스, 지리산둘레길 걷기축제, ATC 2024, 트레일 운영, 생물다양성 보존, 기후 위기 대응, 국제 협력, 사회적 약자, 걷기 축제, 지리산둘레길"
     },
     {
-      hid: "og:image",
       property: "og:image",
-      content: "/og-image.png"
+      content: "https://atcjirisan.com/og-image.png"
     },
     {
-      hid: "og:title",
       property: "og:title",
-      content: "ATC 2024 | 지리산둘레길 걷기축제  & 아시아 트레일 컨퍼런스"
+      content: "제 5회 아시아 트레일즈 컨퍼런스 2024 | 지리산둘레길 걷기축제"
     },
     {
-      hid: "og:description",
+      name: "author",
+      content: "사단법인 숲길, 지리산둘레길"
+    },
+    {
       property: "og:description",
       content:
-        "2024년 제 5회를 맞은 아시아 트레일즈 컨퍼런스(Asia Trails Conference, ATC)는 아시아 트레일 네트워크(Asia Trails Network, ATN)를 중심으로 전 세계의 트레일 운영관리 단체들과 각 국의 정책결정자, 실무자 및 이해관계자들이 한자리에 모여 트레일의 운영관리, 도보여행의 영향력, 그리고 각 국의 정책 등에 대해 논의하며 미래세대를 위한 방향성을 제시하는 컨퍼런스입니다."
+        "2024년 10월 지리산둘레길에서 열리는 제 5회 아시아 트레일즈 컨퍼런스 및 걷기축제에 초대합니다. 트레일 운영 관리, 생물다양성 보존, 기후 위기 대응, 사회적 약자를 위한 프로그램 등 다양한 주제로 논의하며, 걷기 축제도 함께 즐길 수 있습니다. 지리산둘레길에서 만나보세요."
     },
     {
       name: "msapplication-tooltip",
@@ -52,7 +52,7 @@ export default {
     },
     {
       property: "og:site_name",
-      content: "ATC 2024 | 지리산둘레길 걷기축제  & 아시아 트레일 컨퍼런스"
+      content: "제 5회 아시아 트레일즈 컨퍼런스 2024 | 지리산둘레길 걷기축제"
     },
     {
       name: "msapplication-TileImage",
@@ -67,9 +67,8 @@ export default {
       content: "#ffffff"
     },
     {
-      hid: "twitter:card",
       name: "twitter:card",
-      content: "/og-image.png"
+      content: "summary_large_image"
     },
     {
       property: "twitter:domain",
@@ -80,20 +79,17 @@ export default {
       content: "https://atcjirisan.com"
     },
     {
-      hid: "twitter:title",
       name: "twitter:title",
-      content: "ATC 2024 | 지리산둘레길 걷기축제  & 아시아 트레일 컨퍼런스"
+      content: "제 5회 아시아 트레일즈 컨퍼런스 2024 | 지리산둘레길 걷기축제"
     },
     {
-      hid: "twitter:description",
       name: "twitter:description",
       content:
-        "2024년 제 5회를 맞은 아시아 트레일즈 컨퍼런스(Asia Trails Conference, ATC)는 아시아 트레일 네트워크(Asia Trails Network, ATN)를 중심으로 전 세계의 트레일 운영관리 단체들과 각 국의 정책결정자, 실무자 및 이해관계자들이 한자리에 모여 트레일의 운영관리, 도보여행의 영향력, 그리고 각 국의 정책 등에 대해 논의하며 미래세대를 위한 방향성을 제시하는 컨퍼런스입니다."
+        "2024년 10월 지리산둘레길에서 열리는 제 5회 아시아 트레일즈 컨퍼런스 및 걷기축제에 초대합니다. 트레일 운영 관리, 생물다양성 보존, 기후 위기 대응, 사회적 약자를 위한 프로그램 등 다양한 주제로 논의하며, 걷기 축제도 함께 즐길 수 있습니다. 지리산둘레길에서 만나보세요."
     },
     {
-      hid: "twitter:image",
       name: "twitter:image",
-      content: "/og-image.png"
+      content: "https://atcjirisan.com/og-image.png"
     }
     //   {
     //     name: "naver-site-verification",
