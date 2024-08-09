@@ -42,7 +42,7 @@
 <script setup>
 const dayCount = computed(() => {
   const today = new Date();
-  const targetDate = new Date("2024-08-15");
+  const targetDate = new Date("2024-09-01");
   const timeDiff = targetDate - today;
   const day = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
 

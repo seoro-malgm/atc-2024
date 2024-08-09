@@ -108,7 +108,7 @@
               </span>
             </nuxt-link>
           </li>
-          <li class="list-item">
+          <!-- <li class="list-item">
             <nuxt-link :to="`/festival`" class="link-item">
               <span
                 :class="
@@ -120,7 +120,7 @@
                 {{ $t("global_gnb_item04_festival") }}
               </span>
             </nuxt-link>
-          </li>
+          </li> -->
           <li class="list-item">
             <button
               class="link-item"
