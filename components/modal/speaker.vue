@@ -8,24 +8,28 @@
 
         <div class="util">
           <button @click.prevent="close">
-            <UIcon name="bxs:x-square" class="text-2xl lg:text-4xl" />
+            <UIcon name="bxs:x-square" class="text-3xl lg:text-4xl" />
           </button>
         </div>
       </header>
       <section class="modal-body">
         <template v-if="selected?.subjectImage">
-          <nuxt-img
-            :src="`/images/subjects/${selected.subjectImage}`"
-            provider="defaultProvider"
-            class="image w-full aspect-square"
-          />
+          <div class="image-wrapper">
+            <nuxt-img
+              :src="`/images/subjects/${selected.subjectImage}`"
+              provider="defaultProvider"
+              class="image w-full aspect-square"
+            />
+          </div>
         </template>
-        <p class="brief">
-         <pre>{{ $t(`${selected?.id}_brief`)}}</pre>
-        </p>
-        <pre class="bio">
+        <div class="content">
+          <div class="brief">
+            <pre>{{ $t(`${selected?.id}_brief`) }}</pre>
+          </div>
+          <pre class="bio">
           <pre>{{ $t(`${selected?.id}_bio`) }}</pre>
         </pre>
+        </div>
       </section>
       <footer class="modal-footer">
         <div class="profile">
@@ -117,17 +121,23 @@ const linkTo = url => {
     }
     /* 내용 */
     .modal-body {
-      @apply pb-4 border-t border-grayscale-800;
-      .image {
-        @apply mb-2;
+      @apply border-t border-grayscale-800 lg:flex lg:items-stretch;
+      .image-wrapper {
+        @apply w-full lg:w-5/12 mb-2 lg:mb-0 relative overflow-hidden aspect-square;
+        .image {
+          @apply absolute-center h-full object-cover;
+        }
       }
-      .brief {
-        @apply text-base mt-4 px-6 pb-4 border-b border-grayscale-800 font-semibold;
-        line-height: 1.7;
-      }
-      .bio {
-        @apply text-gray-700 mt-4 px-6;
-        line-height: 1.7;
+      .content {
+        @apply w-full lg:w-7/12 pb-4;
+        .brief {
+          @apply text-base mt-4 px-6 pb-4 border-b border-grayscale-800 font-semibold;
+          line-height: 1.7;
+        }
+        .bio {
+          @apply text-gray-700 mt-4 px-6;
+          line-height: 1.7;
+        }
       }
     }
     /* 푸터 */

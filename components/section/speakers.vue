@@ -85,14 +85,14 @@ const items = computed(() => {
 #section-speakers {
   @apply pb-16 bg-[#020802] border-t border-grayscale-900 text-white relative transition-all;
   .list-speaker {
-    @apply flex flex-row flex-wrap lg:flex-nowrap w-full justify-center items-center;
+    @apply flex flex-row flex-wrap lg:flex-nowrap w-full justify-center items-center max-lg:px-8;
     .list-item {
-      @apply lg:-mx-3 w-6/12 lg:w-3/12;
+      @apply lg:mx-4 w-6/12 lg:w-3/12 max-lg:mb-6 max-lg:px-2;
       /* 연사 */
       figure.speaker {
-        @apply relative;
+        @apply relative aspect-square;
         .image {
-          @apply saturate-0 transition-all-default mx-auto;
+          @apply saturate-0 transition-all-default mx-auto h-full w-auto;
         }
         .dim {
           @apply absolute-center z-[2] w-full h-full block max-xl:hidden;
@@ -102,7 +102,10 @@ const items = computed(() => {
         + figcaption {
           @apply w-full text-center px-2;
           h6 {
-            @apply text-xl xl:text-2xl font-bold px-4 pt-2 lg:px-6 text-pretty;
+            @apply text-lg xl:text-2xl font-bold px-4 pt-2 lg:px-6 text-pretty;
+          }
+          .info-list {
+            @apply max-lg:text-xs my-1;
           }
         }
         &:hover {

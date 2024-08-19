@@ -66,7 +66,7 @@ export default defineAppConfig({
     },
     modal: {
       wrapper: "relative z-[4000]",
-
+      width: "w-full lg:max-w-[64vw] sm:max-w-lg",
       shadow: "shadow-none",
       rounded: "rounded-none",
       background: "border border-grayscale-800 dark:border-grayscale-200"
