@@ -21,11 +21,11 @@
           />
         </template>
         <p class="brief">
-          {{ $t(`${selected?.id}_brief`) }}
+         <pre>{{ $t(`${selected?.id}_brief`)}}</pre>
         </p>
-        <p class="bio">
-          {{ $t(`${selected?.id}_bio`) }}
-        </p>
+        <pre class="bio">
+          <pre>{{ $t(`${selected?.id}_bio`) }}</pre>
+        </pre>
       </section>
       <footer class="modal-footer">
         <div class="profile">

@@ -16,12 +16,11 @@
     "image": "soo_kwang.png",
     "hidden": true
   },
-
   {
     "id": "speaker_presentation_item04",
-    "thumbnail": "AFoCO.png",
-    "image": "AFoCO.png",
-    "hidden": true
+    "thumbnail": "dr_pham.png",
+    "image": "dr_pham.png",
+    "subjectImage": "dr_pham.png"
   },
   {
     "id": "speaker_presentation_item05",
@@ -32,6 +31,7 @@
   {
     "id": "speaker_presentation_item06",
     "thumbnail": "su_dol_kang.png",
-    "image": "su_dol_kang.png"
+    "image": "su_dol_kang.png",
+    "subjectImage": "su_dol_kang.png"
   }
 ]

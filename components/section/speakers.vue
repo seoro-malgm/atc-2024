@@ -1,7 +1,7 @@
 <template>
   <section id="section-speakers" ref="target">
     <header-section>{{ $t("speaker_subject__title") }}</header-section>
-    <div class="mt-12 mx-auto">
+    <div class="mt-12 mx-auto container">
       <ul class="list-speaker">
         <li v-for="(item, i) in items" :key="item.id" class="list-item">
           <button
@@ -85,7 +85,7 @@ const items = computed(() => {
 #section-speakers {
   @apply pb-16 bg-[#020802] border-t border-grayscale-900 text-white relative transition-all;
   .list-speaker {
-    @apply flex flex-row flex-wrap lg:flex-nowrap w-full justify-center;
+    @apply flex flex-row flex-wrap lg:flex-nowrap w-full justify-center items-center;
     .list-item {
       @apply lg:-mx-3 w-6/12 lg:w-3/12;
       /* 연사 */
