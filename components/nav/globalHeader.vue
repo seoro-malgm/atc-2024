@@ -92,10 +92,17 @@
         <ul class="list-link" v-if="validate">
           <li v-for="(item, i) in linkList" :key="i" class="list-item">
             <nuxt-link
-              :to="`/${currentLocale}/${item.url}`"
+              :to="
+                item?.url
+                  ? `/${currentLocale}/${item.url}`
+                  : item.path
+                  ? item.path
+                  : `/${currentLocale}/home`
+              "
               class="link-item"
               :class="{ disabled: item?.disabled }"
               :disabled="item.disabled"
+              :target="item?.target"
             >
               <span
                 :class="
@@ -108,20 +115,9 @@
               </span>
             </nuxt-link>
           </li>
+
+          <!-- join 모달 버튼 -->
           <!-- <li class="list-item">
-            <nuxt-link :to="`/festival`" class="link-item">
-              <span
-                :class="
-                  pinned
-                    ? 'text-base md:text-lg lg:text-3xl'
-                    : 'text-base md:text-lg lg:text-2xl'
-                "
-              >
-                {{ $t("global_gnb_item04_festival") }}
-              </span>
-            </nuxt-link>
-          </li> -->
-          <li class="list-item">
             <button
               class="link-item"
               @click.prevent="$emit('modal-subscribe', true)"
@@ -136,7 +132,7 @@
                 {{ $t("global_gnb_item03_join") }}
               </span>
             </button>
-          </li>
+          </li> -->
           <li class="list-item ms-auto pt-1">
             <UPopover
               color="bg-grayscale-900"
@@ -218,11 +214,17 @@ const linkList = ref([
   {
     key: "global_gnb_item02_speakers",
     url: "speakers"
+  },
+  {
+    key: "global_gnb_item04_festival",
+    path: "/festival",
+    target: "_blank"
+  },
+  {
+    key: "global_gnb_item05_tour",
+    path: "/tour",
+    target: "_blank"
   }
-  // {
-  //   key: "global_gnb_item04_festival",
-  //   url: "festival"
-  // }
 ]);
 
 const navToggle = ref(false);

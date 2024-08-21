@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section-festival></section-festival>
+    <section-tour></section-tour>
   </div>
 </template>
 

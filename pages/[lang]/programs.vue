@@ -1,11 +1,11 @@
 <template>
   <div id="programs">
-    <header-section>
+    <!-- <header-section>
       {{ $t("program_subject__title") }}
-    </header-section>
-    <section-introduction :hideHeader="true" />
+    </header-section> -->
+    <!-- <section-introduction :hideHeader="true" /> -->
 
-    <section class="mt-24 lg:mt-48">
+    <section class="">
       <header-section>{{ $t("program_timetable__title") }}</header-section>
       <div class="time-table">
         <header class="lg:hidden">
@@ -141,6 +141,11 @@
       <header-section class="border-b-0">
         {{ $t("program_subject__topic") }}
       </header-section>
+      <div
+        class="border-b-0 pt-8 conteinr text-center text-xl lg:text-4xl font-bold max-xl:pb-10"
+      >
+        "{{ $t("main_intro_item01_subtitle") }}"
+      </div>
       <div>
         <section-scroll-horizontal
           :items="subjects"
@@ -148,6 +153,23 @@
         />
       </div>
     </section>
+
+    <section class="mt-12 lg:mt-48">
+      <header-section class="border-b-0"> 컨퍼런스 참여하기 </header-section>
+      <div class="ifame-wrap">
+        <iframe
+          src="https://www.youtube.com/embed/-NtVu5osxHE?si=AupCgH9DOVwNUGG2"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        />
+      </div>
+    </section>
+
+    <!-- 소식 구독 예약하기 -->
+    <section-booking-news @modal-subscribe="$emit('modal-subscribe', true)" />
   </div>
 </template>
 
@@ -235,6 +257,13 @@ const subjects = reactive([
         }
       }
     }
+  }
+}
+
+.ifame-wrap {
+  @apply max-lg:container max-w-full;
+  iframe {
+    @apply w-full h-[calc(100vw*0.5625)];
   }
 }
 </style>

@@ -79,7 +79,6 @@
   </div>
 </template>
 <script setup>
-import { ref, reactive, onMounted, onUnmounted } from "vue";
 import { useElementBounding } from "@vueuse/core";
 import { useMouseInElement } from "@vueuse/core";
 

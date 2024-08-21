@@ -13,11 +13,11 @@
     <!-- 장소섹션 -->
     <section-location />
 
-    <!-- 프로그램 -->
-    <section-programs />
-
     <!-- 소식 구독 예약하기 -->
     <section-booking-news @modal-subscribe="$emit('modal-subscribe', true)" />
+
+    <!-- 프로그램, 부대행사-->
+    <section-programs />
 
     <!-- 스폰서 -->
     <section-sponsors />

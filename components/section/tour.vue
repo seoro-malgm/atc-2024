@@ -12,12 +12,15 @@
     <!-- 정보 -->
     <div class="infos">
       <header class="section-festival-header">
-        <p class="subtitle">2,000명이 함께하는 지리산 로컬페스타</p>
-        <h4 class="title">지리산 걷기 축제</h4>
+        <p class="subtitle">6개시군 지리산둘레길 탐험단장과 함께하는</p>
+        <h4 class="title">지리산 숲길 탐험단</h4>
       </header>
       <article>
         <div class="description">
-          <p class="detail-info">10.26(토) / 전남 구례군</p>
+          <p class="detail-info">10.27(일)</p>
+          <p class="detail-info">
+            구례군, 남원시, 산청군장수군, 하동군, 함양군
+          </p>
           <span class="more-info">
             사전 참가 신청기간 09.02(월) - 10.14(월)
           </span>
@@ -28,15 +31,7 @@
             <a href="#"> 참가신청 / registration </a>
           </li>
           <li>
-            <a
-              href="https://cut-monkey-9e4.notion.site/2024-ATC-5bcd635f4ae04d638cbb40c04ef90948"
-              target="_blank"
-            >
-              자원봉사 신청 / volunteer
-            </a>
-          </li>
-          <li>
-            <a href="https://festival.atcjirisan.com/" target="_blank">
+            <a href="https://tour.atcjirisan.com/" target="_blank">
               자세히보기 / information
             </a>
           </li>
@@ -53,7 +48,7 @@
   @apply grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 bg-blue-50 p-4 lg:p-8;
   /* 포스터 영역 */
   .poster-wrapper {
-    @apply relative;
+    @apply relative order-1 lg:order-2;
     .poster {
       @apply relative aspect-[9/16];
       .image {
@@ -64,7 +59,7 @@
 
   /* 정보 */
   .infos {
-    @apply text-center py-3 lg:py-20;
+    @apply text-center py-3 lg:py-20 order-2 lg:order-1;
     .section-festival-header {
       @apply mb-8;
       .subtitle {
@@ -87,7 +82,7 @@
       li {
         @apply mb-4 mx-0 text-white;
         a:link {
-          @apply block bg-green-800 p-4 lg:p-6 text-white text-lg lg:text-2xl font-bold hover:scale-105 transition-all-default;
+          @apply block bg-green-800 p-4 lg:p-6  text-lg lg:text-2xl font-bold hover:scale-105 transition-all-default;
         }
       }
     }

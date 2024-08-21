@@ -1,6 +1,6 @@
 <template>
   <footer class="global-footer">
-    <section-marquee />
+    <!-- <section-marquee /> -->
     <!-- 푸터 정보 -->
     <div class="content">
       <div class="footer-container">
