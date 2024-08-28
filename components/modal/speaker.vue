@@ -22,6 +22,9 @@
             />
           </div>
         </template>
+        <template v-else>
+          <div class="w-full h-full pb-[360px] bg-green-200"></div>
+        </template>
         <div class="content">
           <div class="brief">
             <pre>{{ $t(`${selected?.id}_brief`) }}</pre>
@@ -41,7 +44,7 @@
             />
           </template>
           <template v-else>
-            <div class="w-full h-full bg-green-200"></div>
+            <div class="w-full h-full bg-green-200 p-4"></div>
           </template>
         </div>
         <div>

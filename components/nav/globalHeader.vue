@@ -117,7 +117,7 @@
           </li>
 
           <!-- join 모달 버튼 -->
-          <!-- <li class="list-item">
+          <li class="list-item">
             <button
               class="link-item"
               @click.prevent="$emit('modal-subscribe', true)"
@@ -132,7 +132,7 @@
                 {{ $t("global_gnb_item03_join") }}
               </span>
             </button>
-          </li> -->
+          </li>
           <li class="list-item ms-auto pt-1">
             <UPopover
               color="bg-grayscale-900"
@@ -214,17 +214,17 @@ const linkList = ref([
   {
     key: "global_gnb_item02_speakers",
     url: "speakers"
-  },
-  {
-    key: "global_gnb_item04_festival",
-    path: "/festival",
-    target: "_blank"
-  },
-  {
-    key: "global_gnb_item05_tour",
-    path: "/tour",
-    target: "_blank"
   }
+  // {
+  //   key: "global_gnb_item04_festival",
+  //   path: "/festival",
+  //   target: "_blank"
+  // },
+  // {
+  //   key: "global_gnb_item05_tour",
+  //   path: "/tour",
+  //   target: "_blank"
+  // }
 ]);
 
 const navToggle = ref(false);

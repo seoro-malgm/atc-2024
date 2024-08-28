@@ -2,7 +2,7 @@
 import seoData from "./data/seoData.js";
 
 export default defineNuxtConfig({
-  ssr: true,
+  ssr: false,
   devtools: { enabled: false },
   app: {
     head: {
@@ -135,6 +135,7 @@ export default defineNuxtConfig({
       gen: 2,
       nodeVersion: "20"
     }
+    // preset: "static"
   },
   imports: {
     dirs: [

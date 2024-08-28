@@ -1,0 +1,32 @@
+{
+  "functions": {
+    "source": ".output/server",
+    "runtime": "nodejs20",
+    "httpsOptions": {
+      "maxInstances": 10
+    },
+    "codebase": "default",
+    "ignore": [
+      "node_modules",
+      ".git",
+      "firebase-debug.log",
+      "firebase-debug.*.log"
+    ]
+  },
+  "hosting": [
+    {
+      "site": "atcjirisan",
+      "public": ".output/public"
+    }
+  ],
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "storage": {
+    "rules": "storage.rules"
+  },
+  "extensions": {
+    "firestore-send-email-3fb5": "firebase/firestore-send-email@0.1.34"
+  }
+}

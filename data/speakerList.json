@@ -7,20 +7,21 @@
   },
   {
     "id": "speaker_presentation_item02",
-    "thumbnail": "enock_glidden.png",
-    "image": "enock_glidden.png",
-    "subjectImage": "enock_glidden.webp"
+    "thumbnail": "soo_kwang.png",
+    "image": "soo_kwang.png",
+    "subjectImage": "soo_kwang.webp"
   },
   {
     "id": "speaker_presentation_item03",
-    "image": "soo_kwang.png",
-    "hidden": true
-  },
-  {
-    "id": "speaker_presentation_item04",
     "thumbnail": "dr_pham.png",
     "image": "dr_pham.png",
     "subjectImage": "dr_pham.png"
+  },
+  {
+    "id": "speaker_presentation_item04",
+    "thumbnail": "enock_glidden.png",
+    "image": "enock_glidden.png",
+    "subjectImage": "enock_glidden.webp"
   },
   {
     "id": "speaker_presentation_item05",
