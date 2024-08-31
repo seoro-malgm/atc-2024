@@ -23,7 +23,9 @@
           </div>
         </template>
         <template v-else>
-          <div class="w-full h-full pb-[360px] bg-green-200"></div>
+          <div
+            class="w-full h-full pb-[540px] self-stretch bg-green-200 border-r border-grayscale-800"
+          ></div>
         </template>
         <div class="content">
           <div class="brief">
@@ -126,7 +128,7 @@ const linkTo = url => {
     .modal-body {
       @apply border-t border-grayscale-800 lg:flex lg:items-stretch;
       .image-wrapper {
-        @apply w-full lg:w-5/12 mb-2 lg:mb-0 relative overflow-hidden aspect-square;
+        @apply w-full lg:w-5/12 mb-2 lg:mb-0 relative overflow-hidden aspect-square lg:border-r border-grayscale-800;
         .image {
           @apply absolute-center h-full object-cover;
         }

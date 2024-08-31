@@ -8,6 +8,7 @@
             @click="selected = item"
             @mouseenter="itemHovered = true"
             @mouseleave="itemHovered = false"
+            class="w-full"
           >
             <figure class="speaker">
               <!-- 연사 인물 이미지 -->
@@ -36,13 +37,13 @@
           </button>
         </li>
       </ul>
-      <div class="info">
+      <!-- <div class="info">
         <div class="sign">
           <h6>
             {{ $t("message_infos_speakers_comming_soon") }}
           </h6>
         </div>
-      </div>
+      </div> -->
     </div>
     <!-- view more  -->
     <div
@@ -83,16 +84,16 @@ const items = computed(() => {
 
 <style lang="postcss" scoped>
 #section-speakers {
-  @apply pb-16 bg-[#020802] border-t border-grayscale-900 text-white relative transition-all;
+  @apply pb-16 bg-[#020802] border-t border-grayscale-900 text-white relative transition-all overflow-hidden;
   .list-speaker {
-    @apply flex flex-row flex-wrap lg:flex-nowrap w-full justify-center items-center max-lg:px-8;
+    @apply flex flex-row items-center flex-wrap w-full justify-center px-4 lg:px-6;
     .list-item {
-      @apply lg:mx-4 w-6/12 lg:w-3/12 max-lg:mb-6 max-lg:px-2;
+      @apply w-1/2 lg:w-3/12 max-lg:mb-6;
       /* 연사 */
       figure.speaker {
-        @apply relative aspect-square;
+        @apply relative w-full;
         .image {
-          @apply saturate-0 transition-all-default mx-auto h-full w-auto;
+          @apply saturate-0 transition-all-default h-auto w-full m-auto;
         }
         .dim {
           @apply absolute-center z-[2] w-full h-full block max-xl:hidden;
@@ -102,10 +103,12 @@ const items = computed(() => {
         + figcaption {
           @apply w-full text-center px-2;
           h6 {
-            @apply text-lg xl:text-2xl font-bold px-4 pt-2 lg:px-6 text-pretty;
+            @apply text-lg xl:text-xl font-bold px-4 pt-2 lg:px-16;
+            word-break: keep-all;
           }
+
           .info-list {
-            @apply max-lg:text-xs my-1;
+            @apply text-xs lg:text-sm my-1;
           }
         }
         &:hover {
@@ -133,8 +136,7 @@ const items = computed(() => {
   @apply w-12 h-12 rounded-full bg-grayscale-100 -translate-x-1/2 -translate-y-1/2 z-[2] absolute pointer-events-none text-[#020802] mix-blend-lighten opacity-70 max-xl:hidden;
   transition: width, height 0.1s ease-in-out;
   .text {
-    @apply text-base absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-3;
-    font-weight: 300;
+    @apply text-base absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-3 text-green-600 font-bold;
   }
 }
 </style>

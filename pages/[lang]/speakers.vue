@@ -77,12 +77,12 @@
         </li>
       </ul>
     </section>
-    <div class="mb-24">
-      <div class="text-center">
+    <div class="mb-48">
+      <!-- <div class="text-center">
         <span class="text-sm text-gray-700">
           {{ $t("message_infos_speakers_comming_soon") }}
         </span>
-      </div>
+      </div> -->
     </div>
 
     <modal-speaker :selected="selected" @close="selected = null" />

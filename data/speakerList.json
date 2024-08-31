@@ -19,18 +19,24 @@
   },
   {
     "id": "speaker_presentation_item04",
+    "image": "rtt.png",
+    "thumbnail": "rtt.png",
+    "hidden": true
+  },
+  {
+    "id": "speaker_presentation_item05",
     "thumbnail": "enock_glidden.png",
     "image": "enock_glidden.png",
     "subjectImage": "enock_glidden.webp"
   },
   {
-    "id": "speaker_presentation_item05",
-    "thumbnail": "IUCN_Asia.png",
-    "image": "IUCN_Asia.png",
-    "hidden": true
+    "id": "speaker_presentation_item06",
+    "thumbnail": "kosuke.png",
+    "image": "kosuke.png",
+    "subjectImage": "kosuke.png"
   },
   {
-    "id": "speaker_presentation_item06",
+    "id": "speaker_presentation_item07",
     "thumbnail": "su_dol_kang.png",
     "image": "su_dol_kang.png",
     "subjectImage": "su_dol_kang.png"
