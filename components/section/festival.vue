@@ -5,7 +5,8 @@
       <figure class="poster">
         <nuxt-img
           class="image"
-          src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
+          provider="storageBucket"
+          src="/posters/festival.jpg"
         />
       </figure>
     </div>
@@ -24,8 +25,9 @@
         </div>
         <ul class="utils">
           <li>
-            <!-- todo : 링크 삽입 -->
-            <a href="#"> 참가신청 / registration </a>
+            <a href="https://onoffmix.com/event/308375" target="_blank">
+              참가신청 / registration
+            </a>
           </li>
           <li>
             <a
@@ -36,7 +38,10 @@
             </a>
           </li>
           <li>
-            <a href="https://festival.atcjirisan.com/" target="_blank">
+            <a
+              href="https://otherpado.notion.site/2024-438c364f843142b9a89b57901d4872b8"
+              target="_blank"
+            >
               자세히보기 / information
             </a>
           </li>
@@ -55,9 +60,9 @@
   .poster-wrapper {
     @apply relative;
     .poster {
-      @apply relative aspect-[9/16];
+      @apply relative aspect-[6/9];
       .image {
-        @apply w-full h-full object-cover;
+        @apply w-full h-full object-contain;
       }
     }
   }

@@ -12,7 +12,7 @@
       </p>
     </header>
     <!-- 예약오픈 후 삭제 -->
-    <section class="py-5 ms-auto">
+    <!-- <section class="py-5 ms-auto">
       <section-marquee-custom :height="`${marqueeHeight}px`" duration="50s">
         <ul class="list-programs" ref="list">
           <li
@@ -86,14 +86,14 @@
         </ul>
       </section-marquee-custom>
       <div class="section-footer"></div>
-    </section>
+    </section> -->
 
-    <!-- <div class="container"> -->
-    <!-- 걷기축제 섹션 -->
-    <!-- <section-festival></section-festival> -->
-    <!-- 지리산 숲길 탐험단 섹션 -->
-    <!-- <section-tour></section-tour> -->
-    <!-- </div> -->
+    <div class="container">
+      <!-- 걷기축제 섹션 -->
+      <section-festival></section-festival>
+      <!-- 지리산 숲길 탐험단 섹션 -->
+      <!-- <section-tour></section-tour> -->
+    </div>
   </div>
 </template>
 

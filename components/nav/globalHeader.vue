@@ -117,7 +117,7 @@
           </li>
 
           <!-- join 모달 버튼 -->
-          <li class="list-item">
+          <!-- <li class="list-item">
             <button
               class="link-item"
               @click.prevent="$emit('modal-subscribe', true)"
@@ -132,7 +132,7 @@
                 {{ $t("global_gnb_item03_join") }}
               </span>
             </button>
-          </li>
+          </li> -->
           <li class="list-item ms-auto pt-1">
             <UPopover
               color="bg-grayscale-900"
@@ -214,12 +214,17 @@ const linkList = ref([
   {
     key: "global_gnb_item02_speakers",
     url: "speakers"
+  },
+  {
+    key: "global_gnb_item03_join",
+    path: "https://onoffmix.com/event/308083",
+    target: "_blank"
+  },
+  {
+    key: "global_gnb_item04_festival",
+    path: "/festival",
+    target: "_blank"
   }
-  // {
-  //   key: "global_gnb_item04_festival",
-  //   path: "/festival",
-  //   target: "_blank"
-  // },
   // {
   //   key: "global_gnb_item05_tour",
   //   path: "/tour",
@@ -394,7 +399,7 @@ watch(
         @apply flex items-center max-lg:justify-center flex-wrap;
         .list-item {
           .link-item {
-            @apply block px-4 md:px-4 pt-1 pb-2 lg:px-4 lg:py-2 border-r border-white lg:min-w-[210px] text-center text-nowrap;
+            @apply block px-2 md:px-4 pt-1 pb-2 lg:px-4 lg:py-2 border-r border-white lg:min-w-[210px] text-center text-nowrap;
             &:first-child {
               @apply max-lg:border-l;
             }
