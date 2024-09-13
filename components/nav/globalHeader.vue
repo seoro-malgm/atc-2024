@@ -57,7 +57,7 @@
                 fontSize: headingFontSize
               }"
             >
-              2024.10.25.
+              2024.10.25 ~ 10.27
             </h2>
             <!-- <small>(GMT+9)</small> -->
           </div>
@@ -79,7 +79,7 @@
             >
               in Jirisan
             </h2>
-            <h2>2024.10.25.</h2>
+            <h2>2024.10.25 ~ 10.27</h2>
             <!-- <small>(GMT+9)</small> -->
           </div>
         </div>
@@ -217,14 +217,16 @@ const linkList = ref([
   },
   {
     key: "global_gnb_item03_join",
-    path: "https://onoffmix.com/event/308083",
-    target: "_blank"
-  },
-  {
-    key: "global_gnb_item04_festival",
-    path: "/festival",
+    // path: "https://onoffmix.com/event/308083",
+    // target: "_blank"
+    path: "/join",
     target: "_blank"
   }
+  // {
+  //   key: "global_gnb_item04_festival",
+  //   path: "/festival",
+  //   target: "_blank"
+  // }
   // {
   //   key: "global_gnb_item05_tour",
   //   path: "/tour",
@@ -251,7 +253,7 @@ const pinned = computed(() => {
 
 // 헤더에 위치한 제목의 폰트 사이즈
 const headingFontSize = computed(() => {
-  return `max(3.5vw, calc(4.5vw - ${props.scrollY / 300}vw))`;
+  return `max(3.5vw, calc(1vw - ${props.scrollY / 400}vw))`;
 });
 
 // toast
@@ -359,6 +361,7 @@ watch(
           @apply lg:flex-col max-lg:items-center lg:items-start lg:justify-start max-lg:text-2xl max-lg:text-center;
           .place-and-date {
             @apply max-lg:justify-center;
+            letter-spacing: -0.08vw;
           }
           .heading {
             @apply w-full pe-3 max-lg:text-2xl;

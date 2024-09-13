@@ -14,10 +14,16 @@
     <section-location />
 
     <!-- 소식 구독 예약하기 -->
-    <section-booking-news @modal-subscribe="$emit('modal-subscribe', true)" />
+    <!-- <section-booking-news @modal-subscribe="$emit('modal-subscribe', true)" /> -->
 
     <!-- 프로그램, 부대행사-->
-    <section-programs />
+    <!-- <section-programs /> -->
+
+    <!-- 참여하기 -->
+    <header-section class="mt-4">
+      <h4>참여하기</h4>
+    </header-section>
+    <section-join />
 
     <!-- 스폰서 -->
     <section-sponsors />
