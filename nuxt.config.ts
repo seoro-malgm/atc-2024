@@ -130,12 +130,12 @@ export default defineNuxtConfig({
   //   }
   // },
   nitro: {
-    // preset: "firebase",
-    // firebase: {
-    //   gen: 2,
-    //   nodeVersion: "20"
-    // }
-    preset: "static"
+    preset: "firebase",
+    firebase: {
+      gen: 2,
+      nodeVersion: "20"
+    }
+    // preset: "static"
   },
   imports: {
     dirs: [

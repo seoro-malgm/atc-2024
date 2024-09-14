@@ -3,9 +3,9 @@
     <table class="time-table">
       <thead>
         <tr>
-          <th width="15%">시간</th>
-          <th width="75%">주제</th>
-          <th width="10%">비고</th>
+          <th width="30%">시간</th>
+          <th width="50%">주제</th>
+          <th width="40%">비고</th>
         </tr>
       </thead>
       <tbody>
@@ -192,12 +192,13 @@ const getItem = id => {
 
 <style lang="postcss" scoped>
 .time-table {
-  @apply max-w-full overflow-x-auto;
+  @apply max-w-full overflow-x-auto mt-10;
   table {
     @apply w-full border-collapse;
     th,
     td {
-      @apply border border-gray-300 p-2 text-sm;
+      @apply border border-gray-300 p-2;
+      @apply text-base lg:text-xl;
       &.time {
         @apply font-bold text-center align-middle;
         vertical-align: top;
