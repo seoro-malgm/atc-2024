@@ -31,12 +31,18 @@
   },
   {
     "id": "speaker_presentation_item06",
+    "thumbnail": "ming_chien.png",
+    "image": "ming_chien.png",
+    "subjectImage": "ming_chien.png"
+  },
+  {
+    "id": "speaker_presentation_item07",
     "thumbnail": "kosuke.png",
     "image": "kosuke.png",
     "subjectImage": "kosuke.png"
   },
   {
-    "id": "speaker_presentation_item07",
+    "id": "speaker_presentation_item08",
     "thumbnail": "su_dol_kang.png",
     "image": "su_dol_kang.png",
     "subjectImage": "su_dol_kang.png"
