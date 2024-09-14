@@ -219,8 +219,8 @@ const linkList = ref([
     key: "global_gnb_item03_join",
     // path: "https://onoffmix.com/event/308083",
     // target: "_blank"
-    path: "/join",
-    target: "_blank"
+    path: "join"
+    // target: "_blank"
   }
   // {
   //   key: "global_gnb_item04_festival",

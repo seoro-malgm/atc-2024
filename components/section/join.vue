@@ -77,12 +77,12 @@
 </template>
 
 <script setup>
-const props = defineProps({
-  data: {
-    type: String,
-    default: null
-  }
-});
+// const props = defineProps({
+//   data: {
+//     type: String,
+//     default: null
+//   }
+// });
 const emit = defineEmits();
 
 const items = ref([
@@ -120,10 +120,10 @@ const items = ref([
         title: "참가신청 / registration",
         url: "https://www.onoffmix.com/event/308375"
       },
-      {
-        title: "자원봉사 신청 / volunteer",
-        url: null
-      },
+      // {
+      //   title: "자원봉사 신청 / volunteer",
+      //   url: null
+      // },
       {
         title: "자세히 보기 / information",
         url: "https://www.notion.so/otherpado/2024-438c364f843142b9a89b57901d4872b8"

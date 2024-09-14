@@ -52,6 +52,7 @@
         <div>
           <div class="name">
             {{ $t(`${selected?.id}_name`) }}
+            ({{ $t(`${selected?.id}_name_en`) }})
           </div>
           <div class="details">
             <ul class="info-list">

@@ -25,6 +25,7 @@
               <h6>
                 {{ $t(`${item.id}_name`) }}
               </h6>
+              <span> ({{ $t(`${item.id}_name_en`) }}) </span>
               <ul class="info-list">
                 <li v-if="$t(`${item.id}_company`) !== ''">
                   {{ $t(`${item.id}_company`) }}
