@@ -52,7 +52,9 @@
         <div>
           <div class="name">
             {{ $t(`${selected?.id}_name`) }}
-            ({{ $t(`${selected?.id}_name_en`) }})
+            <template v-if="$t(`${selected?.id}_name_en`)">
+              ({{ $t(`${selected?.id}_name_en`) }})
+            </template>
           </div>
           <div class="details">
             <ul class="info-list">

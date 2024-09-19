@@ -3,9 +3,9 @@
     <table class="time-table">
       <thead>
         <tr>
-          <th width="30%">시간</th>
-          <th width="50%">주제</th>
-          <th width="40%">비고</th>
+          <th width="15%">시간</th>
+          <th width="70%">주제</th>
+          <th width="15%">비고</th>
         </tr>
       </thead>
       <tbody>
@@ -57,13 +57,19 @@
         </tr>
         <tr>
           <td>
-            <pre>{{ getItem(items[0].id) }}</pre>
+            <table-cell
+              :data="getItem(items[0].id)"
+              @select="selected = $event"
+            />
           </td>
           <td class="text-center">30 {{ $t("word__time_min") }}</td>
         </tr>
         <tr>
           <td>
-            <pre>{{ getItem(items[1].id) }}</pre>
+            <table-cell
+              :data="getItem(items[1].id)"
+              @select="selected = $event"
+            />
           </td>
           <td class="text-center">30 {{ $t("word__time_min") }}</td>
         </tr>
@@ -91,13 +97,19 @@
         </tr>
         <tr>
           <td>
-            <pre>{{ getItem(items[2].id) }}</pre>
+            <table-cell
+              :data="getItem(items[2].id)"
+              @select="selected = $event"
+            />
           </td>
           <td class="text-center">30 {{ $t("word__time_min") }}</td>
         </tr>
         <tr>
           <td>
-            <pre>{{ getItem(items[3].id) }}</pre>
+            <table-cell
+              :data="getItem(items[3].id)"
+              @select="selected = $event"
+            />
           </td>
           <td class="text-center">30 {{ $t("word__time_min") }}</td>
         </tr>
@@ -119,13 +131,19 @@
         </tr>
         <tr>
           <td>
-            <pre>{{ getItem(items[4].id) }}</pre>
+            <table-cell
+              :data="getItem(items[4].id)"
+              @select="selected = $event"
+            />
           </td>
           <td class="text-center">30 {{ $t("word__time_min") }}</td>
         </tr>
         <tr>
           <td>
-            <pre>{{ getItem(items[5].id) }}</pre>
+            <table-cell
+              :data="getItem(items[5].id)"
+              @select="selected = $event"
+            />
           </td>
           <td class="text-center">30 {{ $t("word__time_min") }}</td>
         </tr>
@@ -147,7 +165,10 @@
         </tr>
         <tr>
           <td>
-            <pre>{{ getItem(items[6].id) }}</pre>
+            <table-cell
+              :data="getItem(items[6].id)"
+              @select="selected = $event"
+            />
           </td>
 
           <td class="text-center">30 {{ $t("word__time_min") }}</td>
@@ -155,7 +176,10 @@
 
         <tr>
           <td>
-            <pre>{{ getItem(items[7].id) }}</pre>
+            <table-cell
+              :data="getItem(items[7].id)"
+              @select="selected = $event"
+            />
           </td>
 
           <td class="text-center">30 {{ $t("word__time_min") }}</td>
@@ -171,6 +195,7 @@
         </tr>
       </tbody>
     </table>
+    <modal-speaker :selected="selected" @close="selected = null" />
   </div>
 </template>
 
@@ -184,15 +209,33 @@ const emit = defineEmits();
 
 const { t } = useI18n();
 const getItem = id => {
-  return `[${t(`${id}_title`)}]\n${t(`${id}_name`)}(${t(`${id}_name_en`)})\n${t(
-    `${id}_company`
-  )}  ${t(`${id}_position`)}`;
+  const title = t(`${id}_title`);
+  const name = t(`${id}_name`);
+  const nameEn = t(`${id}_name_en`);
+  const company = t(`${id}_company`);
+  const position = t(`${id}_position`);
+  const { subjectImage, image, thumbnail } = items.value.find(
+    item => item.id === id
+  );
+  return {
+    id,
+    title,
+    name,
+    nameEn,
+    company,
+    position,
+    subjectImage,
+    image,
+    thumbnail
+  };
 };
+
+const selected = ref(null);
 </script>
 
 <style lang="postcss" scoped>
 .time-table {
-  @apply max-w-full overflow-x-auto mt-10;
+  @apply max-w-full overflow-x-auto lg:mt-10;
   table {
     @apply w-full border-collapse;
     th,
@@ -200,7 +243,8 @@ const getItem = id => {
       @apply border border-gray-300 p-2;
       @apply text-base lg:text-xl;
       &.time {
-        @apply font-bold text-center align-middle;
+        @apply font-bold text-center align-middle max-lg:text-sm;
+        word-break: keep-all;
         vertical-align: top;
       }
       &.subject {

@@ -8,10 +8,17 @@
     <section class="">
       <header-section>{{ $t("program_timetable__title") }}</header-section>
       <div class="time-table">
-        <header class="lg:hidden">
+        <!-- <header class="flex items-center justify-center lg:hidden">
           SCROLL
-          <icon-arr dir="right" color="transparent" fill="black" class="icon" />
-        </header>
+          <div class="w-10 h-10">
+            <icon-arr
+              dir="right"
+              color="transparent"
+              fill="black"
+              class="icon"
+            />
+          </div>
+        </header> -->
         <table-timeline />
       </div>
     </section>

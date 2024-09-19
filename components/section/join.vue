@@ -120,10 +120,10 @@ const items = ref([
         title: "참가신청 / registration",
         url: "https://www.onoffmix.com/event/308375"
       },
-      // {
-      //   title: "자원봉사 신청 / volunteer",
-      //   url: null
-      // },
+      {
+        title: "자원봉사 신청 / volunteer",
+        url: "https://cut-monkey-9e4.notion.site/2024-10679a6627108001acd1ea72d8f7a269"
+      },
       {
         title: "자세히 보기 / information",
         url: "https://www.notion.so/otherpado/2024-438c364f843142b9a89b57901d4872b8"

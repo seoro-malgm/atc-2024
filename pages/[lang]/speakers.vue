@@ -48,7 +48,9 @@
                 <div class="info">
                   <div class="name">
                     {{ $t(`${item.id}_name`) }}
-                    <span> ({{ $t(`${item.id}_name_en`) }}) </span>
+                    <span v-if="$t(`${item.id}_name_en`)">
+                      ({{ $t(`${item.id}_name_en`) }})
+                    </span>
                   </div>
                   <div class="details">
                     <ul class="info-list">
