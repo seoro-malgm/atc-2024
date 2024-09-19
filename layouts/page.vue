@@ -17,15 +17,30 @@ const props = defineProps({
   headerHeight: {
     type: [Number, String],
     default: 0
-  },
-  validate: {
-    type: Boolean,
-    default: false
   }
 });
+import { useRoute } from "vue-router";
+import { useLocaleStore } from "@/stores/locale";
 
+// 언어 store
+const localeStore = useLocaleStore();
+
+// params에 세팅된 언어
+const paramsLang = computed(() => {
+  return route?.params?.lang;
+});
+
+const allLocales = computed(() => {
+  return localeStore?.allLocales;
+});
+const route = useRoute();
+// 언어를 제대로 사용하는 때가 아니면 hidden
+const validate = computed(() => {
+  return allLocales.value.some(l => l?.id === paramsLang?.value);
+});
 onMounted(() => {
-  if (!props.validate) {
+  // console.log("validate : ", validate.value);
+  if (!validate.value) {
     navigateTo("/ko/home");
   }
 });

@@ -63,7 +63,6 @@ const allLocales = computed(() => {
 const validate = computed(() => {
   return allLocales.value.some(l => l?.id === paramsLang?.value);
 });
-
 const wrapper = ref();
 
 const route = useRoute();
