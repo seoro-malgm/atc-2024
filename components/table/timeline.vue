@@ -10,17 +10,15 @@
       </thead>
       <tbody>
         <tr>
-          <td class="time">09:00 ~</td>
+          <td class="time">10:00 ~ 10:30</td>
           <td>{{ $t("program_timetable__desc01") }}</td>
-          <td class="text-center">
-            <!-- 30 {{ $t("word__time_min") }} -->
-          </td>
+          <td class="text-center">30 {{ $t("word__time_min") }}</td>
         </tr>
-        <tr>
+        <!-- <tr>
           <td class="time">10:10 - 10:30</td>
           <td>{{ $t("program_timetable__desc02") }}</td>
           <td class="text-center">20 {{ $t("word__time_min") }}</td>
-        </tr>
+        </tr> -->
         <tr>
           <td class="time">10:30- 10:35</td>
           <td>{{ $t("program_timetable__desc03") }}</td>

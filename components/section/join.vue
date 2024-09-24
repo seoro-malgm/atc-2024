@@ -30,9 +30,10 @@
               <template v-if="item.poster">
                 <nuxt-img
                   provider="storageBucket"
-                  :src="item.poster"
+                  :src="item?.poster"
                   alt="poster"
                   sizes="100% lg:25vw"
+                  placeholder
                 />
               </template>
               <template v-else>
@@ -59,13 +60,23 @@
             <footer class="section-col-item-footer">
               <ul>
                 <li v-for="link in item.links" :key="link.title">
-                  <a
-                    class="section-col-item-footer-link"
-                    :href="link.url"
-                    target="_blank"
-                  >
-                    {{ link.title }}
-                  </a>
+                  <template v-if="link?.url">
+                    <a
+                      class="section-col-item-footer-link"
+                      :href="link.url"
+                      target="_blank"
+                    >
+                      {{ link.title }}
+                    </a>
+                  </template>
+                  <template v-if="link?.path">
+                    <nuxt-link
+                      class="section-col-item-footer-link"
+                      :to="`/${link.path}`"
+                    >
+                      {{ link.title }}
+                    </nuxt-link>
+                  </template>
                 </li>
               </ul>
             </footer>
@@ -84,6 +95,30 @@
 //   }
 // });
 const emit = defineEmits();
+// const img = useImage();
+import { useLocaleStore } from "@/stores/locale";
+// 언어 store
+const localeStore = useLocaleStore();
+
+import { useRoute } from "vue-router";
+const route = useRoute();
+// params에 세팅된 언어
+const paramsLang = computed(() => {
+  return route?.params?.lang;
+});
+
+/**
+ * 현재 언어 상태 확인
+ * @param lang 최우선으로 현재 경로의 lang param
+ * @argument locale 그 뒤의 locale 값
+ * 모두 없으면 기본 언어 'ko'
+ */
+const currentLocale = computed(() => {
+  return paramsLang?.value || locale.value || "ko";
+});
+const langs = computed(() => {
+  return localeStore.allLocales;
+});
 
 const items = ref([
   {
@@ -96,15 +131,15 @@ const items = ref([
     links: [
       {
         title: "참가신청 / registration",
-        url: "https://www.onoffmix.com/event/308083"
+        url: "https://adsld.link/N1Yeht"
       },
       {
         title: "자원봉사 신청 / volunteer",
-        url: "https://cut-monkey-9e4.notion.site/2024-ATC-5bcd635f4ae04d638cbb40c04ef90948"
+        url: "https://adsld.link/j7X9AT"
       },
       {
         title: "자세히 보기 / information",
-        url: "https://atcjirisan.com/ko/programs"
+        path: `${currentLocale.value}/programs`
       }
     ]
   },
@@ -118,15 +153,15 @@ const items = ref([
     links: [
       {
         title: "참가신청 / registration",
-        url: "https://www.onoffmix.com/event/308375"
+        url: "https://adsld.link/IrsCVY"
       },
       {
         title: "자원봉사 신청 / volunteer",
-        url: "https://cut-monkey-9e4.notion.site/2024-10679a6627108001acd1ea72d8f7a269"
+        url: "https://adsld.link/tpvvTR"
       },
       {
         title: "자세히 보기 / information",
-        url: "https://www.notion.so/otherpado/2024-438c364f843142b9a89b57901d4872b8"
+        url: "https://adsld.link/0SRsBt"
       }
     ]
   },
@@ -140,12 +175,12 @@ const items = ref([
     links: [
       {
         title: "참가신청 / registration",
-        url: "https://www.onoffmix.com/event/308377"
+        url: "https://adsld.link/hySO9d"
       },
 
       {
         title: "자세히 보기 / information",
-        url: "https://www.notion.so/2024-c13152aea41549b19f45b491f900a05a?pvs=21"
+        url: "https://adsld.link/nW1gL1"
       }
     ]
   },
@@ -159,7 +194,7 @@ const items = ref([
     links: [
       {
         title: "참가신청 / registration",
-        url: "https://www.onoffmix.com/event/309230"
+        url: "https://adsld.link/kQ43io"
       }
     ]
   }
@@ -228,7 +263,7 @@ const toggleCollapse = index => {
         }
       }
       .section-col-item-poster {
-        @apply border-b border-grayscale-800;
+        @apply border-b border-grayscale-800 aspect-[210/297] bg-grayscale-200;
         img {
           @apply w-full h-auto;
         }
