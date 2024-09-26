@@ -123,11 +123,11 @@ const langs = computed(() => {
 const items = ref([
   {
     title: "제 5회 아시아 트레일즈 컨퍼런스",
-    poster: "/posters/poster01.jpg",
-    date: "2024.10.25. (금) 10:30~18:30",
+    poster: "/posters/poster01.png",
+    date: "2024.10.25. (금) 10:00~20:00",
     emoji: "🎯",
     location: "전남 구례군 더케이 호텔 그랜드볼룸",
-    additionalInfos: ["사전 참가 신청기간 9.13. (금) - 9.30. (월)"],
+    additionalInfos: ["사전 예약 마감일 : 9.13. (금) - 10.18. (금)"],
     links: [
       {
         title: "참가신청 / registration",
@@ -145,11 +145,11 @@ const items = ref([
   },
   {
     title: "2024 지리산둘레길 걷기축제",
-    poster: "/posters/poster02.jpg",
+    poster: "/posters/poster02.png",
     date: "2024.10.26. (토) 10:00~18:00",
     emoji: "🏃‍♂️",
     location: "전남 구례군 지리산역사문화관",
-    additionalInfos: ["사전 참가 신청기간 9.13. (금) - 9.30. (월)"],
+    additionalInfos: ["사전 예약 마감일 : 9.13. (금) - 10.22. (화)"],
     links: [
       {
         title: "참가신청 / registration",
@@ -167,11 +167,11 @@ const items = ref([
   },
   {
     title: "2024 지리산 숲길 탐험대",
-    poster: null,
-    date: "2024.10.27. (일) 11:00~18:00",
+    poster: "/posters/poster03.png",
+    date: "2024.10.27. (일) 10:00~17:00",
     emoji: "🌳",
     location: "지리산 6개 시군",
-    additionalInfos: ["사전 참가 신청기간 9.13. (금) - 9.30. (월)"],
+    additionalInfos: ["사전 예약 마감일 : 9.13. (금) - 10.18. (금)"],
     links: [
       {
         title: "참가신청 / registration",
@@ -186,11 +186,11 @@ const items = ref([
   },
   {
     title: "2024 지리산둘레길 워크샵",
-    poster: null,
-    date: "2024.10.25. (금) 10:30~18:30 ",
+    poster: "/posters/poster04.png",
+    date: "2024.10.25. (금) 13:00~18:00",
     emoji: "👩‍💻",
     location: "전남 구례군 더케이 호텔 그랜드볼룸",
-    additionalInfos: ["사전 참가 신청기간 9.13. (금) - 9.30. (월)"],
+    additionalInfos: ["사전 예약 마감일 : 9.13. (금) - 10.18. (금)"],
     links: [
       {
         title: "참가신청 / registration",
@@ -263,12 +263,12 @@ const toggleCollapse = index => {
         }
       }
       .section-col-item-poster {
-        @apply border-b border-grayscale-800 aspect-[210/297] bg-grayscale-200;
+        @apply border-b border-grayscale-800 aspect-square bg-grayscale-200;
         img {
           @apply w-full h-auto;
         }
         .section-col-item-poster-placeholder {
-          @apply w-full aspect-video lg:aspect-[210/297] bg-grayscale-300 relative;
+          @apply w-full aspect-square bg-grayscale-300 relative;
           span.text {
             @apply absolute-center text-sm;
           }
