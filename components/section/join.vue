@@ -120,85 +120,89 @@ const langs = computed(() => {
   return localeStore.allLocales;
 });
 
-const items = ref([
-  {
-    title: "제 5회 아시아 트레일즈 컨퍼런스",
-    poster: "/posters/poster01.png",
-    date: "2024.10.25. (금) 10:00~20:00",
-    emoji: "🎯",
-    location: "전남 구례군 더케이 호텔 그랜드볼룸",
-    additionalInfos: ["사전 예약 마감일 : 9.13. (금) - 10.18. (금)"],
-    links: [
-      {
-        title: "참가신청 / registration",
-        url: "https://adsld.link/N1Yeht"
-      },
-      {
-        title: "자원봉사 신청 / volunteer",
-        url: "https://adsld.link/j7X9AT"
-      },
-      {
-        title: "자세히 보기 / information",
-        path: `${currentLocale.value}/programs`
-      }
-    ]
-  },
-  {
-    title: "2024 지리산둘레길 걷기축제",
-    poster: "/posters/poster02.png",
-    date: "2024.10.26. (토) 10:00~18:00",
-    emoji: "🏃‍♂️",
-    location: "전남 구례군 지리산역사문화관",
-    additionalInfos: ["사전 예약 마감일 : 9.13. (금) - 10.22. (화)"],
-    links: [
-      {
-        title: "참가신청 / registration",
-        url: "https://adsld.link/IrsCVY"
-      },
-      {
-        title: "자원봉사 신청 / volunteer",
-        url: "https://adsld.link/tpvvTR"
-      },
-      {
-        title: "자세히 보기 / information",
-        url: "https://adsld.link/0SRsBt"
-      }
-    ]
-  },
-  {
-    title: "2024 지리산 숲길 탐험대",
-    poster: "/posters/poster03.png",
-    date: "2024.10.27. (일) 10:00~17:00",
-    emoji: "🌳",
-    location: "지리산 6개 시군",
-    additionalInfos: ["사전 예약 마감일 : 9.13. (금) - 10.18. (금)"],
-    links: [
-      {
-        title: "참가신청 / registration",
-        url: "https://adsld.link/hySO9d"
-      },
+const { t } = useI18n();
 
-      {
-        title: "자세히 보기 / information",
-        url: "https://adsld.link/nW1gL1"
-      }
-    ]
-  },
-  {
-    title: "2024 지리산둘레길 워크샵",
-    poster: "/posters/poster04.png",
-    date: "2024.10.25. (금) 13:00~18:00",
-    emoji: "👩‍💻",
-    location: "전남 구례군 더케이 호텔 그랜드볼룸",
-    additionalInfos: ["사전 예약 마감일 : 9.13. (금) - 10.18. (금)"],
-    links: [
-      {
-        title: "참가신청 / registration",
-        url: "https://adsld.link/kQ43io"
-      }
-    ]
-  }
-]);
+const items = computed(() => {
+  return [
+    {
+      title: t("join_conference_title"),
+      poster: "/posters/poster01.png",
+      date: t("join_conference_datetime"),
+      emoji: "🎯",
+      location: t("join_conference_place"),
+      additionalInfos: [t("join_conference_duedate")],
+      links: [
+        {
+          title: t("join_festival_btn1"),
+          url: "https://adsld.link/N1Yeht"
+        },
+        {
+          title: t("join_festival_btn2"),
+          url: "https://adsld.link/j7X9AT"
+        },
+        {
+          title: t("join_festival_btn3"),
+          path: `${currentLocale.value}/programs`
+        }
+      ]
+    },
+    {
+      title: t("join_festival_title"),
+      poster: "/posters/poster02.png",
+      date: t("join_festival_datetime"),
+      emoji: "🏃‍♂️",
+      location: t("join_festival_place"),
+      additionalInfos: [t("join_festival_duedate")],
+      links: [
+        {
+          title: t("join_festival_btn1"),
+          url: "https://adsld.link/IrsCVY"
+        },
+        {
+          title: t("join_festival_btn2"),
+          url: "https://adsld.link/tpvvTR"
+        },
+        {
+          title: t("join_festival_btn3"),
+          url: "https://adsld.link/0SRsBt"
+        }
+      ]
+    },
+    {
+      title: t("join_explorers_title"),
+      poster: "/posters/poster03.png",
+      date: t("join_explorers_datetime"),
+      emoji: "🌳",
+      location: t("join_explorers_place"),
+      additionalInfos: [t("join_explorers_duedate")],
+      links: [
+        {
+          title: t("join_festival_btn1"),
+          url: "https://adsld.link/hySO9d"
+        },
+
+        {
+          title: t("join_festival_btn3"),
+          url: "https://adsld.link/nW1gL1"
+        }
+      ]
+    },
+    {
+      title: t("join_workshop_title"),
+      poster: "/posters/poster04.png",
+      date: t("join_workshop_datetime"),
+      emoji: "👩‍💻",
+      location: t("join_workshop_place"),
+      additionalInfos: [t("join_workshop_duedate")],
+      links: [
+        {
+          title: t("join_festival_btn1"),
+          url: "https://adsld.link/kQ43io"
+        }
+      ]
+    }
+  ];
+});
 
 const collapsed = ref(null);
 const toggleCollapse = index => {

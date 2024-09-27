@@ -1,7 +1,7 @@
 <template>
   <div>
     <header-section class="mt-4">
-      <h4>참여하기</h4>
+      {{ t("join_section__title") }}
     </header-section>
     <section-join />
   </div>
@@ -18,6 +18,8 @@ const props = defineProps({
   }
 });
 const emit = defineEmits();
+
+const { t } = useI18n();
 </script>
 
 <style lang="postcss" scoped></style>

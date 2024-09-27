@@ -21,7 +21,7 @@
 
     <!-- 참여하기 -->
     <header-section class="mt-4">
-      <h4>참여하기</h4>
+      {{ $t("join_section__title") }}
     </header-section>
     <section-join />
 
