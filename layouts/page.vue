@@ -4,6 +4,7 @@
       :scrollY="scrollY"
       :headerHeight="headerHeight"
       @modal-subscribe="$event => $emit('modal-subscribe', $event)"
+      :lang="paramsLang"
     />
   </div>
 </template>
