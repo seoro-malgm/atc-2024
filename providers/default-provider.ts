@@ -6,7 +6,7 @@ const operationsGenerator = createOperationsGenerator();
 
 export const getImage: ProviderGetImage = (src, { modifiers = {} } = {}) => {
   const config = useRuntimeConfig();
-  const baseURL: any = config.public.siteUrl;
+  const baseURL: any = config.public.siteURL;
 
   const operations = operationsGenerator(modifiers);
 
